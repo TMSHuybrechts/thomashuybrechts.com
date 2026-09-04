@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victus Control — project van Thomas Huybrechts</title>
+    <meta name="description" content="Een local-first operations-platform om een AI-werkstation te begrijpen, structureren en beheren: live runtime-ontdekking, inventaris, resource-monitoring, security-review en een intent-map die je gewenste opstelling vergelijkt met de werkelijkheid." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="canonical" href="https://thomashuybrechts.com/projecten/victus-control.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="Victus Control — Thomas Huybrechts" />
+    <meta property="og:description" content="Een local-first operations-platform om een AI-werkstation te begrijpen, structureren en beheren: live runtime-ontdekking, inventaris, resource-monitoring, security-review en een intent-map die je gewenste opstelling vergelijkt met de werkelijkheid." />
+    <meta property="og:url" content="https://thomashuybrechts.com/projecten/victus-control.html" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Victus Control",
+      "description": "Een local-first operations-platform om een AI-werkstation te begrijpen, structureren en beheren: live runtime-ontdekking, inventaris, resource-monitoring, security-review en een intent-map die je gewenste opstelling vergelijkt met de werkelijkheid.",
+      "url": "https://thomashuybrechts.com/projecten/victus-control.html",
+      "author": { "@type": "Person", "name": "Thomas Huybrechts", "url": "https://thomashuybrechts.com/" },
+      "inLanguage": "nl-BE"
+    }
+    </script>
+  </head>
+  <body class="project-page">
+    <a class="skip-link" href="#inhoud">Ga naar de inhoud</a>
+
+    <header class="site-header" id="header">
+      <a class="brand" href="../" aria-label="Thomas Huybrechts, naar de startpagina">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Hoofdnavigatie">
+        <a href="../#over">Over</a>
+        <a href="../#doen">Wat ik doe</a>
+        <a href="../#projecten">Projecten</a>
+        <a href="../#profiel">Profiel</a>
+        <a class="nav-contact" href="../#contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Muziek afspelen">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="sound-label">Geluid</span>
+        </button>
+        <audio id="bgm" src="../assets/audio/lemons.mp3" loop preload="none"></audio>
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <article>
+        <section class="section project-hero">
+          <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> Alle projecten</a>
+          <p class="work-tag">LOCAL-FIRST · OPERATIONS · REACT/TS</p>
+          <h1>Victus Control</h1>
+          <p class="project-intro">Een local-first operations-platform om een AI-werkstation te begrijpen, structureren en beheren: live runtime-ontdekking, inventaris, resource-monitoring, security-review en een intent-map die je gewenste opstelling vergelijkt met de werkelijkheid.</p>
+          <dl class="project-meta">
+            <div><dt>Type</dt><dd>Local-first ops-platform</dd></div>
+            <div><dt>Status</dt><dd>Actief in ontwikkeling</dd></div>
+            <div><dt>Rol</dt><dd>Concept, ontwerp &amp; ontwikkeling</dd></div>
+            <div><dt>Stack</dt><dd>React · TypeScript · Vite · SQLite · Playwright</dd></div>
+          </dl>
+          <div class="project-result"><span class="lbl">RESULTAAT</span><p>Toont in één oogopslag het verschil tussen je bedóelde en je live opstelling — zonder cloud-afhankelijkheid.</p></div>
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:thomashuybrechts@gmail.com?subject=Over%20Victus%20Control">Praat met mij hierover <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#details">Lees hoe het werkt <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+
+        <section class="project-gallery" aria-label="Beelden van Victus Control">
+          <figure class="reveal gallery-main">
+            <img src="../assets/projects/victus-control.png" alt="Victus Control — live services, resource-monitor en netwerkkaart (voorbeeldweergave met demodata)" loading="eager" decoding="async" />
+            <figcaption>Victus Control — live services, resource-monitor en netwerkkaart (voorbeeldweergave met demodata)</figcaption>
+          </figure>
+        </section>
+
+        <section class="section project-details" id="details">
+          <div class="project-columns">
+            <div class="reveal">
+              <div class="section-label"><span>01</span> HET PROBLEEM</div>
+              <p class="project-text">Een lokaal AI-werkstation groeit snel uit tot een kluwen: modellen, automatiseringen, dashboards en tools verspreid over processen en poorten. Wat draait er echt, wat hoort er te draaien, en waar wijkt de werkelijkheid af van je bedoeling?</p>
+            </div>
+            <div class="reveal">
+              <div class="section-label"><span>02</span> WAT HET DOET</div>
+              <dl class="feature-list">
+                <div><dt>Live runtime-ontdekking</dt><dd>Scant draaiende diensten en tools en toont status, health en resource-kost per lokale AI-tool — in plaats van losse terminals en giswerk.</dd></div>
+                <div><dt>Intent Map — bedoeld vs. waargenomen</dt><dd>Teken hoe je werkstation hóórt te zijn en laat Victus dat vergelijken met wat er live draait: OK, ontbrekend, blootgesteld of onverwacht. Dát verschil is de kern van het project.</dd></div>
+                <div><dt>Resource-monitor</dt><dd>CPU, RAM, GPU en VRAM in één oogopslag, zodat je meteen ziet waar de druk zit tijdens zwaar AI-werk.</dd></div>
+                <div><dt>Persistente inventaris</dt><dd>Onthoudt bekende tools met notities en statuslabels, ook als ze net niet draaien — een levende catalogus in plaats van een kerkhof.</dd></div>
+                <div><dt>Security-review</dt><dd>Onbekende luisteraars belanden in een review-flow in plaats van stil open te staan; je beslist wat vertrouwd is.</dd></div>
+                <div><dt>Agents &amp; MCP-diagnostiek</dt><dd>Zicht op gekoppelde agents en MCP-servers, bovenop een testbare React/TypeScript-architectuur met SQLite-state.</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="project-learned reveal">
+            <div class="section-label"><span>03</span> WAT IK ERVAN LEERDE</div>
+            <blockquote class="learned">De interessante vraag was niet ‘nog een dashboard’, maar: laat de gebruiker de bedóelde opstelling definiëren en vergelijk die met de live werkelijkheid. Dat verschil — desired vs. observed — is waar het echte inzicht zit.</blockquote>
+          </div>
+        </section>
+
+        <section class="contact contact-compact" id="contact">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">INTERESSE?</p>
+            <h2>Laten we <em>praten</em>.</h2>
+            <p class="contact-sub">Vertel me wat je ervan vindt — of wat je ermee zou willen doen.</p>
+            <div class="contact-actions">
+              <a class="button button-light" href="mailto:thomashuybrechts@gmail.com?subject=Over%20Victus%20Control">Stuur mij een bericht <span aria-hidden="true">↗</span></a>
+              <a class="next-project" href="./thomas-cluster.html">Volgend project: <b>Thomas Cluster Dashboard</b> <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Voetnavigatie">
+        <a href="../#over">Over</a>
+        <a href="../#doen">Wat ik doe</a>
+        <a href="../#projecten">Projecten</a>
+        <a href="../#profiel">Profiel</a>
+        <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/thomashuybrechts" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:thomashuybrechts@gmail.com">E-mail</a>
+      </nav>
+      <p>© <span id="year"></span> Thomas Huybrechts · Digitaal maker, België · Met nieuwsgierigheid gebouwd.</p>
+    </footer>
+  </body>
+</html>

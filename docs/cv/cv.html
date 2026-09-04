@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>CV Thomas Huybrechts</title>
+<style>
+  @font-face { font-family: "Manrope"; font-weight: 400; src: url("https://cdn.jsdelivr.net/npm/@fontsource/manrope/files/manrope-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Manrope"; font-weight: 500; src: url("https://cdn.jsdelivr.net/npm/@fontsource/manrope/files/manrope-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Manrope"; font-weight: 600; src: url("https://cdn.jsdelivr.net/npm/@fontsource/manrope/files/manrope-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Manrope"; font-weight: 700; src: url("https://cdn.jsdelivr.net/npm/@fontsource/manrope/files/manrope-latin-700-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Manrope"; font-weight: 800; src: url("https://cdn.jsdelivr.net/npm/@fontsource/manrope/files/manrope-latin-800-normal.woff2") format("woff2"); }
+  @font-face { font-family: "DM Mono"; font-weight: 400; src: url("https://cdn.jsdelivr.net/npm/@fontsource/dm-mono/files/dm-mono-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "DM Mono"; font-weight: 500; src: url("https://cdn.jsdelivr.net/npm/@fontsource/dm-mono/files/dm-mono-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Playfair Display"; font-weight: 600; font-style: italic; src: url("https://cdn.jsdelivr.net/npm/@fontsource/playfair-display/files/playfair-display-latin-600-italic.woff2") format("woff2"); }
+
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { font-family: "Manrope", sans-serif; color: #171816; background: #f3f0e8; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 14mm 16mm 14mm; position: relative; page-break-after: always; overflow: hidden; background: #f3f0e8; }
+  .page:last-child { page-break-after: auto; }
+  .mono { font-family: "DM Mono", monospace; font-size: 7.6pt; letter-spacing: .12em; text-transform: uppercase; }
+  .serif { font-family: "Playfair Display", serif; font-style: italic; font-weight: 600; }
+  .muted { color: #676861; }
+
+  .top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 5mm; border-bottom: 1px solid #171816; }
+  .brand { display: flex; align-items: center; gap: 3mm; font-weight: 700; font-size: 9.5pt; letter-spacing: -.01em; }
+  .mark { width: 8mm; height: 8mm; border-radius: 50%; background: #171816; color: #d7ff43; display: flex; align-items: center; justify-content: center; font-family: "DM Mono", monospace; font-size: 7pt; }
+
+  .hero { display: grid; grid-template-columns: 1fr 52mm; gap: 10mm; align-items: end; padding: 5mm 0 5mm; }
+  h1 { margin: 0; font-size: 34pt; line-height: .92; letter-spacing: -.05em; font-weight: 700; }
+  .lead { margin: 4mm 0 0; font-size: 9.8pt; line-height: 1.55; color: #676861; max-width: 118mm; }
+  .tags { display: flex; flex-wrap: wrap; gap: 1.5mm; margin-top: 4.5mm; }
+  .tag { padding: 1.4mm 2.6mm; border: 1px solid #c9c6bc; border-radius: 99px; font-family: "DM Mono", monospace; font-size: 7pt; letter-spacing: .06em; }
+  .photo { width: 52mm; height: 44mm; border-radius: 1.5mm; overflow: hidden; background: #171816; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #171816; border-bottom: 1px solid #c9c6bc; }
+  .facts div { padding: 2.4mm 3mm 2.4mm 0; border-right: 1px solid #c9c6bc; display: flex; flex-direction: column; gap: 1.2mm; font-size: 8.6pt; font-weight: 600; }
+  .facts div + div { padding-left: 3mm; }
+  .facts div:last-child { border-right: 0; }
+
+  .section { margin-top: 5.5mm; }
+  .sec-head { display: grid; grid-template-columns: 34mm 1fr; gap: 6mm; align-items: start; margin-bottom: 3mm; }
+  .sec-head h2 { margin: 0; font-size: 17pt; line-height: 1.08; letter-spacing: -.035em; font-weight: 600; }
+  .sec-head h2 em { font-style: normal; color: #ff5c35; }
+  .body { display: grid; grid-template-columns: 34mm 1fr; gap: 6mm; }
+  p.txt { margin: 0 0 1.8mm; font-size: 8.8pt; line-height: 1.5; color: #676861; }
+  p.txt.dark { color: #171816; }
+
+  .job { display: grid; grid-template-columns: 34mm 1fr; gap: 6mm; padding: 2.1mm 0; border-top: 1px solid #c9c6bc; }
+  .job:first-child { border-top: 1px solid #171816; }
+  .job .when { display: flex; flex-direction: column; gap: 1mm; }
+  .job .when b { font-family: "DM Mono", monospace; font-size: 8pt; font-weight: 500; letter-spacing: .06em; }
+  .job .when span { font-family: "DM Mono", monospace; font-size: 7pt; color: #676861; letter-spacing: .08em; text-transform: uppercase; }
+  .job h3 { margin: 0 0 .8mm; font-size: 11pt; letter-spacing: -.02em; font-weight: 700; }
+  .job .org { font-size: 8.8pt; color: #676861; margin-bottom: 1.8mm; }
+  .job p { margin: 0; font-size: 8.5pt; line-height: 1.5; color: #676861; }
+  .job .kw { margin-top: 1.8mm; font-family: "DM Mono", monospace; font-size: 6.8pt; letter-spacing: .08em; color: #171816; }
+
+  .tech { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm 5mm; }
+  .tech div { padding-top: 3mm; border-top: 1px solid #171816; }
+  .tech .n { font-family: "DM Mono", monospace; font-size: 7pt; color: #ff5c35; letter-spacing: .12em; }
+  .tech h3 { margin: 1.2mm 0 1mm; font-size: 9.8pt; letter-spacing: -.02em; font-weight: 700; }
+  .tech p { margin: 0 0 1.2mm; font-size: 7.9pt; line-height: 1.5; color: #676861; }
+  .tech .kw { font-family: "DM Mono", monospace; font-size: 6.3pt; line-height: 1.5; letter-spacing: .08em; }
+
+  .project { display: grid; grid-template-columns: 1fr 1.15fr; gap: 8mm; background: #171816; color: #f3f0e8; border-radius: 1.5mm; padding: 4.5mm 6mm; margin-top: 4mm; }
+  .project h3 { margin: 1.5mm 0 2mm; font-size: 20pt; line-height: 1; letter-spacing: -.04em; font-weight: 600; }
+  .project h3 em { color: #d7ff43; }
+  .project p { margin: 0; font-size: 8.8pt; line-height: 1.55; color: #aaa9a2; }
+  .project ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1.4mm 4mm; font-size: 8.4pt; }
+  .project li { padding-left: 4mm; position: relative; }
+  .project li::before { content: ""; position: absolute; left: 0; top: 1.8mm; width: 2mm; height: 2mm; background: #d7ff43; }
+  .project img { width: 100%; display: block; border-radius: 1mm; border: 1px solid #2a2b28; margin-top: 3mm; }
+
+  .edu { display: grid; grid-template-columns: 34mm 1fr; gap: 6mm; padding: 2.2mm 0; border-top: 1px solid #c9c6bc; }
+  .edu:first-child { border-top: 1px solid #171816; }
+  .edu b { font-size: 9.5pt; font-weight: 700; }
+  .edu span { display: block; font-size: 8.6pt; color: #676861; margin-top: .6mm; }
+
+  .edu3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; border-top: 1px solid #171816; }
+  .edu3 > div { padding-top: 2.5mm; display: flex; flex-direction: column; gap: 1mm; }
+  .edu3 b { font-size: 9.5pt; font-weight: 700; }
+  .edu3 > div > span:last-child { font-size: 8.4pt; color: #676861; line-height: 1.45; }
+  .seek { display: grid; grid-template-columns: 34mm 1fr; gap: 6mm; }
+  .seek h2 { margin: 0 0 1.5mm; font-size: 17pt; line-height: 1.05; letter-spacing: -.04em; font-weight: 600; }
+  .roles { display: flex; flex-wrap: wrap; gap: 1.3mm; margin-top: 2.5mm; }
+
+  .foot { position: absolute; left: 16mm; right: 16mm; bottom: 7mm; display: flex; justify-content: space-between; align-items: center; padding-top: 3mm; border-top: 1px solid #c9c6bc; font-family: "DM Mono", monospace; font-size: 7pt; letter-spacing: .1em; text-transform: uppercase; color: #676861; }
+  .foot b { color: #171816; font-weight: 500; }
+  .cta { display: grid; grid-template-columns: 34mm 1fr; gap: 6mm; margin-top: 4mm; padding: 3mm 6mm; background: #d7ff43; border-radius: 1.5mm; align-items: center; }
+  .cta h2 { margin: 0; white-space: nowrap; font-size: 15pt; line-height: 1; letter-spacing: -.04em; font-weight: 600; }
+  .cta .links { display: flex; flex-direction: column; gap: 1.2mm; font-size: 9pt; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="top">
+    <div class="brand"><span class="mark">TH</span>Thomas Huybrechts</div>
+    <span class="mono muted">Curriculum vitae</span>
+  </div>
+
+  <div class="hero">
+    <div>
+      <span class="mono muted">Operations · techniek · AI &amp; automatisering · software</span>
+      <h1 style="margin-top: 4mm;">Ik bouw,<br>organiseer<br>en <span class="serif">verbeter.</span></h1>
+      <p class="lead">Operations, techniek, software en AI komen bij mij samen. Ik hou ervan om te begrijpen hoe iets werkt, waar het vastloopt en hoe het slimmer kan.</p>
+      <div class="tags"><span class="tag">Operations</span><span class="tag">AI &amp; automatisering</span><span class="tag">Techniek</span><span class="tag">Software</span></div>
+    </div>
+    <div class="photo"><img src="../../assets/thomas.jpg" alt="Thomas Huybrechts"></div>
+  </div>
+
+  <div class="facts">
+    <div><span class="mono muted">Basis</span>Meerhout, België</div>
+    <div><span class="mono muted">Talen</span>Nederlands · Engels</div>
+    <div><span class="mono muted">E-mail</span>thomashuybrechts@gmail.com</div>
+    <div><span class="mono muted">Web</span>thomashuybrechts.com</div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="mono muted">01 — Profiel</span><h2>Geen klassiek profiel. Wel een brede <em>gereedschapskist.</em></h2></div>
+    <div class="body"><span></span><div>
+      <p class="txt">Mijn achtergrond loopt van professionele keukens en automotive tot productie, operations, IT, AI en automatisering.</p>
+      <p class="txt dark">Wat die werelden voor mij gemeen hebben: processen begrijpen, problemen oplossen, verantwoordelijkheid nemen en zorgen dat het eindresultaat werkt.</p>
+      <p class="txt">Vandaag combineer ik die operationele ervaring met technologie: lokale AI-systemen, workflow automation, softwareontwikkeling en embedded hardware.</p>
+    </div></div>
+  </div>
+
+  <div class="section" style="margin-top: 8mm;">
+    <div class="sec-head"><span class="mono muted">02 — Technologie</span><h2>Ik gebruik technologie als <em>gereedschap.</em></h2></div>
+    <div class="body"><span></span>
+      <div class="tech">
+        <div><span class="n">01</span><h3>AI &amp; automatisering</h3><p>Workflow automation, lokale LLM's, agents en slimme koppelingen tussen systemen.</p><div class="kw">n8n · Ollama · LLM's · API's · agents</div></div>
+        <div><span class="n">02</span><h3>Software</h3><p>Experimenteren, prototypes bouwen en softwareprojecten structureren.</p><div class="kw">Python · JavaScript · HTML · CSS · Git</div></div>
+        <div><span class="n">03</span><h3>Systemen</h3><p>Lokale infrastructuur, virtuele machines, netwerken en development environments.</p><div class="kw">Linux · Windows · Proxmox · Tailscale</div></div>
+        <div><span class="n">04</span><h3>Hardware</h3><p>Software koppelen aan fysieke systemen, sensoren en elektronica.</p><div class="kw">ESP32 · Arduino · GPS · elektronica · 3D-printing</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="mono muted">03 — Opleiding</span><h2>Leren stopt niet bij een <em>diploma.</em></h2></div>
+    <div class="body"><span></span>
+      <div class="edu3">
+        <div><span class="mono muted">Horeca</span><b>Hotelschool Ter Duinen</b><span>Afgestudeerd</span></div>
+        <div><span class="mono muted">IT</span><b>Thomas More Geel</b><span>Programmeren · systeem- en netwerkbeheer</span></div>
+        <div><span class="mono muted">Automotive</span><b>VDAB</b><span>Lichte bedrijfsvoertuigen · hybride en elektrische voertuigen</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Thomas Huybrechts</b> · Meerhout, België</span><span>Pagina 1 / 2</span></div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="top">
+    <div class="brand"><span class="mark">TH</span>Thomas Huybrechts</div>
+    <span class="mono muted">Curriculum vitae</span>
+  </div>
+
+  <div class="section" style="margin-top: 8mm;">
+    <div class="sec-head"><span class="mono muted">04 — Ervaring</span><h2>Van werkvloer tot <em>workflow.</em></h2></div>
+    <div>
+      <div class="job">
+        <div class="when"><b>Operations</b><span>Teamlead</span></div>
+        <div><h3>Teamlead Production &amp; Operations</h3><div class="org">Wimpau Zeepziederij</div>
+          <p>Dagelijkse ondersteuning en coördinatie binnen een productieomgeving. Aansturen van medewerkers, opvolgen van productie, organiseren van werkzaamheden en oplossen van operationele en technische problemen.</p>
+          <div class="kw">teamcoördinatie · productie · planning · procesverbetering · operations</div></div>
+      </div>
+      <div class="job">
+        <div class="when"><b>Productie</b><span>Internationaal</span></div>
+        <div><h3>Production</h3><div class="org">Estée Lauder</div>
+          <p>Werken binnen een internationale productieomgeving met sterke aandacht voor kwaliteit, procedures en efficiëntie.</p></div>
+      </div>
+      <div class="job">
+        <div class="when"><b>Automotive</b><span>Techniek</span></div>
+        <div><h3>Automotive Technician</h3><div class="org">Ford Deckx Mol</div>
+          <p>Praktische ervaring met voertuigonderhoud, mechanische werkzaamheden, diagnose en techniek.</p></div>
+      </div>
+      <div class="job">
+        <div class="when"><b>Operations</b><span>Techniek</span></div>
+        <div><h3>Operations</h3><div class="org">Watch Repair Antwerp</div>
+          <p>Operationele ondersteuning binnen een gespecialiseerde technische omgeving.</p></div>
+      </div>
+      <div class="job">
+        <div class="when"><b>Horeca</b><span>Keuken</span></div>
+        <div><h3>Chef &amp; Chef de Partie</h3><div class="org">Marcel · Bistro Barista · Watermolen</div>
+          <p>Professionele keukenervaring met verantwoordelijkheid, organisatie, snelheid en werken onder druk.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div>
+      <span class="mono" style="color: #d7ff43;">Selected project</span>
+      <h3>Repo <em>Notebook.</em></h3>
+      <p>Een eigen omgeving om software repositories automatisch te analyseren, begrijpen en beheren — met lokale AI, zonder cloud.</p>
+    </div>
+    <ul style="align-self: center;">
+        <li>Repository-analyse</li><li>Knowledge graphs</li>
+        <li>Node / Python / Rust / Go-detectie</li><li>Geïntegreerde terminals</li>
+        <li>MCP-integratie</li><li>Obsidian-koppeling</li>
+      </ul>
+    
+  </div>
+
+  <div class="section">
+    <div class="seek">
+      <span class="mono muted">05 — Wat ik zoek</span>
+      <div>
+        <h2>Een rol waar operations, techniek en digitalisering <span class="serif">elkaar raken.</span></h2>
+        <div class="roles">
+          <span class="tag">Operations</span><span class="tag">Technical Operations</span><span class="tag">Process Improvement</span><span class="tag">AI Automation</span><span class="tag">Workflow Automation</span><span class="tag">Technical Coordinator</span><span class="tag">Digital Transformation</span><span class="tag">AI / IT Operations</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <span class="mono">Iets bouwen?</span>
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 6mm;">
+      <h2>Praat met mij.</h2>
+      <div class="links" style="flex-direction: row; gap: 5mm;"><span>thomashuybrechts@gmail.com</span><span>thomashuybrechts.com</span></div>
+    </div>
+  </div>
+
+  <div class="foot"><span><b>Thomas Huybrechts</b> · Meerhout, België</span><span>Pagina 2 / 2</span></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jarvis — project van Thomas Huybrechts</title>
+    <meta name="description" content="Een handsfree AI-command center: een visuele agent-architectuur die aanvoelt als een tactical game, bestuurd met klappen, stem en handgebaren." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="canonical" href="https://thomashuybrechts.com/projecten/jarvis.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="Jarvis — Thomas Huybrechts" />
+    <meta property="og:description" content="Een handsfree AI-command center: een visuele agent-architectuur die aanvoelt als een tactical game, bestuurd met klappen, stem en handgebaren." />
+    <meta property="og:url" content="https://thomashuybrechts.com/projecten/jarvis.html" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Jarvis",
+      "description": "Een handsfree AI-command center: een visuele agent-architectuur die aanvoelt als een tactical game, bestuurd met klappen, stem en handgebaren.",
+      "url": "https://thomashuybrechts.com/projecten/jarvis.html",
+      "author": { "@type": "Person", "name": "Thomas Huybrechts", "url": "https://thomashuybrechts.com/" },
+      "inLanguage": "nl-BE"
+    }
+    </script>
+  </head>
+  <body class="project-page">
+    <a class="skip-link" href="#inhoud">Ga naar de inhoud</a>
+
+    <header class="site-header" id="header">
+      <a class="brand" href="../" aria-label="Thomas Huybrechts, naar de startpagina">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Hoofdnavigatie">
+        <a href="../#over">Over</a>
+        <a href="../#doen">Wat ik doe</a>
+        <a href="../#projecten">Projecten</a>
+        <a href="../#profiel">Profiel</a>
+        <a class="nav-contact" href="../#contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Muziek afspelen">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="sound-label">Geluid</span>
+        </button>
+        <audio id="bgm" src="../assets/audio/lemons.mp3" loop preload="none"></audio>
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <article>
+        <section class="section project-hero">
+          <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> Alle projecten</a>
+          <p class="work-tag">AGENTS · SPRAAK · GEBAREN</p>
+          <h1>Jarvis</h1>
+          <p class="project-intro">Een handsfree AI-command center: een visuele agent-architectuur die aanvoelt als een tactical game, bestuurd met klappen, stem en handgebaren.</p>
+          <dl class="project-meta">
+            <div><dt>Type</dt><dd>AI-command center</dd></div>
+            <div><dt>Status</dt><dd>Actief in ontwikkeling</dd></div>
+            <div><dt>Rol</dt><dd>Concept, ontwerp &amp; ontwikkeling</dd></div>
+            <div><dt>Stack</dt><dd>Lokale AI · agents · spraak (STT) · gebarenherkenning</dd></div>
+          </dl>
+          <div class="project-result"><span class="lbl">RESULTAAT</span><p>3 handsfree besturingswijzen — klap, stem én handgebaren — op een lokaal brein.</p></div>
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:thomashuybrechts@gmail.com?subject=Over%20Jarvis">Praat met mij hierover <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#details">Lees hoe het werkt <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+
+        <section class="project-gallery" aria-label="Beelden van Jarvis">
+          <figure class="reveal gallery-main">
+            <img src="../assets/projects/jarvis-nexus.jpg" alt="Jarvis Nexus — het agent command center: elke agent heeft een eigen lane, load en input/output (voorbeeldweergave)" loading="eager" decoding="async" />
+            <figcaption>Jarvis Nexus — het agent command center: elke agent heeft een eigen lane, load en input/output (voorbeeldweergave)</figcaption>
+          </figure>
+        </section>
+
+        <section class="section project-details" id="details">
+          <div class="project-columns">
+            <div class="reveal">
+              <div class="section-label"><span>01</span> HET PROBLEEM</div>
+              <p class="project-text">Een chatvenster is passief. Ik wilde een assistent die je zíét werken — welke agents actief zijn, hoe ze samenwerken en waar de volgende actie ontstaat — en die je handsfree bestuurt.</p>
+            </div>
+            <div class="reveal">
+              <div class="section-label"><span>02</span> WAT HET DOET</div>
+              <dl class="feature-list">
+                <div><dt>Agent command center</dt><dd>Een Nexus-Core orkestreert gespecialiseerde agents (research, briefing, geheugen, risico) — elk met een eigen lane, load en duidelijke input/output. Meer mission control dan admin-paneel.</dd></div>
+                <div><dt>Klapbesturing</dt><dd>2× kort klappen opent je dashboards, muziek en editor; 3× klappen stelt een gesproken vraag aan je kennisbank. Volledig handsfree.</dd></div>
+                <div><dt>Stem in het Vlaams</dt><dd>Spraakinvoer en gesproken antwoorden in het Nederlands van hier.</dd></div>
+                <div><dt>Handgebaren</dt><dd>Een aparte versie bestuurt de interface met handgebaren via de camera.</dd></div>
+                <div><dt>Lokaal brein</dt><dd>Draait op lokale AI, zodat je gesprekken en data op je eigen machine blijven.</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="project-learned reveal">
+            <div class="section-label"><span>03</span> WAT IK ERVAN LEERDE</div>
+            <blockquote class="learned">Handsfree bediening dwingt je om intentie simpel te maken: een klap, een gebaar, een zin. De echte uitdaging zat niet in de features maar in betrouwbaar herkennen en meteen duidelijke feedback geven.</blockquote>
+          </div>
+        </section>
+
+        <section class="contact contact-compact" id="contact">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">INTERESSE?</p>
+            <h2>Laten we <em>praten</em>.</h2>
+            <p class="contact-sub">Vertel me wat je ervan vindt — of wat je ermee zou willen doen.</p>
+            <div class="contact-actions">
+              <a class="button button-light" href="mailto:thomashuybrechts@gmail.com?subject=Over%20Jarvis">Stuur mij een bericht <span aria-hidden="true">↗</span></a>
+              <a class="next-project" href="./sirena.html">Volgend project: <b>Sirena</b> <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Voetnavigatie">
+        <a href="../#over">Over</a>
+        <a href="../#doen">Wat ik doe</a>
+        <a href="../#projecten">Projecten</a>
+        <a href="../#profiel">Profiel</a>
+        <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/thomashuybrechts" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:thomashuybrechts@gmail.com">E-mail</a>
+      </nav>
+      <p>© <span id="year"></span> Thomas Huybrechts · Digitaal maker, België · Met nieuwsgierigheid gebouwd.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thomas Cluster Dashboard — project van Thomas Huybrechts</title>
+    <meta name="description" content="Eén zelf-gehost controleplatform voor mijn lokale AI- en automatiseringscluster: een master command center met Docker-, n8n-, Ollama/OpenClaw- en ComfyUI-modules onder één dak." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="canonical" href="https://thomashuybrechts.com/projecten/thomas-cluster.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="Thomas Cluster Dashboard — Thomas Huybrechts" />
+    <meta property="og:description" content="Eén zelf-gehost controleplatform voor mijn lokale AI- en automatiseringscluster: een master command center met Docker-, n8n-, Ollama/OpenClaw- en ComfyUI-modules onder één dak." />
+    <meta property="og:url" content="https://thomashuybrechts.com/projecten/thomas-cluster.html" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Thomas Cluster Dashboard",
+      "description": "Eén zelf-gehost controleplatform voor mijn lokale AI- en automatiseringscluster: een master command center met Docker-, n8n-, Ollama/OpenClaw- en ComfyUI-modules onder één dak.",
+      "url": "https://thomashuybrechts.com/projecten/thomas-cluster.html",
+      "author": { "@type": "Person", "name": "Thomas Huybrechts", "url": "https://thomashuybrechts.com/" },
+      "inLanguage": "nl-BE"
+    }
+    </script>
+  </head>
+  <body class="project-page">
+    <a class="skip-link" href="#inhoud">Ga naar de inhoud</a>
+
+    <header class="site-header" id="header">
+      <a class="brand" href="../" aria-label="Thomas Huybrechts, naar de startpagina">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Hoofdnavigatie">
+        <a href="../#over">Over</a>
+        <a href="../#doen">Wat ik doe</a>
+        <a href="../#projecten">Projecten</a>
+        <a href="../#profiel">Profiel</a>
+        <a class="nav-contact" href="../#contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Muziek afspelen">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="sound-label">Geluid</span>
+        </button>
+        <audio id="bgm" src="../assets/audio/lemons.mp3" loop preload="none"></audio>
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <article>
+        <section class="section project-hero">
+          <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> Alle projecten</a>
+          <p class="work-tag">INFRASTRUCTUUR · DOCKER · n8n · OLLAMA</p>
+          <h1>Thomas Cluster Dashboard</h1>
+          <p class="project-intro">Eén zelf-gehost controleplatform voor mijn lokale AI- en automatiseringscluster: een master command center met Docker-, n8n-, Ollama/OpenClaw- en ComfyUI-modules onder één dak.</p>
+          <dl class="project-meta">
+            <div><dt>Type</dt><dd>Cluster-orkestratie</dd></div>
+            <div><dt>Status</dt><dd>Actief in gebruik</dd></div>
+            <div><dt>Rol</dt><dd>Concept, ontwerp &amp; ontwikkeling</dd></div>
+            <div><dt>Stack</dt><dd>Docker · n8n · Ollama · OpenClaw · ComfyUI</dd></div>
+          </dl>
+          <div class="project-result"><span class="lbl">RESULTAAT</span><p>4 systemen — Docker, n8n, Ollama en ComfyUI — onder één command center met start- en reconnect-logica.</p></div>
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:thomashuybrechts@gmail.com?subject=Over%20Thomas%20Cluster%20Dashboard">Praat met mij hierover <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#details">Lees hoe het werkt <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+
+        <section class="project-gallery" aria-label="Beelden van Thomas Cluster Dashboard">
+          <figure class="reveal gallery-main">
+            <img src="../assets/projects/thomas-cluster.png" alt="Master Cluster Command Center — start-flow, AI-mode/travel-mode en de module-HQ&#x27;s (voorbeeldweergave)" loading="eager" decoding="async" />
+            <figcaption>Master Cluster Command Center — start-flow, AI-mode/travel-mode en de module-HQ&#x27;s (voorbeeldweergave)</figcaption>
+          </figure>
+        </section>
+
+        <section class="section project-details" id="details">
+          <div class="project-columns">
+            <div class="reveal">
+              <div class="section-label"><span>01</span> HET PROBLEEM</div>
+              <p class="project-text">Een groeiend lokaal AI-lab is al snel een verzameling losse diensten: containers, automatiseringen, modelservers en GPU-workflows, elk met hun eigen venster. Alles apart opstarten en controleren kost tijd en gaat mis.</p>
+            </div>
+            <div class="reveal">
+              <div class="section-label"><span>02</span> WAT HET DOET</div>
+              <dl class="feature-list">
+                <div><dt>Master command center</dt><dd>Eén moederdashboard om het hele cluster te wekken, valideren en controleren — met een start-flow die stap voor stap netwerk, infra-node, AI-node, Ollama en OpenClaw nakijkt.</dd></div>
+                <div><dt>AI-mode &amp; travel-mode</dt><dd>De primaire AI-node blijft bereikbaar, ook wanneer de machine fysiek niet thuis staat, via een overlay-netwerk en reconnect-logica.</dd></div>
+                <div><dt>Docker-module</dt><dd>Containers overzien en beheren vanuit het dashboard in plaats van losse terminals.</dd></div>
+                <div><dt>n8n-automatisering</dt><dd>De automatiseringsmotor als eigen module, naast de rest van het cluster.</dd></div>
+                <div><dt>Lokale modellen</dt><dd>Ollama en OpenClaw gekoppeld: modellen starten en verbinden met de rest van de stack.</dd></div>
+                <div><dt>ComfyUI / GPU-workflows</dt><dd>Een aparte view voor beeldgeneratie en GPU-werk, als module van hetzelfde geheel.</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="project-learned reveal">
+            <div class="section-label"><span>03</span> WAT IK ERVAN LEERDE</div>
+            <blockquote class="learned">De modules — Docker, n8n, Ollama, ComfyUI — zijn geen losse projecten maar vensters op één systeem. De echte waarde zat in de start-flow en reconnect-logica die van losse diensten één betrouwbaar cluster maken.</blockquote>
+          </div>
+        </section>
+
+        <section class="contact contact-compact" id="contact">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">INTERESSE?</p>
+            <h2>Laten we <em>praten</em>.</h2>
+            <p class="contact-sub">Vertel me wat je ervan vindt — of wat je ermee zou willen doen.</p>
+            <div class="contact-actions">
+              <a class="button button-light" href="mailto:thomashuybrechts@gmail.com?subject=Over%20Thomas%20Cluster%20Dashboard">Stuur mij een bericht <span aria-hidden="true">↗</span></a>
+              <a class="next-project" href="./repo-notebook.html">Volgend project: <b>Repo Notebook</b> <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Voetnavigatie">
+        <a href="../#over">Over</a>
+        <a href="../#doen">Wat ik doe</a>
+        <a href="../#projecten">Projecten</a>
+        <a href="../#profiel">Profiel</a>
+        <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/thomashuybrechts" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:thomashuybrechts@gmail.com">E-mail</a>
+      </nav>
+      <p>© <span id="year"></span> Thomas Huybrechts · Digitaal maker, België · Met nieuwsgierigheid gebouwd.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thomas Huybrechts — Digitaal maker · AI, software & hardware</title>
+    <meta name="description" content="Thomas Huybrechts bouwt AI-agents, software en hardware die écht werken: lokaal, praktisch en van idee tot werkend product. Beschikbaar voor projecten in België." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href="https://thomashuybrechts.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="Thomas Huybrechts — Ik maak technologie menselijk." />
+    <meta property="og:description" content="AI-agents, software en hardware die niet in een demo blijven hangen. Projecten, werkwijze en contact." />
+    <meta property="og:url" content="https://thomashuybrechts.com/" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Thomas Huybrechts — Digitaal maker" />
+    <meta name="twitter:description" content="AI-agents, software en hardware die écht werken. Van idee tot werkend product." />
+    <meta name="twitter:image" content="https://thomashuybrechts.com/assets/og.png" />
+
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://thomashuybrechts.com/#thomas",
+          "name": "Thomas Huybrechts",
+          "url": "https://thomashuybrechts.com/",
+          "email": "mailto:thomashuybrechts@gmail.com",
+          "sameAs": ["https://github.com/TMSHuybrechts", "https://www.linkedin.com/in/thomashuybrechts"],
+          "jobTitle": "Digitaal maker · Teamlead Production & Operations",
+          "alumniOf": [{"@type": "EducationalOrganization", "name": "Hotelschool Ter Duinen"}, {"@type": "EducationalOrganization", "name": "Thomas More Geel"}],
+          "description": "Bouwt AI-agents, software en hardware die écht werken — van idee tot werkend product.",
+          "knowsAbout": ["Operations", "Procesverbetering", "Artificiële intelligentie", "AI-agents", "Workflow automation", "n8n", "Ollama", "Softwareontwikkeling", "Python", "Embedded systems", "ESP32", "Proxmox"],
+          "address": { "@type": "PostalAddress", "addressLocality": "Meerhout", "addressCountry": "BE" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://thomashuybrechts.com/#site",
+          "url": "https://thomashuybrechts.com/",
+          "name": "Thomas Huybrechts",
+          "inLanguage": "nl-BE",
+          "about": { "@id": "https://thomashuybrechts.com/#thomas" }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#inhoud">Ga naar de inhoud</a>
+
+    <header class="site-header" id="header">
+      <a class="brand" href="#top" aria-label="Thomas Huybrechts, naar boven">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Hoofdnavigatie">
+        <a href="#over">Over</a>
+        <a href="#doen">Wat ik doe</a>
+        <a href="#projecten">Projecten</a>
+        <a href="#ervaring">Ervaring</a>
+        <a href="#profiel">Profiel</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Muziek afspelen">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="sound-label">Geluid</span>
+        </button>
+        <audio id="bgm" src="./assets/audio/lemons.mp3" loop preload="none"></audio>
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <section class="hero" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span> Beschikbaar voor nieuwe projecten · België</p>
+          <h1>Ik maak technologie <em>menselijk.</em></h1>
+          <p class="hero-disciplines"><span>AI</span><span>Automation</span><span>Software</span><span>Embedded Systems</span><span>Operations</span></p>
+          <p class="hero-intro">Ik ben Thomas — digitale maker. Ik bouw AI-agents, software en hardware die niet in een demo blijven hangen, maar écht werken. Lokaal waar het kan, praktisch altijd.</p>
+          <ul class="hero-proof" aria-label="Waar ik voor sta">
+            <li>Lokale AI, geen cloud nodig</li>
+            <li>Van idee tot werkend prototype</li>
+            <li>Software én hardware</li>
+            <li>Teamlead-ervaring in operations</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#projecten">Bekijk mijn projecten <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#doen">Wat ik voor jou kan doen <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="./assets/thomas-huybrechts-cv.pdf" download>Download cv <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <div class="hero-object reveal" role="img" aria-label="Interactieve illustratie: AI, code en devices draaien rond de stap van idee naar werkend product">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="core"><span>idee</span><strong>→</strong><span>werkend</span></div>
+          <span class="orbit-label label-ai">AI</span>
+          <span class="orbit-label label-code">CODE</span>
+          <span class="orbit-label label-device">DEVICES</span>
+          <span class="coordinate coordinate-top">51.05° N</span>
+          <span class="coordinate coordinate-bottom">MADE IN BELGIUM</span>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>AI AGENTS</span><i>✦</i><span>LOKALE LLM'S</span><i>✦</i><span>AUTOMATISERING</span><i>✦</i><span>CREATIVE CODE</span><i>✦</i><span>EMBEDDED SYSTEMS</span><i>✦</i><span>DIGITAL PRODUCTS</span><i>✦</i>
+          <span>AI AGENTS</span><i>✦</i><span>LOKALE LLM'S</span><i>✦</i><span>AUTOMATISERING</span><i>✦</i><span>CREATIVE CODE</span><i>✦</i><span>EMBEDDED SYSTEMS</span><i>✦</i><span>DIGITAL PRODUCTS</span><i>✦</i>
+        </div>
+      </div>
+
+      <section class="section about" id="over">
+        <div class="section-label reveal"><span>01</span> OVER MIJ</div>
+        <div class="about-content reveal">
+          <h2>Nieuwsgierig genoeg om het uit te zoeken. Praktisch genoeg om het te bouwen.</h2>
+          <div class="about-layout">
+            <figure class="portrait">
+              <img src="./assets/thomas-portrait.jpg" alt="Portret van Thomas Huybrechts" width="680" height="850" loading="lazy" decoding="async" />
+              <figcaption>Thomas Huybrechts · Meerhout, België · hands-on, analytisch, resultaatgericht</figcaption>
+            </figure>
+            <div class="about-grid">
+              <p>Ik duik graag in technologie die nog niet vanzelfsprekend is. Ik onderzoek hoe dingen werken, combineer bestaande systemen en vertaal technische mogelijkheden naar iets dat logisch aanvoelt voor de mens die het gebruikt.</p>
+              <p>Mijn werk zit op het kruispunt van software, artificiële intelligentie, hardware en creativiteit. Ik leer door te maken, te meten en opnieuw te proberen — tot het klopt. Geen slides, wel werkende dingen.</p>
+              <p>Geen klassiek profiel — wel één duidelijke rode draad: ik combineer operations, software, AI en hardware tot één werkend systeem. Van professionele keukens en automotive tot productie, operations en IT, de laatste jaren als teamlead Production &amp; Operations — telkens draaide het om hetzelfde: processen begrijpen, problemen analyseren en systemen bouwen die blijven werken.</p>
+              <p class="mantra" aria-label="Mijn werkhouding"><span>Problemen zien.</span> <span>Structuur aanbrengen.</span> <span class="mantra-accent">Oplossingen bouwen.</span> <span>Resultaten leveren.</span></p>
+              <div class="experience" aria-label="Wat ik meebreng uit operationele en leidinggevende rollen">
+                <div><b>Leidinggeven</b><span>Teams aansturen, mensen laten groeien, rust houden als het druk is.</span></div>
+                <div><b>Processen</b><span>Chaos omzetten in een werkwijze die elke dag standhoudt.</span></div>
+                <div><b>Leveren</b><span>Deadlines zijn echt. Ik lever wat afgesproken is, ook als het spannend wordt.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services" id="doen">
+        <div class="section-heading reveal">
+          <div class="section-label"><span>02</span> WAT IK DOE</div>
+          <p>Drie dingen waar je mij voor kunt inschakelen — of die ik combineer als het project erom vraagt.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service reveal">
+            <span class="service-icon" aria-hidden="true">◎</span>
+            <h3>AI-agents &amp; automatisering</h3>
+            <p>Assistenten en workflows die echte taken uitvoeren: documenten verwerken, systemen koppelen, acties op je computer of server uitvoeren. Draait lokaal als privacy of kosten dat vragen.</p>
+            <p class="service-examples">MCP-koppelingen · lokale LLM's · spraak &amp; avatar · kennisbanken</p>
+          </article>
+          <article class="service reveal">
+            <span class="service-icon" aria-hidden="true">◫</span>
+            <h3>Producten &amp; prototypes</h3>
+            <p>Van wild idee naar een eerste werkende versie die je kunt testen bij echte gebruikers. Desktop-apps, plugins, tools en interfaces — snel gebouwd, eerlijk gemeten, daarna aangescherpt.</p>
+            <p class="service-examples">Electron-apps · Obsidian-plugins · web-tools · interne dashboards</p>
+          </article>
+          <article class="service reveal">
+            <span class="service-icon" aria-hidden="true">◉</span>
+            <h3>Hardware &amp; embedded</h3>
+            <p>Tastbare apparaten met eigen firmware: microcontrollers, displays en sensoren die praten met je software. Waar het digitale de fysieke wereld raakt.</p>
+            <p class="service-examples">ESP32-firmware · sensoren · interactieve interfaces · prototypes</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section work" id="projecten">
+        <div class="section-heading reveal">
+          <div class="section-label"><span>03</span> WAAR IK MEE BEZIG BEN</div>
+          <p>Van vlaggenschepen tot losse experimenten &mdash; software, lokale AI en hardware die ik samenbreng. Klik door voor screenshots en uitleg.</p>
+        </div>
+
+        <div class="work-tier reveal"><span>Uitgelichte projecten</span><span class="work-tier-sub">De grootste, meest complete systemen</span></div>
+        <div class="work-list">
+          <a class="work-item reveal" href="./projecten/orbit-display.html">
+            <div class="work-number">01</div>
+            <div class="work-icon" aria-hidden="true">&#9680;</div>
+            <div class="work-copy">
+              <p class="work-tag">FLAGSHIP &middot; LOKALE AI &middot; ORCHESTRATIE</p>
+              <h3>Orbit Display</h3>
+              <p class="work-subtitle">E&eacute;n dashboard voor al mijn lokale AI-tools</p>
+              <p>E&eacute;n visueel commandocentrum voor mijn lokale AI-tools, automatiseringen en beveiliging &mdash; met een draaiend wiel als navigatie. Bekijk de interactieve demo.</p>
+            </div>
+            <span class="work-link">Bekijk project <span aria-hidden="true">&rarr;</span></span>
+          </a>
+
+          <a class="work-item reveal" href="./projecten/victus-control.html">
+            <div class="work-number">02</div>
+            <div class="work-icon" aria-hidden="true">&#9672;</div>
+            <div class="work-copy">
+              <p class="work-tag">FLAGSHIP &middot; LOCAL-FIRST OPS &middot; REACT/TS</p>
+              <h3>Victus Control</h3>
+              <p class="work-subtitle">Local-first platform om een AI-werkstation te beheren</p>
+              <p>Een local-first operations-platform dat een AI-werkstation in kaart brengt en beheert &mdash; met een intent-map die je gewenste opstelling vergelijkt met wat er &eacute;cht draait.</p>
+            </div>
+            <span class="work-link">Bekijk project <span aria-hidden="true">&rarr;</span></span>
+          </a>
+
+          <a class="work-item reveal" href="./projecten/thomas-cluster.html">
+            <div class="work-number">03</div>
+            <div class="work-icon" aria-hidden="true">&#11041;</div>
+            <div class="work-copy">
+              <p class="work-tag">FLAGSHIP &middot; INFRASTRUCTUUR &middot; ORCHESTRATIE</p>
+              <h3>Thomas Cluster Dashboard</h3>
+              <p class="work-subtitle">Lokale AI- en automation-infrastructuur</p>
+              <p>&Eacute;&eacute;n master command center voor mijn lokale AI-cluster: Docker, n8n, Ollama/OpenClaw en ComfyUI als modules onder &eacute;&eacute;n dak.</p>
+            </div>
+            <span class="work-link">Bekijk project <span aria-hidden="true">&rarr;</span></span>
+          </a>
+        </div>
+
+        <div class="work-tier reveal"><span>Grote projecten</span><span class="work-tier-sub">Volwaardige tools en apps</span></div>
+        <div class="work-list">
+          <a class="work-item reveal" href="./projecten/repo-notebook.html">
+            <div class="work-number">04</div>
+            <div class="work-icon" aria-hidden="true">&#9089;</div>
+            <div class="work-copy">
+              <p class="work-tag">ELECTRON &middot; LOKALE AI &middot; KENNIS</p>
+              <h3>Repo Notebook</h3>
+              <p class="work-subtitle">Kennisomgeving voor GitHub-repositories met lokale AI</p>
+              <p>Een visuele kennisomgeving die GitHub-repositories verzamelt, analyseert en verbindt &mdash; met Oogst, lokale AI en slimme suggesties. Geen cloud, jouw data blijft bij jou.</p>
+            </div>
+            <span class="work-link">Bekijk project <span aria-hidden="true">&rarr;</span></span>
+          </a>
+
+          <a class="work-item reveal" href="./projecten/repo-notebook-obsidian.html">
+            <div class="work-number">05</div>
+            <div class="work-icon" aria-hidden="true">&#8984;</div>
+            <div class="work-copy">
+              <p class="work-tag">OBSIDIAN &middot; PLUGIN &middot; MCP</p>
+              <h3>Repo Notebook voor Obsidian</h3>
+              <p class="work-subtitle">Repo Notebook als Obsidian-plugin</p>
+              <p>Een Obsidian-plugin die Repo Notebook naar je eigen vault brengt, met BRAT-releases en een MCP-koppeling voor AI-assistenten.</p>
+            </div>
+            <span class="work-link">Bekijk project <span aria-hidden="true">&rarr;</span></span>
+          </a>
+
+          <a class="work-item reveal" href="./projecten/cyberdash.html">
+            <div class="work-number">06</div>
+            <div class="work-icon" aria-hidden="true">&#9928;</div>
+            <div class="work-copy">
+              <p class="work-tag">SECURITY &middot; PYTHON &middot; DOCKER</p>
+              <h3>CyberDash</h3>
+              <p class="work-subtitle">Modulair security-dashboard</p>
+              <p>Een modulair security-dashboard dat lokale AI, security-tools, OSINT en een ge&iuml;soleerd oefenlab achter &eacute;&eacute;n webinterface brengt. Als oefening in architectuur en integratie.</p>
+            </div>
+            <span class="work-link">Bekijk project <span aria-hidden="true">&rarr;</span></span>
+          </a>
+
+          <a class="work-item reveal" href="./projecten/llm-wiki.html">
+            <div class="work-icon" aria-hidden="true">&#10070;</div>
+            <div class="work-copy">
+              <p class="work-tag">LOKALE AI &middot; KENNISGRAAF &middot; AUTO-INGEST</p>
+              <h3>LLM Wiki</h3>
+              <p class="work-subtitle">Zelf-onderhoudende kennisbank met kennisgraaf</p>
+              <p>Een zelf-onderhoudende kennisbank die bronnen automatisch inleest, entiteiten en concepten extraheert en alles verbindt in een doorzoekbare kennisgraaf.</p>
+            </div>
+            <span class="work-link">Bekijk project <span aria-hidden="true">&rarr;</span></span>
+          </a>
+
+          <a class="work-item reveal" href="./projecten/jarvis.html">
+            <div class="work-icon" aria-hidden="true">&#9673;</div>
+            <div class="work-copy">
+              <p class="work-tag">AGENTS &middot; SPRAAK &middot; GEBAREN</p>
+              <h3>Jarvis</h3>
+              <p class="work-subtitle">Handsfree AI-command center (stem &amp; gebaren)</p>
+              <p>Een handsfree AI-command center dat aanvoelt als een tactical game &mdash; bestuurd met klappen, stem en handgebaren, op een lokaal brein.</p>
+            </div>
+            <span class="work-link">Bekijk project <span aria-hidden="true">&rarr;</span></span>
+          </a>
+          <a class="work-item reveal" href="./projecten/generative-ai.html">
+            <div class="work-icon" aria-hidden="true">&#10022;</div>
+            <div class="work-copy">
+              <p class="work-tag">BEELD &middot; VIDEO &middot; LOKALE AI</p>
+              <h3>Generatieve AI</h3>
+              <p class="work-subtitle">Lokale AI-beeld- en videogeneratie</p>
+              <p>Fotorealistische beelden en video genereren met lokale AI &mdash; ComfyUI, eigen LoRA-training en afwerking, volledig op mijn eigen GPU.</p>
+            </div>
+            <span class="work-link">Bekijk project <span aria-hidden="true">&rarr;</span></span>
+          </a>
+        </div>
+
+        <div class="work-tier reveal"><span>Van scripts naar systemen</span><span class="work-tier-sub">Hoe het gegroeid is &mdash; van kleine tools tot een ecosysteem</span></div>
+        <ol class="timeline reveal">
+          <li class="reveal">
+            <div class="tl-when"><b>Eerste tools</b><span>PowerShell</span></div>
+            <div class="tl-body">
+              <h3>PC Optimo V7</h3>
+              <p class="tl-org">Windows-onderhoudsconsole</p>
+              <p>Menu-gestuurde diagnose, opschoning, opstart-/taakbeheer en rapportage &mdash; een van mijn eerste werkende tools.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="tl-when"><b>Command center</b><span>Prototype</span></div>
+            <div class="tl-body">
+              <h3>Project FSC</h3>
+              <p class="tl-org">One Program. Full Spectrum Control.</p>
+              <p>Een vroeg commando-interface met Mission Control, diagnostiek, hulpmiddelen, logboek en een command-console &mdash; de visuele voorouder van mijn latere command centers.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="tl-when"><b>Lokale AI</b><span>Launcher</span></div>
+            <div class="tl-body">
+              <h3>GSS / Sirena Control 0.1</h3>
+              <p class="tl-org">Lokale-model-launcher</p>
+              <p>Een vroege control-center-UI om lokale modellen en tools te starten (Phind, DeepSeek, Mistral, Stable Diffusion, Open WebUI). De brug tussen FSC en mijn latere local-AI-platformen.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="tl-when"><b>Dec 2024</b><span>Multi-agent</span></div>
+            <div class="tl-body">
+              <h3>Multi-agent experiment</h3>
+              <p class="tl-org">Planner-gestuurde agents</p>
+              <p>Vroege experimenten met taak-decompositie: een planner die werk opsplitst en toewijst aan gespecialiseerde agents voor code, bestanden, browsen en MCP-tools.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="tl-when"><b>Assistent</b><span>Familie</span></div>
+            <div class="tl-body">
+              <h3><a href="./projecten/sirena.html">Sirena <span aria-hidden="true">&rarr;</span></a></h3>
+              <p class="tl-org">Lokale Vlaamse desktopassistent</p>
+              <p>Uitgegroeid van glas-UI en voice-devstation tot een Flask-assistent met modelkeuze, avatar, stem en echte computeracties. Zie de projectpagina voor de evolutie.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="work-tier reveal"><span>Kleinere tools &amp; experimenten</span><span class="work-tier-sub">Hardware, firmware en losse tools</span></div>
+        <div class="work-list">
+          <a class="work-item reveal" href="./projecten/embedded.html">
+            <div class="work-number">07</div>
+            <div class="work-icon" aria-hidden="true">&#9673;</div>
+            <div class="work-copy">
+              <p class="work-tag">ESP32 &middot; FIRMWARE &middot; HARDWARE</p>
+              <h3>Embedded experimenten</h3>
+              <p class="work-subtitle">Eigen ESP32-firmware &amp; hardware</p>
+              <p>Eigen firmware, displays en microcontrollers in tastbare apparaten &mdash; van ESP32-prototypes tot interactieve interfaces die met je software praten.</p>
+            </div>
+            <span class="work-link">Bekijk project <span aria-hidden="true">&rarr;</span></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="arena" aria-labelledby="arena-title">
+        <div class="arena-image reveal">
+          <img
+            src="./assets/arena.webp"
+            srcset="./assets/arena-640.webp 640w, ./assets/arena.webp 1024w"
+            sizes="(max-width: 600px) 100vw, 45vw"
+            alt="Cinematisch beeld van een gladiator in een arena"
+            width="1024" height="1536" loading="lazy" decoding="async" />
+          <span class="arena-caption">THE ARENA · BUILD / TEST / LEARN</span>
+        </div>
+        <div class="arena-copy reveal">
+          <p class="eyebrow">MIJN MENTALITEIT</p>
+          <h2 id="arena-title">Ideeën bewijzen zich pas <em>in de arena.</em></h2>
+          <p>Een concept mag ambitieus zijn. Daarna moet het gebouwd, getest en aangescherpt worden — met echte gebruikers, echte data en echte hardware. Ik werk graag waar experiment en uitvoering elkaar ontmoeten.</p>
+          <div class="arena-principles" aria-label="Mijn drie werkprincipes">
+            <span><b>01</b> Bouw het</span>
+            <span><b>02</b> Test het</span>
+            <span><b>03</b> Maak het beter</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process" id="werkwijze">
+        <div class="section-heading reveal">
+          <div class="section-label"><span>04</span> HOE IK WERK</div>
+          <p>Kleine stappen, snel zichtbaar resultaat. Zo weet je vroeg of het klopt — en blijven verrassingen klein.</p>
+        </div>
+        <ol class="process-steps">
+          <li class="reveal"><b>01</b><h3>Begrijpen</h3><p>Wat moet er echt opgelost worden? Ik kijk voorbij de vraag naar het probleem erachter.</p></li>
+          <li class="reveal"><b>02</b><h3>Bouwen</h3><p>Een kleine, werkende versie — geen eindeloze plannen, wel iets dat je vandaag al kunt aanraken.</p></li>
+          <li class="reveal"><b>03</b><h3>Testen</h3><p>Met echte feedback, echte data en waar nodig echte hardware. Meten in plaats van gokken.</p></li>
+          <li class="reveal"><b>04</b><h3>Verbeteren</h3><p>Aanscherpen tot het klopt, daarna pas uitbreiden. Zo groeit iets dat blijft werken.</p></li>
+        </ol>
+      </section>
+
+      <section class="section experience-section" id="ervaring">
+        <div class="section-heading reveal">
+          <div class="section-label"><span>05</span> ERVARING</div>
+          <p>Van werkvloer tot workflow. Elke stap leerde me iets anders over hoe werk écht georganiseerd wordt.</p>
+        </div>
+        <ol class="timeline">
+          <li class="reveal">
+            <div class="tl-when"><b>Operations</b><span>Teamlead</span></div>
+            <div class="tl-body">
+              <h3>Teamlead Production &amp; Operations</h3>
+              <p class="tl-org">Wimpau Zeepziederij</p>
+              <p>Dagelijkse ondersteuning en coördinatie binnen een productieomgeving. Aansturen van medewerkers, opvolgen van productie, organiseren van werkzaamheden en oplossen van operationele en technische problemen.</p>
+              <p class="tl-kw">teamcoördinatie · productie · planning · procesverbetering · operations</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="tl-when"><b>Productie</b><span>Internationaal</span></div>
+            <div class="tl-body">
+              <h3>Production</h3>
+              <p class="tl-org">Estée Lauder</p>
+              <p>Werken binnen een internationale productieomgeving met sterke aandacht voor kwaliteit, procedures en efficiëntie.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="tl-when"><b>Automotive</b><span>Techniek</span></div>
+            <div class="tl-body">
+              <h3>Automotive Technician</h3>
+              <p class="tl-org">Ford Deckx Mol</p>
+              <p>Praktische ervaring met voertuigonderhoud, mechanische werkzaamheden, diagnose en techniek.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="tl-when"><b>Operations</b><span>Techniek</span></div>
+            <div class="tl-body">
+              <h3>Operations</h3>
+              <p class="tl-org">Watch Repair Antwerp</p>
+              <p>Operationele ondersteuning binnen een gespecialiseerde technische omgeving.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <div class="tl-when"><b>Horeca</b><span>Keuken</span></div>
+            <div class="tl-body">
+              <h3>Chef &amp; Chef de Partie</h3>
+              <p class="tl-org">Marcel · Bistro Barista · Watermolen</p>
+              <p>Professionele keukenervaring met verantwoordelijkheid, organisatie, snelheid en werken onder druk.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="education reveal" aria-label="Opleiding">
+          <div class="section-label"><span>06</span> OPLEIDING</div>
+          <div class="edu-grid">
+            <div><span class="tl-kw">Horeca</span><b>Hotelschool Ter Duinen</b><span>Afgestudeerd</span></div>
+            <div><span class="tl-kw">IT</span><b>Thomas More Geel</b><span>Programmeren · systeem- en netwerkbeheer</span></div>
+            <div><span class="tl-kw">Automotive</span><b>VDAB</b><span>Lichte bedrijfsvoertuigen · hybride en elektrische voertuigen</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section profile" id="profiel">
+        <div class="section-label reveal"><span>07</span> PROFIEL</div>
+        <div class="profile-layout">
+          <div class="profile-statement reveal">
+            <p class="quote-mark">“</p>
+            <blockquote>Niet wachten tot de toekomst er is. Een prototype bouwen en kijken wat er gebeurt.</blockquote>
+          </div>
+
+          <div class="profile-details reveal">
+            <div class="detail-row">
+              <h3>Focus</h3>
+              <p>AI-agents &amp; automatisering<br />Productontwikkeling<br />Embedded &amp; hardware<br />Creative technology</p>
+            </div>
+            <div class="detail-row">
+              <h3>Sterktes</h3>
+              <p>Snel leren &amp; onderzoeken<br />Prototypes bouwen<br />Systemen verbinden<br />Praktisch problemen oplossen</p>
+            </div>
+            <div class="detail-row">
+              <h3>Gereedschap</h3>
+              <p>AI &amp; automatisering: n8n, Ollama, lokale LLM's, API's, agents, MCP<br />Software: Python, JavaScript, HTML, CSS, Git, Electron<br />Systemen: Linux, Windows, Proxmox, Tailscale<br />Hardware: ESP32, Arduino, GPS, elektronica, 3D-printing</p>
+            </div>
+            <div class="detail-row">
+              <h3>Wat ik zoek</h3>
+              <p>Een rol waar operations, techniek en digitalisering elkaar raken — vast of freelance, hybride of remote vanuit België. Denk aan <b>technical operations</b>, <b>process improvement</b>, <b>AI &amp; workflow automation</b>, <b>technical coordinator</b> of <b>digital transformation</b>.</p>
+            </div>
+            <div class="detail-row">
+              <h3>Basis</h3>
+              <p>Meerhout, België<br />Nederlands &amp; Engels<br />Open voor samenwerking, freelance en vaste rollen</p>
+            </div>
+            <div class="detail-row detail-row-links">
+              <h3>Links</h3>
+              <p>
+                <a class="inline-link" href="./assets/thomas-huybrechts-cv.pdf" download>Download mijn cv (PDF) <span aria-hidden="true">↓</span></a><br />
+                <a class="inline-link" href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub <span aria-hidden="true">↗</span></a><br />
+                <a class="inline-link" href="https://www.linkedin.com/in/thomashuybrechts" rel="me noopener" target="_blank">LinkedIn <span aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">EEN IDEE DAT MOET BESTAAN?</p>
+          <h2>Laten we iets<br /><em>interessants</em> maken.</h2>
+          <p class="contact-sub">Vertel me in een paar zinnen wat je wilt bouwen — of welke rol je wilt invullen. Je krijgt een eerlijk antwoord: kan ik helpen, wat is de eerste kleine stap, en wat mag je verwachten.</p>
+          <div class="contact-actions">
+            <a class="button button-light" href="mailto:thomashuybrechts@gmail.com?subject=Idee%20om%20samen%20te%20bouwen">Stuur mij een bericht <span aria-hidden="true">↗</span></a>
+            <button class="copy-email" type="button" data-email="thomashuybrechts@gmail.com" aria-live="polite">
+              <span class="copy-email-text">thomashuybrechts@gmail.com</span>
+              <span class="copy-email-hint">kopieer</span>
+            </button>
+          </div>
+          <div class="contact-links">
+            <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/thomashuybrechts" rel="me noopener" target="_blank">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="./assets/thomas-huybrechts-cv.pdf" download>Cv (PDF) <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="contact-disc reveal" aria-hidden="true">
+          <span>HELLO · BONJOUR · HALLO · HEY · </span>
+          <strong>TH</strong>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="#top"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Voetnavigatie">
+        <a href="#over">Over</a>
+        <a href="#doen">Wat ik doe</a>
+        <a href="#projecten">Projecten</a>
+        <a href="#ervaring">Ervaring</a>
+        <a href="#profiel">Profiel</a>
+        <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/thomashuybrechts" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:thomashuybrechts@gmail.com">E-mail</a>
+      </nav>
+      <p>© <span id="year"></span> Thomas Huybrechts · Digitaal maker, België · Met nieuwsgierigheid gebouwd.</p>
+    </footer>
+  </body>
+</html>

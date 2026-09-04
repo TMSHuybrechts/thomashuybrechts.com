@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sirena — project van Thomas Huybrechts</title>
+    <meta name="description" content="Een zichtbare Vlaamse desktopassistent met een lokaal AI-brein, stem en avatar — die niet alleen antwoordt, maar echte acties op je computer uitvoert." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="canonical" href="https://thomashuybrechts.com/projecten/sirena.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="Sirena — Thomas Huybrechts" />
+    <meta property="og:description" content="Een zichtbare Vlaamse desktopassistent met een lokaal AI-brein, stem en avatar — die niet alleen antwoordt, maar echte acties op je computer uitvoert." />
+    <meta property="og:url" content="https://thomashuybrechts.com/projecten/sirena.html" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Sirena",
+      "description": "Een zichtbare Vlaamse desktopassistent met een lokaal AI-brein, stem en avatar — die niet alleen antwoordt, maar echte acties op je computer uitvoert.",
+      "url": "https://thomashuybrechts.com/projecten/sirena.html",
+      "author": { "@type": "Person", "name": "Thomas Huybrechts", "url": "https://thomashuybrechts.com/" },
+      "inLanguage": "nl-BE"
+    }
+    </script>
+  </head>
+  <body class="project-page">
+    <a class="skip-link" href="#inhoud">Ga naar de inhoud</a>
+
+    <header class="site-header" id="header">
+      <a class="brand" href="../" aria-label="Thomas Huybrechts, naar de startpagina">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Hoofdnavigatie">
+        <a href="../#over">Over</a>
+        <a href="../#doen">Wat ik doe</a>
+        <a href="../#projecten">Projecten</a>
+        <a href="../#profiel">Profiel</a>
+        <a class="nav-contact" href="../#contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Muziek afspelen">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="sound-label">Geluid</span>
+        </button>
+        <audio id="bgm" src="../assets/audio/lemons.mp3" loop preload="none"></audio>
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <article>
+        <section class="section project-hero">
+          <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> Alle projecten</a>
+          <p class="work-tag">ASSISTENT · STEM · AVATAR</p>
+          <h1>Sirena</h1>
+          <p class="project-intro">Een zichtbare Vlaamse desktopassistent met een lokaal AI-brein, stem en avatar — die niet alleen antwoordt, maar echte acties op je computer uitvoert.</p>
+          <dl class="project-meta">
+            <div><dt>Type</dt><dd>Desktopassistent</dd></div>
+            <div><dt>Status</dt><dd>Actief in ontwikkeling</dd></div>
+            <div><dt>Rol</dt><dd>Concept, ontwerp &amp; ontwikkeling</dd></div>
+            <div><dt>Stack</dt><dd>Lokale LLM · spraakherkenning &amp; -synthese · avatar · systeemkoppelingen</dd></div>
+          </dl>
+          <div class="project-result"><span class="lbl">RESULTAAT</span><p>Praat, luistert én voert echte computeracties uit — met een lokaal AI-brein, geen cloud.</p></div>
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:thomashuybrechts@gmail.com?subject=Over%20Sirena">Praat met mij hierover <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#details">Lees hoe het werkt <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+
+        <section class="project-gallery" aria-label="Beelden van Sirena">
+          <figure class="reveal gallery-main">
+            <img src="../assets/projects/sirena-app.jpg" alt="Sirena — chatvenster met modelkeuze, avatar en spraakbesturing (voorbeeldweergave)" loading="eager" decoding="async" />
+            <figcaption>Sirena — chatvenster met modelkeuze, avatar en spraakbesturing (voorbeeldweergave)</figcaption>
+          </figure>
+        </section>
+
+        <section class="section project-details" id="details">
+          <div class="project-columns">
+            <div class="reveal">
+              <div class="section-label"><span>01</span> HET PROBLEEM</div>
+              <p class="project-text">AI-assistenten zitten meestal in een chatvenster en blijven bij praten. Sirena is een experiment in de andere richting: een assistent die je ziet en hoort, in het Nederlands van hier, en die dingen kan dóén op je computer.</p>
+            </div>
+            <div class="reveal">
+              <div class="section-label"><span>02</span> WAT HET DOET</div>
+              <dl class="feature-list">
+                <div><dt>Zichtbaar en hoorbaar</dt><dd>Een avatar op je bureaublad, met stem in het Vlaams. Je praat ertegen, ze praat terug.</dd></div>
+                <div><dt>Lokaal brein</dt><dd>Het taalmodel draait op je eigen machine. Je gesprekken en bestanden verlaten je computer niet.</dd></div>
+                <div><dt>Echte acties</dt><dd>Koppelingen om bestanden te openen, programma&#x27;s te starten, informatie op te zoeken en taken uit te voeren — met bevestiging waar dat hoort.</dd></div>
+                <div><dt>Uitbreidbaar</dt><dd>Nieuwe vaardigheden toevoegen als modules, zodat Sirena meegroeit met wat je nodig hebt.</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="project-learned reveal">
+            <div class="section-label"><span>03</span> WAT IK ERVAN LEERDE</div>
+            <blockquote class="learned">Spraak en avatar maken een assistent meteen ‘echter’ — en dus ook strenger beoordeeld. Latency, betrouwbaarheid en duidelijke bevestigingen wegen zwaarder dan nog een feature.</blockquote>
+          </div>
+        </section>
+
+        <section class="contact contact-compact" id="contact">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">INTERESSE?</p>
+            <h2>Laten we <em>praten</em>.</h2>
+            <p class="contact-sub">Vertel me wat je ervan vindt — of wat je ermee zou willen doen.</p>
+            <div class="contact-actions">
+              <a class="button button-light" href="mailto:thomashuybrechts@gmail.com?subject=Over%20Sirena">Stuur mij een bericht <span aria-hidden="true">↗</span></a>
+              <a class="next-project" href="./embedded.html">Volgend project: <b>Embedded experimenten</b> <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Voetnavigatie">
+        <a href="../#over">Over</a>
+        <a href="../#doen">Wat ik doe</a>
+        <a href="../#projecten">Projecten</a>
+        <a href="../#profiel">Profiel</a>
+        <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/thomashuybrechts" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:thomashuybrechts@gmail.com">E-mail</a>
+      </nav>
+      <p>© <span id="year"></span> Thomas Huybrechts · Digitaal maker, België · Met nieuwsgierigheid gebouwd.</p>
+    </footer>
+  </body>
+</html>
