@@ -109,7 +109,7 @@ if (bgm && soundBtn) {
   const URLS = {
     cv: rel + 'assets/thomas-huybrechts-cv.pdf',
     ava: rel + 'assets/agent-thomas.jpg',
-    mail: 'mailto:info@thomashuybrechts.com?subject=Contact%20via%20thomashuybrechts.com',
+    mail: 'mailto:hey@thomashuybrechts.com?subject=Contact%20via%20thomashuybrechts.com',
     github: 'https://github.com/TMSHuybrechts',
     linkedin: 'https://www.linkedin.com/in/thomashuybrechts',
     sec: id => rel + '#' + id,
