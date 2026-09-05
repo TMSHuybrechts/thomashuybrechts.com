@@ -111,7 +111,7 @@ if (bgm && soundBtn) {
     ava: rel + 'assets/agent-thomas.jpg',
     mail: 'mailto:hey@thomashuybrechts.com?subject=Contact%20via%20thomashuybrechts.com',
     github: 'https://github.com/TMSHuybrechts',
-    linkedin: 'https://www.linkedin.com/in/thomashuybrechts',
+    linkedin: 'https://www.linkedin.com/in/thomas-huybrechts-a14277105',
     sec: id => rel + '#' + id,
     project: slug => (isProj ? '' : 'projecten/') + slug + '.html',
   };

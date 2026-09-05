@@ -369,7 +369,7 @@ TEMPLATE = """<!doctype html>
         <a href="../#projecten">Projecten</a>
         <a href="../#profiel">Profiel</a>
         <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/thomashuybrechts" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/thomas-huybrechts-a14277105" rel="me noopener" target="_blank">LinkedIn</a>
         <a href="mailto:{email}">E-mail</a>
       </nav>
       <p>© <span id="year"></span> Thomas Huybrechts · Digitaal maker, België · Met nieuwsgierigheid gebouwd.</p>

@@ -21,7 +21,7 @@ Deze bestanden zijn nu tijdelijke placeholders — vervang ze door echte beelden
 | `assets/projects/obsidian-1.svg`, `obsidian-2.svg` | Screenshots Obsidian-plugin | `projecten/repo-notebook-obsidian.html` |
 | `assets/projects/sirena-1.svg`, `sirena-2.svg` | Screenshots Sirena | `projecten/sirena.html` |
 | `assets/projects/embedded-1.svg`, `embedded-2.svg` | Foto's ESP32-prototypes | `projecten/embedded.html` |
-| LinkedIn-URL | Nu `linkedin.com/in/thomashuybrechts` (gok) — vervang door je echte profiel-URL in `index.html`, `docs/build-projects.py` (daarna `python3 docs/build-projects.py`) en de JSON-LD (`sameAs`). GitHub (`github.com/TMSHuybrechts`) klopt al. | profiel, contact, footer |
+| LinkedIn-URL | Nu `linkedin.com/in/thomas-huybrechts-a14277105` (gok) — vervang door je echte profiel-URL in `index.html`, `docs/build-projects.py` (daarna `python3 docs/build-projects.py`) en de JSON-LD (`sameAs`). GitHub (`github.com/TMSHuybrechts`) klopt al. | profiel, contact, footer |
 
 De Repo Notebook-screenshots (`assets/projects/repo-notebook-1.webp` en `-2.webp`) het portret (`assets/thomas.jpg`, uitsnede van je composietbeeld; het volledige beeld staat in `assets/thomas-composite.jpg`) en het cv (`assets/thomas-huybrechts-cv.pdf`, bron: `docs/cv/cv.html`) zijn echt.
 
