@@ -353,7 +353,7 @@ TEMPLATE = """<!doctype html>
             <h2>Laten we <em>praten</em>.</h2>
             <p class="contact-sub">Vertel me wat je ervan vindt — of wat je ermee zou willen doen.</p>
             <div class="contact-actions">
-              <a class="button button-light" href="mailto:{email}?subject=Over%20{title_q}">Stuur mij een bericht <span aria-hidden="true">↗</span></a>
+              <a class="button button-light" href="mailto:{email}?subject=Over%20{title_q}">Contacteer mij <span aria-hidden="true">↗</span></a>
               <a class="next-project" href="./{next_slug}.html">Volgend project: <b>{next}</b> <span aria-hidden="true">→</span></a>
             </div>
           </div>
