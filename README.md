@@ -39,7 +39,7 @@ De Repo Notebook-screenshots (`assets/projects/repo-notebook-1.webp` en `-2.webp
 
 ## Aanpassen
 
-- Contactadres: zoek in `index.html` naar `thomashuybrechts@gmail.com` (komt ook voor in de JSON-LD en de demo-knoppen bij projecten)
+- Contactadres: zoek in `index.html` naar `info@thomashuybrechts.com` (komt ook voor in de JSON-LD en de demo-knoppen bij projecten)
 - Projecten: sectie `#projecten`; de knop per project opent een e-mail met vooraf ingevuld onderwerp
 - Diensten: sectie `#doen`
 - Werkwijze: sectie `#werkwijze`

@@ -11,7 +11,7 @@ import html, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PARTIALS = pathlib.Path(__file__).resolve().parent / "partials"
-EMAIL = "thomashuybrechts@gmail.com"
+EMAIL = "info@thomashuybrechts.com"
 
 PROJECTS = [
     {
