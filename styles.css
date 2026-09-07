@@ -437,6 +437,8 @@ a.work-item:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px;
 .project-hero.has-bg .project-meta dd { color: var(--paper); }
 .project-hero.has-bg .button-dark { background: var(--paper); color: var(--ink); }
 .project-hero.has-bg .button-dark:hover { background: #fff; }
+.project-hero.has-bg .project-meta .inline-link { color: var(--paper); border-bottom-color: rgba(243,240,232,.5); }
+.project-hero.has-bg .project-meta .inline-link:hover { border-bottom-color: var(--paper); }
 
 /* ===== Agent Thomas — gescripte AI-gids (client-side, geen backend) ===== */
 .agent-thomas { position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 90; font-family: "Manrope", sans-serif; }
