@@ -397,6 +397,9 @@ a.work-item:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px;
 }
 
 /* ---------- Geluid ---------- */
+.app-chip { display: inline-flex; align-items: center; justify-content: center; width: 2.2rem; height: 2.2rem; border: 1px solid var(--line); border-radius: 999px; transition: border-color .2s, transform .2s; }
+.app-chip img { width: 1.35rem; height: 1.35rem; border-radius: 5px; display: block; }
+.app-chip:hover { border-color: var(--ink); transform: translateY(-1px); }
 .sound-toggle { display: inline-flex; align-items: center; gap: .55rem; height: 2.2rem; padding: 0 .85rem; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; font: 500 .62rem "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; transition: border-color .2s, background .2s; }
 .sound-toggle:hover { border-color: var(--ink); }
 .sound-toggle[aria-pressed="true"] { background: var(--acid); border-color: var(--acid); }
