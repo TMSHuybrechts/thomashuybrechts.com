@@ -110,6 +110,7 @@ if (bgm && soundBtn) {
     cv: rel + 'assets/thomas-huybrechts-cv.pdf',
     ava: rel + 'assets/agent-thomas.jpg',
     mail: 'mailto:hey@thomashuybrechts.com?subject=Contact%20via%20thomashuybrechts.com',
+    gmail: 'https://mail.google.com/mail/?view=cm&fs=1&to=hey%40thomashuybrechts.com&su=Contact%20via%20thomashuybrechts.com',
     github: 'https://github.com/TMSHuybrechts',
     linkedin: 'https://www.linkedin.com/in/thomas-huybrechts-a14277105',
     sec: id => rel + '#' + id,
@@ -171,7 +172,7 @@ if (bgm && soundBtn) {
     }),
     contact: () => ({
       text: 'Zeker! Ik ben beschikbaar voor projecten — vast of freelance, hybride of remote vanuit België 🇧🇪',
-      actions: [A('✉️ Stuur een bericht', URLS.mail, { copy: 'hey@thomashuybrechts.com' }), A('LinkedIn ↗', URLS.linkedin, { ext: true }), A('GitHub ↗', URLS.github, { ext: true })],
+      actions: [A('✉️ Stuur een bericht', URLS.gmail, { ext: true, copy: 'hey@thomashuybrechts.com' }), A('LinkedIn ↗', URLS.linkedin, { ext: true }), A('GitHub ↗', URLS.github, { ext: true })],
       chips: ['cv', 'projects'],
     }),
     about: () => ({
@@ -277,7 +278,7 @@ if (bgm && soundBtn) {
     mailNoteShown = true;
     const el = document.createElement('div');
     el.className = 'at-msg at-bot';
-    el.innerHTML = '📋 Adres gekopieerd: <b>' + addr + '</b><br>Opent je mailapp niet vanzelf? Plak het adres dan gewoon in een nieuw bericht.';
+    el.innerHTML = '📋 Adres ook gekopieerd: <b>' + addr + '</b><br>Gebruik je geen Gmail? Plak het adres dan gewoon in je eigen mailapp.';
     log.appendChild(el); scrollDown();
   }
 
