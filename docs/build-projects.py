@@ -304,7 +304,7 @@ TEMPLATE = """<!doctype html>
     <header class="site-header" id="header">
       <a class="brand" href="../" aria-label="Thomas Huybrechts, naar de startpagina">
         <span class="brand-mark">TH</span>
-        <span><em>T</em>homas <em>H</em>uybrechts</span>
+        <span>Thomas Huybrechts</span>
       </a>
       <nav id="nav" aria-label="Hoofdnavigatie">
         <a href="../#over">Over</a>
@@ -373,7 +373,7 @@ TEMPLATE = """<!doctype html>
     </main>
 
     <footer>
-      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span><em>T</em>homas <em>H</em>uybrechts</span></a>
+      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
       <nav class="footer-nav" aria-label="Voetnavigatie">
         <a href="../#over">Over</a>
         <a href="../#doen">Wat ik doe</a>
