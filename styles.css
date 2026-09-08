@@ -51,7 +51,8 @@ a { color: inherit; text-decoration: none; }
 .site-header nav a.is-active::after { right: 0; }
 .nav-contact { display: none; }
 .brand { display: inline-flex; align-items: center; gap: .75rem; font-size: 1rem; font-weight: 700; letter-spacing: -.02em; }
-.brand-mark { width: 2.35rem; height: 2.35rem; display: grid; place-items: center; border-radius: 50%; color: var(--paper); background: var(--ink); font: 500 .72rem "DM Mono", monospace; }
+.brand em { font-family: "Playfair Display", serif; font-weight: 600; font-size: 1.28em; line-height: 1; }
+.brand-mark { width: 2.35rem; height: 2.35rem; display: grid; place-items: center; border-radius: 50%; color: var(--acid); background: var(--ink); font: 500 .72rem "DM Mono", monospace; }
 .site-header nav { display: flex; gap: clamp(1.3rem, 3vw, 2.75rem); font-size: .78rem; font-weight: 600; }
 .site-header nav a, .text-link { position: relative; }
 .site-header nav a::after, .text-link::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -.3rem; height: 1px; background: currentColor; transition: right .25s ease; }
@@ -210,7 +211,8 @@ footer p { margin: 0; justify-self: end; color: #989991; }
 .footer-nav { display: flex; gap: 1.6rem; font-weight: 600; }
 .footer-nav a { opacity: .8; transition: opacity .2s; }
 .footer-nav a:hover { opacity: 1; }
-.footer-brand .brand-mark { color: var(--ink); background: var(--paper); }
+.footer-brand .brand-mark { color: var(--ink); background: var(--acid); }
+.footer-brand em { color: var(--acid); }
 
 .reveal { transition: opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1); }
 html.js .reveal { opacity: 0; transform: translateY(24px); }
