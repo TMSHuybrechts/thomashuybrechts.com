@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onderdelen Inventaris — project van Thomas Huybrechts</title>
+    <meta name="description" content="Een eigen voorraadbeheer voor elektronica-onderdelen: wat heb ik, waar ligt het en wat moet ik nog kopen — één snelle lokale app met automatische te-kopen-lijst." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="canonical" href="https://thomashuybrechts.com/projecten/onderdelen-inventaris.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="Onderdelen Inventaris — Thomas Huybrechts" />
+    <meta property="og:description" content="Een eigen voorraadbeheer voor elektronica-onderdelen: wat heb ik, waar ligt het en wat moet ik nog kopen — één snelle lokale app met automatische te-kopen-lijst." />
+    <meta property="og:url" content="https://thomashuybrechts.com/projecten/onderdelen-inventaris.html" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Onderdelen Inventaris",
+      "description": "Een eigen voorraadbeheer voor elektronica-onderdelen: wat heb ik, waar ligt het en wat moet ik nog kopen — één snelle lokale app met automatische te-kopen-lijst.",
+      "url": "https://thomashuybrechts.com/projecten/onderdelen-inventaris.html",
+      "author": { "@type": "Person", "name": "Thomas Huybrechts", "url": "https://thomashuybrechts.com/" },
+      "inLanguage": "nl-BE"
+    }
+    </script>
+  </head>
+  <body class="project-page">
+    <a class="skip-link" href="#inhoud">Ga naar de inhoud</a>
+
+    <header class="site-header" id="header">
+      <a class="brand" href="../" aria-label="Thomas Huybrechts, naar de startpagina">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Hoofdnavigatie">
+        <a href="../#over">Over</a>
+        <a href="../#doen">Wat ik doe</a>
+        <a href="../#projecten">Projecten</a>
+        <a href="../#profiel">Profiel</a>
+        <a class="nav-contact" href="../#contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Muziek afspelen">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="sound-label">Geluid</span>
+        </button>
+        <audio id="bgm" src="../assets/audio/lemons.mp3" loop preload="none"></audio>
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <article>
+        <section class="section project-hero">
+          <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> Alle projecten</a>
+          <p class="work-tag">SINGLE-FILE APP · OPERATIONS · HARDWARE</p>
+          <h1>Onderdelen Inventaris</h1>
+          <p class="project-intro">Een eigen voorraadbeheer voor mijn elektronica-werkbank: wat heb ik, waar ligt het en wat moet ik nog kopen — gebouwd als één snelle lokale app.</p>
+          <dl class="project-meta">
+            <div><dt>Type</dt><dd>Desktop-tool (single-file HTML, ook als Electron-app)</dd></div>
+            <div><dt>Status</dt><dd>Dagelijks in gebruik</dd></div>
+            <div><dt>Rol</dt><dd>Concept, ontwerp &amp; ontwikkeling</dd></div>
+            <div><dt>Stack</dt><dd>HTML · CSS · JavaScript · Electron · JSON</dd></div>
+          </dl>
+          <div class="project-result"><span class="lbl">RESULTAAT</span><p>Tientallen onderdelen gecatalogiseerd met status en locatie — en een automatische te-kopen-lijst met prijsnotities en zoektermen per onderdeel.</p></div>
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:hey@thomashuybrechts.com?subject=Over%20Onderdelen%20Inventaris">Praat met mij hierover <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#details">Lees hoe het werkt <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+
+        <section class="project-gallery" aria-label="Beelden van Onderdelen Inventaris">
+          <figure class="reveal gallery-main">
+            <img src="../assets/projects/onderdelen-inventaris-lijst.webp" alt="De inventarislijst gegroepeerd per categorie, met aantallen, status, locatie en notities per onderdeel" width="2480" height="1800" loading="eager" decoding="async" />
+            <figcaption>De lijst: per categorie, met aantallen, status, locatievak en notities per onderdeel</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../assets/projects/onderdelen-inventaris-kopen.webp" alt="De inventaris gefilterd op status 'te kopen' — een boodschappenlijst met richtprijzen en zoektermen" width="2480" height="1800" loading="lazy" decoding="async" />
+            <figcaption>Eén filterklik verder: de te-kopen-lijst, met richtprijzen en zoektermen per onderdeel</figcaption>
+          </figure>
+        </section>
+
+        <section class="section project-details" id="details">
+          <div class="project-columns">
+            <div class="reveal">
+              <div class="section-label"><span>01</span> HET PROBLEEM</div>
+              <p class="project-text">Elektronica-onderdelen verzamelen zich sneller dan je denkt: ESP32-borden, displays, sensoren, kabels — verspreid over dozen, lades en "ergens veilig". Net op het moment dat je iets wilt bouwen, weet je niet wat er in huis is, waar het ligt, of je het dubbel bestelt.</p>
+            </div>
+            <div class="reveal">
+              <div class="section-label"><span>02</span> WAT HET DOET</div>
+              <dl class="feature-list">
+                <div><dt>Voorraad &amp; status</dt><dd>Elk onderdeel met aantal en een status: aanwezig, controleren of te kopen. Aantallen bijwerken met één klik op plus of min.</dd></div>
+                <div><dt>Locaties</dt><dd>Per onderdeel een locatievak ("waar ligt dit?") en een per-locatie-overzicht — zodat de lade-chaos ook digitaal klopt.</dd></div>
+                <div><dt>Te-kopen-lijst</dt><dd>Eén filterklik maakt van de inventaris een boodschappenlijst, met richtprijzen en exacte zoektermen per onderdeel in de notities.</dd></div>
+                <div><dt>Categorieën &amp; zoeken</dt><dd>Audio, displays, ESP32 &amp; borden, connectoren… alles gegroepeerd, doorzoekbaar en filterbaar.</dd></div>
+                <div><dt>Lokaal &amp; simpel</dt><dd>Eén HTML-bestand, data in één JSON. Draait ook als Electron-app met autosave, en exporteert naar JSON of CSV.</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="project-learned reveal">
+            <div class="section-label"><span>03</span> WAT IK ERVAN LEERDE</div>
+            <blockquote class="learned">De beste tool is degene die je écht blijft invullen. Alles wat meer moeite kost dan een sticker op een doos, verliest — dus draait alles rond één lijst, grote knoppen en autosave. Operations-denken, toegepast op mijn eigen werkbank.</blockquote>
+          </div>
+        </section>
+
+        <section class="contact contact-compact" id="contact">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">INTERESSE?</p>
+            <h2>Laten we <em>praten</em>.</h2>
+            <p class="contact-sub">Vertel me wat je ervan vindt — of wat je ermee zou willen doen.</p>
+            <div class="contact-actions">
+              <a class="button button-light" href="mailto:hey@thomashuybrechts.com?subject=Over%20Onderdelen%20Inventaris">Contacteer mij <span aria-hidden="true">↗</span></a>
+              <a class="next-project" href="./embedded.html">Volgend project: <b>Embedded experimenten</b> <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Voetnavigatie">
+        <a href="../#over">Over</a>
+        <a href="../#doen">Wat ik doe</a>
+        <a href="../#projecten">Projecten</a>
+        <a href="../#profiel">Profiel</a>
+        <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/thomas-huybrechts-a14277105" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:hey@thomashuybrechts.com">E-mail</a>
+      </nav>
+      <p>© <span id="year"></span> Thomas Huybrechts · Digitaal maker, België · Met nieuwsgierigheid gebouwd.</p>
+    </footer>
+<script data-goatcounter="https://thomashuybrechts.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
