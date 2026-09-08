@@ -85,6 +85,12 @@ PROJECTS = [
         "hero_bg": "repo-notebook-bg.jpg",
         "intro": "Een visuele kennisomgeving die GitHub-repositories verzamelt, analyseert en als verbonden informatie presenteert — met Oogst, lokale AI en slimme suggesties.",
         "meta": [("Type", "Desktop-app (Electron)"), ("Status", "Actief in ontwikkeling"), ("Rol", "Concept, ontwerp & ontwikkeling"), ("Stack", "Electron · lokale LLM · MCP · GitHub API")],
+        "website": ("../repo-notebook/", "thomashuybrechts.com/repo-notebook"),
+        "hero_actions": [
+            ("button button-dark", "../repo-notebook/", "Bekijk de live website", "↗", False),
+            ("text-link", "https://github.com/TMSHuybrechts/The-repo-notebook", "GitHub-repository", "↗", True),
+            ("text-link", "#details", "Lees hoe het werkt", "↓", False),
+        ],
         "images": [("repo-notebook-2.webp", "Oogst: plak een GitHub-account, toolnamen of een pagina-URL en Repo Notebook haalt alle repositories op"), ("repo-notebook-1.webp", "De lijstweergave met 127 opgeslagen repositories, README, statistieken en notities per repo")],
         "problem": "Wie veel met open source werkt, verzamelt honderden repositories: in browsertabs, sterretjes, notities en losse mapjes. Daar gaat kennis verloren. Waarom sloeg je iets op? Werkt het nog? Wat hangt ermee samen?",
         "features": [
@@ -248,6 +254,13 @@ RESULTS = {
     "generative-ai": "Fotorealistische beelden en video, met eigen LoRA's getraind op één RTX 4070 — volledig lokaal.",
 }
 
+# Slugs die de kruislink-chip naar de Repo Notebook-productsite tonen
+APP_CHIP_SLUGS = {"repo-notebook", "repo-notebook-obsidian"}
+APP_CHIP = """        <a class="app-chip" href="../repo-notebook/" title="Repo Notebook — bekijk de website">
+          <img src="../repo-notebook/favicon.svg" alt="Repo Notebook" width="22" height="22" />
+        </a>
+"""
+
 def e(s): return html.escape(s, quote=True)
 
 TEMPLATE = """<!doctype html>
@@ -301,7 +314,7 @@ TEMPLATE = """<!doctype html>
         <a class="nav-contact" href="../#contact">Contact</a>
       </nav>
       <div class="header-right">
-        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Muziek afspelen">
+{app_chip}        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Muziek afspelen">
           <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
           <span class="sound-label">Geluid</span>
         </button>
@@ -323,9 +336,7 @@ TEMPLATE = """<!doctype html>
 {meta}
           </dl>
 {result_html}          <div class="hero-actions">
-            <a class="button button-dark" href="mailto:{email}?subject=Over%20{title_q}">Praat met mij hierover <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="#details">Lees hoe het werkt <span aria-hidden="true">↓</span></a>
-          </div>
+{hero_actions}          </div>
         </section>
 {gallery}{extra}
         <section class="section project-details" id="details">
@@ -374,12 +385,16 @@ TEMPLATE = """<!doctype html>
       </nav>
       <p>© <span id="year"></span> Thomas Huybrechts · Digitaal maker, België · Met nieuwsgierigheid gebouwd.</p>
     </footer>
-  </body>
+  <script data-goatcounter="https://thomashuybrechts.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
 </html>
 """
 
 for p in PROJECTS:
     meta = "\n".join(f'            <div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>' for k, v in p["meta"])
+    if p.get("website"):
+        whref, wlabel = p["website"]
+        meta += f'\n            <div><dt>Website</dt><dd><a class="inline-link" href="{whref}">{wlabel}</a></dd></div>'
     if p.get("images"):
         imgs = []
         for i, (src, cap) in enumerate(p["images"]):
@@ -396,11 +411,22 @@ for p in PROJECTS:
     hero_bg = p.get("hero_bg")
     hero_cls = " has-bg" if hero_bg else ""
     hero_style = f' style="--hero-bg:url(../assets/projects/{hero_bg})"' if hero_bg else ""
+    title_q = p["title"].replace(" ", "%20")
+    actions = p.get("hero_actions") or [
+        ("button button-dark", f"mailto:{EMAIL}?subject=Over%20{title_q}", "Praat met mij hierover", "↗", False),
+        ("text-link", "#details", "Lees hoe het werkt", "↓", False),
+    ]
+    EXT_ATTRS = ' rel="noopener" target="_blank"'
+    hero_actions = "".join(
+        f'            <a class="{cls}" href="{href}"{EXT_ATTRS if ext else ""}>{label} <span aria-hidden="true">{arrow}</span></a>\n'
+        for cls, href, label, arrow, ext in actions
+    )
     out = TEMPLATE.format(
         hero_cls=hero_cls, hero_style=hero_style, result_html=result_html,
-        title=e(p["title"]), title_q=p["title"].replace(" ", "%20"), intro=e(p["intro"]), slug=p["slug"], tag=e(p["tag"]),
+        title=e(p["title"]), title_q=title_q, intro=e(p["intro"]), slug=p["slug"], tag=e(p["tag"]),
         email=EMAIL, meta=meta, gallery=gallery, extra=extra, problem=e(p["problem"]), features=feats, learned=e(p["learned"]),
-        next=e(p["next"]), next_slug=p["next_slug"],
+        next=e(p["next"]), next_slug=p["next_slug"], hero_actions=hero_actions,
+        app_chip=APP_CHIP if p["slug"] in APP_CHIP_SLUGS else "",
     )
     (ROOT / "projecten" / f"{p['slug']}.html").write_text(out, encoding="utf-8")
     print("wrote", p["slug"])
