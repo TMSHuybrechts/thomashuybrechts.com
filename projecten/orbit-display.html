@@ -406,11 +406,21 @@
     else if(ev.key==='g'||ev.key==='G'){ setView('grid'); }
   });
 
-  function onResize(){ var w=stage.clientWidth||1000; if(!userChose){ setView(w<900?'grid':'wheel'); return; } if(built && !root.classList.contains('ocw-view-grid')) build(); }
-  if(window.ResizeObserver){ new ResizeObserver(onResize).observe(stage); } else { window.addEventListener('resize', onResize); }
+  // Meet op root (blijft altijd zichtbaar) en reageer alleen op echte breedtewijzigingen —
+  // stage gaat op display:none in grid-view (clientWidth 0) en iOS hertekent bij elke
+  // adresbalk-beweging; allebei veroorzaakten een oneindige grid<->wiel-fliplus (geflikker).
+  var lastW = root.clientWidth || document.documentElement.clientWidth || 1000;
+  function onResize(){
+    var w = root.clientWidth || document.documentElement.clientWidth || 1000;
+    if (Math.abs(w - lastW) < 2) return;
+    lastW = w;
+    if(!userChose){ setView(w<900?'grid':'wheel'); return; }
+    if(built && !root.classList.contains('ocw-view-grid')) build();
+  }
+  if(window.ResizeObserver){ new ResizeObserver(onResize).observe(root); } else { window.addEventListener('resize', onResize); }
 
   buildGrid();
-  if((stage.clientWidth||1000) < 900){ setView('grid'); } else { build(); }
+  if(lastW < 900){ setView('grid'); } else { build(); }
 })();
 </script>
 
