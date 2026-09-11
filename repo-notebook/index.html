@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Repo Notebook — Discover. Organize. Understand. Run.</title>
   <meta name="description" content="Repo Notebook helps you discover, organize, understand, clone and run GitHub repositories from one visual workspace.">
-  <meta name="theme-color" content="#050b12">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f3f0e8">
+  <meta name="color-scheme" content="light">
   <link rel="canonical" href="https://thomashuybrechts.com/repo-notebook/">
 
   <meta property="og:type" content="website">
@@ -25,6 +25,9 @@
 
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/map.webp" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap">
   <link rel="stylesheet" href="style.css">
 
   <script type="application/ld+json">
@@ -43,15 +46,15 @@
   </script>
 </head>
 <body>
-  <div class="noise"></div>
+  <a class="skip-link" href="#top">Skip to content</a>
 
   <header class="topbar shell">
     <a class="brand" href="#top">
-      <span class="icon">▣</span>
-      <span>Repo Notebook</span>
-      <small>MCP</small>
+      <span class="icon" aria-hidden="true">RN</span>
+      <span class="brand-name">Repo Notebook<small>by Thomas Huybrechts</small></span>
+
     </a>
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="#discover">Discover</a>
       <a href="#map">Map</a>
       <a href="#run">Run</a>
@@ -67,7 +70,7 @@
     <section class="hero shell">
       <div class="hero-copy">
         <div class="eyebrow">GITHUB REPOSITORY INTELLIGENCE</div>
-        <h1>Discover.<br>Organize.<br><span>Understand.</span><br>Run.</h1>
+        <h1>Less searching.<br>More <span>making.</span></h1>
         <p>
           Repo Notebook brings repository discovery, AI judgement, related projects,
           graph mapping, cloning and local quickstart together in one control center.
@@ -75,19 +78,19 @@
         <div class="actions">
           <a class="btn primary" href="https://github.com/TMSHuybrechts/The-repo-notebook/releases/latest" target="_blank" rel="noopener">⬇ Download for Windows</a>
           <a class="btn ghost" href="https://github.com/TMSHuybrechts/The-repo-notebook" target="_blank" rel="noopener">View on GitHub</a>
-          <a class="btn ghost" href="#discover">See how it works</a>
+          <a class="text-link" href="#discover">Discover how it works ↗</a>
         </div>
         <div class="micro">
           <span>TOP 10 NOW</span><span>AI JUDGEMENT</span><span>RELATED REPOS</span><span>MCP</span>
         </div>
       </div>
 
-      <div class="hero-shot">
-        <div class="glow"></div>
+      <div class="product-preview"><div class="hero-shot">
+        <div class="window-bar"><span>● REPO NOTEBOOK</span><span>YOUR CONNECTED WORKSPACE ↗</span></div>
         <img src="assets/map.webp" alt="Repo Notebook map view" width="1686" height="853" loading="eager" fetchpriority="high" decoding="async">
         <div class="shot-label top-right">MAP / CLUSTERS</div>
-        <div class="shot-label bottom-left">132 repos mapped</div>
-      </div>
+        <div class="shot-label bottom-left">DISCOVER. CONNECT. BUILD.</div>
+      </div><p class="product-note">01 / THE APP IN ACTION — REAL PRODUCT CAPTURE</p></div>
     </section>
 
     <section class="strip" aria-hidden="true">
@@ -130,7 +133,7 @@
           Repositories are grouped into clusters so patterns become visible:
           AI tools, ESP32 projects, Flipper tooling, skills, automation and more.
         </p>
-        <div class="stat-grid">
+        <p class="example-note">Example collection shown in the screenshot</p><div class="stat-grid">
           <div><strong>132</strong><span>repos</span></div>
           <div><strong>6+</strong><span>clusters</span></div>
           <div><strong>203</strong><span>hidden links</span></div>
@@ -196,7 +199,7 @@
       <div class="cta-inner">
         <div>
           <div class="mini">OPEN SOURCE / BUILD IN PUBLIC</div>
-          <h2>Get the app.<br>Follow the build.</h2>
+          <h2>Good code deserves<br><em>a place to grow.</em></h2>
         </div>
         <div class="cta-actions">
           <a class="btn primary" href="https://github.com/TMSHuybrechts/The-repo-notebook/releases/latest" target="_blank" rel="noopener">⬇ Download for Windows</a>

@@ -60,3 +60,6 @@ De Repo Notebook-screenshots (`assets/projects/repo-notebook-1.webp` en `-2.webp
 Updaten = bestanden aanpassen en pushen; binnen een minuut staat het live.
 
 Alternatieven: Cloudflare Pages of Netlify (map slepen, gratis), of de webhosting van je registrar (bestanden via FTP/bestandsbeheer in de `www`-map zetten). Controleer na publicatie de social preview via bv. opengraph.xyz en de structured data via de Rich Results Test van Google.
+
+## Repo Notebook branding
+De productsite in `repo-notebook/` deelt de papier-, inkt- en limoenkleuren en typografie van de hoofdsite. Zie [merkafspraken](docs/product/repo-notebook-branding.md). De hoofdsite en desktop-app behouden hun bestaande gedrag.
