@@ -207,8 +207,9 @@ blockquote { max-width: 530px; margin: 2rem 0 0; font-size: clamp(2rem, 3.2vw, 3
 .contact-disc strong { font-size: 3rem; letter-spacing: -.08em; }
 @keyframes float { 50% { transform: translateY(-12px) rotate(2deg); } }
 
-footer { min-height: 110px; padding: 1.5rem max(var(--pad), calc((100vw - var(--max)) / 2 + var(--pad))); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; color: var(--paper); background: var(--ink); border-top: 1px solid rgb(243 240 232 / .2); font-size: .72rem; }
-footer p { margin: 0; justify-self: end; color: #989991; }
+footer { min-height: 110px; padding: 2rem max(var(--pad), calc((100vw - var(--max)) / 2 + var(--pad))); display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 1.4rem 2rem; color: var(--paper); background: var(--ink); border-top: 1px solid rgb(243 240 232 / .2); font-size: .72rem; }
+footer .footer-nav { justify-self: end; flex-wrap: wrap; }
+footer p { grid-column: 1 / -1; margin: 0; padding-top: 1.2rem; border-top: 1px solid rgb(243 240 232 / .12); color: #989991; }
 .footer-nav { display: flex; gap: 1.6rem; font-weight: 600; }
 .footer-nav a { opacity: .8; transition: opacity .2s; }
 .footer-nav a:hover { opacity: 1; }
@@ -413,6 +414,52 @@ a.work-item:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px;
 .sound-toggle[aria-pressed="true"] .sound-bars i:nth-child(3) { animation-delay: .3s; }
 @keyframes bars { 0%, 100% { height: 30%; } 50% { height: 100%; } }
 @media (max-width: 600px) { .sound-label { display: none; } .sound-toggle { padding: 0 .6rem; } }
+
+/* ---------- Projecticonen (SVG) ---------- */
+.ico { width: 1.9rem; height: 1.9rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Meer projecten: compacte index ---------- */
+.work-index { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.work-mini { display: grid; grid-template-columns: 3rem 1fr auto; align-items: center; gap: 1.1rem; padding: 1.6rem 1.2rem 1.6rem 0; border-bottom: 1px solid var(--line); color: inherit; transition: background .25s ease; }
+.work-mini:nth-child(odd) { border-right: 1px solid var(--line); }
+.work-mini:nth-child(even) { padding-left: 1.6rem; }
+.work-mini:hover, .work-mini:focus-visible { background: #ebe8de; outline: none; }
+.work-mini:focus-visible { box-shadow: inset 0 0 0 2px var(--ink); }
+.work-mini-icon { width: 3rem; height: 3rem; display: grid; place-items: center; border-radius: 50%; background: var(--acid); }
+.work-mini-icon .ico { width: 1.3rem; height: 1.3rem; }
+.work-mini:nth-child(4n+2) .work-mini-icon { background: var(--orange); }
+.work-mini:nth-child(4n+3) .work-mini-icon { background: var(--blue); }
+.work-mini:nth-child(4n) .work-mini-icon { color: var(--paper); background: var(--ink); }
+.work-mini .work-tag { display: block; margin: 0 0 .4rem; }
+.work-mini h3 { margin: 0 0 .3rem; font-size: clamp(1.2rem, 1.7vw, 1.5rem); font-weight: 500; letter-spacing: -.035em; }
+.work-mini-sub { display: block; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+.work-mini-arrow { font-size: 1.1rem; transition: transform .2s ease; }
+.work-mini:hover .work-mini-arrow, .work-mini:focus-visible .work-mini-arrow { transform: translateX(4px); }
+
+/* ---------- Van scripts naar systemen: uitklapbaar ---------- */
+.growth { margin-top: clamp(3rem, 6vw, 5rem); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+.growth summary { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem 2rem; padding: 1.3rem 0; cursor: pointer; list-style: none; }
+.growth summary::-webkit-details-marker { display: none; }
+.growth summary > span:first-child { font: 500 .82rem "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+.growth-toggle { margin-left: auto; width: 2.2rem; height: 2.2rem; display: grid; place-items: center; border: 1px solid var(--ink); border-radius: 50%; font-size: 1.1rem; transition: transform .25s ease, background .2s ease; }
+.growth summary:hover .growth-toggle { background: var(--acid); }
+.growth[open] .growth-toggle { transform: rotate(45deg); background: var(--acid); }
+.growth summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.growth .timeline { margin-top: 0; }
+
+@media (max-width: 900px) { footer .footer-nav { justify-self: start; } }
+@media (max-width: 760px) {
+  .work-index { grid-template-columns: 1fr; }
+  .work-mini:nth-child(odd) { border-right: 0; }
+  .work-mini:nth-child(even) { padding-left: 0; }
+  .work-mini { padding-right: 0; }
+}
+
+/* ---------- Agent Thomas op gsm: pas tonen na scrollen (anders ligt hij over de hero-knoppen) ---------- */
+@media (max-width: 600px) {
+  .agent-thomas { transition: opacity .3s ease, transform .3s ease; }
+  .agent-thomas:not(.at-ready) { opacity: 0; transform: translateY(1rem); pointer-events: none; }
+}
 
 /* ---------- Taalkiezer (lang.js) ---------- */
 .lang-switch { position: relative; }

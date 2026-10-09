@@ -267,6 +267,19 @@ if (bgm && soundBtn) {
     '</section>';
   document.body.appendChild(wrap);
 
+  // Op smalle schermen pas tonen na wat scrollen: anders ligt de avatar over de hero-knoppen
+  const markReady = () => {
+    if (window.scrollY < window.innerHeight * 0.4) return;
+    wrap.classList.add('at-ready');
+    window.removeEventListener('scroll', markReady);
+  };
+  if (document.querySelector('.hero') && window.matchMedia('(max-width: 600px)').matches) {
+    window.addEventListener('scroll', markReady, { passive: true });
+    markReady();
+  } else {
+    wrap.classList.add('at-ready');
+  }
+
   const panel = wrap.querySelector('.at-panel');
   const launcher = wrap.querySelector('.at-launcher');
   const closeBtn = wrap.querySelector('.at-close');

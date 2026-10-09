@@ -858,13 +858,13 @@
   ]
  },
  {
-  "nl": "Grote projecten",
+  "nl": "Meer projecten",
   "pages": [
    "index.html"
   ]
  },
  {
-  "nl": "Volwaardige tools en apps",
+  "nl": "Volwaardige tools, apps en hardware-experimenten",
   "pages": [
    "index.html"
   ]
@@ -878,12 +878,6 @@
  },
  {
   "nl": "Kennisomgeving voor GitHub-repositories met lokale AI",
-  "pages": [
-   "index.html"
-  ]
- },
- {
-  "nl": "Een visuele kennisomgeving die GitHub-repositories verzamelt, analyseert en verbindt — met Oogst, lokale AI en slimme suggesties. Geen cloud, jouw data blijft bij jou.",
   "pages": [
    "index.html"
   ]
@@ -911,12 +905,6 @@
   ]
  },
  {
-  "nl": "Een Obsidian-plugin die Repo Notebook naar je eigen vault brengt, met BRAT-releases en een MCP-koppeling voor AI-assistenten.",
-  "pages": [
-   "index.html"
-  ]
- },
- {
   "nl": "SECURITY · PYTHON · DOCKER",
   "pages": [
    "index.html"
@@ -933,12 +921,6 @@
  },
  {
   "nl": "Modulair security-dashboard",
-  "pages": [
-   "index.html"
-  ]
- },
- {
-  "nl": "Een modulair security-dashboard dat lokale AI, security-tools, OSINT en een geïsoleerd oefenlab achter één webinterface brengt. Als oefening in architectuur en integratie.",
   "pages": [
    "index.html"
   ]
@@ -966,12 +948,6 @@
   ]
  },
  {
-  "nl": "Een zelf-onderhoudende kennisbank die bronnen automatisch inleest, entiteiten en concepten extraheert en alles verbindt in een doorzoekbare kennisgraaf.",
-  "pages": [
-   "index.html"
-  ]
- },
- {
   "nl": "AGENTS · SPRAAK · GEBAREN",
   "pages": [
    "index.html",
@@ -989,12 +965,6 @@
  },
  {
   "nl": "Handsfree AI-command center (stem & gebaren)",
-  "pages": [
-   "index.html"
-  ]
- },
- {
-  "nl": "Een handsfree AI-command center dat aanvoelt als een tactical game — bestuurd met klappen, stem en handgebaren, op een lokaal brein.",
   "pages": [
    "index.html"
   ]
@@ -1020,7 +990,43 @@
   ]
  },
  {
-  "nl": "Fotorealistische beelden en video genereren met lokale AI — ComfyUI, eigen LoRA-training en afwerking, volledig op mijn eigen GPU.",
+  "nl": "ESP32 · FIRMWARE · HARDWARE",
+  "pages": [
+   "index.html",
+   "projecten/embedded.html"
+  ]
+ },
+ {
+  "nl": "Embedded experimenten",
+  "pages": [
+   "index.html",
+   "projecten/embedded.html",
+   "projecten/sirena.html",
+   "script.js"
+  ]
+ },
+ {
+  "nl": "Eigen ESP32-firmware & hardware",
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "nl": "SINGLE-FILE · TOOL · OPERATIONS",
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "nl": "Onderdelen Inventaris",
+  "pages": [
+   "index.html",
+   "projecten/embedded.html",
+   "projecten/onderdelen-inventaris.html"
+  ]
+ },
+ {
+  "nl": "Voorraadbeheer voor mijn elektronica-werkbank",
   "pages": [
    "index.html"
   ]
@@ -1187,72 +1193,6 @@
  },
  {
   "nl": "Uitgegroeid van glas-UI en voice-devstation tot een Flask-assistent met modelkeuze, avatar, stem en echte computeracties. Zie de projectpagina voor de evolutie.",
-  "pages": [
-   "index.html"
-  ]
- },
- {
-  "nl": "Kleinere tools & experimenten",
-  "pages": [
-   "index.html"
-  ]
- },
- {
-  "nl": "Hardware, firmware en losse tools",
-  "pages": [
-   "index.html"
-  ]
- },
- {
-  "nl": "ESP32 · FIRMWARE · HARDWARE",
-  "pages": [
-   "index.html",
-   "projecten/embedded.html"
-  ]
- },
- {
-  "nl": "Embedded experimenten",
-  "pages": [
-   "index.html",
-   "projecten/embedded.html",
-   "projecten/sirena.html",
-   "script.js"
-  ]
- },
- {
-  "nl": "Eigen ESP32-firmware & hardware",
-  "pages": [
-   "index.html"
-  ]
- },
- {
-  "nl": "Eigen firmware, displays en microcontrollers in tastbare apparaten — van ESP32-prototypes tot interactieve interfaces die met je software praten.",
-  "pages": [
-   "index.html"
-  ]
- },
- {
-  "nl": "SINGLE-FILE · TOOL · OPERATIONS",
-  "pages": [
-   "index.html"
-  ]
- },
- {
-  "nl": "Onderdelen Inventaris",
-  "pages": [
-   "index.html",
-   "projecten/embedded.html",
-   "projecten/onderdelen-inventaris.html"
-  ]
- },
- {
-  "nl": "Voorraadbeheer voor mijn elektronica-werkbank",
-  "pages": [
-   "index.html"
-  ]
- },
- {
-  "nl": "Eén snelle lokale app die bijhoudt welke onderdelen ik heb, waar ze liggen en wat er nog gekocht moet worden — met automatische te-kopen-lijst.",
   "pages": [
    "index.html"
   ]
