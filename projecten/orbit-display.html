@@ -7,6 +7,17 @@
     <meta name="description" content="Eén visueel commandocentrum dat mijn lokale AI-tools, automatiseringen, beveiligingsutility&#x27;s, skill-ontdekking en projectlaunchers samenbrengt in één navigeerbaar ecosysteem — met een draaiend wiel als navigatie." />
     <meta name="theme-color" content="#f3f0e8" />
     <link rel="canonical" href="https://thomashuybrechts.com/projecten/orbit-display.html" />
+    <!-- i18n:start · gegenereerd door docs/build-i18n.py, niet met de hand aanpassen -->
+    <link rel="alternate" hreflang="nl-BE" href="https://thomashuybrechts.com/projecten/orbit-display.html" />
+    <link rel="alternate" hreflang="en" href="https://thomashuybrechts.com/en/projecten/orbit-display.html" />
+    <link rel="alternate" hreflang="fr" href="https://thomashuybrechts.com/fr/projecten/orbit-display.html" />
+    <link rel="alternate" hreflang="de" href="https://thomashuybrechts.com/de/projecten/orbit-display.html" />
+    <link rel="alternate" hreflang="es" href="https://thomashuybrechts.com/es/projecten/orbit-display.html" />
+    <link rel="alternate" hreflang="pt" href="https://thomashuybrechts.com/pt/projecten/orbit-display.html" />
+    <link rel="alternate" hreflang="it" href="https://thomashuybrechts.com/it/projecten/orbit-display.html" />
+    <link rel="alternate" hreflang="x-default" href="https://thomashuybrechts.com/projecten/orbit-display.html" />
+    <script src="../lang.js"></script>
+    <!-- i18n:end -->
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="nl_BE" />
     <meta property="og:site_name" content="Thomas Huybrechts" />
@@ -258,21 +269,23 @@
   if(!root || root.dataset.ocwInit) return;
   root.dataset.ocwInit = "1";
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Vertaling via /i18n/<taal>.js (window.TH_I18N); Nederlands als fallback
+  var T = function(s){ return (window.TH_I18N && window.TH_I18N[s]) || s; };
 
   var TOOLS = [
-    { name:'Skill Finder', color:'#d7ff43', badge:'SF', status:'online', tag:'Lokale zoekmachine voor duizenden AI-skills.', metrics:[['Skills','5.147'],['Categorieën','30'],['Tags','24']], meta:['Lokaal · read-only','Laatst geïndexeerd · 4 min geleden'], open:'Skill Finder openen', actions:['Zoekindex','Herbouwen'] },
-    { name:'Aguara Audit', color:'#e06ad0', badge:'AG', status:'online', tag:'Visualiseert bevindingen uit lokale security-audits.', metrics:[['Audits','42'],['Findings','55','warn'],['Verdict','Review','warn']], meta:['Laatste audit · vandaag','Read-only rapportweergave'], open:'Audit-rapport openen', actions:['Exporteer','Herscan'] },
-    { name:'Thomas Cluster', color:'#818cf8', badge:'TC', status:'online', tag:'Orkestratie van de lokale AI- & automatiseringscluster.', metrics:[['Nodes','5'],['Services','18'],['Uptime','99,4%','ok']], meta:['Docker · n8n · Ollama','Master command center'], open:'Cluster-dashboard openen', actions:['Status','Herverbind'] },
-    { name:'Victus Core', color:'#65a7ff', badge:'VC', status:'online', tag:'Local-first operations-laag voor het AI-werkstation.', metrics:[['Processen','214'],['VRAM','61%','warn'],['Health','92','ok']], meta:['Intent map · desired vs observed','Persistente inventaris'], open:'Victus Core openen', actions:['Scan','Inventaris'] },
-    { name:'n8n Runtime', color:'#fb7185', badge:'N8', status:'online', tag:'Centrale automatiseringsmotor voor workflows.', metrics:[['Workflows','23'],['Runs vandaag','148','ok'],['Fouten','0','ok']], meta:['Automation HQ','Webhooks & schedules'], open:'Automatiseringen openen', actions:['Nieuwe flow','Logboek'] },
-    { name:'AI Inventaris', color:'#f5b73b', badge:'AI', status:'online', tag:'Overzicht van lokale modellen en hun verbruik.', metrics:[['Modellen','42'],['Op schijf','881 GB'],['Actief','3','ok']], meta:['Ollama & LM Studio','Gedeelde model-symlinks'], open:'Inventaris openen', actions:['Sorteer','Opruimen'] },
-    { name:'NeuroLinked', color:'#2dd4bf', badge:'NL', status:'online', tag:'Gedeeld AI-geheugen over meerdere assistenten.', metrics:[['Nodes','1.204'],['Links','3,9k'],['Query','38 ms','ok']], meta:['Kennisgraaf','Altijd-aan service'], open:'Brein openen', actions:['Verken','Voed'] },
-    { name:'ClawSecure', color:'#58b258', badge:'CS', status:'online', tag:'Web-beveiligingslaag met host- en origin-controle.', metrics:[['Regels','36'],['Geblokkeerd','12'],['Status','OK','ok']], meta:['Localhost-guard','CSRF & rebinding'], open:'Beveiliging openen', actions:['Regels','Log'] },
-    { name:'Trusted Pipeline', color:'#38d6c4', badge:'QP', status:'idle', tag:'Quarantaine → verificatie → vertrouwde bestanden.', metrics:[['In wacht','3','warn'],['Doorgelaten','128'],['Geweigerd','7','crit']], meta:['Sluimert · handmatig starten','Read-only overzicht'], open:'Pipeline openen', actions:['Herstart','Wachtrij'] },
-    { name:'FLUX Studio', color:'#a78bfa', badge:'FX', status:'idle', tag:'Beeldgeneratie-bundel op de lokale GPU.', metrics:[['Modellen','6'],['VRAM-piek','7,4 GB','warn'],['Wachtrij','0']], meta:['Sluimert · GPU vrijgegeven','ComfyUI-workflows'], open:'Studio openen', actions:['Wachtrij','Modellen'] },
-    { name:'Encyclopedia', color:'#ff5c35', badge:'EN', status:'online', tag:'14-punts kennisbank voor lokale AI-systemen.', metrics:[['Termen','318'],['Categorieën','14'],['Links','61']], meta:['Doorzoekbaar','Export naar Obsidian'], open:'Encyclopedie openen', actions:['Zoek','Exporteer'] },
-    { name:'claude-obsidian', color:'#7c6cf0', badge:'CO', status:'online', tag:'Koppeling tussen assistenten en je Obsidian-vault.', metrics:[['Notities','1,6k'],['Wikilinks','9,2k'],['Sync','Live','ok']], meta:['Tweerichtings-sync','MCP-server'], open:'Vault openen', actions:['Sync nu','Zijpaneel'] },
-    { name:'MD DropSort', color:'#65a7ff', badge:'MD', status:'online', tag:'Sleep-en-sorteer voor losse Markdown en downloads.', metrics:[['Wachtrij','9'],['Gesorteerd','2,4k'],['Regels','12']], meta:['Drop-map watcher','Client-side regels'], open:'DropSort openen', actions:['Sorteer nu','Regels'] }
+    { name:'Skill Finder', color:'#d7ff43', badge:'SF', status:'online', tag:T('Lokale zoekmachine voor duizenden AI-skills.'), metrics:[[T('Skills'),T('5.147')],[T('Categorieën'),T('30')],[T('Tags'),T('24')]], meta:[T('Lokaal · read-only'),T('Laatst geïndexeerd · 4 min geleden')], open:T('Skill Finder openen'), actions:[T('Zoekindex'),T('Herbouwen')] },
+    { name:'Aguara Audit', color:'#e06ad0', badge:'AG', status:'online', tag:T('Visualiseert bevindingen uit lokale security-audits.'), metrics:[[T('Audits'),T('42')],[T('Findings'),T('55'),'warn'],[T('Verdict'),T('Review'),'warn']], meta:[T('Laatste audit · vandaag'),T('Read-only rapportweergave')], open:T('Audit-rapport openen'), actions:[T('Exporteer'),T('Herscan')] },
+    { name:'Thomas Cluster', color:'#818cf8', badge:'TC', status:'online', tag:T('Orkestratie van de lokale AI- & automatiseringscluster.'), metrics:[[T('Nodes'),T('5')],[T('Services'),T('18')],[T('Uptime'),T('99,4%'),'ok']], meta:[T('Docker · n8n · Ollama'),T('Master command center')], open:T('Cluster-dashboard openen'), actions:[T('Status'),T('Herverbind')] },
+    { name:'Victus Core', color:'#65a7ff', badge:'VC', status:'online', tag:T('Local-first operations-laag voor het AI-werkstation.'), metrics:[[T('Processen'),T('214')],[T('VRAM'),T('61%'),'warn'],[T('Health'),T('92'),'ok']], meta:[T('Intent map · desired vs observed'),T('Persistente inventaris')], open:T('Victus Core openen'), actions:[T('Scan'),T('Inventaris')] },
+    { name:'n8n Runtime', color:'#fb7185', badge:'N8', status:'online', tag:T('Centrale automatiseringsmotor voor workflows.'), metrics:[[T('Workflows'),T('23')],[T('Runs vandaag'),T('148'),'ok'],[T('Fouten'),T('0'),'ok']], meta:[T('Automation HQ'),T('Webhooks & schedules')], open:T('Automatiseringen openen'), actions:[T('Nieuwe flow'),T('Logboek')] },
+    { name:'AI Inventaris', color:'#f5b73b', badge:'AI', status:'online', tag:T('Overzicht van lokale modellen en hun verbruik.'), metrics:[[T('Modellen'),T('42')],[T('Op schijf'),T('881 GB')],[T('Actief'),T('3'),'ok']], meta:[T('Ollama & LM Studio'),T('Gedeelde model-symlinks')], open:T('Inventaris openen'), actions:[T('Sorteer'),T('Opruimen')] },
+    { name:'NeuroLinked', color:'#2dd4bf', badge:'NL', status:'online', tag:T('Gedeeld AI-geheugen over meerdere assistenten.'), metrics:[[T('Nodes'),T('1.204')],[T('Links'),T('3,9k')],[T('Query'),T('38 ms'),'ok']], meta:[T('Kennisgraaf'),T('Altijd-aan service')], open:T('Brein openen'), actions:[T('Verken'),T('Voed')] },
+    { name:'ClawSecure', color:'#58b258', badge:'CS', status:'online', tag:T('Web-beveiligingslaag met host- en origin-controle.'), metrics:[[T('Regels'),T('36')],[T('Geblokkeerd'),T('12')],[T('Status'),T('OK'),'ok']], meta:[T('Localhost-guard'),T('CSRF & rebinding')], open:T('Beveiliging openen'), actions:[T('Regels'),T('Log')] },
+    { name:'Trusted Pipeline', color:'#38d6c4', badge:'QP', status:'idle', tag:T('Quarantaine → verificatie → vertrouwde bestanden.'), metrics:[[T('In wacht'),T('3'),'warn'],[T('Doorgelaten'),T('128')],[T('Geweigerd'),T('7'),'crit']], meta:[T('Sluimert · handmatig starten'),T('Read-only overzicht')], open:T('Pipeline openen'), actions:[T('Herstart'),T('Wachtrij')] },
+    { name:'FLUX Studio', color:'#a78bfa', badge:'FX', status:'idle', tag:T('Beeldgeneratie-bundel op de lokale GPU.'), metrics:[[T('Modellen'),T('6')],[T('VRAM-piek'),T('7,4 GB'),'warn'],[T('Wachtrij'),T('0')]], meta:[T('Sluimert · GPU vrijgegeven'),T('ComfyUI-workflows')], open:T('Studio openen'), actions:[T('Wachtrij'),T('Modellen')] },
+    { name:'Encyclopedia', color:'#ff5c35', badge:'EN', status:'online', tag:T('14-punts kennisbank voor lokale AI-systemen.'), metrics:[[T('Termen'),T('318')],[T('Categorieën'),T('14')],[T('Links'),T('61')]], meta:[T('Doorzoekbaar'),T('Export naar Obsidian')], open:T('Encyclopedie openen'), actions:[T('Zoek'),T('Exporteer')] },
+    { name:'claude-obsidian', color:'#7c6cf0', badge:'CO', status:'online', tag:T('Koppeling tussen assistenten en je Obsidian-vault.'), metrics:[[T('Notities'),T('1,6k')],[T('Wikilinks'),T('9,2k')],[T('Sync'),T('Live'),'ok']], meta:[T('Tweerichtings-sync'),T('MCP-server')], open:T('Vault openen'), actions:[T('Sync nu'),T('Zijpaneel')] },
+    { name:'MD DropSort', color:'#65a7ff', badge:'MD', status:'online', tag:T('Sleep-en-sorteer voor losse Markdown en downloads.'), metrics:[[T('Wachtrij'),T('9')],[T('Gesorteerd'),T('2,4k')],[T('Regels'),T('12')]], meta:[T('Drop-map watcher'),T('Client-side regels')], open:T('DropSort openen'), actions:[T('Sorteer nu'),T('Regels')] }
   ];
   var N = TOOLS.length;
   function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
@@ -282,11 +295,11 @@
   (function(){
     var online = TOOLS.filter(function(t){return t.status==='online';}).length;
     document.getElementById('ocwStats').innerHTML =
-      '<div class="ocw-stat"><span class="n">'+N+'</span><span class="l">modules</span></div>'+
+      '<div class="ocw-stat"><span class="n">'+N+'</span><span class="l">'+T('modules')+'</span></div>'+
       '<div class="ocw-stat ok"><span class="n">'+online+'</span><span class="l">online</span></div>'+
-      '<div class="ocw-stat warn"><span class="n">'+(N-online)+'</span><span class="l">sluimeren</span></div>'+
-      '<div class="ocw-stat lime"><span class="n">5.147</span><span class="l">skills geïndexeerd</span></div>'+
-      '<div class="ocw-stat"><span class="n">3</span><span class="l">GPU-taken</span></div>';
+      '<div class="ocw-stat warn"><span class="n">'+(N-online)+'</span><span class="l">'+T('sluimeren')+'</span></div>'+
+      '<div class="ocw-stat lime"><span class="n">'+T('5.147')+'</span><span class="l">'+T('skills geïndexeerd')+'</span></div>'+
+      '<div class="ocw-stat"><span class="n">3</span><span class="l">'+T('GPU-taken')+'</span></div>';
   })();
 
   var track = document.getElementById('ocwTrack');
@@ -311,7 +324,7 @@
       b.type='button'; b.className='ocw-node';
       b.style.setProperty('--nc', t.color);
       b.dataset.i=i;
-      b.setAttribute('aria-label', t.name+' — '+(t.status==='online'?'online':'sluimert'));
+      b.setAttribute('aria-label', t.name+' — '+(t.status==='online'?'online':T('sluimert')));
       b.innerHTML='<span class="dot"></span>'+(t.status!=='online'?'<span class="alarm"></span>':'')+'<span>'+esc(t.name)+'</span>';
       b.addEventListener('click', function(e){ e.stopPropagation(); spinTo(i); });
       track.appendChild(b);
@@ -347,7 +360,7 @@
     var metrics = t.metrics.map(function(m){ var tone=m[2]?' '+m[2]:''; return '<div class="ocw-metric'+tone+'"><span class="ml">'+esc(m[0])+'</span><span class="mv">'+esc(m[1])+'</span></div>'; }).join('');
     var meta = t.meta.map(function(m){ return '<li>'+ICON_META+'<span>'+esc(m)+'</span></li>'; }).join('');
     var actions = t.actions.map(function(a){ return '<button type="button" class="ocw-qa" data-copy="'+esc(a)+'">'+ICON_TAG+'<span>'+esc(a)+'</span></button>'; }).join('');
-    var lc = t.status==='online'?'online':'idle', lt = t.status==='online'?'online':'sluimert';
+    var lc = t.status==='online'?'online':'idle', lt = t.status==='online'?'online':T('sluimert');
     center.innerHTML =
       '<div class="ocw-c-top"><div class="ocw-c-badge">'+esc(t.badge)+'</div><div class="ocw-c-title">'+
       '<h4>'+esc(t.name)+'<span class="ocw-live-pill '+lc+'"><span class="d"></span>'+lt+'</span></h4>'+
@@ -360,7 +373,7 @@
       btn.addEventListener('click', function(){
         try{ if(navigator.clipboard) navigator.clipboard.writeText('Orbit · '+btn.dataset.copy+' (demo)'); }catch(e){}
         var span=btn.querySelector('span'), prev=span.textContent;
-        btn.classList.add('copied'); span.textContent='Gekopieerd (demo)';
+        btn.classList.add('copied'); span.textContent=T('Gekopieerd (demo)');
         setTimeout(function(){ btn.classList.remove('copied'); span.textContent=prev; }, 1200);
       });
     });
@@ -371,7 +384,7 @@
       var m = t.metrics.slice(0,2).map(function(x){ return '<span>'+esc(x[0])+'<b>'+esc(x[1])+'</b></span>'; }).join('');
       return '<button type="button" class="ocw-gcard" data-i="'+i+'" style="--nc:'+t.color+'">'+
         '<div class="gh"><span class="nm"><span class="dot"></span>'+esc(t.name)+'</span>'+
-        '<span class="ocw-live-pill '+(t.status==='online'?'online':'idle')+'"><span class="d"></span>'+(t.status==='online'?'online':'sluimert')+'</span></div>'+
+        '<span class="ocw-live-pill '+(t.status==='online'?'online':'idle')+'"><span class="d"></span>'+(t.status==='online'?'online':T('sluimert'))+'</span></div>'+
         '<div class="gt">'+esc(t.tag)+'</div><div class="gm">'+m+'</div></button>';
     }).join('');
     grid.querySelectorAll('.ocw-gcard').forEach(function(c){

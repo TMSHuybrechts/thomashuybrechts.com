@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es" data-root="../../">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repo Notebook para Obsidian — proyecto de Thomas Huybrechts</title>
+    <meta name="description" content="Un plugin de Obsidian que lleva Repo Notebook a tu propio vault, con releases vía BRAT y una integración MCP para que los asistentes de IA trabajen directamente con tus notas." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="canonical" href="https://thomashuybrechts.com/es/projecten/repo-notebook-obsidian.html" />
+    <!-- i18n:start · gegenereerd door docs/build-i18n.py, niet met de hand aanpassen -->
+    <link rel="alternate" hreflang="nl-BE" href="https://thomashuybrechts.com/projecten/repo-notebook-obsidian.html" />
+    <link rel="alternate" hreflang="en" href="https://thomashuybrechts.com/en/projecten/repo-notebook-obsidian.html" />
+    <link rel="alternate" hreflang="fr" href="https://thomashuybrechts.com/fr/projecten/repo-notebook-obsidian.html" />
+    <link rel="alternate" hreflang="de" href="https://thomashuybrechts.com/de/projecten/repo-notebook-obsidian.html" />
+    <link rel="alternate" hreflang="es" href="https://thomashuybrechts.com/es/projecten/repo-notebook-obsidian.html" />
+    <link rel="alternate" hreflang="pt" href="https://thomashuybrechts.com/pt/projecten/repo-notebook-obsidian.html" />
+    <link rel="alternate" hreflang="it" href="https://thomashuybrechts.com/it/projecten/repo-notebook-obsidian.html" />
+    <link rel="alternate" hreflang="x-default" href="https://thomashuybrechts.com/projecten/repo-notebook-obsidian.html" />
+    <script src="../../i18n/es.js"></script>
+    <script src="../../lang.js"></script>
+    <!-- i18n:end -->
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="Repo Notebook para Obsidian — Thomas Huybrechts" />
+    <meta property="og:description" content="Un plugin de Obsidian que lleva Repo Notebook a tu propio vault, con releases vía BRAT y una integración MCP para que los asistentes de IA trabajen directamente con tus notas." />
+    <meta property="og:url" content="https://thomashuybrechts.com/es/projecten/repo-notebook-obsidian.html" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script src="../../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Repo Notebook para Obsidian",
+      "description": "Un plugin de Obsidian que lleva Repo Notebook a tu propio vault, con releases vía BRAT y una integración MCP para que los asistentes de IA trabajen directamente con tus notas.",
+      "url": "https://thomashuybrechts.com/es/projecten/repo-notebook-obsidian.html",
+      "author": {
+        "@type": "Person",
+        "name": "Thomas Huybrechts",
+        "url": "https://thomashuybrechts.com/"
+      },
+      "inLanguage": "es"
+    }
+    </script>
+  </head>
+  <body class="project-page">
+    <a class="skip-link" href="#inhoud">Ir al contenido</a>
+
+    <header class="site-header" id="header">
+      <a class="brand" href="../" aria-label="Thomas Huybrechts, a la página de inicio">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Navegación principal">
+        <a href="../#over">Sobre mí</a>
+        <a href="../#doen">Qué hago</a>
+        <a href="../#projecten">Proyectos</a>
+        <a href="../#profiel">Perfil</a>
+        <a class="nav-contact" href="../#contact">Contacto</a>
+      </nav>
+      <div class="header-right">
+        <a class="app-chip" href="../../repo-notebook/" title="Repo Notebook — ver la web">
+          <img src="../../repo-notebook/favicon.svg" alt="Repo Notebook" width="22" height="22" />
+        </a>
+        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Reproducir música">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="sound-label">Sonido</span>
+        </button>
+        <audio id="bgm" src="../../assets/audio/lemons.mp3" loop preload="none"></audio>
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <article>
+        <section class="section project-hero">
+          <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> Todos los proyectos</a>
+          <p class="work-tag">OBSIDIAN · PLUGIN · MCP</p>
+          <h1>Repo Notebook para Obsidian</h1>
+          <p class="project-intro">Un plugin de Obsidian que lleva Repo Notebook a tu propio vault, con releases vía BRAT y una integración MCP para que los asistentes de IA trabajen directamente con tus notas.</p>
+          <dl class="project-meta">
+            <div><dt>Tipo</dt><dd>Plugin de Obsidian</dd></div>
+            <div><dt>Estado</dt><dd>En desarrollo activo</dd></div>
+            <div><dt>Rol</dt><dd>Diseño y desarrollo</dd></div>
+            <div><dt>Stack</dt><dd>TypeScript · Obsidian API · BRAT · MCP</dd></div>
+          </dl>
+          <div class="project-result"><span class="lbl">RESULTADO</span><p>Conocimiento de repos y una integración de IA (MCP) directamente en tu vault de Obsidian, con releases vía BRAT.</p></div>
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:hey@thomashuybrechts.com?subject=Sobre%20Repo%20Notebook%20para%20Obsidian">Háblame de esto <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#details">Lee cómo funciona <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+
+        <section class="project-gallery" aria-label="Imágenes de Repo Notebook para Obsidian">
+          <figure class="reveal gallery-main">
+            <img src="../../assets/projects/repo-graph.jpg" alt="El grafo de conocimiento en Obsidian — cada repo guardado se convierte en una nota, con wikilinks que lo conectan todo (vista de ejemplo alejada)" loading="eager" decoding="async" />
+            <figcaption>El grafo de conocimiento en Obsidian — cada repo guardado se convierte en una nota, con wikilinks que lo conectan todo (vista de ejemplo alejada)</figcaption>
+          </figure>
+        </section>
+
+        <section class="section project-details" id="details">
+          <div class="project-columns">
+            <div class="reveal">
+              <div class="section-label"><span>01</span> EL PROBLEMA</div>
+              <p class="project-text">Muchos makers viven en Obsidian. Una app de escritorio aparte es entonces un sitio de más. El conocimiento sobre repositorios debe estar junto a tus otras notas — consultable, enlazable y tuyo.</p>
+            </div>
+            <div class="reveal">
+              <div class="section-label"><span>02</span> QUÉ HACE</div>
+              <dl class="feature-list">
+                <div><dt>Todo en tu vault</dt><dd>Los repositorios se convierten en notas Markdown normales con frontmatter. Funcionan con tus tags, enlaces y graph view de siempre.</dd></div>
+                <div><dt>Releases vía BRAT</dt><dd>Instalar y actualizar vía BRAT, sin esperar a la community store oficial. Iteración rápida con usuarios reales.</dd></div>
+                <div><dt>Integración MCP</dt><dd>Un servidor MCP hace el vault accesible para asistentes de IA como Claude: buscar en tus notas de repos, pedir resúmenes, dejar que añadan sugerencias.</dd></div>
+                <div><dt>El mismo cerebro que Repo Notebook</dt><dd>La lógica de análisis y sugerencias se comparte con la app de escritorio, para que ambas den la misma calidad.</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="project-learned reveal">
+            <div class="section-label"><span>03</span> LO QUE APRENDÍ</div>
+            <blockquote class="learned">Construir un plugin te obliga a hacer tu núcleo pequeño y portable. Lo que en la app de escritorio iba ‘solo’, aquí tuvo que volverse explícito y testeable — y eso también mejoró la app de escritorio.</blockquote>
+          </div>
+        </section>
+
+        <section class="contact contact-compact" id="contact">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">¿TE INTERESA?</p>
+            <h2>Vamos a <em>hablar</em>.</h2>
+            <p class="contact-sub">Dime qué te parece — o qué te gustaría hacer con ello.</p>
+            <div class="contact-actions">
+              <a class="button button-light" href="mailto:hey@thomashuybrechts.com?subject=Sobre%20Repo%20Notebook%20para%20Obsidian">Contáctame <span aria-hidden="true">↗</span></a>
+              <a class="next-project" href="./cyberdash.html">Siguiente proyecto: <b>CyberDash</b> <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <a href="../#over">Sobre mí</a>
+        <a href="../#doen">Qué hago</a>
+        <a href="../#projecten">Proyectos</a>
+        <a href="../#profiel">Perfil</a>
+        <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/thomas-huybrechts-a14277105" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:hey@thomashuybrechts.com">Correo</a>
+      </nav>
+      <p>© <span id="year"></span> Thomas Huybrechts · Creador digital, Bélgica · Construido con curiosidad.</p>
+    </footer>
+  <script data-goatcounter="https://thomashuybrechts.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

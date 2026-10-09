@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt" data-root="../../">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLM Wiki — projeto de Thomas Huybrechts</title>
+    <meta name="description" content="Uma base de conhecimento que se mantém sozinha: as fontes são lidas automaticamente, as entidades e os conceitos extraídos, e tudo é ligado num grafo de conhecimento pesquisável." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="canonical" href="https://thomashuybrechts.com/pt/projecten/llm-wiki.html" />
+    <!-- i18n:start · gegenereerd door docs/build-i18n.py, niet met de hand aanpassen -->
+    <link rel="alternate" hreflang="nl-BE" href="https://thomashuybrechts.com/projecten/llm-wiki.html" />
+    <link rel="alternate" hreflang="en" href="https://thomashuybrechts.com/en/projecten/llm-wiki.html" />
+    <link rel="alternate" hreflang="fr" href="https://thomashuybrechts.com/fr/projecten/llm-wiki.html" />
+    <link rel="alternate" hreflang="de" href="https://thomashuybrechts.com/de/projecten/llm-wiki.html" />
+    <link rel="alternate" hreflang="es" href="https://thomashuybrechts.com/es/projecten/llm-wiki.html" />
+    <link rel="alternate" hreflang="pt" href="https://thomashuybrechts.com/pt/projecten/llm-wiki.html" />
+    <link rel="alternate" hreflang="it" href="https://thomashuybrechts.com/it/projecten/llm-wiki.html" />
+    <link rel="alternate" hreflang="x-default" href="https://thomashuybrechts.com/projecten/llm-wiki.html" />
+    <script src="../../i18n/pt.js"></script>
+    <script src="../../lang.js"></script>
+    <!-- i18n:end -->
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="LLM Wiki — Thomas Huybrechts" />
+    <meta property="og:description" content="Uma base de conhecimento que se mantém sozinha: as fontes são lidas automaticamente, as entidades e os conceitos extraídos, e tudo é ligado num grafo de conhecimento pesquisável." />
+    <meta property="og:url" content="https://thomashuybrechts.com/pt/projecten/llm-wiki.html" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script src="../../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "LLM Wiki",
+      "description": "Uma base de conhecimento que se mantém sozinha: as fontes são lidas automaticamente, as entidades e os conceitos extraídos, e tudo é ligado num grafo de conhecimento pesquisável.",
+      "url": "https://thomashuybrechts.com/pt/projecten/llm-wiki.html",
+      "author": {
+        "@type": "Person",
+        "name": "Thomas Huybrechts",
+        "url": "https://thomashuybrechts.com/"
+      },
+      "inLanguage": "pt"
+    }
+    </script>
+  </head>
+  <body class="project-page">
+    <a class="skip-link" href="#inhoud">Saltar para o conteúdo</a>
+
+    <header class="site-header" id="header">
+      <a class="brand" href="../" aria-label="Thomas Huybrechts, ir para a página inicial">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Navegação principal">
+        <a href="../#over">Sobre</a>
+        <a href="../#doen">O que faço</a>
+        <a href="../#projecten">Projetos</a>
+        <a href="../#profiel">Perfil</a>
+        <a class="nav-contact" href="../#contact">Contacto</a>
+      </nav>
+      <div class="header-right">
+        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Reproduzir música">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="sound-label">Som</span>
+        </button>
+        <audio id="bgm" src="../../assets/audio/lemons.mp3" loop preload="none"></audio>
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Abrir menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <article>
+        <section class="section project-hero">
+          <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> Todos os projetos</a>
+          <p class="work-tag">IA LOCAL · GRAFO DE CONHECIMENTO · AUTO-INGEST</p>
+          <h1>LLM Wiki</h1>
+          <p class="project-intro">Uma base de conhecimento que se mantém sozinha: as fontes são lidas automaticamente, as entidades e os conceitos extraídos, e tudo é ligado num grafo de conhecimento pesquisável.</p>
+          <dl class="project-meta">
+            <div><dt>Tipo</dt><dd>Base de conhecimento + grafo de conhecimento</dd></div>
+            <div><dt>Estado</dt><dd>Em uso ativo</dd></div>
+            <div><dt>Função</dt><dd>Conceito, design &amp; desenvolvimento</dd></div>
+            <div><dt>Stack</dt><dd>IA local · Python · Markdown · visualização de grafos</dd></div>
+          </dl>
+          <div class="project-result"><span class="lbl">RESULTADO</span><p>Fontes lidas automaticamente e ligadas num grafo de conhecimento com centenas de nós — totalmente local.</p></div>
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:hey@thomashuybrechts.com?subject=Sobre%20LLM%20Wiki">Fale comigo sobre isto <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#details">Leia como funciona <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+
+        <section class="project-gallery" aria-label="Imagens da LLM Wiki">
+          <figure class="reveal gallery-main">
+            <img src="../../assets/projects/llm-wiki-graph.webp" alt="O grafo de conhecimento: fontes, entidades, conceitos e sínteses ligados por centenas de relações (vista sem etiquetas)" loading="eager" decoding="async" />
+            <figcaption>O grafo de conhecimento: fontes, entidades, conceitos e sínteses ligados por centenas de relações (vista sem etiquetas)</figcaption>
+          </figure>
+        </section>
+
+        <section class="section project-details" id="details">
+          <div class="project-columns">
+            <div class="reveal">
+              <div class="section-label"><span>01</span> O PROBLEMA</div>
+              <p class="project-text">O conhecimento fica disperso por notas, documentos e conversas. Queria um sistema que lesse, resumisse e ligasse fontes automaticamente — para que a visão geral crescesse em vez de se diluir.</p>
+            </div>
+            <div class="reveal">
+              <div class="section-label"><span>02</span> O QUE FAZ</div>
+              <dl class="feature-list">
+                <div><dt>Ingest automático</dt><dd>Largue uma fonte na inbox e a wiki lê-a: resumo, afirmações principais, entidades e conceitos são extraídos automaticamente.</dd></div>
+                <div><dt>Grafo de conhecimento</dt><dd>Tudo é ligado num grafo pesquisável com centenas de nós e relações, com tipos próprios para fontes, entidades, conceitos e sínteses.</dd></div>
+                <div><dt>Síntese viva</dt><dd>Uma página de visão geral é reescrita a cada ingest, para que o fio condutor entre todas as fontes se mantenha atual.</dd></div>
+                <div><dt>Local &amp; privado</dt><dd>Corre em IA local; toda a base de conhecimento fica na sua própria máquina.</dd></div>
+                <div><dt>Mantida saudável</dt><dd>Verificações integradas de páginas órfãs, links partidos e contradições mantêm a base de conhecimento consistente.</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="project-learned reveal">
+            <div class="section-label"><span>03</span> O QUE APRENDI</div>
+            <blockquote class="learned">O valor não estava em ainda mais notas, mas nas ligações entre elas. Assim que ingest, grafo e síntese trabalharam juntos, uma coleção solta de documentos tornou-se um verdadeiro sistema de conhecimento.</blockquote>
+          </div>
+        </section>
+
+        <section class="contact contact-compact" id="contact">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">INTERESSADO?</p>
+            <h2>Vamos <em>conversar</em>.</h2>
+            <p class="contact-sub">Diga-me o que acha — ou o que gostaria de fazer com isto.</p>
+            <div class="contact-actions">
+              <a class="button button-light" href="mailto:hey@thomashuybrechts.com?subject=Sobre%20LLM%20Wiki">Contacte-me <span aria-hidden="true">↗</span></a>
+              <a class="next-project" href="./jarvis.html">Próximo projeto: <b>Jarvis</b> <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="../#over">Sobre</a>
+        <a href="../#doen">O que faço</a>
+        <a href="../#projecten">Projetos</a>
+        <a href="../#profiel">Perfil</a>
+        <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/thomas-huybrechts-a14277105" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:hey@thomashuybrechts.com">E-mail</a>
+      </nav>
+      <p>© <span id="year"></span> Thomas Huybrechts · Criador digital, Bélgica · Construído com curiosidade.</p>
+    </footer>
+  <script data-goatcounter="https://thomashuybrechts.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -61,5 +61,19 @@ Updaten = bestanden aanpassen en pushen; binnen een minuut staat het live.
 
 Alternatieven: Cloudflare Pages of Netlify (map slepen, gratis), of de webhosting van je registrar (bestanden via FTP/bestandsbeheer in de `www`-map zetten). Controleer na publicatie de social preview via bv. opengraph.xyz en de structured data via de Rich Results Test van Google.
 
+## Talen (NL + EN, FR, DE, ES, PT, IT)
+
+Nederlands is de bron en staat in de root; elke vertaling is een volledige kopie in `/en/`, `/fr/`, `/de/`, `/es/`, `/pt/`, `/it/` (eigen URL + hreflang, goed voor Google). De taalkiezer met vlaggen (`lang.js`, vlaggen in `assets/flags/`) onthoudt de keuze in de browser: wie een andere taal koos, wordt vanaf de Nederlandse pagina's automatisch doorgestuurd.
+
+Na elke tekstwijziging:
+
+```powershell
+python docs/build-projects.py      # alleen als je projectdata aanpaste
+python docs/build-i18n.py extract  # toont welke teksten nog niet vertaald zijn
+python docs/build-i18n.py build    # schrijft alle taalmappen, /i18n/*.js en sitemap.xml
+```
+
+Vertalingen staan in `docs/i18n/<taal>.json` (sleutel = Nederlandse tekst). Nieuwe of gewijzigde teksten zonder vertaling blijven in het Nederlands staan tot ze in die JSON-bestanden zijn toegevoegd. Pas nooit de bestanden in de taalmappen met de hand aan: die worden bij elke build overschreven. JavaScript-teksten zijn vertaalbaar via `t('...')` (script.js) of `T('...')` (inline scripts).
+
 ## Repo Notebook branding
 De productsite in `repo-notebook/` deelt de papier-, inkt- en limoenkleuren en typografie van de hoofdsite. Zie [merkafspraken](docs/product/repo-notebook-branding.md). De hoofdsite en desktop-app behouden hun bestaande gedrag.

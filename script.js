@@ -2,6 +2,10 @@
 // als je index.html gewoon opent zonder werkende JavaScript).
 document.documentElement.classList.add('js');
 
+// Vertalingen: /i18n/<taal>.js zet window.TH_I18N (Nederlandse tekst -> vertaling).
+// Op de Nederlandse pagina's bestaat die niet en blijft alles Nederlands.
+const t = s => (window.TH_I18N && window.TH_I18N[s]) || s;
+
 // Jaar in de footer
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
@@ -34,13 +38,13 @@ const toggle = document.querySelector('.menu-toggle');
 const closeMenu = () => {
   nav.classList.remove('is-open');
   toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-label', 'Menu openen');
+  toggle.setAttribute('aria-label', t('Menu openen'));
 };
 toggle.addEventListener('click', () => {
   const open = !nav.classList.contains('is-open');
   nav.classList.toggle('is-open', open);
   toggle.setAttribute('aria-expanded', String(open));
-  toggle.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+  toggle.setAttribute('aria-label', open ? t('Menu sluiten') : t('Menu openen'));
 });
 nav.addEventListener('click', e => e.target.closest('a') && closeMenu());
 document.addEventListener('keydown', e => e.key === 'Escape' && closeMenu());
@@ -78,8 +82,8 @@ if (copyBtn) {
     try {
       await navigator.clipboard.writeText(copyBtn.dataset.email);
       copyBtn.classList.add('is-copied');
-      hint.textContent = 'gekopieerd';
-      setTimeout(() => { copyBtn.classList.remove('is-copied'); hint.textContent = 'kopieer'; }, 2000);
+      hint.textContent = t('gekopieerd');
+      setTimeout(() => { copyBtn.classList.remove('is-copied'); hint.textContent = t('kopieer'); }, 2000);
     } catch {
       window.location.href = 'mailto:' + copyBtn.dataset.email;
     }
@@ -93,9 +97,9 @@ if (bgm && soundBtn) {
   bgm.volume = 0.35;
   soundBtn.addEventListener('click', async () => {
     if (bgm.paused) {
-      try { await bgm.play(); soundBtn.setAttribute('aria-pressed', 'true'); soundBtn.setAttribute('aria-label', 'Muziek pauzeren'); } catch {}
+      try { await bgm.play(); soundBtn.setAttribute('aria-pressed', 'true'); soundBtn.setAttribute('aria-label', t('Muziek pauzeren')); } catch {}
     } else {
-      bgm.pause(); soundBtn.setAttribute('aria-pressed', 'false'); soundBtn.setAttribute('aria-label', 'Muziek afspelen');
+      bgm.pause(); soundBtn.setAttribute('aria-pressed', 'false'); soundBtn.setAttribute('aria-label', t('Muziek afspelen'));
     }
   });
 }
@@ -106,9 +110,10 @@ if (bgm && soundBtn) {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isProj = location.pathname.includes('/projecten/');
   const rel = isProj ? '../' : '';
+  const rootRel = document.documentElement.dataset.root || rel; // data-root staat op vertaalde pagina's (een map dieper)
   const URLS = {
-    cv: rel + 'assets/thomas-huybrechts-cv.pdf',
-    ava: rel + 'assets/agent-thomas.jpg',
+    cv: rootRel + 'assets/thomas-huybrechts-cv.pdf',
+    ava: rootRel + 'assets/agent-thomas.jpg',
     mail: 'mailto:hey@thomashuybrechts.com?subject=Contact%20via%20thomashuybrechts.com',
     gmail: 'https://mail.google.com/mail/?view=cm&fs=1&to=hey%40thomashuybrechts.com&su=Contact%20via%20thomashuybrechts.com',
     github: 'https://github.com/TMSHuybrechts',
@@ -118,21 +123,21 @@ if (bgm && soundBtn) {
   };
 
   const PROJECTS = {
-    'orbit-display': ['Orbit Display', 'één draaiend command-wiel dat al mijn lokale AI-tools, automatiseringen en beveiliging samenbrengt'],
-    'victus-control': ['Victus Control', 'een local-first ops-platform met een intent-map: wat je wílt draaien vs. wat er écht draait'],
-    'thomas-cluster': ['Thomas Cluster', 'één master command center voor mijn hele lokale AI-cluster (Docker, n8n, Ollama, ComfyUI)'],
-    'repo-notebook': ['Repo Notebook', 'een Electron-app die GitHub-repos verzamelt, analyseert en verbindt — met lokale AI'],
-    'repo-notebook-obsidian': ['Repo Notebook voor Obsidian', 'dezelfde kennisomgeving als plugin in je eigen Obsidian-vault, met MCP'],
-    'cyberdash': ['CyberDash', 'een modulair security-dashboard — mijn oefening in architectuur & integratie'],
-    'llm-wiki': ['LLM Wiki', 'een zelf-onderhoudende kennisbank die bronnen inleest en verbindt in een kennisgraaf'],
-    'jarvis': ['Jarvis', 'een handsfree AI-command center: bestuurd met klappen, stem én handgebaren'],
-    'sirena': ['Sirena', 'een Vlaamse desktopassistent met stem, avatar en échte computeracties'],
-    'embedded': ['Embedded experimenten', 'eigen ESP32-firmware, displays en microcontrollers in tastbare toestellen'],
+    'orbit-display': [t('Orbit Display'), t('één draaiend command-wiel dat al mijn lokale AI-tools, automatiseringen en beveiliging samenbrengt')],
+    'victus-control': [t('Victus Control'), t('een local-first ops-platform met een intent-map: wat je wílt draaien vs. wat er écht draait')],
+    'thomas-cluster': [t('Thomas Cluster'), t('één master command center voor mijn hele lokale AI-cluster (Docker, n8n, Ollama, ComfyUI)')],
+    'repo-notebook': [t('Repo Notebook'), t('een Electron-app die GitHub-repos verzamelt, analyseert en verbindt — met lokale AI')],
+    'repo-notebook-obsidian': [t('Repo Notebook voor Obsidian'), t('dezelfde kennisomgeving als plugin in je eigen Obsidian-vault, met MCP')],
+    'cyberdash': [t('CyberDash'), t('een modulair security-dashboard — mijn oefening in architectuur & integratie')],
+    'llm-wiki': [t('LLM Wiki'), t('een zelf-onderhoudende kennisbank die bronnen inleest en verbindt in een kennisgraaf')],
+    'jarvis': [t('Jarvis'), t('een handsfree AI-command center: bestuurd met klappen, stem én handgebaren')],
+    'sirena': [t('Sirena'), t('een Vlaamse desktopassistent met stem, avatar en échte computeracties')],
+    'embedded': [t('Embedded experimenten'), t('eigen ESP32-firmware, displays en microcontrollers in tastbare toestellen')],
   };
 
   const LABELS = {
-    cv: '📄 Bekijk cv', projects: '🚀 Toon projecten', skills: '🤔 Wat doe je?',
-    contact: '✉️ Contact', tools: '🧰 Gereedschap', about: '👋 Wie ben je?',
+    cv: t('📄 Bekijk cv'), projects: t('🚀 Toon projecten'), skills: t('🤔 Wat doe je?'),
+    contact: t('✉️ Contact'), tools: t('🧰 Gereedschap'), about: t('👋 Wie ben je?'),
   };
   Object.keys(PROJECTS).forEach(s => { LABELS[s] = PROJECTS[s][0]; });
 
@@ -142,56 +147,56 @@ if (bgm && soundBtn) {
     const p = PROJECTS[slug];
     return {
       text: '<b>' + p[0] + '</b> — ' + p[1] + '.',
-      actions: [A('Bekijk project →', URLS.project(slug))],
+      actions: [A(t('Bekijk project →'), URLS.project(slug))],
       chips: ['projects', 'contact'],
     };
   }
 
   const ANSWERS = {
     greeting: () => ({
-      text: 'Hoi! Welkom op mijn pagina 👋\nIk ben Agent Thomas — een AI-gids. Wil je mijn cv zien, of kijk je liever wat rond?',
+      text: t('Hoi! Welkom op mijn pagina 👋\nIk ben Agent Thomas — een AI-gids. Wil je mijn cv zien, of kijk je liever wat rond?'),
       chips: ['cv', 'projects', 'skills', 'contact'],
     }),
     cv: () => ({
-      text: 'Mijn cv staat klaar als PDF — meteen te downloaden 👇\nKort: digitale maker uit Meerhout, teamlead Production & Operations, met een brede tech-gereedschapskist — AI-agents, software én hardware.',
-      actions: [A('📄 Download cv (PDF)', URLS.cv, { dl: true }), A('Bekijk profiel', URLS.sec('profiel'))],
+      text: t('Mijn cv staat klaar als PDF — meteen te downloaden 👇\nKort: digitale maker uit Meerhout, teamlead Production & Operations, met een brede tech-gereedschapskist — AI-agents, software én hardware.'),
+      actions: [A(t('📄 Download cv (PDF)'), URLS.cv, { dl: true }), A(t('Bekijk profiel'), URLS.sec('profiel'))],
       chips: ['skills', 'projects', 'contact'],
     }),
     projects: () => ({
-      text: 'Ik bouw lokale AI, dashboards, tools én hardware. Mijn uitgelichte projecten:',
-      actions: [A('Orbit Display', URLS.project('orbit-display')), A('Victus Control', URLS.project('victus-control')), A('Thomas Cluster', URLS.project('thomas-cluster')), A('Alle projecten →', URLS.sec('projecten'))],
+      text: t('Ik bouw lokale AI, dashboards, tools én hardware. Mijn uitgelichte projecten:'),
+      actions: [A(t('Orbit Display'), URLS.project('orbit-display')), A(t('Victus Control'), URLS.project('victus-control')), A(t('Thomas Cluster'), URLS.project('thomas-cluster')), A(t('Alle projecten →'), URLS.sec('projecten'))],
       chips: ['repo-notebook', 'jarvis', 'llm-wiki', 'cyberdash'],
     }),
     skills: () => ({
-      text: 'Drie dingen waar je mij voor inschakelt:\n① AI-agents & automatisering — lokale LLM’s, MCP, n8n\n② Producten & prototypes — Electron-apps, plugins, tools\n③ Hardware & embedded — ESP32, firmware, sensoren\nVaak combineer ik ze.',
+      text: t('Drie dingen waar je mij voor inschakelt:\n① AI-agents & automatisering — lokale LLM’s, MCP, n8n\n② Producten & prototypes — Electron-apps, plugins, tools\n③ Hardware & embedded — ESP32, firmware, sensoren\nVaak combineer ik ze.'),
       chips: ['tools', 'projects', 'contact'],
     }),
     tools: () => ({
-      text: 'Mijn gereedschapskist:\n• AI: n8n, Ollama & lokale LLM’s, MCP, agents\n• Software: Python, JavaScript, Electron, Git\n• Systemen: Linux, Windows, Proxmox, Tailscale\n• Hardware: ESP32, Arduino, sensoren, 3D-printing',
+      text: t('Mijn gereedschapskist:\n• AI: n8n, Ollama & lokale LLM’s, MCP, agents\n• Software: Python, JavaScript, Electron, Git\n• Systemen: Linux, Windows, Proxmox, Tailscale\n• Hardware: ESP32, Arduino, sensoren, 3D-printing'),
       chips: ['projects', 'about', 'contact'],
     }),
     contact: () => ({
-      text: 'Zeker! Ik ben beschikbaar voor projecten — vast of freelance, hybride of remote vanuit België 🇧🇪',
-      actions: [A('✉️ Stuur een bericht', URLS.gmail, { ext: true, copy: 'hey@thomashuybrechts.com' }), A('LinkedIn ↗', URLS.linkedin, { ext: true }), A('GitHub ↗', URLS.github, { ext: true })],
+      text: t('Zeker! Ik ben beschikbaar voor projecten — vast of freelance, hybride of remote vanuit België 🇧🇪'),
+      actions: [A(t('✉️ Stuur een bericht'), URLS.gmail, { ext: true, copy: 'hey@thomashuybrechts.com' }), A(t('LinkedIn ↗'), URLS.linkedin, { ext: true }), A(t('GitHub ↗'), URLS.github, { ext: true })],
       chips: ['cv', 'projects'],
     }),
     about: () => ({
-      text: 'Ik ben Thomas — nieuwsgierig genoeg om het uit te zoeken, praktisch genoeg om het te bouwen. Mijn achtergrond loopt van keukens en automotive tot operations en IT, nu als teamlead Production & Operations. Geen slides, wel werkende dingen.',
-      actions: [A('Lees meer over mij', URLS.sec('over'))],
+      text: t('Ik ben Thomas — nieuwsgierig genoeg om het uit te zoeken, praktisch genoeg om het te bouwen. Mijn achtergrond loopt van keukens en automotive tot operations en IT, nu als teamlead Production & Operations. Geen slides, wel werkende dingen.'),
+      actions: [A(t('Lees meer over mij'), URLS.sec('over'))],
       chips: ['skills', 'projects', 'contact'],
     }),
     localai: () => ({
-      text: 'Ik werk graag local-first: AI die op je eigen machine draait (Ollama, lokale LLM’s). Geen cloud nodig, geen API-kosten, en je data blijft bij jou.',
+      text: t('Ik werk graag local-first: AI die op je eigen machine draait (Ollama, lokale LLM’s). Geen cloud nodig, geen API-kosten, en je data blijft bij jou.'),
       chips: ['projects', 'tools', 'contact'],
     }),
     meta: () => ({
-      text: 'Eerlijk? 😄 Ik ben een lichte, gescripte gids — geen zware AI in de cloud. Thomas bóúwt wél échte lokale AI-agents; die zie je terug in zijn projecten.',
+      text: t('Eerlijk? 😄 Ik ben een lichte, gescripte gids — geen zware AI in de cloud. Thomas bóúwt wél échte lokale AI-agents; die zie je terug in zijn projecten.'),
       chips: ['projects', 'contact'],
     }),
-    thanks: () => ({ text: 'Graag gedaan! 🙌 Nog iets dat je wilt weten?', chips: ['projects', 'cv', 'contact'] }),
-    bye: () => ({ text: 'Tot ziens! 👋 Kom gerust nog eens langs.', chips: ['projects', 'contact'] }),
+    thanks: () => ({ text: t('Graag gedaan! 🙌 Nog iets dat je wilt weten?'), chips: ['projects', 'cv', 'contact'] }),
+    bye: () => ({ text: t('Tot ziens! 👋 Kom gerust nog eens langs.'), chips: ['projects', 'contact'] }),
     fallback: () => ({
-      text: 'Daar heb ik zo geen kant-en-klaar antwoord op — maar Thomas wel. Bekijk zijn projecten of stuur hem een berichtje.',
+      text: t('Daar heb ik zo geen kant-en-klaar antwoord op — maar Thomas wel. Bekijk zijn projecten of stuur hem een berichtje.'),
       chips: ['projects', 'skills', 'contact'],
     }),
   };
@@ -221,6 +226,10 @@ if (bgm && soundBtn) {
     { id: 'greeting', kw: ['hallo', 'hoi', 'hey', 'goeiedag', 'goedendag'] },
   ];
 
+  // Trefwoorden in de taal van de pagina (uit /i18n/<taal>.js) bovenop de Nederlandse
+  const extraKw = window.TH_I18N_KW || {};
+  MATCH.forEach(m => { if (extraKw[m.id]) m.kw = m.kw.concat(extraKw[m.id]); });
+
   function classify(text) {
     const t = ' ' + text.toLowerCase().trim() + ' ';
     let best = null, score = 0;
@@ -237,24 +246,24 @@ if (bgm && soundBtn) {
   wrap.className = 'agent-thomas';
   wrap.setAttribute('data-open', 'false');
   wrap.innerHTML =
-    '<div class="at-teaser" hidden><span class="at-teaser-txt"></span><button class="at-teaser-x" type="button" aria-label="Sluiten">×</button></div>' +
-    '<button class="at-launcher" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="at-panel" aria-label="Praat met Agent Thomas">' +
+    '<div class="at-teaser" hidden><span class="at-teaser-txt"></span><button class="at-teaser-x" type="button" aria-label="' + t('Sluiten') + '">×</button></div>' +
+    '<button class="at-launcher" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="at-panel" aria-label="' + t('Praat met Agent Thomas') + '">' +
       '<span class="at-ring" aria-hidden="true"></span>' +
       '<img src="' + URLS.ava + '" alt="" width="64" height="64" />' +
     '</button>' +
-    '<section id="at-panel" class="at-panel" role="dialog" aria-label="Agent Thomas — digitale gids" hidden>' +
+    '<section id="at-panel" class="at-panel" role="dialog" aria-label="' + t('Agent Thomas — digitale gids') + '" hidden>' +
       '<header class="at-head">' +
         '<img src="' + URLS.ava + '" alt="" width="40" height="40" />' +
-        '<div class="at-id"><b>Agent Thomas</b><span class="at-status"><i></i> AI-gids · demo</span></div>' +
-        '<button class="at-close" type="button" aria-label="Chat sluiten">×</button>' +
+        '<div class="at-id"><b>Agent Thomas</b><span class="at-status"><i></i> ' + t('AI-gids · demo') + '</span></div>' +
+        '<button class="at-close" type="button" aria-label="' + t('Chat sluiten') + '">×</button>' +
       '</header>' +
       '<div class="at-log" role="log" aria-live="polite"></div>' +
       '<div class="at-chips"></div>' +
       '<form class="at-input" autocomplete="off">' +
-        '<input type="text" name="q" placeholder="Stel gerust een vraag…" aria-label="Typ een bericht aan Agent Thomas" maxlength="200" />' +
-        '<button type="submit" aria-label="Verstuur bericht">→</button>' +
+        '<input type="text" name="q" placeholder="' + t('Stel gerust een vraag…') + '" aria-label="' + t('Typ een bericht aan Agent Thomas') + '" maxlength="200" />' +
+        '<button type="submit" aria-label="' + t('Verstuur bericht') + '">→</button>' +
       '</form>' +
-      '<p class="at-fineprint">Gescripte demo-gids · geen data verlaat je toestel</p>' +
+      '<p class="at-fineprint">' + t('Gescripte demo-gids · geen data verlaat je toestel') + '</p>' +
     '</section>';
   document.body.appendChild(wrap);
 
@@ -278,7 +287,7 @@ if (bgm && soundBtn) {
     mailNoteShown = true;
     const el = document.createElement('div');
     el.className = 'at-msg at-bot';
-    el.innerHTML = '📋 Adres ook gekopieerd: <b>' + addr + '</b><br>Gebruik je geen Gmail? Plak het adres dan gewoon in je eigen mailapp.';
+    el.innerHTML = t('📋 Adres ook gekopieerd:') + ' <b>' + addr + '</b><br>' + t('Gebruik je geen Gmail? Plak het adres dan gewoon in je eigen mailapp.');
     log.appendChild(el); scrollDown();
   }
 
@@ -409,7 +418,7 @@ if (bgm && soundBtn) {
   if (!seen) {
     setTimeout(() => {
       if (!panel.hidden) return;
-      teaserTxt.textContent = 'Hoi! 👋 Vragen? Ik gids je even rond.';
+      teaserTxt.textContent = t('Hoi! 👋 Vragen? Ik gids je even rond.');
       teaser.hidden = false;
       try { sessionStorage.setItem('at_teaser', '1'); } catch (err) {}
     }, 1600);

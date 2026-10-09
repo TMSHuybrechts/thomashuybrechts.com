@@ -216,8 +216,8 @@ PROJECTS = [
             ("Off-grid communicatie", "Experimenten met LoRa-mesh voor communicatie zonder internet of netwerkdekking."),
         ],
         "learned": "Hardware is onvergeeflijk: een verkeerde weerstand of een timing-fout laat zich niet wegrefactoren. Dat dwingt tot klein beginnen, alles meten en pas dan uitbreiden — precies de werkwijze die ik ook in software hanteer.",
-        "next": "Generatieve AI",
-        "next_slug": "generative-ai",
+        "next": "Onderdelen Inventaris",
+        "next_slug": "onderdelen-inventaris",
     },
     {
         "slug": "generative-ai",

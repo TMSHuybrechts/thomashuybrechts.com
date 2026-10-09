@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="de" data-root="../../">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generative KI — Projekt von Thomas Huybrechts</title>
+    <meta name="description" content="Fotorealistische Bilder und Videos mit lokaler KI generieren — vom Prompt und Modell bis zum fertigen Ergebnis, komplett auf meiner eigenen GPU." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="canonical" href="https://thomashuybrechts.com/de/projecten/generative-ai.html" />
+    <!-- i18n:start · gegenereerd door docs/build-i18n.py, niet met de hand aanpassen -->
+    <link rel="alternate" hreflang="nl-BE" href="https://thomashuybrechts.com/projecten/generative-ai.html" />
+    <link rel="alternate" hreflang="en" href="https://thomashuybrechts.com/en/projecten/generative-ai.html" />
+    <link rel="alternate" hreflang="fr" href="https://thomashuybrechts.com/fr/projecten/generative-ai.html" />
+    <link rel="alternate" hreflang="de" href="https://thomashuybrechts.com/de/projecten/generative-ai.html" />
+    <link rel="alternate" hreflang="es" href="https://thomashuybrechts.com/es/projecten/generative-ai.html" />
+    <link rel="alternate" hreflang="pt" href="https://thomashuybrechts.com/pt/projecten/generative-ai.html" />
+    <link rel="alternate" hreflang="it" href="https://thomashuybrechts.com/it/projecten/generative-ai.html" />
+    <link rel="alternate" hreflang="x-default" href="https://thomashuybrechts.com/projecten/generative-ai.html" />
+    <script src="../../i18n/de.js"></script>
+    <script src="../../lang.js"></script>
+    <!-- i18n:end -->
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="Generative KI — Thomas Huybrechts" />
+    <meta property="og:description" content="Fotorealistische Bilder und Videos mit lokaler KI generieren — vom Prompt und Modell bis zum fertigen Ergebnis, komplett auf meiner eigenen GPU." />
+    <meta property="og:url" content="https://thomashuybrechts.com/de/projecten/generative-ai.html" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script src="../../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Generative KI",
+      "description": "Fotorealistische Bilder und Videos mit lokaler KI generieren — vom Prompt und Modell bis zum fertigen Ergebnis, komplett auf meiner eigenen GPU.",
+      "url": "https://thomashuybrechts.com/de/projecten/generative-ai.html",
+      "author": {
+        "@type": "Person",
+        "name": "Thomas Huybrechts",
+        "url": "https://thomashuybrechts.com/"
+      },
+      "inLanguage": "de"
+    }
+    </script>
+  </head>
+  <body class="project-page">
+    <a class="skip-link" href="#inhoud">Zum Inhalt springen</a>
+
+    <header class="site-header" id="header">
+      <a class="brand" href="../" aria-label="Thomas Huybrechts, zur Startseite">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Hauptnavigation">
+        <a href="../#over">Über mich</a>
+        <a href="../#doen">Was ich tue</a>
+        <a href="../#projecten">Projekte</a>
+        <a href="../#profiel">Profil</a>
+        <a class="nav-contact" href="../#contact">Kontakt</a>
+      </nav>
+      <div class="header-right">
+        <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Musik abspielen">
+          <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="sound-label">Ton</span>
+        </button>
+        <audio id="bgm" src="../../assets/audio/lemons.mp3" loop preload="none"></audio>
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menü öffnen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <article>
+        <section class="section project-hero">
+          <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> Alle Projekte</a>
+          <p class="work-tag">GENERATIVE KI · BILD &amp; VIDEO</p>
+          <h1>Generative KI</h1>
+          <p class="project-intro">Fotorealistische Bilder und Videos mit lokaler KI generieren — vom Prompt und Modell bis zum fertigen Ergebnis, komplett auf meiner eigenen GPU.</p>
+          <dl class="project-meta">
+            <div><dt>Typ</dt><dd>Bild- &amp; Videogenerierung</dd></div>
+            <div><dt>Status</dt><dd>Laufend</dd></div>
+            <div><dt>Rolle</dt><dd>Prompting, LoRA-Training &amp; Postproduktion</dd></div>
+            <div><dt>Stack</dt><dd>ComfyUI · Stable Diffusion / Flux · LoRA · lokale RTX 4070</dd></div>
+          </dl>
+          <div class="project-result"><span class="lbl">ERGEBNIS</span><p>Fotorealistische Bilder und Videos, mit eigenen LoRAs trainiert auf einer RTX 4070 — komplett lokal.</p></div>
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:hey@thomashuybrechts.com?subject=%C3%9Cber%20Generative%20KI">Sprich mit mir darüber <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#details">Lies, wie es funktioniert <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+
+        <section class="project-gallery" aria-label="Bilder von Generative KI">
+          <figure class="reveal gallery-main">
+            <img src="../../assets/projects/genai-gladiator.jpg" alt="Cineastischer Gladiator — fotorealistische KI-Generierung, lokal gerendert" loading="eager" decoding="async" />
+            <figcaption>Cineastischer Gladiator — fotorealistische KI-Generierung, lokal gerendert</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../../assets/projects/genai-bust.jpg" alt="Marmorbüste — dieselbe Generierung, die du auch als Avatar von Agent Thomas auf dieser Seite siehst" loading="lazy" decoding="async" />
+            <figcaption>Marmorbüste — dieselbe Generierung, die du auch als Avatar von Agent Thomas auf dieser Seite siehst</figcaption>
+          </figure>
+        </section>
+
+        <section class="section project-details" id="details">
+          <div class="project-columns">
+            <div class="reveal">
+              <div class="section-label"><span>01</span> DAS PROBLEM</div>
+              <p class="project-text">Gute KI-Bilder und -Videos sind keine Frage eines Knopfdrucks. Es steckt in Prompting, der Wahl der richtigen Modelle, dem Training eigener LoRAs und sauberer Nachbearbeitung. Ich wollte diese ganze Pipeline lokal beherrschen — ohne Cloud-Abo, mit voller Kontrolle über Stil, Qualität und Privatsphäre.</p>
+            </div>
+            <div class="reveal">
+              <div class="section-label"><span>02</span> WAS ES TUT</div>
+              <dl class="feature-list">
+                <div><dt>Fotorealistische Bilder</dt><dd>Von Porträts und Skulpturen bis zu cineastischen Szenen, mit Blick für Licht, Komposition und Detail.</dd></div>
+                <div><dt>Eigenes LoRA-Training</dt><dd>Modelle auf einen bestimmten Stil oder eine Figur feinabstimmen, trainiert auf meiner eigenen RTX 4070.</dd></div>
+                <div><dt>ComfyUI-Workflows</dt><dd>Node-basierte Pipelines für wiederholbare, kontrollierbare Ergebnisse statt zufälliger Ausgaben.</dd></div>
+                <div><dt>Auch Video</dt><dd>Derselbe Workflow erweitert auf kurze, bewegte Bilder — vom Standbild zum Clip.</dd></div>
+                <div><dt>Komplett lokal</dt><dd>Alles läuft auf meiner eigenen Maschine: keine Cloud, kein Abo, volle Kontrolle und Privatsphäre.</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="project-learned reveal">
+            <div class="section-label"><span>03</span> WAS ICH DARAUS GELERNT HABE</div>
+            <blockquote class="learned">Der Unterschied zwischen ‚einem Bildchen‘ und einem brauchbaren Ergebnis liegt im Workflow: prompten, iterieren, trainieren und nachbearbeiten. Lokal zu arbeiten zwang mich, die ganze Pipeline zu verstehen, statt mich auf einen externen Dienst zu stützen.</blockquote>
+          </div>
+        </section>
+
+        <section class="contact contact-compact" id="contact">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">INTERESSE?</p>
+            <h2>Lass uns <em>reden</em>.</h2>
+            <p class="contact-sub">Sag mir, was du davon hältst — oder was du damit machen würdest.</p>
+            <div class="contact-actions">
+              <a class="button button-light" href="mailto:hey@thomashuybrechts.com?subject=%C3%9Cber%20Generative%20KI">Kontaktiere mich <span aria-hidden="true">↗</span></a>
+              <a class="next-project" href="./orbit-display.html">Nächstes Projekt: <b>Orbit Display</b> <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Fußnavigation">
+        <a href="../#over">Über mich</a>
+        <a href="../#doen">Was ich tue</a>
+        <a href="../#projecten">Projekte</a>
+        <a href="../#profiel">Profil</a>
+        <a href="https://github.com/TMSHuybrechts" rel="me noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/thomas-huybrechts-a14277105" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:hey@thomashuybrechts.com">E-Mail</a>
+      </nav>
+      <p>© <span id="year"></span> Thomas Huybrechts · Digitaler Maker, Belgien · Mit Neugier gebaut.</p>
+    </footer>
+  <script data-goatcounter="https://thomashuybrechts.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
