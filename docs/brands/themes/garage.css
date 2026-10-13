@@ -1,0 +1,16 @@
+/* Carrosserie: werkplaats. Donker asfalt, signaalgeel, hoekig en luid. */
+:root {
+  --bg: #141618; --fg: #f2f0ea; --muted: #a3a59f; --surface: #1d2023; --alt-bg: #0e1012;
+  --accent: #ffc400; --accent-fg: #141618; --accent-text: #ffc400; --bubble: #2a2e32;
+  --font-head: "Barlow Condensed", sans-serif; --font-body: "Barlow", sans-serif;
+  --head-weight: 800; --head-case: uppercase; --head-tracking: .01em;
+  --h1-size: clamp(3.4rem, 8.5vw, 7rem); --h2-size: clamp(2.4rem, 5vw, 4rem); --h3-size: 1.7rem;
+  --radius: 0; --radius-btn: 0; --radius-msg: 2px; --gap: 0;
+  --border: 1px solid #33373b; --border-strong: 3px solid #ffc400; --border-card: 1px solid #33373b;
+  --shadow-btn: 6px 6px 0 #000; --shadow-btn-hover: 9px 9px 0 #000; --shadow-card: none;
+  --chat-head-bg: #ffc400; --chat-head-fg: #141618;
+  --hero-bg: repeating-linear-gradient(-45deg, transparent 0 38px, rgb(255 196 0 / .035) 38px 76px);
+  --cta-bg: #ffc400; --cta-fg: #141618; --cta-btn-bg: #141618; --cta-btn-fg: #ffc400;
+}
+.chat-head i { background: #141618; }
+.card { border-top: 4px solid var(--accent); }

@@ -1,0 +1,33 @@
+{
+  "live": false,
+  "name": "Garagebot",
+  "sector": "Garages & vakmensen",
+  "title": "Garagebot — een AI-assistent die je telefoon opvangt terwijl jij sleutelt",
+  "description": "AI-chatbot voor garages en vakmensen: beantwoordt vragen van klanten op je website, noteert afspraakverzoeken en stuurt ze naar je mailbox. Gebouwd in België.",
+  "fonts_url": "https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@700;800&display=swap",
+  "eyebrow": "Voor garages & vakmensen",
+  "h1": "Jij sleutelt. De bot neemt op.",
+  "intro": "Onder een auto kan je de telefoon niet opnemen. Een AI-assistent op je website beantwoordt intussen de vragen van je klanten, en zet elk afspraakverzoek klaar in je mailbox.",
+  "cta": "Plan een gesprek",
+  "greeting": "Dag! Ik ben de assistent van de garage. Stel gerust je vraag, of klik op een voorbeeld hieronder.",
+  "tries": [
+    "Ik heb een garage en mis veel telefoontjes. Kan je daar iets aan doen?",
+    "Doen jullie ook onderhoud aan hybrides?",
+    "Wa kost zo ne bot ongeveer?",
+    "Kan ik zaterdag nog langskomen?"
+  ],
+  "pains_title": "Herkenbaar?",
+  "pains": [
+    ["Telefoon rinkelt, handen vol olie", "Elke gemiste oproep is een klant die de volgende garage belt. De bot is er altijd, ook om zeven uur 's avonds."],
+    ["Tien keer per dag dezelfde vraag", "Openingsuren, welke merken, hoe lang duurt een onderhoud. De bot antwoordt uit jouw eigen info, jij werkt door."],
+    ["Afspraken op papiertjes", "Wie een afspraak wil, geeft naam en nummer aan de bot. Jij krijgt het netjes in je mailbox, klaar om terug te bellen."]
+  ],
+  "steps_title": "Zo werkt het",
+  "steps": [
+    ["Jij vertelt hoe het bij jou gaat", "Uren, merken, diensten, wat je wel en niet doet. Een gesprek van een uur volstaat om te starten."],
+    ["Ik bouw de bot in je site", "Hij komt als klein chatvenster op je bestaande website. Je hoeft zelf niets te installeren."],
+    ["Jij krijgt de aanvragen", "Elke afspraakvraag komt als mail binnen, met een samenvatting van wat de klant vroeg."]
+  ],
+  "cta_title": "Minder gemiste klanten?",
+  "cta_text": "Vertel me welke vragen je het vaakst aan de telefoon krijgt. Je hoort eerlijk of een bot dat bij jou kan opvangen."
+}

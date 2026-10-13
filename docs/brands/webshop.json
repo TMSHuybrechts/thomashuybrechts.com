@@ -1,0 +1,33 @@
+{
+  "live": false,
+  "name": "Winkelbot",
+  "sector": "Webshops",
+  "title": "Winkelbot — een AI-verkoper die je producten kent, dag en nacht",
+  "description": "AI-chatbot voor webshops: beantwoordt productvragen, levering en retour op basis van je eigen catalogus. Gebouwd met n8n, in het Nederlands en Engels.",
+  "fonts_url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap",
+  "eyebrow": "Voor webshops",
+  "h1": "Een verkoper die nooit slaapt.",
+  "intro": "Wie twijfelt, koopt niet. Een AI-chatbot die je producten kent, beantwoordt de vraag op het moment dat ze opkomt: past dit, wanneer komt het, kan ik het terugsturen?",
+  "cta": "Plan een demo",
+  "greeting": "Hey! Ik ben de assistent van de shop. Vraag maar raak over producten, levering of retour.",
+  "tries": [
+    "Wa kost zo ne chatbot ongeveer voor ne kleine webshop?",
+    "Kan die bot antwoorden over mijn eigen producten, en hoe lang duurt het om dat te bouwen?",
+    "Werkt dat met mijn bestaande webshop?",
+    "Do you also work in English?"
+  ],
+  "pains_title": "Waar je nu verkoop laat liggen",
+  "pains": [
+    ["Twijfel op de productpagina", "Een bezoeker heeft één vraag en vindt het antwoord niet. Hij klikt weg. De bot antwoordt in een paar seconden."],
+    ["Je mailbox vol met 'waar blijft mijn pakje'", "Levertijden, retourregels, maten. De bot kent je voorwaarden en antwoordt meteen, jij houdt tijd over."],
+    ["Klanten in het buitenland", "De bot antwoordt in de taal van de vraag. Nederlands, Engels, Frans, zonder dat jij iets moet vertalen."]
+  ],
+  "steps_title": "Van catalogus tot chat",
+  "steps": [
+    ["Je catalogus als kennis", "Productinfo, levering en retourbeleid worden de bron. De bot verzint niets en zegt het als hij iets niet weet."],
+    ["Ingebouwd in je shop", "Een licht chatvenster dat past bij je huisstijl. Werkt naast wat je al hebt, er hoeft niets vervangen te worden."],
+    ["Leren uit de vragen", "Je ziet welke vragen terugkomen. Dat zegt je meteen wat er op je productpagina's ontbreekt."]
+  ],
+  "cta_title": "Zien hoe hij jouw producten uitlegt?",
+  "cta_text": "Stuur me een link naar je shop. Ik laat zien hoe een bot met jouw catalogus zou antwoorden."
+}

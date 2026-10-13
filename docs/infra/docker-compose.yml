@@ -1,0 +1,34 @@
+# n8n chat-backend — draait in LXC 111 "n8n" op pve (192.168.0.246), map /opt/n8n
+# Starten: docker compose up -d        Updaten: docker compose pull && docker compose up -d
+# De tunnel start pas mee met:  docker compose --profile tunnel up -d   (na TUNNEL_TOKEN in .env)
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:stable
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - TZ=Europe/Brussels
+      - GENERIC_TIMEZONE=Europe/Brussels
+      - N8N_HOST=${N8N_HOST:-192.168.0.246}
+      - N8N_PROTOCOL=${N8N_PROTOCOL:-http}
+      - WEBHOOK_URL=${WEBHOOK_URL:-http://192.168.0.246:5678/}
+      # http op het LAN tot de tunnel er is; met https-domein terug op true zetten
+      - N8N_SECURE_COOKIE=${N8N_SECURE_COOKIE:-false}
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_PERSONALIZATION_ENABLED=false
+    volumes:
+      - n8n_data:/home/node/.n8n
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    profiles: ["tunnel"]
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    depends_on:
+      - n8n
+
+volumes:
+  n8n_data:

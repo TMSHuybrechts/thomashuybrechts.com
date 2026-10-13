@@ -1,0 +1,16 @@
+/* Carrosserie: winkel. Crème, koraal en inktblauw, speels met stickerschaduwen. */
+:root {
+  --bg: #fff8f0; --fg: #1b1a3a; --muted: #5b5a78; --surface: #ffffff; --alt-bg: #ffe9dc;
+  --accent: #ff5a3c; --accent-fg: #ffffff; --accent-text: #e0401f; --bubble: #f3efff;
+  --font-head: "Bricolage Grotesque", sans-serif; --font-body: "DM Sans", sans-serif;
+  --head-weight: 800; --head-case: none; --head-tracking: -.035em;
+  --h1-size: clamp(3rem, 7vw, 5.8rem); --h2-size: clamp(2.1rem, 4.2vw, 3.3rem); --h3-size: 1.4rem;
+  --radius: 18px; --radius-btn: 14px; --radius-msg: 14px; --gap: 1.2rem;
+  --border: 2px solid #1b1a3a; --border-strong: 2px solid #1b1a3a; --border-card: 2px solid #1b1a3a;
+  --shadow-btn: 4px 4px 0 #1b1a3a; --shadow-btn-hover: 7px 7px 0 #1b1a3a; --shadow-card: 6px 6px 0 #1b1a3a;
+  --chat-head-bg: #1b1a3a; --chat-head-fg: #fff8f0; --chat-tilt: rotate(1.2deg);
+  --cta-bg: #1b1a3a; --cta-fg: #fff8f0; --cta-btn-bg: #ff5a3c; --cta-btn-fg: #ffffff;
+}
+.card:nth-child(2) { background: #f3efff; }
+.card:nth-child(3) { background: #e6fbef; }
+.try { border-width: 1.5px; }

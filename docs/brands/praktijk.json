@@ -1,0 +1,33 @@
+{
+  "live": false,
+  "name": "Praktijkbot",
+  "sector": "Praktijken & kantoren",
+  "title": "Praktijkbot — een rustige AI-assistent voor je praktijk of kantoor",
+  "description": "AI-assistent voor praktijken en kantoren: beantwoordt praktische vragen van patiënten en cliënten op je website. Kan volledig lokaal draaien, zodat gegevens je gebouw niet verlaten.",
+  "fonts_url": "https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap",
+  "eyebrow": "Voor praktijken & kantoren",
+  "h1": "Meer tijd voor wie voor je zit.",
+  "intro": "Een AI-assistent op je website beantwoordt de praktische vragen: uren, bereikbaarheid, wat mee te brengen, hoe een afspraak verloopt. Zo blijft je onthaal vrij voor wie echt hulp nodig heeft.",
+  "cta": "Plan een kennismaking",
+  "greeting": "Goeiedag. Ik ben de digitale assistent van de praktijk. Waarmee kan ik u helpen?",
+  "tries": [
+    "Kan dat ook zonder dat mijn data naar Amerika gaat?",
+    "Wat moet ik meebrengen naar een eerste afspraak?",
+    "Geeft de bot ook medisch of juridisch advies?",
+    "Do you also work in English?"
+  ],
+  "pains_title": "Waar het onthaal nu tijd aan verliest",
+  "pains": [
+    ["Dezelfde praktische vragen", "Parking, uren, terugbetaling, documenten. Vragen met een vast antwoord, die toch elke dag iemand van je team bezighouden."],
+    ["Vragen buiten de uren", "Mensen zoeken 's avonds en in het weekend. De assistent antwoordt dan ook, en verwijst door wanneer het nodig is."],
+    ["Zorgen over privacy", "Terecht. De assistent kan volledig lokaal draaien, op een toestel in je eigen gebouw. Geen gegevens naar een externe dienst."]
+  ],
+  "steps_title": "Zorgvuldig opgebouwd",
+  "steps": [
+    ["Afbakenen wat hij mag", "Samen leggen we vast waarover de assistent antwoordt en waar hij altijd doorverwijst. Geen advies, wel praktische hulp."],
+    ["Opbouwen op je eigen teksten", "De assistent antwoordt alleen uit wat jij aanlevert: je website, je infobrochure, je huisregels."],
+    ["Testen voor hij live gaat", "Je team stelt eerst zelf de moeilijke vragen. Pas als de antwoorden kloppen, komt hij op de site."]
+  ],
+  "cta_title": "Benieuwd of het bij jouw praktijk past?",
+  "cta_text": "In een kort gesprek overlopen we welke vragen jullie het vaakst krijgen en hoe je met gegevens wil omgaan."
+}

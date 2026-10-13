@@ -1,0 +1,188 @@
+{
+  "id": "thChatWorkflow01",
+  "name": "Chat — thomashuybrechts.com + merksites",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "chat",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://thomashuybrechts.com,http://127.0.0.1:8765"
+        }
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "th-chat"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Code-node \"Voorbereiden\": controleert de vraag, bewaakt de limieten en bouwt de prompt per merk.\nconst MODEL = 'openai/gpt-oss-120b'; // Groq-modellen wisselen: zie console.groq.com/docs/models\nconst MAX_PER_SESSION = 20;\nconst MAX_PER_DAY = 600; // beschermt de gratis Groq-limiet\nconst SESSION_TTL_MS = 6 * 60 * 60 * 1000;\nconst EMAIL = 'hey@thomashuybrechts.com';\n\nconst RULES = `\nRegels:\n- Je bent een AI-assistent en zegt dat eerlijk als iemand het vraagt.\n- Antwoord kort: twee tot vier zinnen, in gewone taal, zonder opsommingstekens of opmaak.\n- Antwoord in de taal van de vraag (Nederlands, Vlaams dialect mag je begrijpen, Engels of Frans).\n- Spreek in de wij-vorm (\"dat bekijken we graag met je\"). Noem de naam Thomas niet, tenzij iemand vraagt wie er achter deze dienst zit.\n- Noem nooit een prijs of tarief. Zeg dat we dat persoonlijk bespreken en vraag wat de bot zou moeten kunnen.\n- Beloof geen termijnen of resultaten. Verzin geen klanten, cijfers of referenties.\n- Zeg niet stellig dat iets voor iemands specifieke situatie kan. Zeg dat het meestal mogelijk is en dat we samen bekijken wat haalbaar is. Som geen koppelingen op waar niet naar gevraagd is.\n- Stel na je antwoord één korte wedervraag om de situatie van de bezoeker beter te begrijpen.\n- Toont iemand interesse, vraag dan naam en e-mailadres zodat we contact kunnen opnemen.\n- Weet je iets niet, zeg dat en verwijs naar ${EMAIL}.\n- Ga niet in op vragen die niets met deze diensten te maken hebben.`;\n\nconst ABOUT_THOMAS = `\nOver Thomas Huybrechts: freelancer uit Meerhout (Kempen, België). Bouwt AI-chatbots in websites en software,\ngetraind op de eigen documenten van de klant. Koppelt ze met n8n aan mail, CRM, sheets en facturatie.\nKan in de cloud draaien of volledig lokaal, zodat gegevens het gebouw niet verlaten.\nHeeft jaren operations geleid (productie, planning, teams) en begrijpt dus eerst het proces voor hij automatiseert.\nWerkwijze: begrijpen, een kleine werkende versie bouwen, testen met echte vragen, verbeteren.\nWerkt voor kmo's, freelancers en zelfstandigen. Nederlands en Engels. Contact: ${EMAIL}.`;\n\nconst BRANDS = {\n  thomas: `Je bent de AI-assistent op thomashuybrechts.com. Je helpt bezoekers begrijpen wat we voor hen kunnen bouwen.\nDiensten: AI-chatbots in een website of software (hoofddienst), n8n-workflows en koppelingen, websites met AI ingebouwd.`,\n  garage: `Je bent de demo-assistent van Garagebot, een dienst van Thomas Huybrechts voor garages en vakmensen.\nDe bezoeker is meestal een garagehouder of vakman. Leg uit hoe een bot op zijn website vragen van klanten opvangt\n(openingsuren, merken, diensten) en afspraakverzoeken met naam en nummer doorstuurt naar zijn mailbox.`,\n  praktijk: `Je bent de demo-assistent van Praktijkbot, een dienst van Thomas Huybrechts voor praktijken en kantoren\n(tandarts, kinesist, boekhouder, advocaat). Toon rustig en verzorgd, spreek de bezoeker aan met u.\nLeg uit hoe een assistent praktische vragen beantwoordt en dat hij volledig lokaal kan draaien.\nEen assistent geeft nooit medisch, juridisch of fiscaal advies; hij verwijst daarvoor altijd door.`,\n  webshop: `Je bent de demo-assistent van Winkelbot, een dienst van Thomas Huybrechts voor webshops.\nDe bezoeker is meestal een webshop-eigenaar. Leg uit hoe een bot productvragen, levering en retour beantwoordt\nop basis van de eigen catalogus en voorwaarden, in de taal van de klant.`,\n};\n\nconst body = $input.first().json.body || {};\nconst message = String(body.message || '').trim().slice(0, 600);\nconst sessionId = String(body.sessionId || '').slice(0, 80);\nconst brand = Object.keys(BRANDS).includes(body.brand) ? body.brand : 'thomas';\nconst history = (Array.isArray(body.history) ? body.history : [])\n  .slice(-12)\n  .filter(h => h && typeof h.text === 'string')\n  .map(h => ({ role: h.role === 'assistant' ? 'assistant' : 'user', text: h.text.slice(0, 1000) }));\n\nconst store = $getWorkflowStaticData('global');\nconst now = Date.now();\nconst today = new Date(now).toISOString().slice(0, 10);\nstore.sessions = store.sessions || {};\nfor (const [key, value] of Object.entries(store.sessions)) {\n  if (now - value.t > SESSION_TTL_MS) delete store.sessions[key];\n}\nif (!store.day || store.day.date !== today) store.day = { date: today, n: 0 };\n\nlet blocked = '';\nif (!message || !sessionId) {\n  blocked = 'Ik heb je vraag niet goed ontvangen. Probeer het nog eens.';\n} else {\n  const session = store.sessions[sessionId] || { n: 0, t: now };\n  session.n += 1;\n  session.t = now;\n  store.sessions[sessionId] = session;\n  store.day.n += 1;\n  if (session.n > MAX_PER_SESSION) blocked = `We zitten aan de limiet van deze demo. Mail me op ${EMAIL} voor de rest van je vragen.`;\n  else if (store.day.n > MAX_PER_DAY) blocked = `De assistent heeft het vandaag erg druk gehad. Mail me op ${EMAIL}, dan antwoord ik zelf.`;\n}\n\nconst payload = {\n  model: MODEL,\n  temperature: 0.4,\n  reasoning_effort: 'low', // redeneermodel: denktokens tellen mee in max_tokens\n  max_tokens: 900,\n  messages: [\n    { role: 'system', content: [BRANDS[brand], ABOUT_THOMAS, RULES].join('\\n') },\n    ...history.map(h => ({ role: h.role, content: h.text })),\n    { role: 'user', content: message },\n  ],\n};\n\nreturn [{ json: { blocked, brand, sessionId, message, history, payload } }];\n"
+      },
+      "name": "Voorbereiden",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "blocked",
+              "leftValue": "={{ $json.blocked }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "name": "Geblokkeerd?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        440,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "groqApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.payload) }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "name": "Groq",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        100
+      ],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "groqApi": {
+          "id": "RcCjzhXbcwSrxhdl",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Code-node \"Antwoord\": haalt het antwoord uit de Groq-respons en herkent een lead (e-mailadres in het gesprek).\nconst FALLBACK = 'Dat lukt nu even niet. Mail me op hey@thomashuybrechts.com, dan antwoord ik zelf.';\nconst prep = $('Voorbereiden').first().json;\nconst res = $input.first().json || {};\n\nconst blocked = prep.blocked || '';\nconst fromModel = ((res.choices && res.choices[0] && res.choices[0].message && res.choices[0].message.content) || '').trim();\nconst reply = blocked || fromModel || FALLBACK;\n\nconst email = (prep.message.match(/[\\w.+-]+@[\\w-]+(\\.[\\w-]+)+/) || [])[0] || '';\nconst transcript = [\n  ...prep.history.map(h => (h.role === 'assistant' ? 'Bot: ' : 'Bezoeker: ') + h.text),\n  'Bezoeker: ' + prep.message,\n  'Bot: ' + reply,\n].join('\\n\\n');\n\nreturn [{ json: { reply, lead: Boolean(email), email, brand: prep.brand, transcript } }];\n"
+      },
+      "name": "Antwoord",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { reply: $json.reply } }}"
+      },
+      "name": "Terugsturen",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1100,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Voorbereiden",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Voorbereiden": {
+      "main": [
+        [
+          {
+            "node": "Geblokkeerd?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Geblokkeerd?": {
+      "main": [
+        [
+          {
+            "node": "Antwoord",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Groq",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq": {
+      "main": [
+        [
+          {
+            "node": "Antwoord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Antwoord": {
+      "main": [
+        [
+          {
+            "node": "Terugsturen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false
+}

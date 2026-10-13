@@ -109,7 +109,8 @@ if (bgm && soundBtn) {
   if (document.getElementById('agent-thomas')) return;
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isProj = location.pathname.includes('/projecten/');
-  const rel = isProj ? '../' : '';
+  const isDemo = location.pathname.includes('/demo/');
+  const rel = isProj || isDemo ? '../' : '';
   const rootRel = document.documentElement.dataset.root || rel; // data-root staat op vertaalde pagina's (een map dieper)
   const URLS = {
     cv: rootRel + 'assets/thomas-huybrechts-cv.pdf',
@@ -119,7 +120,7 @@ if (bgm && soundBtn) {
     github: 'https://github.com/TMSHuybrechts',
     linkedin: 'https://www.linkedin.com/in/thomas-huybrechts-a14277105',
     sec: id => rel + '#' + id,
-    project: slug => (isProj ? '' : 'projecten/') + slug + '.html',
+    project: slug => (isProj ? '' : rel + 'projecten/') + slug + '.html',
   };
 
   const PROJECTS = {
@@ -240,6 +241,10 @@ if (bgm && soundBtn) {
     }
     return score > 0 ? best : 'fallback';
   }
+
+  // De vergelijkingspagina (/demo/) gebruikt dezelfde gescripte gids in een eigen paneel, zonder zwevende widget
+  window.TH_SCRIPTED = { classify, answer: id => (ANSWERS[id] || ANSWERS.fallback)(), labels: LABELS };
+  if (isDemo) return;
 
   const wrap = document.createElement('div');
   wrap.id = 'agent-thomas';
@@ -368,10 +373,45 @@ if (bgm && soundBtn) {
     }, delay);
   }
 
+  // Getypte vragen gaan naar de AI-chat zodra die bereikbaar is (chat-ai.js, mode 'live').
+  // De knoppen blijven de snelle gescripte antwoorden, en zonder backend blijft alles gescript.
+  let ai = null;
+  const aiHistory = [];
+  const aiScript = document.createElement('script');
+  aiScript.src = rootRel + 'chat-ai.js';
+  aiScript.onload = () => {
+    if (!window.TH_AI || window.TH_AI.mode !== 'live') return;
+    ai = window.TH_AI;
+    wrap.querySelector('.at-status').lastChild.textContent = ' ' + t('AI-assistent');
+    wrap.querySelector('.at-fineprint').textContent = t('Dit is een AI · prijzen en afspraken bevestigen we persoonlijk');
+  };
+  document.head.appendChild(aiScript);
+
+  async function sendAi(text) {
+    setChips([]);
+    showTyping();
+    busy = true;
+    try {
+      const { reply, ok } = await ai.send(text, aiHistory);
+      const el = document.createElement('div');
+      el.className = 'at-msg at-bot';
+      el.style.whiteSpace = 'pre-wrap';
+      el.textContent = reply; // antwoord van het model nooit als HTML invoegen
+      hideTyping();
+      log.appendChild(el); scrollDown();
+      if (ok) aiHistory.push({ role: 'user', text }, { role: 'assistant', text: reply });
+    } finally {
+      hideTyping();
+      setChips(['projects', 'contact']);
+      busy = false;
+    }
+  }
+
   function send(text) {
     text = (text || '').trim();
     if (!text || busy) return;
     addUser(text);
+    if (ai) { sendAi(text); return; }
     respond(classify(text));
   }
 

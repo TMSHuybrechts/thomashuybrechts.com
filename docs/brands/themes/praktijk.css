@@ -1,0 +1,15 @@
+/* Carrosserie: praktijk. Zacht licht, salie en diepgroen, rond en rustig. */
+:root {
+  --bg: #f6f4ee; --fg: #1f2d2a; --muted: #5d6b67; --surface: #ffffff; --alt-bg: #e9efe8;
+  --accent: #2f5d50; --accent-fg: #ffffff; --accent-text: #2f5d50; --bubble: #eef2ec;
+  --font-head: "Fraunces", serif; --font-body: "Figtree", sans-serif;
+  --head-weight: 500; --head-case: none; --head-tracking: -.02em;
+  --h1-size: clamp(2.7rem, 5.6vw, 4.6rem); --h2-size: clamp(1.9rem, 3.6vw, 2.9rem); --h3-size: 1.35rem;
+  --radius: 22px; --radius-btn: 999px; --radius-msg: 16px; --gap: 1.4rem;
+  --border: 1px solid #dfe5dd; --border-strong: 1px solid #cfd8cd; --border-card: 1px solid #e3e8e1;
+  --shadow-btn: none; --shadow-btn-hover: 0 10px 24px rgb(47 93 80 / .25); --shadow-card: 0 18px 44px rgb(31 45 42 / .07);
+  --chat-head-bg: #ffffff; --chat-head-fg: #1f2d2a;
+  --cta-bg: #2f5d50; --cta-fg: #f6f4ee; --cta-btn-bg: #f6f4ee; --cta-btn-fg: #1f2d2a;
+}
+.chat-head { border-bottom: var(--border); }
+.btn:hover { transform: translateY(-2px); }

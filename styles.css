@@ -593,3 +593,17 @@ a.work-item:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px;
 .project-hero.has-bg .project-result { background: rgb(215 255 67 / .14); }
 .project-hero.has-bg .project-result .lbl { color: #cfe0b0; }
 .project-hero.has-bg .project-result p { color: var(--paper); }
+
+/* Loopbaan inklapbaar + veelgestelde vragen */
+.career { margin-top: 0; }
+.faq { display: grid; grid-template-columns: 1fr 3fr; gap: 3rem; align-items: start; padding-top: 0; }
+.faq-list { border-top: 1px solid var(--ink); }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary { display: flex; align-items: center; gap: 1.5rem; padding: 1.4rem 0; cursor: pointer; list-style: none; font-size: clamp(1.1rem, 1.7vw, 1.4rem); font-weight: 600; letter-spacing: -.03em; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary:hover .growth-toggle, .faq-list details[open] .growth-toggle { background: var(--acid); }
+.faq-list details[open] .growth-toggle { transform: rotate(45deg); }
+.faq-list summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.faq-list .growth-toggle { flex: none; font-weight: 400; }
+.faq-list p { max-width: 62ch; margin: 0 0 1.6rem; color: var(--muted); line-height: 1.8; }
+@media (max-width: 900px) { .faq { grid-template-columns: 1fr; gap: 1.5rem; } }
