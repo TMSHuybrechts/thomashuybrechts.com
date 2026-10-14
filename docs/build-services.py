@@ -58,7 +58,7 @@ SERVICES = [
             ("Wat kost een website laten maken?", "Een website start bij mij vanaf €{website} excl. btw voor een site op maat tot 5 pagina's. Meer pagina's, meerdere talen of een webshop vragen een offerte op maat. Je krijgt altijd vooraf een vaste prijs."),
             ("Hoe lang duurt het voor mijn website online staat?", "Voor een gewone kmo-site reken je op twee tot vier weken, afhankelijk van hoe snel teksten en foto's klaar zijn. De exacte planning staat in de offerte."),
             ("Kan ik zelf nog iets aanpassen?", "Kleine aanpassingen doe ik snel voor je. Wil je zelf regelmatig teksten wijzigen, dan bespreken we vooraf een oplossing waarmee dat makkelijk kan."),
-            ("Werk je enkel in de Kempen?", "Ik woon in Meerhout en kom graag langs in de Kempen, maar ik werk ook voor klanten in de rest van Vlaanderen. Veel gaat gewoon via videogesprek."),
+            ("Werk je enkel in de Kempen?", "Ik woon in Meerhout, maar werk voor klanten in heel Vlaanderen. Bijna alles verloopt online: kennismaking per videogesprek, oplevering en uitleg op afstand, zodat je alles ook meteen digitaal hebt. Is een bezoek echt nodig, dan kom ik langs in de Kempen."),
         ],
         "related": ["ai-chatbot-laten-maken", "n8n-automatisatie"],
     },
