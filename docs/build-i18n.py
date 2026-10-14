@@ -371,6 +371,8 @@ def write_sitemap():
     for slug in ("website-laten-maken", "ai-chatbot-laten-maken", "n8n-automatisatie"):
         entry(SITE + slug + "/", "0.9")
     entry(SITE + "demo/", "0.7")
+    for slug in ("website-laten-maken-kempen-prijs",):
+        entry(SITE + "kennis/" + slug + "/", "0.7")
     lines.append("</urlset>")
     (ROOT / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
