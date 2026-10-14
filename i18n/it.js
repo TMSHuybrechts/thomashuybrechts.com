@@ -63,6 +63,8 @@ window.TH_I18N = {
  "Gescripte demo-gids · geen data verlaat je toestel": "Guida demo scriptata · nessun dato lascia il tuo dispositivo",
  "📋 Adres ook gekopieerd:": "📋 Indirizzo copiato anche:",
  "Gebruik je geen Gmail? Plak het adres dan gewoon in je eigen mailapp.": "Non usi Gmail? Allora incolla semplicemente l'indirizzo nella tua app di posta.",
+ "AI-assistent": "AI-assistent",
+ "Dit is een AI · prijzen en afspraken bevestigen we persoonlijk": "Dit is een AI · prijzen en afspraken bevestigen we persoonlijk",
  "Hoi! 👋 Vragen? Ik gids je even rond.": "Ciao! 👋 Domande? Ti faccio fare un giro.",
  "Lokale zoekmachine voor duizenden AI-skills.": "Motore di ricerca locale per migliaia di skill AI.",
  "Skills": "Skill",

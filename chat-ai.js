@@ -2,7 +2,7 @@
 // Contract: POST { brand, sessionId, message, history: [{ role, text }] }  ->  { reply: "..." }
 // brand = data-brand op <html> (merksites); n8n kiest daarmee het juiste kennisdocument.
 (function () {
-  const LIVE_ENDPOINT = ''; // publiek adres via de tunnel, bv. 'https://n8n.thomashuybrechts.com/webhook/chat' — leeg = nog niet aangesloten
+  const LIVE_ENDPOINT = 'https://pve.tail5e2072.ts.net:8443/webhook/chat'; // Tailscale Funnel op pve: enkel /webhook staat open, het n8n-beheer niet
   const LAN_ENDPOINT = 'http://192.168.0.246:5678/webhook/chat'; // n8n op pve, enkel bereikbaar op het thuisnetwerk
   const TIMEOUT_MS = 20000;
   const MAX_MESSAGES = 20; // per sessie; n8n dwingt dezelfde grens af

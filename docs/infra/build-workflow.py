@@ -6,6 +6,9 @@ import json, pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent
 ORIGINS = "https://thomashuybrechts.com,http://127.0.0.1:8765"  # merksites hier toevoegen zodra ze een adres hebben
+LEAD_FROM = "hey@thomashuybrechts.com"
+LEAD_TO = "__LEAD_TO__"  # placeholder: deploy-workflow.sh vult het echte adres in uit docs/infra/.env.local (niet in git)
+SMTP_CRED = {"id": "HilLTRoKhYMXI62L", "name": "SMTP account"}  # verwijst naar de SMTP-instelling in n8n; None = geen lead-mail
 
 
 def js(name):
@@ -53,6 +56,31 @@ nodes = [
     }),
 ]
 
+# Lead-mail: pas ná het antwoord aan de bezoeker, zodat een trage of mislukte mail de chat niet ophoudt
+if SMTP_CRED:
+    nodes += [
+        node("Lead?", "n8n-nodes-base.if", 2, [1320, 0], {
+            "conditions": {
+                "options": {"caseSensitive": True, "leftValue": "", "typeValidation": "loose"},
+                "conditions": [{
+                    "id": "lead",
+                    "leftValue": "={{ $('Antwoord').first().json.lead }}",
+                    "rightValue": "",
+                    "operator": {"type": "boolean", "operation": "true", "singleValue": True},
+                }],
+                "combinator": "and",
+            },
+        }),
+        node("Lead-mail", "n8n-nodes-base.emailSend", 2.1, [1540, -100], {
+            "fromEmail": LEAD_FROM,
+            "toEmail": LEAD_TO,
+            "subject": "=Nieuwe lead via de chatbot ({{ $('Antwoord').first().json.brand }}): {{ $('Antwoord').first().json.email }}",
+            "emailFormat": "text",
+            "text": "=Iemand liet een e-mailadres achter in de chat.\n\nE-mail: {{ $('Antwoord').first().json.email }}\nSite: {{ $('Antwoord').first().json.brand }}\n\n--- Gesprek ---\n\n{{ $('Antwoord').first().json.transcript }}",
+            "options": {"appendAttribution": False},
+        }, credentials={"smtp": SMTP_CRED}, onError="continueRegularOutput"),
+    ]
+
 connections = {
     "Webhook": {"main": [[{"node": "Voorbereiden", "type": "main", "index": 0}]]},
     "Voorbereiden": {"main": [[{"node": "Geblokkeerd?", "type": "main", "index": 0}]]},
@@ -63,6 +91,9 @@ connections = {
     "Groq": {"main": [[{"node": "Antwoord", "type": "main", "index": 0}]]},
     "Antwoord": {"main": [[{"node": "Terugsturen", "type": "main", "index": 0}]]},
 }
+if SMTP_CRED:
+    connections["Terugsturen"] = {"main": [[{"node": "Lead?", "type": "main", "index": 0}]]}
+    connections["Lead?"] = {"main": [[{"node": "Lead-mail", "type": "main", "index": 0}], []]}
 
 workflow = {
     "id": "thChatWorkflow01",  # vast id: `n8n import:workflow` eist er een, en een herimport overschrijft dezelfde workflow

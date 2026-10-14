@@ -2,7 +2,13 @@
 # Bouwt de chat-workflow en zet ze live in n8n (LXC 111 op pve). Run vanuit de repo-root: bash docs/infra/deploy-workflow.sh
 set -euo pipefail
 python docs/infra/build-workflow.py
-scp -q -o BatchMode=yes docs/infra/chat-workflow.json proxmox:/tmp/chat-workflow.json
+# Lead-adres staat niet in de openbare repo: lokaal invullen, op de server laten landen
+LEAD_TO=$(sed -n "s/^LEAD_TO=//p" docs/infra/.env.local 2>/dev/null)
+[ -n "$LEAD_TO" ] || { echo "LEAD_TO ontbreekt in docs/infra/.env.local" >&2; exit 1; }
+TMP=$(mktemp)
+sed "s/__LEAD_TO__/$LEAD_TO/g" docs/infra/chat-workflow.json > "$TMP"
+scp -q -o BatchMode=yes "$TMP" proxmox:/tmp/chat-workflow.json
+rm -f "$TMP"
 ssh -o BatchMode=yes proxmox 'pct push 111 /tmp/chat-workflow.json /opt/n8n/chat-workflow.json && rm /tmp/chat-workflow.json && pct exec 111 -- bash -c "
 cd /opt/n8n
 docker compose cp chat-workflow.json n8n:/tmp/chat-workflow.json >/dev/null 2>&1
