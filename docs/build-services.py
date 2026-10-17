@@ -21,6 +21,9 @@ PRICES = {
     "chatbot_month": "129",
     "n8n": "750",
     "hourly": "75",
+    "zorg_basis": "45",
+    "zorg_plus": "110",
+    "zorg_premium": "250",
 }
 
 SERVICES = [
@@ -45,6 +48,13 @@ SERVICES = [
             ("Klaar om mee te groeien", [
                 "Je website is vaak het eerste stuk van je digitale zaak. Wil je later vragen automatisch laten beantwoorden of aanvragen meteen in je agenda of CRM zetten, dan hang ik er een AI-chatbot of een n8n-automatisatie aan. Zonder alles opnieuw te moeten bouwen.",
             ]),
+            ("Onderhoud voor een vast bedrag per maand", [
+                "Een website is niet af na de oplevering. Er verschijnen updates, back-ups moeten kloppen en beveiliging vraagt opvolging. Wil je daar niet zelf mee bezig zijn, dan kan je een onderhoudspakket nemen voor een vast bedrag per maand, maandelijks opzegbaar met één maand opzeg. Je kiest uit drie opties:",
+                "Zorg Basis, €{zorg_basis} per maand: hosting, back-ups, beveiligingsupdates en bewaking, zodat je site snel, veilig en online blijft.",
+                "Zorg Plus, €{zorg_plus} per maand: alles van Basis, plus 1 uur kleine wijzigingen per maand en een maandrapport.",
+                "Zorg Premium, €{zorg_premium} per maand: alles van Plus, plus 3 uur wijzigingen, een SEO-rapport en een antwoord binnen 1 werkdag.",
+                "Alle bedragen zijn exclusief btw.",
+            ]),
         ],
         "includes": [
             "Ontwerp op maat, tot 5 pagina's",
@@ -53,9 +63,12 @@ SERVICES = [
             "Contactformulier dat rechtstreeks in je mailbox toekomt",
             "Meertalig als je dat nodig hebt (meerprijs)",
             "Uitleg bij oplevering, de site is van jou",
+            "Optioneel onderhoud vanaf €{zorg_basis} per maand, maandelijks opzegbaar",
         ],
         "faq": [
             ("Wat kost een website laten maken?", "Een website start bij mij vanaf €{website} excl. btw voor een site op maat tot 5 pagina's. Meer pagina's, meerdere talen of een webshop vragen een offerte op maat. Je krijgt altijd vooraf een vaste prijs."),
+            ("Wat kost onderhoud van mijn website?", "Onderhoud is optioneel en kost €{zorg_basis}, €{zorg_plus} of €{zorg_premium} per maand (excl. btw), afhankelijk van hoeveel opvolging je wil. Het is maandelijks opzegbaar met één maand opzeg."),
+            ("Is onderhoud verplicht?", "Nee. De site is van jou en je kan hem ook zelf laten hosten en bijhouden. Een onderhoudspakket is voor wie liever niet zelf bezig is met updates, back-ups en beveiliging."),
             ("Hoe lang duurt het voor mijn website online staat?", "Voor een gewone kmo-site reken je op twee tot vier weken, afhankelijk van hoe snel teksten en foto's klaar zijn. De exacte planning staat in de offerte."),
             ("Kan ik zelf nog iets aanpassen?", "Kleine aanpassingen doe ik snel voor je. Wil je zelf regelmatig teksten wijzigen, dan bespreken we vooraf een oplossing waarmee dat makkelijk kan."),
             ("Werk je enkel in de Kempen?", "Nee. Ik woon in Meerhout, maar werk online voor klanten in heel België en daarbuiten. Alles verloopt op afstand: kennismaking per videogesprek, oplevering en uitleg, zodat je alles ook meteen digitaal hebt. Is een bezoek echt nodig, dan kom ik langs in de Kempen."),
