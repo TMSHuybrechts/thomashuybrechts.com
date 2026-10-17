@@ -122,6 +122,12 @@ if (bgm && soundBtn) {
     sec: id => rel + '#' + id,
     project: slug => (isProj ? '' : rel + 'projecten/') + slug + '.html',
   };
+  // Dienstpagina's bestaan in het Nederlands en het Engels; de overige talen verwijzen naar de Engelse
+  const pageLang = document.documentElement.lang || 'nl';
+  const SVC = pageLang === 'nl'
+    ? { website: '/website-laten-maken/', chatbot: '/ai-chatbot-laten-maken/', automation: '/n8n-automatisatie/' }
+    : { website: '/en/website-development/', chatbot: '/en/ai-chatbot-development/', automation: '/en/n8n-automation/' };
+  URLS.demo = '/demo/';
 
   const PROJECTS = {
     'orbit-display': [t('Orbit Display'), t('één draaiend command-wiel dat al mijn lokale AI-tools, automatiseringen en beveiliging samenbrengt')],
@@ -137,8 +143,10 @@ if (bgm && soundBtn) {
   };
 
   const LABELS = {
-    cv: t('📄 Bekijk cv'), projects: t('🚀 Toon projecten'), skills: t('🤔 Wat doe je?'),
-    contact: t('✉️ Contact'), tools: t('🧰 Gereedschap'), about: t('👋 Wie ben je?'),
+    services: t('🧭 Wat bied je aan?'), prices: t('💶 Wat kost het?'), website: t('🌐 Website'),
+    chatbot: t('🤖 AI-chatbot'), automation: t('⚙️ Automatisatie'), maintenance: t('🛠️ Onderhoud'),
+    contact: t('🤝 Gratis kennismaking'), projects: t('🚀 Toon projecten'), about: t('👋 Wie ben je?'),
+    cv: t('📄 Bekijk cv'),
   };
   Object.keys(PROJECTS).forEach(s => { LABELS[s] = PROJECTS[s][0]; });
 
@@ -153,52 +161,75 @@ if (bgm && soundBtn) {
     };
   }
 
+  // Let op: de prijzen hieronder staan ook in docs/build-services.py (PRICES); pas ze samen aan.
   const ANSWERS = {
     greeting: () => ({
-      text: t('Hoi! Welkom op mijn pagina 👋\nIk ben Agent Thomas — een AI-gids. Wil je mijn cv zien, of kijk je liever wat rond?'),
-      chips: ['cv', 'projects', 'skills', 'contact'],
+      text: t('Hoi! Ik ben Agent Thomas, de digitale gids van Thomas Huybrechts 👋\nIk help je op weg met websites, AI-chatbots en automatisaties. Waarover wil je meer weten?'),
+      chips: ['services', 'prices', 'projects', 'contact'],
     }),
-    cv: () => ({
-      text: t('Mijn cv staat klaar als PDF — meteen te downloaden 👇\nKort: digitale maker uit Meerhout, teamlead Production & Operations, met een brede tech-gereedschapskist — AI-agents, software én hardware.'),
-      actions: [A(t('📄 Download cv (PDF)'), URLS.cv, { dl: true }), A(t('Bekijk profiel'), URLS.sec('profiel'))],
-      chips: ['skills', 'projects', 'contact'],
+    services: () => ({
+      text: t('Ik help kleine bedrijven met drie dingen:\n① Websites die snel zijn en gevonden worden in Google\n② AI-chatbots die klanten antwoorden met jouw eigen informatie\n③ Automatisaties met n8n voor werk dat elke week terugkomt\nAltijd met een vaste prijs vooraf.'),
+      actions: [A(t('Website laten maken →'), SVC.website), A(t('AI-chatbot laten maken →'), SVC.chatbot), A(t('n8n-automatisatie →'), SVC.automation)],
+      chips: ['prices', 'maintenance', 'contact'],
+    }),
+    prices: () => ({
+      text: t('Dit zijn mijn vaste prijzen, exclusief btw:\n• Website: vanaf €1.250\n• AI-chatbot: €129 per maand + €250 opstart\n• Automatisatie met n8n: vanaf €750\n• Onderhoud van je website: vanaf €45 per maand\n• Uurtarief: €75'),
+      chips: ['website', 'chatbot', 'automation', 'contact'],
+    }),
+    website: () => ({
+      text: t('Een website van tot 5 pagina’s, snel op de gsm en vindbaar in Google, vanaf €1.250. Onderhoud voor een vast bedrag per maand is optioneel.'),
+      actions: [A(t('Website laten maken →'), SVC.website)],
+      chips: ['maintenance', 'prices', 'contact'],
+    }),
+    chatbot: () => ({
+      text: t('Een AI-chatbot beantwoordt vragen van je bezoekers met jouw eigen informatie, dag en nacht. €129 per maand plus €250 opstart, maandelijks opzegbaar.'),
+      actions: [A(t('AI-chatbot laten maken →'), SVC.chatbot), A(t('Probeer de demo →'), URLS.demo)],
+      chips: ['prices', 'localai', 'contact'],
+    }),
+    automation: () => ({
+      text: t('Werk dat elke week terugkomt, doet zichzelf: aanvragen doorsturen, offertes opvolgen, mails sorteren. Een workflow met n8n start vanaf €750.'),
+      actions: [A(t('n8n-automatisatie →'), SVC.automation)],
+      chips: ['prices', 'contact'],
+    }),
+    maintenance: () => ({
+      text: t('Onderhoud voor een vast bedrag per maand: Zorg Basis €45, Zorg Plus €110, Zorg Premium €250. Maandelijks opzegbaar, of betaal een jaar vooraf en krijg 2 maanden gratis.'),
+      actions: [A(t('Bekijk de opties →'), SVC.website)],
+      chips: ['website', 'contact'],
+    }),
+    contact: () => ({
+      text: t('Plan een gratis kennismaking: vertel me in een paar zinnen wat je wil bereiken. Je krijgt binnen twee werkdagen een eerlijk antwoord, online voor heel België en ook verder weg.'),
+      actions: [A(t('✉️ Stuur een bericht'), URLS.gmail, { ext: true, copy: 'hey@thomashuybrechts.com' }), A(t('LinkedIn ↗'), URLS.linkedin, { ext: true }), A(t('GitHub ↗'), URLS.github, { ext: true })],
+      chips: ['prices', 'projects'],
     }),
     projects: () => ({
-      text: t('Ik bouw lokale AI, dashboards, tools én hardware. Mijn uitgelichte projecten:'),
+      text: t('Hier zijn enkele van mijn eigen projecten, zodat je ziet wat ik bouw:'),
       actions: [A(t('Orbit Display'), URLS.project('orbit-display')), A(t('Victus Control'), URLS.project('victus-control')), A(t('Thomas Cluster'), URLS.project('thomas-cluster')), A(t('Alle projecten →'), URLS.sec('projecten'))],
       chips: ['repo-notebook', 'jarvis', 'llm-wiki', 'cyberdash'],
     }),
-    skills: () => ({
-      text: t('Drie dingen waar je mij voor inschakelt:\n① AI-agents & automatisering — lokale LLM’s, MCP, n8n\n② Producten & prototypes — Electron-apps, plugins, tools\n③ Hardware & embedded — ESP32, firmware, sensoren\nVaak combineer ik ze.'),
-      chips: ['tools', 'projects', 'contact'],
-    }),
-    tools: () => ({
-      text: t('Mijn gereedschapskist:\n• AI: n8n, Ollama & lokale LLM’s, MCP, agents\n• Software: Python, JavaScript, Electron, Git\n• Systemen: Linux, Windows, Proxmox, Tailscale\n• Hardware: ESP32, Arduino, sensoren, 3D-printing'),
-      chips: ['projects', 'about', 'contact'],
-    }),
-    contact: () => ({
-      text: t('Zeker! Ik ben beschikbaar voor projecten — vast of freelance, hybride of remote vanuit België 🇧🇪'),
-      actions: [A(t('✉️ Stuur een bericht'), URLS.gmail, { ext: true, copy: 'hey@thomashuybrechts.com' }), A(t('LinkedIn ↗'), URLS.linkedin, { ext: true }), A(t('GitHub ↗'), URLS.github, { ext: true })],
-      chips: ['cv', 'projects'],
+    cv: () => ({
+      text: t('Mijn cv staat klaar als PDF, meteen te downloaden 👇'),
+      actions: [A(t('📄 Download cv (PDF)'), URLS.cv, { dl: true }), A(t('Bekijk profiel'), URLS.sec('profiel'))],
+      chips: ['services', 'projects', 'contact'],
     }),
     about: () => ({
-      text: t('Ik ben Thomas — nieuwsgierig genoeg om het uit te zoeken, praktisch genoeg om het te bouwen. Mijn achtergrond loopt van automotive en productie tot operations en IT, de laatste jaren als teamlead Production & Operations. Geen slides, wel werkende dingen.'),
+      text: t('Ik ben Thomas, freelancer uit Meerhout. Ik bouw websites, AI-chatbots en automatisaties voor kmo’s en zelfstandigen, online voor heel België en ook verder weg. Mijn achtergrond zit in operations, techniek en IT.'),
       actions: [A(t('Lees meer over mij'), URLS.sec('over'))],
-      chips: ['skills', 'projects', 'contact'],
+      chips: ['services', 'projects', 'contact'],
     }),
     localai: () => ({
-      text: t('Ik werk graag local-first: AI die op je eigen machine draait (Ollama, lokale LLM’s). Geen cloud nodig, geen API-kosten, en je data blijft bij jou.'),
-      chips: ['projects', 'tools', 'contact'],
+      text: t('Gevoelige gegevens? Dan kan een chatbot ook volledig lokaal draaien op een server bij jou, zodat niets je gebouw verlaat.'),
+      chips: ['chatbot', 'prices', 'contact'],
     }),
     meta: () => ({
-      text: t('Eerlijk? 😄 Ik ben een lichte, gescripte gids — geen zware AI in de cloud. Thomas bóúwt wél échte lokale AI-agents; die zie je terug in zijn projecten.'),
-      chips: ['projects', 'contact'],
+      text: t('Eerlijk? 😄 Ik ben een lichte, gescripte gids, geen echte AI. Wil je de echte AI-chatbot zien? Probeer de demo.'),
+      actions: [A(t('Probeer de demo →'), URLS.demo)],
+      chips: ['chatbot', 'contact'],
     }),
-    thanks: () => ({ text: t('Graag gedaan! 🙌 Nog iets dat je wilt weten?'), chips: ['projects', 'cv', 'contact'] }),
-    bye: () => ({ text: t('Tot ziens! 👋 Kom gerust nog eens langs.'), chips: ['projects', 'contact'] }),
+    thanks: () => ({ text: t('Graag gedaan! 🙌 Nog iets dat je wilt weten?'), chips: ['prices', 'projects', 'contact'] }),
+    bye: () => ({ text: t('Tot ziens! 👋 Kom gerust nog eens langs.'), chips: ['services', 'contact'] }),
     fallback: () => ({
-      text: t('Daar heb ik zo geen kant-en-klaar antwoord op — maar Thomas wel. Bekijk zijn projecten of stuur hem een berichtje.'),
-      chips: ['projects', 'skills', 'contact'],
+      text: t('Daar heb ik geen kant-en-klaar antwoord op, maar Thomas wel. Plan gerust een gratis kennismaking.'),
+      chips: ['services', 'prices', 'contact'],
     }),
   };
   Object.keys(PROJECTS).forEach(s => { ANSWERS[s] = () => projectAnswer(s); });
@@ -207,21 +238,25 @@ if (bgm && soundBtn) {
     { id: 'repo-notebook-obsidian', kw: ['obsidian', 'plugin', 'brat', 'vault'] },
     { id: 'orbit-display', kw: ['orbit', 'wiel', 'wheel', 'openclaw', 'draaiend'] },
     { id: 'victus-control', kw: ['victus', 'intent map', 'intent-map', 'praetor', 'imperator'] },
-    { id: 'thomas-cluster', kw: ['cluster', 'docker', 'n8n', 'comfyui', 'infrastruct'] },
+    { id: 'thomas-cluster', kw: ['cluster', 'docker', 'comfyui', 'infrastruct'] },
     { id: 'repo-notebook', kw: ['repo notebook', 'repo-notebook', 'oogst', 'repositor', 'github repo', 'electron'] },
     { id: 'cyberdash', kw: ['cyberdash', 'security', 'osint', 'hack', 'pentest', 'cyber'] },
     { id: 'llm-wiki', kw: ['llm wiki', 'wiki', 'kennisbank', 'kennisgraaf', 'ingest', 'graaf'] },
     { id: 'jarvis', kw: ['jarvis', 'klap', 'gebaren', 'gebaar', 'handsfree', 'nexus'] },
     { id: 'sirena', kw: ['sirena', 'avatar', 'desktopassistent', 'bureaublad'] },
     { id: 'embedded', kw: ['embedded', 'esp32', 'esp8266', 'firmware', 'arduino', 'microcontroller', 'hardware'] },
+    { id: 'prices', kw: ['prijs', 'prijzen', 'kost', 'kosten', 'tarief', 'tarieven', 'hoeveel', 'offerte', 'budget', 'euro', '€'] },
+    { id: 'website', kw: ['website', 'webshop', 'webdesign', 'homepage', 'site laten'] },
+    { id: 'chatbot', kw: ['chatbot', 'chat bot', 'chatbots'] },
+    { id: 'automation', kw: ['automatis', 'n8n', 'workflow', 'zapier', 'make.com'] },
+    { id: 'maintenance', kw: ['onderhoud', 'hosting', 'back-up', 'backup', 'beheer', 'zorgpakket', 'zorg '] },
+    { id: 'services', kw: ['wat doe', 'wat kan', 'wat maak', 'diensten', 'aanbod', 'wat bied', 'waarmee'] },
     { id: 'cv', kw: ['cv', 'curriculum', 'resume', 'werkervaring'] },
-    { id: 'contact', kw: ['contact', 'mail', 'e-mail', 'email', 'inhuren', 'aanwerven', 'beschikbaar', 'hire', 'freelance', 'vacature', 'bereiken'] },
-    { id: 'tools', kw: ['gereedschap', 'stack', 'technolog', 'welke tools', 'talen', 'programmeer', 'python', 'framework'] },
-    { id: 'localai', kw: ['lokaal', 'lokale', 'ollama', 'privacy', 'cloud', 'local-first'] },
-    { id: 'skills', kw: ['wat doe', 'wat kan', 'wat maak', 'diensten', 'skills', 'waarmee'] },
+    { id: 'contact', kw: ['contact', 'mail', 'e-mail', 'email', 'kennismaking', 'afspraak', 'bellen', 'inhuren', 'beschikbaar', 'hire', 'freelance', 'bereiken'] },
+    { id: 'localai', kw: ['lokaal', 'lokale', 'ollama', 'privacy', 'cloud', 'local-first', 'gevoelig'] },
     { id: 'about', kw: ['wie ben', 'wie is', 'over thomas', 'over jou', 'jezelf', 'voorstellen'] },
     { id: 'projects', kw: ['project', 'werk', 'portfolio', 'gemaakt', 'gebouwd', 'laten zien', 'tonen', 'demo'] },
-    { id: 'meta', kw: ['ben je echt', 'echte ai', 'ben je ai', 'ben je een bot', 'bot', 'werkt dit', 'fake', 'nep', 'chatgpt'] },
+    { id: 'meta', kw: ['ben je echt', 'echte ai', 'ben je ai', 'ben je een bot', 'werkt dit', 'fake', 'nep', 'chatgpt'] },
     { id: 'thanks', kw: ['bedankt', 'dank', 'merci', 'thanks', 'thx'] },
     { id: 'bye', kw: ['doei', 'tot ziens', 'ciao', 'bye', 'later'] },
     { id: 'greeting', kw: ['hallo', 'hoi', 'hey', 'goeiedag', 'goedendag'] },

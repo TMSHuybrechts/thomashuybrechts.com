@@ -5095,7 +5095,43 @@
   ]
  },
  {
-  "nl": "📄 Bekijk cv",
+  "nl": "🧭 Wat bied je aan?",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "💶 Wat kost het?",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "🌐 Website",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "🤖 AI-chatbot",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "⚙️ Automatisatie",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "🛠️ Onderhoud",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "🤝 Gratis kennismaking",
   "pages": [
    "script.js"
   ]
@@ -5107,25 +5143,13 @@
   ]
  },
  {
-  "nl": "🤔 Wat doe je?",
-  "pages": [
-   "script.js"
-  ]
- },
- {
-  "nl": "✉️ Contact",
-  "pages": [
-   "script.js"
-  ]
- },
- {
-  "nl": "🧰 Gereedschap",
-  "pages": [
-   "script.js"
-  ]
- },
- {
   "nl": "👋 Wie ben je?",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "📄 Bekijk cv",
   "pages": [
    "script.js"
   ]
@@ -5137,55 +5161,79 @@
   ]
  },
  {
-  "nl": "Hoi! Welkom op mijn pagina 👋\nIk ben Agent Thomas — een AI-gids. Wil je mijn cv zien, of kijk je liever wat rond?",
+  "nl": "Hoi! Ik ben Agent Thomas, de digitale gids van Thomas Huybrechts 👋\nIk help je op weg met websites, AI-chatbots en automatisaties. Waarover wil je meer weten?",
   "pages": [
    "script.js"
   ]
  },
  {
-  "nl": "Mijn cv staat klaar als PDF — meteen te downloaden 👇\nKort: digitale maker uit Meerhout, teamlead Production & Operations, met een brede tech-gereedschapskist — AI-agents, software én hardware.",
+  "nl": "Ik help kleine bedrijven met drie dingen:\n① Websites die snel zijn en gevonden worden in Google\n② AI-chatbots die klanten antwoorden met jouw eigen informatie\n③ Automatisaties met n8n voor werk dat elke week terugkomt\nAltijd met een vaste prijs vooraf.",
   "pages": [
    "script.js"
   ]
  },
  {
-  "nl": "📄 Download cv (PDF)",
+  "nl": "Website laten maken →",
   "pages": [
    "script.js"
   ]
  },
  {
-  "nl": "Bekijk profiel",
+  "nl": "AI-chatbot laten maken →",
   "pages": [
    "script.js"
   ]
  },
  {
-  "nl": "Ik bouw lokale AI, dashboards, tools én hardware. Mijn uitgelichte projecten:",
+  "nl": "n8n-automatisatie →",
   "pages": [
    "script.js"
   ]
  },
  {
-  "nl": "Alle projecten →",
+  "nl": "Dit zijn mijn vaste prijzen, exclusief btw:\n• Website: vanaf €1.250\n• AI-chatbot: €129 per maand + €250 opstart\n• Automatisatie met n8n: vanaf €750\n• Onderhoud van je website: vanaf €45 per maand\n• Uurtarief: €75",
   "pages": [
    "script.js"
   ]
  },
  {
-  "nl": "Drie dingen waar je mij voor inschakelt:\n① AI-agents & automatisering — lokale LLM’s, MCP, n8n\n② Producten & prototypes — Electron-apps, plugins, tools\n③ Hardware & embedded — ESP32, firmware, sensoren\nVaak combineer ik ze.",
+  "nl": "Een website van tot 5 pagina’s, snel op de gsm en vindbaar in Google, vanaf €1.250. Onderhoud voor een vast bedrag per maand is optioneel.",
   "pages": [
    "script.js"
   ]
  },
  {
-  "nl": "Mijn gereedschapskist:\n• AI: n8n, Ollama & lokale LLM’s, MCP, agents\n• Software: Python, JavaScript, Electron, Git\n• Systemen: Linux, Windows, Proxmox, Tailscale\n• Hardware: ESP32, Arduino, sensoren, 3D-printing",
+  "nl": "Een AI-chatbot beantwoordt vragen van je bezoekers met jouw eigen informatie, dag en nacht. €129 per maand plus €250 opstart, maandelijks opzegbaar.",
   "pages": [
    "script.js"
   ]
  },
  {
-  "nl": "Zeker! Ik ben beschikbaar voor projecten — vast of freelance, hybride of remote vanuit België 🇧🇪",
+  "nl": "Probeer de demo →",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "Werk dat elke week terugkomt, doet zichzelf: aanvragen doorsturen, offertes opvolgen, mails sorteren. Een workflow met n8n start vanaf €750.",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "Onderhoud voor een vast bedrag per maand: Zorg Basis €45, Zorg Plus €110, Zorg Premium €250. Maandelijks opzegbaar, of betaal een jaar vooraf en krijg 2 maanden gratis.",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "Bekijk de opties →",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "Plan een gratis kennismaking: vertel me in een paar zinnen wat je wil bereiken. Je krijgt binnen twee werkdagen een eerlijk antwoord, online voor heel België en ook verder weg.",
   "pages": [
    "script.js"
   ]
@@ -5209,7 +5257,37 @@
   ]
  },
  {
-  "nl": "Ik ben Thomas — nieuwsgierig genoeg om het uit te zoeken, praktisch genoeg om het te bouwen. Mijn achtergrond loopt van automotive en productie tot operations en IT, de laatste jaren als teamlead Production & Operations. Geen slides, wel werkende dingen.",
+  "nl": "Hier zijn enkele van mijn eigen projecten, zodat je ziet wat ik bouw:",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "Alle projecten →",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "Mijn cv staat klaar als PDF, meteen te downloaden 👇",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "📄 Download cv (PDF)",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "Bekijk profiel",
+  "pages": [
+   "script.js"
+  ]
+ },
+ {
+  "nl": "Ik ben Thomas, freelancer uit Meerhout. Ik bouw websites, AI-chatbots en automatisaties voor kmo’s en zelfstandigen, online voor heel België en ook verder weg. Mijn achtergrond zit in operations, techniek en IT.",
   "pages": [
    "script.js"
   ]
@@ -5221,13 +5299,13 @@
   ]
  },
  {
-  "nl": "Ik werk graag local-first: AI die op je eigen machine draait (Ollama, lokale LLM’s). Geen cloud nodig, geen API-kosten, en je data blijft bij jou.",
+  "nl": "Gevoelige gegevens? Dan kan een chatbot ook volledig lokaal draaien op een server bij jou, zodat niets je gebouw verlaat.",
   "pages": [
    "script.js"
   ]
  },
  {
-  "nl": "Eerlijk? 😄 Ik ben een lichte, gescripte gids — geen zware AI in de cloud. Thomas bóúwt wél échte lokale AI-agents; die zie je terug in zijn projecten.",
+  "nl": "Eerlijk? 😄 Ik ben een lichte, gescripte gids, geen echte AI. Wil je de echte AI-chatbot zien? Probeer de demo.",
   "pages": [
    "script.js"
   ]
@@ -5245,7 +5323,7 @@
   ]
  },
  {
-  "nl": "Daar heb ik zo geen kant-en-klaar antwoord op — maar Thomas wel. Bekijk zijn projecten of stuur hem een berichtje.",
+  "nl": "Daar heb ik geen kant-en-klaar antwoord op, maar Thomas wel. Plan gerust een gratis kennismaking.",
   "pages": [
    "script.js"
   ]

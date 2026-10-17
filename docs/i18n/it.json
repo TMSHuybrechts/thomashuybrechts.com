@@ -869,7 +869,33 @@
   "Kennismaking project": "Primo incontro progetto",
   "Thomas Huybrechts · Freelance websites, automatisatie & AI-chatbots, België · Met nieuwsgierigheid gebouwd.": "Thomas Huybrechts · Siti web, automazione e chatbot AI freelance, Belgio · Costruito con curiosità.",
   "AI-assistent": "Assistente AI",
-  "Dit is een AI · prijzen en afspraken bevestigen we persoonlijk": "Questa è un'AI · prezzi e appuntamenti li confermiamo di persona"
+  "Dit is een AI · prijzen en afspraken bevestigen we persoonlijk": "Questa è un'AI · prezzi e appuntamenti li confermiamo di persona",
+  "🧭 Wat bied je aan?": "🧭 Cosa offri?",
+  "💶 Wat kost het?": "💶 Quanto costa?",
+  "🌐 Website": "🌐 Sito web",
+  "🤖 AI-chatbot": "🤖 Chatbot AI",
+  "⚙️ Automatisatie": "⚙️ Automazione",
+  "🛠️ Onderhoud": "🛠️ Manutenzione",
+  "🤝 Gratis kennismaking": "🤝 Chiamata gratuita",
+  "Website laten maken →": "Realizzazione siti web →",
+  "AI-chatbot laten maken →": "Realizzazione chatbot AI →",
+  "n8n-automatisatie →": "Automazione n8n →",
+  "Probeer de demo →": "Prova la demo →",
+  "Bekijk de opties →": "Vedi le opzioni →",
+  "Hoi! Ik ben Agent Thomas, de digitale gids van Thomas Huybrechts 👋\nIk help je op weg met websites, AI-chatbots en automatisaties. Waarover wil je meer weten?": "Ciao! Sono Agent Thomas, la guida digitale di Thomas Huybrechts 👋\nTi aiuto con siti web, chatbot AI e automazioni. Su cosa vuoi saperne di più?",
+  "Ik help kleine bedrijven met drie dingen:\n① Websites die snel zijn en gevonden worden in Google\n② AI-chatbots die klanten antwoorden met jouw eigen informatie\n③ Automatisaties met n8n voor werk dat elke week terugkomt\nAltijd met een vaste prijs vooraf.": "Aiuto le piccole imprese con tre cose:\n① Siti web veloci e ben posizionati su Google\n② Chatbot AI che rispondono ai clienti con le tue informazioni\n③ Automazioni con n8n per il lavoro che si ripete ogni settimana\nSempre con un prezzo fisso in anticipo.",
+  "Dit zijn mijn vaste prijzen, exclusief btw:\n• Website: vanaf €1.250\n• AI-chatbot: €129 per maand + €250 opstart\n• Automatisatie met n8n: vanaf €750\n• Onderhoud van je website: vanaf €45 per maand\n• Uurtarief: €75": "Questi sono i miei prezzi fissi, IVA esclusa:\n• Sito web: da 1.250 €\n• Chatbot AI: 129 € al mese + 250 € di avvio\n• Automazione con n8n: da 750 €\n• Manutenzione del sito: da 45 € al mese\n• Tariffa oraria: 75 €",
+  "Een website van tot 5 pagina’s, snel op de gsm en vindbaar in Google, vanaf €1.250. Onderhoud voor een vast bedrag per maand is optioneel.": "Un sito web fino a 5 pagine, veloce su mobile e facile da trovare su Google, da 1.250 €. La manutenzione a canone mensile fisso è facoltativa.",
+  "Een AI-chatbot beantwoordt vragen van je bezoekers met jouw eigen informatie, dag en nacht. €129 per maand plus €250 opstart, maandelijks opzegbaar.": "Un chatbot AI risponde alle domande dei tuoi visitatori con le tue informazioni, giorno e notte. 129 € al mese più 250 € di avvio, annullabile ogni mese.",
+  "Werk dat elke week terugkomt, doet zichzelf: aanvragen doorsturen, offertes opvolgen, mails sorteren. Een workflow met n8n start vanaf €750.": "Il lavoro che si ripete ogni settimana si fa da solo: inoltrare richieste, seguire i preventivi, smistare le email. Un flusso n8n parte da 750 €.",
+  "Onderhoud voor een vast bedrag per maand: Zorg Basis €45, Zorg Plus €110, Zorg Premium €250. Maandelijks opzegbaar, of betaal een jaar vooraf en krijg 2 maanden gratis.": "Manutenzione a canone mensile fisso: Care Basic 45 €, Care Plus 110 €, Care Premium 250 €. Annullabile ogni mese, oppure paga un anno in anticipo e ricevi 2 mesi gratis.",
+  "Plan een gratis kennismaking: vertel me in een paar zinnen wat je wil bereiken. Je krijgt binnen twee werkdagen een eerlijk antwoord, online voor heel België en ook verder weg.": "Prenota una prima chiamata gratuita: raccontami in poche frasi cosa vuoi ottenere. Ricevi una risposta onesta entro due giorni lavorativi, online per tutto il Belgio e oltre.",
+  "Hier zijn enkele van mijn eigen projecten, zodat je ziet wat ik bouw:": "Ecco alcuni dei miei progetti, così vedi cosa costruisco:",
+  "Mijn cv staat klaar als PDF, meteen te downloaden 👇": "Il mio CV è pronto in PDF, da scaricare subito 👇",
+  "Ik ben Thomas, freelancer uit Meerhout. Ik bouw websites, AI-chatbots en automatisaties voor kmo’s en zelfstandigen, online voor heel België en ook verder weg. Mijn achtergrond zit in operations, techniek en IT.": "Sono Thomas, freelance di Meerhout. Realizzo siti web, chatbot AI e automazioni per PMI e autonomi, online per tutto il Belgio e oltre. Il mio background è in operations, tecnica e IT.",
+  "Gevoelige gegevens? Dan kan een chatbot ook volledig lokaal draaien op een server bij jou, zodat niets je gebouw verlaat.": "Dati sensibili? Allora un chatbot può anche funzionare interamente in locale su un server da te, così niente lascia il tuo edificio.",
+  "Eerlijk? 😄 Ik ben een lichte, gescripte gids, geen echte AI. Wil je de echte AI-chatbot zien? Probeer de demo.": "Sinceramente? 😄 Sono una guida leggera e scriptata, non una vera AI. Vuoi vedere il vero chatbot AI? Prova la demo.",
+  "Daar heb ik geen kant-en-klaar antwoord op, maar Thomas wel. Plan gerust een gratis kennismaking.": "Non ho una risposta pronta, ma Thomas sì. Prenota pure una prima chiamata gratuita."
  },
  "kw": {
   "repo-notebook-obsidian": [
@@ -1043,6 +1069,42 @@
    "buongiorno",
    "buonasera",
    "ehi"
+  ],
+  "services": [
+   "cosa offri",
+   "servizi",
+   "cosa fai"
+  ],
+  "prices": [
+   "prezzo",
+   "prezzi",
+   "costa",
+   "quanto",
+   "tariffa",
+   "preventivo",
+   "budget"
+  ],
+  "website": [
+   "sito web",
+   "sito",
+   "negozio online",
+   "web design"
+  ],
+  "chatbot": [
+   "chatbot",
+   "chat bot",
+   "assistente"
+  ],
+  "automation": [
+   "automazion",
+   "n8n",
+   "workflow",
+   "zapier"
+  ],
+  "maintenance": [
+   "manutenzione",
+   "hosting",
+   "backup"
   ]
  }
 }
