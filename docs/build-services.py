@@ -53,6 +53,7 @@ SERVICES = [
                 "Zorg Basis, €{zorg_basis} per maand: hosting, back-ups, beveiligingsupdates en bewaking, zodat je site snel, veilig en online blijft.",
                 "Zorg Plus, €{zorg_plus} per maand: alles van Basis, plus 1 uur kleine wijzigingen per maand en een maandrapport.",
                 "Zorg Premium, €{zorg_premium} per maand: alles van Plus, plus 3 uur wijzigingen, een SEO-rapport en een antwoord binnen 1 werkdag.",
+                "Betaal je liever per jaar vooraf, dan betaal je 10 maanden en krijg je er 2 gratis.",
                 "Alle bedragen zijn exclusief btw.",
             ]),
         ],
@@ -67,7 +68,7 @@ SERVICES = [
         ],
         "faq": [
             ("Wat kost een website laten maken?", "Een website start bij mij vanaf €{website} excl. btw voor een site op maat tot 5 pagina's. Meer pagina's, meerdere talen of een webshop vragen een offerte op maat. Je krijgt altijd vooraf een vaste prijs."),
-            ("Wat kost onderhoud van mijn website?", "Onderhoud is optioneel en kost €{zorg_basis}, €{zorg_plus} of €{zorg_premium} per maand (excl. btw), afhankelijk van hoeveel opvolging je wil. Het is maandelijks opzegbaar met één maand opzeg."),
+            ("Wat kost onderhoud van mijn website?", "Onderhoud is optioneel en kost €{zorg_basis}, €{zorg_plus} of €{zorg_premium} per maand (excl. btw), afhankelijk van hoeveel opvolging je wil. Het is maandelijks opzegbaar met één maand opzeg. Betaal je per jaar vooraf, dan betaal je 10 maanden en krijg je er 2 gratis."),
             ("Is onderhoud verplicht?", "Nee. De site is van jou en je kan hem ook zelf laten hosten en bijhouden. Een onderhoudspakket is voor wie liever niet zelf bezig is met updates, back-ups en beveiliging."),
             ("Hoe lang duurt het voor mijn website online staat?", "Voor een gewone kmo-site reken je op twee tot vier weken, afhankelijk van hoe snel teksten en foto's klaar zijn. De exacte planning staat in de offerte."),
             ("Kan ik zelf nog iets aanpassen?", "Kleine aanpassingen doe ik snel voor je. Wil je zelf regelmatig teksten wijzigen, dan bespreken we vooraf een oplossing waarmee dat makkelijk kan."),
