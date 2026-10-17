@@ -182,7 +182,7 @@ if (bgm && soundBtn) {
       chips: ['cv', 'projects'],
     }),
     about: () => ({
-      text: t('Ik ben Thomas — nieuwsgierig genoeg om het uit te zoeken, praktisch genoeg om het te bouwen. Mijn achtergrond loopt van keukens en automotive tot operations en IT, nu als teamlead Production & Operations. Geen slides, wel werkende dingen.'),
+      text: t('Ik ben Thomas — nieuwsgierig genoeg om het uit te zoeken, praktisch genoeg om het te bouwen. Mijn achtergrond loopt van automotive en productie tot operations en IT, de laatste jaren als teamlead Production & Operations. Geen slides, wel werkende dingen.'),
       actions: [A(t('Lees meer over mij'), URLS.sec('over'))],
       chips: ['skills', 'projects', 'contact'],
     }),

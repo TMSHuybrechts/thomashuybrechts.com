@@ -45,7 +45,7 @@ window.TH_I18N = {
  "✉️ Stuur een bericht": "✉️ Send a message",
  "LinkedIn ↗": "LinkedIn ↗",
  "GitHub ↗": "GitHub ↗",
- "Ik ben Thomas — nieuwsgierig genoeg om het uit te zoeken, praktisch genoeg om het te bouwen. Mijn achtergrond loopt van keukens en automotive tot operations en IT, nu als teamlead Production & Operations. Geen slides, wel werkende dingen.": "I'm Thomas — curious enough to figure it out, practical enough to build it. My background runs from kitchens and automotive to operations and IT, now as team lead Production & Operations. No slides, just things that work.",
+ "Ik ben Thomas — nieuwsgierig genoeg om het uit te zoeken, praktisch genoeg om het te bouwen. Mijn achtergrond loopt van automotive en productie tot operations en IT, de laatste jaren als teamlead Production & Operations. Geen slides, wel werkende dingen.": "I'm Thomas — curious enough to figure it out, practical enough to build it. My background runs from automotive and production to operations and IT, most recently as team lead Production & Operations. No slides, just things that work.",
  "Lees meer over mij": "Read more about me",
  "Ik werk graag local-first: AI die op je eigen machine draait (Ollama, lokale LLM’s). Geen cloud nodig, geen API-kosten, en je data blijft bij jou.": "I like working local-first: AI that runs on your own machine (Ollama, local LLMs). No cloud needed, no API costs, and your data stays with you.",
  "Eerlijk? 😄 Ik ben een lichte, gescripte gids — geen zware AI in de cloud. Thomas bóúwt wél échte lokale AI-agents; die zie je terug in zijn projecten.": "Honestly? 😄 I'm a light, scripted guide — not a heavy AI in the cloud. Thomas does build real local AI agents; you'll find them in his projects.",

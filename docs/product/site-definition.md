@@ -13,7 +13,7 @@
 ## Inhoudsarchitectuur
 
 1. **Introductie:** naam, positionering, drie bewijspunten en kernboodschap.
-2. **Over:** portret, motivatie, manier van denken en operationele/leidinggevende achtergrond (chef en teamlead).
+2. **Over:** portret, motivatie, manier van denken en operationele/leidinggevende achtergrond (teamlead).
 3. **Wat ik doe:** drie inzetbare domeinen (AI-agents & automatisering, producten & prototypes, hardware & embedded) met concrete voorbeelden.
 4. **Waar ik mee bezig ben:** vier concrete projecten: Repo Notebook, de bijbehorende Obsidian-plugin, Sirena en embedded experimenten — elk met een eigen detailpagina (screenshots, probleem, functies, geleerde lessen, demo-knop).
 5. **Arena-manifest:** een visueel statement over bouwen, testen en verbeteren.
