@@ -72,9 +72,29 @@ SERVICES = [
         "intro": "Ik bouw AI-chatbots die vragen van je bezoekers beantwoorden op basis van jouw eigen informatie: je diensten, prijzen, openingsuren en voorwaarden. Dag en nacht, in het Nederlands, en als hij het niet weet, verwijst hij door naar jou.",
         "service_type": "AI-chatbot",
         "blocks": [
+            ("Wat is een chatbot?", [
+                "Een chatbot is een programma dat op je website, in een app of via berichten met bezoekers praat. De bezoeker typt een vraag en de chatbot antwoordt meteen. Zo krijgen klanten hulp zonder te wachten op een mail of een telefoontje.",
+                "Er bestaan twee soorten chatbots, en het verschil bepaalt wat je er in de praktijk mee kan.",
+            ]),
+            ("Het verschil tussen een gewone chatbot en de nieuwe generatie", [
+                "Een klassieke chatbot werkt met vaste scripts. De bezoeker kiest een knop of typt een trefwoord, en de bot volgt een voorgeprogrammeerd pad. Dat werkt voor eenvoudige vragen, maar zodra iemand het anders formuleert of iets onverwachts vraagt, loopt hij vast en zegt hij dat hij het niet begrijpt.",
+                "De nieuwe generatie, een AI-chatbot, is gebouwd op een groot taalmodel. Die begrijpt gewone taal, ook met typfouten, omgangstaal of een vraag in twee delen, en formuleert zelf een antwoord. Daardoor voelt het als een gesprek in plaats van een keuzemenu.",
+                "Een AI-chatbot kan ook fouten maken als je hem niet afbakent. Daarom laat ik hem enkel antwoorden uit jouw eigen informatie, en verwijst hij door naar jou als hij iets niet weet.",
+                "Een stap verder zijn AI-agents, die niet alleen antwoorden maar ook acties uitvoeren, zoals een aanvraag doorsturen of een afspraak voorstellen. Dat bespreken we als het bij jouw zaak past.",
+            ]),
+            ("Hoe zijn we hier gekomen? Een korte geschiedenis", [
+                "Chatbots zijn ouder dan je denkt. In 1966 bouwde Joseph Weizenbaum aan het MIT ELIZA, een programma dat een gesprekstherapeut nabootste door op trefwoorden te reageren. Het begreep niets, maar mensen praatten er toch mee. Zo ontstonden de eerste chatbots: regels en scripts.",
+                "Decennialang bleven chatbots zo werken, met keuzemenu's en vaste antwoorden, op websites en later in berichtenapps en spraakassistenten.",
+                "De omslag kwam in 2017, toen onderzoekers van Google de transformer-architectuur beschreven, de techniek waarop moderne taalmodellen draaien. Eind 2022 bracht OpenAI ChatGPT uit en kon iedereen zelf ervaren dat een computer gewone taal begrijpt en zinnige antwoorden schrijft. Sindsdien volgen de modellen elkaar snel op, ook open modellen die je op je eigen computer kan draaien.",
+            ]),
+            ("Waar komt AI vandaan en hoe werkt het?", [
+                "Moderne AI komt uit machine learning: in plaats van een computer regels te geven, laat je hem patronen leren uit enorme hoeveelheden voorbeelden. Een taalmodel leert zo uit een gigantische hoeveelheid tekst.",
+                "In de kern voorspelt het telkens welk stukje tekst er logisch volgt. Door dat miljarden keren te oefenen leert het model grammatica, feiten en schrijfstijlen. Het zoekt dus niets op, het schrijft een antwoord dat past. Daarom kan het soms ook zelfverzekerd iets verkeerds zeggen.",
+                "Voor een bedrijf maak ik dat betrouwbaar door het model bij elke vraag eerst het juiste stuk uit jouw eigen documenten te laten opzoeken en daaruit te laten antwoorden. Vakmensen noemen dat retrieval-augmented generation, kortweg RAG. Voor jou betekent het: antwoorden uit je eigen prijslijst en voorwaarden, niet uit het internet.",
+            ]),
             ("Wat doet een AI-chatbot voor je zaak?", [
                 "Je krijgt elke week dezelfde vragen: zijn jullie open op zaterdag, wat kost dat ongeveer, leveren jullie ook in Geel? Een AI-chatbot vangt die vragen op, ook 's avonds en in het weekend. Bezoekers krijgen meteen een antwoord in plaats van te wachten op een mail, en jij krijgt tijd terug.",
-                "Anders dan de klassieke keuzemenu-bots begrijpt een AI-chatbot gewone taal, ook met een tikfout of in dialect. Op de demopagina kan je zelf een klassieke bot en een AI-bot naast elkaar testen.",
+                "Op de demopagina kan je zelf een klassieke bot en een AI-bot naast elkaar testen.",
             ]),
             ("Getraind op jouw informatie, niet op het hele internet", [
                 "De bot antwoordt alleen uit wat jij aanlevert: je website, een prijslijst, een handleiding, veelgestelde vragen. Zo verzint hij geen dingen over je zaak. Voor hij live gaat, testen we hem samen met de moeilijkste vragen die je klanten stellen.",
@@ -94,6 +114,9 @@ SERVICES = [
             "Maandelijks opzegbaar, geen jaarcontract",
         ],
         "faq": [
+            ("Wat is een chatbot?", "Een chatbot is een programma dat op een website of in een app met bezoekers praat en hun vragen meteen beantwoordt, dag en nacht. Een klassieke chatbot volgt een vast script, een AI-chatbot begrijpt gewone taal en formuleert zelf een antwoord."),
+            ("Wat is het verschil tussen een gewone chatbot en een AI-chatbot?", "Een gewone chatbot werkt met knoppen en trefwoorden en loopt vast bij een onverwachte vraag. Een AI-chatbot begrijpt gewone taal, ook met typfouten, en antwoordt op basis van de informatie die jij aanlevert, waardoor het gesprek natuurlijker verloopt."),
+            ("Hoe werkt een AI-chatbot?", "Een AI-chatbot is gebouwd op een taalmodel dat getraind is op enorme hoeveelheden tekst en telkens voorspelt welk stukje tekst logisch volgt. Om betrouwbaar te zijn, zoekt hij bij elke vraag eerst het juiste stuk uit jouw eigen documenten op en antwoordt hij daaruit."),
             ("Wat kost een AI-chatbot laten maken?", "€{chatbot_month} per maand, plus een eenmalige opstart van €{chatbot} (excl. btw). Daarin zit alles: opbouw, hosting, de AI-kosten en onderhoud. Maandelijks opzegbaar. Moet hij gekoppeld worden aan andere systemen, dan krijg je daar een offerte voor."),
             ("Werkt het ook op mijn bestaande website?", "Ja. De chatbot is een klein stukje code dat in bijna elke website past: WordPress, Wix, Shopify, Squarespace of een site op maat."),
             ("Wat als de bot een fout antwoord geeft?", "Hij antwoordt alleen uit wat jij aanlevert en zegt het als hij iets niet weet. Dan verwijst hij door naar jou. We testen hem samen voor hij live gaat, en onderhoud houdt hem bij."),
