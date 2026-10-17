@@ -113,7 +113,6 @@ if (bgm && soundBtn) {
   const rel = isProj || isDemo ? '../' : '';
   const rootRel = document.documentElement.dataset.root || rel; // data-root staat op vertaalde pagina's (een map dieper)
   const URLS = {
-    cv: rootRel + 'assets/thomas-huybrechts-cv.pdf',
     ava: rootRel + 'assets/agent-thomas.jpg',
     mail: 'mailto:hey@thomashuybrechts.com?subject=Contact%20via%20thomashuybrechts.com',
     gmail: 'https://mail.google.com/mail/?view=cm&fs=1&to=hey%40thomashuybrechts.com&su=Contact%20via%20thomashuybrechts.com',
@@ -146,7 +145,6 @@ if (bgm && soundBtn) {
     services: t('🧭 Wat bied je aan?'), prices: t('💶 Wat kost het?'), website: t('🌐 Website'),
     chatbot: t('🤖 AI-chatbot'), automation: t('⚙️ Automatisatie'), maintenance: t('🛠️ Onderhoud'),
     contact: t('🤝 Gratis kennismaking'), projects: t('🚀 Toon projecten'), about: t('👋 Wie ben je?'),
-    cv: t('📄 Bekijk cv'),
   };
   Object.keys(PROJECTS).forEach(s => { LABELS[s] = PROJECTS[s][0]; });
 
@@ -206,11 +204,6 @@ if (bgm && soundBtn) {
       actions: [A(t('Orbit Display'), URLS.project('orbit-display')), A(t('Victus Control'), URLS.project('victus-control')), A(t('Thomas Cluster'), URLS.project('thomas-cluster')), A(t('Alle projecten →'), URLS.sec('projecten'))],
       chips: ['repo-notebook', 'jarvis', 'llm-wiki', 'cyberdash'],
     }),
-    cv: () => ({
-      text: t('Mijn cv staat klaar als PDF, meteen te downloaden 👇'),
-      actions: [A(t('📄 Download cv (PDF)'), URLS.cv, { dl: true }), A(t('Bekijk profiel'), URLS.sec('profiel'))],
-      chips: ['services', 'projects', 'contact'],
-    }),
     about: () => ({
       text: t('Ik ben Thomas, freelancer uit Meerhout. Ik bouw websites, AI-chatbots en automatisaties voor kmo’s en zelfstandigen, online voor heel België en ook verder weg. Mijn achtergrond zit in operations, techniek en IT.'),
       actions: [A(t('Lees meer over mij'), URLS.sec('over'))],
@@ -251,7 +244,6 @@ if (bgm && soundBtn) {
     { id: 'automation', kw: ['automatis', 'n8n', 'workflow', 'zapier', 'make.com'] },
     { id: 'maintenance', kw: ['onderhoud', 'hosting', 'back-up', 'backup', 'beheer', 'zorgpakket', 'zorg '] },
     { id: 'services', kw: ['wat doe', 'wat kan', 'wat maak', 'diensten', 'aanbod', 'wat bied', 'waarmee'] },
-    { id: 'cv', kw: ['cv', 'curriculum', 'resume', 'werkervaring'] },
     { id: 'contact', kw: ['contact', 'mail', 'e-mail', 'email', 'kennismaking', 'afspraak', 'bellen', 'inhuren', 'beschikbaar', 'hire', 'freelance', 'bereiken'] },
     { id: 'localai', kw: ['lokaal', 'lokale', 'ollama', 'privacy', 'cloud', 'local-first', 'gevoelig'] },
     { id: 'about', kw: ['wie ben', 'wie is', 'over thomas', 'over jou', 'jezelf', 'voorstellen'] },

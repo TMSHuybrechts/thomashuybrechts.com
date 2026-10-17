@@ -1915,12 +1915,6 @@
   ]
  },
  {
-  "nl": "Download mijn cv (PDF)",
-  "pages": [
-   "index.html"
-  ]
- },
- {
   "nl": "GitHub",
   "pages": [
    "index.html",
@@ -2087,12 +2081,6 @@
   "pages": [
    "index.html",
    "script.js"
-  ]
- },
- {
-  "nl": "Cv (PDF)",
-  "pages": [
-   "index.html"
   ]
  },
  {
@@ -5149,12 +5137,6 @@
   ]
  },
  {
-  "nl": "📄 Bekijk cv",
-  "pages": [
-   "script.js"
-  ]
- },
- {
   "nl": "Bekijk project →",
   "pages": [
    "script.js"
@@ -5264,24 +5246,6 @@
  },
  {
   "nl": "Alle projecten →",
-  "pages": [
-   "script.js"
-  ]
- },
- {
-  "nl": "Mijn cv staat klaar als PDF, meteen te downloaden 👇",
-  "pages": [
-   "script.js"
-  ]
- },
- {
-  "nl": "📄 Download cv (PDF)",
-  "pages": [
-   "script.js"
-  ]
- },
- {
-  "nl": "Bekijk profiel",
   "pages": [
    "script.js"
   ]
