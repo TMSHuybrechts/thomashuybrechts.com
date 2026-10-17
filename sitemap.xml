@@ -822,10 +822,28 @@
   <url><loc>https://thomashuybrechts.com/repo-notebook/</loc><changefreq>monthly</changefreq><priority>0.9</priority>
   </url>
   <url><loc>https://thomashuybrechts.com/website-laten-maken/</loc><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://thomashuybrechts.com/website-laten-maken/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thomashuybrechts.com/en/website-development/" />
+  </url>
+  <url><loc>https://thomashuybrechts.com/en/website-development/</loc><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://thomashuybrechts.com/website-laten-maken/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thomashuybrechts.com/en/website-development/" />
   </url>
   <url><loc>https://thomashuybrechts.com/ai-chatbot-laten-maken/</loc><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://thomashuybrechts.com/ai-chatbot-laten-maken/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thomashuybrechts.com/en/ai-chatbot-development/" />
+  </url>
+  <url><loc>https://thomashuybrechts.com/en/ai-chatbot-development/</loc><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://thomashuybrechts.com/ai-chatbot-laten-maken/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thomashuybrechts.com/en/ai-chatbot-development/" />
   </url>
   <url><loc>https://thomashuybrechts.com/n8n-automatisatie/</loc><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://thomashuybrechts.com/n8n-automatisatie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thomashuybrechts.com/en/n8n-automation/" />
+  </url>
+  <url><loc>https://thomashuybrechts.com/en/n8n-automation/</loc><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://thomashuybrechts.com/n8n-automatisatie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thomashuybrechts.com/en/n8n-automation/" />
   </url>
   <url><loc>https://thomashuybrechts.com/demo/</loc><changefreq>monthly</changefreq><priority>0.7</priority>
   </url>

@@ -368,8 +368,13 @@ def write_sitemap():
         for page in pages():
             entry(page_url(code, page), "1.0" if page == "index.html" else "0.8", page)
     entry(SITE + "repo-notebook/", "0.9")
-    for slug in ("website-laten-maken", "ai-chatbot-laten-maken", "n8n-automatisatie"):
-        entry(SITE + slug + "/", "0.9")
+    # dienstpagina's: Nederlands en Engels, met wederzijdse taalverwijzingen
+    for nl_slug, en_slug in (("website-laten-maken", "website-development"), ("ai-chatbot-laten-maken", "ai-chatbot-development"), ("n8n-automatisatie", "n8n-automation")):
+        for loc in (SITE + nl_slug + "/", SITE + "en/" + en_slug + "/"):
+            lines.append(f"  <url><loc>{loc}</loc><changefreq>monthly</changefreq><priority>0.9</priority>")
+            lines.append(f'    <xhtml:link rel="alternate" hreflang="nl-BE" href="{SITE}{nl_slug}/" />')
+            lines.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{SITE}en/{en_slug}/" />')
+            lines.append("  </url>")
     entry(SITE + "demo/", "0.7")
     lines.append("</urlset>")
     (ROOT / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")

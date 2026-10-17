@@ -7,10 +7,12 @@ Bron van de prijzen: docs/marktonderzoek-prijzen.md
 """
 import html
 import json
+import sys
 from urllib.parse import quote
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 SITE = "https://thomashuybrechts.com/"
 EMAIL = "hey@thomashuybrechts.com"
 REGION = ["Meerhout", "Geel", "Mol", "Balen", "Laakdal", "Westerlo", "Herentals", "Kasterlee", "Retie", "Turnhout"]
@@ -186,27 +188,46 @@ NAMES = {
 }
 
 
-def fill(s):
-    return s.format(**PRICES)
+from services_en import NAMES_EN, SERVICES_EN, SLUG_EN, UI  # noqa: E402
+
+SLUG_NL = {"website": "website-laten-maken", "chatbot": "ai-chatbot-laten-maken", "n8n": "n8n-automatisatie"}
+SLUGS = {"nl": SLUG_NL, "en": SLUG_EN}
+# in het Engels een komma als duizendtal (1,250)
+PRICES_BY_LANG = {"nl": PRICES, "en": {k: v.replace(".", ",") for k, v in PRICES.items()}}
 
 
-def esc(s):
-    return html.escape(fill(s), quote=True)
+def names_of(lang):
+    return NAMES if lang == "nl" else NAMES_EN
 
 
-def schema(svc):
-    url = f"{SITE}{svc['slug']}/"
+def page_url(key, lang):
+    slug = SLUGS[lang][key]
+    return f"{SITE}{slug}/" if lang == "nl" else f"{SITE}en/{slug}/"
+
+
+def fill(s, lang="nl"):
+    return s.format(**PRICES_BY_LANG[lang])
+
+
+def esc(s, lang="nl"):
+    return html.escape(fill(s, lang), quote=True)
+
+
+def schema(svc, lang="nl"):
+    url = page_url(svc["key"], lang)
+    names = names_of(lang)
     price = PRICES[svc["key"]].replace(".", "")
     graph = [
         {
             "@type": "Service",
             "@id": f"{url}#dienst",
-            "name": NAMES[svc["slug"]],
+            "name": names[svc["slug"]],
             "serviceType": svc["service_type"],
-            "description": fill(svc["description"]),
+            "description": fill(svc["description"], lang),
             "url": url,
+            "inLanguage": lang,
             "provider": {"@id": f"{SITE}#zaak"},
-            "areaServed": [{"@type": "City", "name": c} for c in REGION] + [{"@type": "Country", "name": "België"}],
+            "areaServed": [{"@type": "City", "name": c} for c in REGION] + [{"@type": "Country", "name": UI[lang]["country"]}],
             "offers": {
                 "@type": "Offer",
                 "priceCurrency": "EUR",
@@ -217,113 +238,131 @@ def schema(svc):
         {
             "@type": "FAQPage",
             "mainEntity": [
-                {"@type": "Question", "name": fill(q), "acceptedAnswer": {"@type": "Answer", "text": fill(a)}}
+                {"@type": "Question", "name": fill(q, lang), "acceptedAnswer": {"@type": "Answer", "text": fill(a, lang)}}
                 for q, a in svc["faq"]
             ],
         },
         {
             "@type": "BreadcrumbList",
             "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "Thomas Huybrechts", "item": SITE},
-                {"@type": "ListItem", "position": 2, "name": NAMES[svc["slug"]], "item": url},
+                {"@type": "ListItem", "position": 1, "name": "Thomas Huybrechts", "item": SITE if lang == "nl" else SITE + "en/"},
+                {"@type": "ListItem", "position": 2, "name": names[svc["slug"]], "item": url},
             ],
         },
     ]
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
 
 
-def render(svc):
-    url = f"{SITE}{svc['slug']}/"
+def render(svc, lang="nl"):
+    T = UI[lang]
+    names = names_of(lang)
+    key = svc["key"]
+    url = page_url(key, lang)
+    up = "../" if lang == "nl" else "../../"  # naar de root van de site
+    other = "en" if lang == "nl" else "nl"
     blocks = "\n".join(
         f"""        <section class="svc-block reveal">
           <h2>{html.escape(h)}</h2>
-{chr(10).join(f'          <p>{esc(p)}</p>' for p in ps)}
+{chr(10).join(f'          <p>{esc(p, lang)}</p>' for p in ps)}
         </section>"""
         for h, ps in svc["blocks"]
     )
-    includes = "\n".join(f"              <li>{esc(i)}</li>" for i in svc["includes"])
+    includes = "\n".join(f"              <li>{esc(i, lang)}</li>" for i in svc["includes"])
     faq = "\n".join(
         f"""          <details>
-            <summary>{esc(q)} <span class="growth-toggle" aria-hidden="true">+</span></summary>
-            <p>{esc(a)}</p>
+            <summary>{esc(q, lang)} <span class="growth-toggle" aria-hidden="true">+</span></summary>
+            <p>{esc(a, lang)}</p>
           </details>"""
         for q, a in svc["faq"]
     )
     related = "\n".join(
-        f'          <a class="svc-related-link" href="../{r}/">{NAMES[r]} <span aria-hidden="true">&rarr;</span></a>'
+        f'          <a class="svc-related-link" href="../{r}/">{names[r]} <span aria-hidden="true">&rarr;</span></a>'
         for r in svc["related"]
     )
-    demo_btn = '\n            <a class="text-link" href="../demo/">Probeer de demo <span aria-hidden="true">&rarr;</span></a>' if svc.get("demo") else ""
+    demo_btn = f'\n            <a class="text-link" href="{up}demo/">{T["try_demo"]} <span aria-hidden="true">&rarr;</span></a>' if svc.get("demo") else ""
     active = ' class="is-active" aria-current="page"'
     nav = "\n".join(
-        f'        <a{active if s == svc["slug"] else ""} href="../{s}/">{n}</a>'
-        for s, n in [("website-laten-maken", "Websites"), ("n8n-automatisatie", "Automatisatie"), ("ai-chatbot-laten-maken", "Chatbots")]
+        f'        <a{active if SLUGS[lang][k] == svc["slug"] else ""} href="../{SLUGS[lang][k]}/">{T["nav"][k]}</a>'
+        for k in ("website", "n8n", "chatbot")
     )
-    price = PRICES[svc["key"]]
-    if svc["key"] == "chatbot":
-        price_html = f'<p class="price-amount"><small>+ &euro;{price} opstart</small> &euro;{PRICES["chatbot_month"]}<small>per maand</small></p>'
+    footer_links = "\n".join(
+        f'        <a href="../{SLUGS[lang][k]}/">{T["footer_names"][k]}</a>' for k in ("website", "chatbot", "n8n")
+    )
+    price = PRICES_BY_LANG[lang][key]
+    if key == "chatbot":
+        price_html = f'<p class="price-amount"><small>+ &euro;{price} {T["setup"]}</small> &euro;{PRICES_BY_LANG[lang]["chatbot_month"]}<small>{T["per_month"]}</small></p>'
     else:
-        price_html = f'<p class="price-amount"><small>vanaf</small> &euro;{price}</p>'
+        price_html = f'<p class="price-amount"><small>{T["from"]}</small> &euro;{price}</p>'
+    # taalversies van dezelfde dienst voor Google, en een zichtbare link naar de andere taal
+    alternates = (
+        f'    <link rel="alternate" hreflang="nl-BE" href="{page_url(key, "nl")}" />\n'
+        f'    <link rel="alternate" hreflang="en" href="{page_url(key, "en")}" />\n'
+        f'    <link rel="alternate" hreflang="x-default" href="{page_url(key, "nl")}" />'
+    )
+    i18n_scripts = f'    <script src="{up}i18n/en.js"></script>\n' if lang == "en" else ""
+    other_href = f"../../{SLUGS[other][key]}/" if lang == "en" else f"../en/{SLUGS[other][key]}/"
+    other_hreflang = "nl-BE" if other == "nl" else "en"
     return f"""<!doctype html>
-<html lang="nl" data-root="../">
+<html lang="{lang}" data-root="{up}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{esc(svc['title'])}</title>
-    <meta name="description" content="{esc(svc['description'])}" />
+    <title>{esc(svc['title'], lang)}</title>
+    <meta name="description" content="{esc(svc['description'], lang)}" />
     <meta name="theme-color" content="#f3f0e8" />
     <meta name="color-scheme" content="light" />
     <link rel="canonical" href="{url}" />
+{alternates}
     <!-- Gegenereerd door docs/build-services.py, niet met de hand aanpassen -->
 
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:locale" content="{T['locale']}" />
     <meta property="og:site_name" content="Thomas Huybrechts" />
-    <meta property="og:title" content="{esc(svc['title'])}" />
-    <meta property="og:description" content="{esc(svc['description'])}" />
+    <meta property="og:title" content="{esc(svc['title'], lang)}" />
+    <meta property="og:description" content="{esc(svc['description'], lang)}" />
     <meta property="og:url" content="{url}" />
     <meta property="og:image" content="{SITE}assets/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="{up}favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" />
-    <link rel="stylesheet" href="../styles.css" />
-    <script src="../script.js" defer></script>
+    <link rel="stylesheet" href="{up}styles.css" />
+{i18n_scripts}    <script src="{up}script.js" defer></script>
     <script type="application/ld+json">
-{schema(svc)}
+{schema(svc, lang)}
     </script>
   </head>
   <body class="svc-page">
-    <a class="skip-link" href="#inhoud">Ga naar de inhoud</a>
+    <a class="skip-link" href="#inhoud">{T['skip']}</a>
 
     <header class="site-header" id="header">
-      <a class="brand" href="../" aria-label="Thomas Huybrechts, naar de startpagina">
+      <a class="brand" href="{'../' if lang == 'nl' else '../../en/'}" aria-label="{T['brand_aria']}">
         <span class="brand-mark">TH</span>
         <span>Thomas Huybrechts</span>
       </a>
-      <nav id="nav" aria-label="Hoofdnavigatie">
+      <nav id="nav" aria-label="{T['nav_aria']}">
 {nav}
-        <a href="../demo/">Demo</a>
-        <a href="../#prijzen">Prijzen</a>
-        <a class="nav-contact" href="#contact">Contact</a>
+        <a href="{up}demo/">{T['demo']}</a>
+        <a href="{up if lang == 'nl' else '../../en/'}#prijzen">{T['pricing']}</a>
+        <a class="nav-contact" href="#contact">{T['contact']}</a>
       </nav>
       <div class="header-right">
-        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="{T['menu_aria']}">
           <span></span><span></span>
         </button>
       </div>
     </header>
 
     <main id="inhoud">
-      <nav class="svc-crumbs" aria-label="Kruimelpad"><a href="../">Home</a> <span aria-hidden="true">/</span> <span>{NAMES[svc['slug']]}</span></nav>
+      <nav class="svc-crumbs" aria-label="{T['crumbs_aria']}"><a href="{'../' if lang == 'nl' else '../../en/'}">{T['home']}</a> <span aria-hidden="true">/</span> <span>{names[svc['slug']]}</span></nav>
       <section class="svc-hero">
         <p class="eyebrow"><span class="status-dot"></span> {svc['eyebrow']}</p>
         <h1>{svc['h1']}</h1>
-        <p class="hero-intro">{esc(svc['intro'])}</p>
+        <p class="hero-intro">{esc(svc['intro'], lang)}</p>
         <div class="hero-actions">
-          <a class="button button-dark" href="#contact">Plan een gratis kennismaking <span aria-hidden="true">&rarr;</span></a>{demo_btn}
+          <a class="button button-dark" href="#contact">{T['cta']} <span aria-hidden="true">&rarr;</span></a>{demo_btn}
         </div>
       </section>
 
@@ -331,40 +370,40 @@ def render(svc):
         <div class="svc-body">
 {blocks}
         </div>
-        <aside class="svc-aside reveal" aria-label="Prijs en inbegrepen">
+        <aside class="svc-aside reveal" aria-label="{T['aside_aria']}">
           <article class="price-card price-card-accent">
-            <p class="price-name">{NAMES[svc['slug']]}</p>
+            <p class="price-name">{names[svc['slug']]}</p>
             {price_html}
             <ul>
 {includes}
             </ul>
-            <p class="svc-vat">Vaste prijs, excl. btw. Offerte op maat na de kennismaking.</p>
+            <p class="svc-vat">{T['vat']}</p>
           </article>
         </aside>
       </div>
 
       <section class="section faq svc-faq" id="vragen">
-        <div class="section-label reveal"><span>?</span> VEELGESTELD</div>
+        <div class="section-label reveal"><span>?</span> {T['faq_label']}</div>
         <div class="faq-list reveal">
 {faq}
         </div>
       </section>
 
-      <section class="svc-related reveal" aria-label="Andere diensten">
-        <p class="eyebrow">OOK INTERESSANT</p>
+      <section class="svc-related reveal" aria-label="{T['related_aria']}">
+        <p class="eyebrow">{T['related_label']}</p>
 {related}
       </section>
 
       <section class="contact" id="contact">
         <div class="contact-copy reveal">
-          <p class="eyebrow"><span class="status-dot"></span> BESCHIKBAAR VOOR OPDRACHTEN</p>
-          <h2>Even <em>sparren?</em></h2>
-          <p class="contact-sub">Vertel me in een paar zinnen wat je wil bereiken. Je krijgt binnen twee werkdagen een eerlijk antwoord: wat is zinvol, wat is de eerste stap, en wat kost het.</p>
+          <p class="eyebrow"><span class="status-dot"></span> {T['avail']}</p>
+          <h2>{T['contact_h2']}</h2>
+          <p class="contact-sub">{T['contact_sub']}</p>
           <div class="contact-actions">
-            <a class="button button-light" href="mailto:{EMAIL}?subject={quote(NAMES[svc['slug']])}">Plan een gratis kennismaking <span aria-hidden="true">&nearr;</span></a>
+            <a class="button button-light" href="mailto:{EMAIL}?subject={quote(names[svc['slug']])}">{T['cta']} <span aria-hidden="true">&nearr;</span></a>
             <button class="copy-email" type="button" data-email="{EMAIL}" aria-live="polite">
               <span class="copy-email-text">{EMAIL}</span>
-              <span class="copy-email-hint">kopieer</span>
+              <span class="copy-email-hint">{T['copy']}</span>
             </button>
           </div>
         </div>
@@ -376,15 +415,14 @@ def render(svc):
     </main>
 
     <footer>
-      <a class="brand footer-brand" href="../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
-      <nav class="footer-nav" aria-label="Voetnavigatie">
-        <a href="../website-laten-maken/">Website laten maken</a>
-        <a href="../ai-chatbot-laten-maken/">AI-chatbot laten maken</a>
-        <a href="../n8n-automatisatie/">n8n-automatisatie</a>
-        <a href="../demo/">Demo</a>
-        <a href="mailto:{EMAIL}">E-mail</a>
+      <a class="brand footer-brand" href="{'../' if lang == 'nl' else '../../en/'}"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="{T['footer_nav_aria']}">
+{footer_links}
+        <a href="{up}demo/">{T['demo']}</a>
+        <a href="mailto:{EMAIL}">{T['email']}</a>
+        <a href="{other_href}" hreflang="{other_hreflang}" lang="{other}">{T['other_lang']}</a>
       </nav>
-      <p>&copy; <span id="year"></span> Thomas Huybrechts &middot; Freelance websites, automatisatie &amp; AI-chatbots &middot; Meerhout, Kempen</p>
+      <p>&copy; <span id="year"></span> Thomas Huybrechts &middot; {T['footer_line']}</p>
     </footer>
   <script data-goatcounter="https://thomashuybrechts.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
@@ -393,11 +431,12 @@ def render(svc):
 
 
 def main():
-    for svc in SERVICES:
-        out = ROOT / svc["slug"] / "index.html"
-        out.parent.mkdir(exist_ok=True)
-        out.write_text(render(svc), encoding="utf-8", newline="\n")
-        print(f"  {svc['slug']}/index.html")
+    for lang, services in (("nl", SERVICES), ("en", SERVICES_EN)):
+        for svc in services:
+            out = ROOT / svc["slug"] / "index.html" if lang == "nl" else ROOT / "en" / svc["slug"] / "index.html"
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(render(svc, lang), encoding="utf-8", newline="\n")
+            print(f"  {out.relative_to(ROOT).as_posix()}")
 
 
 if __name__ == "__main__":
