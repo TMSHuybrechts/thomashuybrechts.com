@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Repo Notebook for Obsidian — a project by Thomas Huybrechts</title>
-    <meta name="description" content="An Obsidian plugin that brings Repo Notebook into your own vault, with BRAT releases and an MCP link so AI assistants can work directly with your notes." />
+    <meta name="description" content="An Obsidian plugin that puts your Repo Notebook shelf inside your own vault: every saved GitHub repo becomes a note, related repos become wikilinks, and cloning, installing and running stay one command away." />
     <meta name="theme-color" content="#f3f0e8" />
     <link rel="canonical" href="https://thomashuybrechts.com/en/projecten/repo-notebook-obsidian.html" />
     <!-- i18n:start · gegenereerd door docs/build-i18n.py, niet met de hand aanpassen -->
@@ -23,7 +23,7 @@
     <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content="Thomas Huybrechts" />
     <meta property="og:title" content="Repo Notebook for Obsidian — Thomas Huybrechts" />
-    <meta property="og:description" content="An Obsidian plugin that brings Repo Notebook into your own vault, with BRAT releases and an MCP link so AI assistants can work directly with your notes." />
+    <meta property="og:description" content="An Obsidian plugin that puts your Repo Notebook shelf inside your own vault: every saved GitHub repo becomes a note, related repos become wikilinks, and cloning, installing and running stay one command away." />
     <meta property="og:url" content="https://thomashuybrechts.com/en/projecten/repo-notebook-obsidian.html" />
     <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -38,7 +38,7 @@
       "@context": "https://schema.org",
       "@type": "CreativeWork",
       "name": "Repo Notebook for Obsidian",
-      "description": "An Obsidian plugin that brings Repo Notebook into your own vault, with BRAT releases and an MCP link so AI assistants can work directly with your notes.",
+      "description": "An Obsidian plugin that puts your Repo Notebook shelf inside your own vault: every saved GitHub repo becomes a note, related repos become wikilinks, and cloning, installing and running stay one command away.",
       "url": "https://thomashuybrechts.com/en/projecten/repo-notebook-obsidian.html",
       "author": {
         "@type": "Person",
@@ -83,26 +83,44 @@
       <article>
         <section class="section project-hero">
           <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> All projects</a>
-          <p class="work-tag">OBSIDIAN · PLUGIN · MCP</p>
+          <p class="work-tag">OBSIDIAN · PLUGIN · TYPESCRIPT</p>
           <h1>Repo Notebook for Obsidian</h1>
-          <p class="project-intro">An Obsidian plugin that brings Repo Notebook into your own vault, with BRAT releases and an MCP link so AI assistants can work directly with your notes.</p>
+          <p class="project-intro">An Obsidian plugin that puts your Repo Notebook shelf inside your own vault: every saved GitHub repo becomes a note, related repos become wikilinks, and cloning, installing and running stay one command away.</p>
           <dl class="project-meta">
-            <div><dt>Type</dt><dd>Obsidian plugin</dd></div>
-            <div><dt>Status</dt><dd>In active development</dd></div>
+            <div><dt>Type</dt><dd>Obsidian plugin (desktop)</dd></div>
+            <div><dt>Status</dt><dd>v0.1.0 · installable via BRAT</dd></div>
             <div><dt>Role</dt><dd>Design &amp; development</dd></div>
-            <div><dt>Stack</dt><dd>TypeScript · Obsidian API · BRAT · MCP</dd></div>
+            <div><dt>Stack</dt><dd>TypeScript · Obsidian API · Bases · esbuild · node:test</dd></div>
+            <div><dt>Website</dt><dd><a class="inline-link" href="https://github.com/TMSHuybrechts/obsidian-repo-notebook">github.com/TMSHuybrechts/obsidian-repo-notebook</a></dd></div>
           </dl>
-          <div class="project-result"><span class="lbl">RESULT</span><p>Repo knowledge and an AI link (MCP) straight in your Obsidian vault, with BRAT releases.</p></div>
+          <div class="project-result"><span class="lbl">RESULT</span><p>Your whole GitHub collection as linked notes in Obsidian, synced in both directions with the app.</p></div>
           <div class="hero-actions">
-            <a class="button button-dark" href="mailto:hey@thomashuybrechts.com?subject=About%20Repo%20Notebook%20for%20Obsidian">Talk to me about this <span aria-hidden="true">↗</span></a>
+            <a class="button button-dark" href="https://github.com/TMSHuybrechts/obsidian-repo-notebook" rel="noopener" target="_blank">Plugin on GitHub <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="../../repo-notebook/">The Repo Notebook app <span aria-hidden="true">↗</span></a>
             <a class="text-link" href="#details">Read how it works <span aria-hidden="true">↓</span></a>
           </div>
         </section>
 
         <section class="project-gallery" aria-label="Screenshots of Repo Notebook for Obsidian">
           <figure class="reveal gallery-main">
-            <img src="../../assets/projects/repo-graph.jpg" alt="The knowledge graph in Obsidian — every saved repo becomes a note, with wikilinks connecting everything (zoomed-out sample view)" loading="eager" decoding="async" />
-            <figcaption>The knowledge graph in Obsidian — every saved repo becomes a note, with wikilinks connecting everything (zoomed-out sample view)</figcaption>
+            <video src="../../assets/projects/obsidian-demo.mp4" poster="../assets/projects/obsidian-demo-poster.webp" controls muted loop playsinline preload="none" width="1280" height="720" aria-label="Short demo: a repo note with summary, AI verdict and your own notes, then the graph view of the whole collection"></video>
+            <figcaption>Short demo: a repo note with summary, AI verdict and your own notes, then the graph view of the whole collection</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../../assets/projects/obsidian-note.webp" alt="Every repo becomes a note: summary with stars, language and status, your own Notes and the AI verdict. On the right, the plugin&#x27;s side panel" loading="lazy" decoding="async" />
+            <figcaption>Every repo becomes a note: summary with stars, language and status, your own Notes and the AI verdict. On the right, the plugin's side panel</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../../assets/projects/obsidian-related.webp" alt="Related repos as wikilinks, each with the reason for the link, calculated by the same engine as the map in the app" loading="lazy" decoding="async" />
+            <figcaption>Related repos as wikilinks, each with the reason for the link, calculated by the same engine as the map in the app</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../../assets/projects/obsidian-graph.webp" alt="Obsidian&#x27;s graph view instantly shows your whole repo map (zoomed out, 169 repos)" loading="lazy" decoding="async" />
+            <figcaption>Obsidian's graph view instantly shows your whole repo map (zoomed out, 169 repos)</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../../assets/projects/obsidian-bases.webp" alt="A ready-made Bases table: all repos with language, stars, cluster and health, sortable and groupable" loading="lazy" decoding="async" />
+            <figcaption>A ready-made Bases table: all repos with language, stars, cluster and health, sortable and groupable</figcaption>
           </figure>
         </section>
 
@@ -110,21 +128,23 @@
           <div class="project-columns">
             <div class="reveal">
               <div class="section-label"><span>01</span> THE PROBLEM</div>
-              <p class="project-text">Many makers live in Obsidian. A separate desktop app is then one place too many. Knowledge about repositories belongs next to your other notes — searchable, linkable and yours.</p>
+              <p class="project-text">Repo Notebook kept my GitHub collection in its own app, but my notes live in Obsidian. Two places means double work: what you know about a repo belongs next to the rest of your knowledge, searchable and linkable, without drifting out of sync.</p>
             </div>
             <div class="reveal">
               <div class="section-label"><span>02</span> WHAT IT DOES</div>
               <dl class="feature-list">
-                <div><dt>Everything in your vault</dt><dd>Repositories become plain Markdown notes with frontmatter. They work with your existing tags, links and graph view.</dd></div>
-                <div><dt>BRAT releases</dt><dd>Install and update via BRAT, without waiting for the official community store. Fast iteration with real users.</dd></div>
-                <div><dt>MCP link</dt><dd>An MCP server makes the vault reachable for AI assistants such as Claude: searching your repo notes, requesting summaries, letting them add suggestions.</dd></div>
-                <div><dt>Same brain as Repo Notebook</dt><dd>The analysis and suggestion logic is shared with the desktop app, so both deliver the same quality.</dd></div>
+                <div><dt>Every repo a note</dt><dd>One Markdown note per repo with frontmatter (stars, language, topics, status, cluster, health), a summary, the AI verdict, the key files and the README. Plus an index note per cluster and status.</dd></div>
+                <div><dt>Related repos as wikilinks</dt><dd>The links from the app's knowledge graph become real [[wikilinks]], with the reason attached. That way Obsidian's graph view shows your complete repo map. Tags like #repo/taal/python give colour groups.</dd></div>
+                <div><dt>Two-way sync</dt><dd>Change your status, category or notes in Obsidian and it shows up in the app a little over a second later, and the other way around. Your own Notes block is never overwritten; a deleted repo is marked, not erased.</dd></div>
+                <div><dt>Side panel with actions</dt><dd>Search, status filters, an A–Z list and a right-click menu with clone, install, start, stop, log and git pull. If the app is off, reading, syncing and adding repos keep working.</dd></div>
+                <div><dt>Bases table</dt><dd>A ready-made table for Obsidian Bases: all repos, ‘to try’, ‘cloned’ and a view per cluster.</dd></div>
+                <div><dt>Install in 3 steps</dt><dd>Install BRAT from the community plugins, choose ‘Add beta plugin’ and paste TMSHuybrechts/obsidian-repo-notebook. BRAT then keeps the plugin up to date by itself.</dd></div>
               </dl>
             </div>
           </div>
           <div class="project-learned reveal">
             <div class="section-label"><span>03</span> WHAT I LEARNED</div>
-            <blockquote class="learned">Building a plugin forces you to make your core small and portable. What happened ‘by itself’ in the desktop app had to become explicit and testable here — and that made the desktop app better too.</blockquote>
+            <blockquote class="learned">The hardest question wasn't technical but: what belongs to whom? Once it was settled which part of a note the app manages and which part is yours, two-way sync became reliable. The core logic runs without Obsidian and is tested against a small fake version of the Obsidian API; a sync of 122 repos takes about 0.3 seconds.</blockquote>
           </div>
         </section>
 

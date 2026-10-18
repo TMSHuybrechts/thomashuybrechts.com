@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Repo Notebook voor Obsidian — project van Thomas Huybrechts</title>
-    <meta name="description" content="Een Obsidian-plugin die Repo Notebook naar je eigen vault brengt, met BRAT-releases en een MCP-koppeling zodat AI-assistenten rechtstreeks met je notities kunnen werken." />
+    <meta name="description" content="Een Obsidian-plugin die je Repo Notebook-plank in je eigen vault zet: elke opgeslagen GitHub-repo wordt een notitie, verwante repos worden wikilinks, en klonen, installeren en starten blijven één commando ver." />
     <meta name="theme-color" content="#f3f0e8" />
     <link rel="canonical" href="https://thomashuybrechts.com/projecten/repo-notebook-obsidian.html" />
     <!-- i18n:start · gegenereerd door docs/build-i18n.py, niet met de hand aanpassen -->
@@ -22,7 +22,7 @@
     <meta property="og:locale" content="nl_BE" />
     <meta property="og:site_name" content="Thomas Huybrechts" />
     <meta property="og:title" content="Repo Notebook voor Obsidian — Thomas Huybrechts" />
-    <meta property="og:description" content="Een Obsidian-plugin die Repo Notebook naar je eigen vault brengt, met BRAT-releases en een MCP-koppeling zodat AI-assistenten rechtstreeks met je notities kunnen werken." />
+    <meta property="og:description" content="Een Obsidian-plugin die je Repo Notebook-plank in je eigen vault zet: elke opgeslagen GitHub-repo wordt een notitie, verwante repos worden wikilinks, en klonen, installeren en starten blijven één commando ver." />
     <meta property="og:url" content="https://thomashuybrechts.com/projecten/repo-notebook-obsidian.html" />
     <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -37,7 +37,7 @@
       "@context": "https://schema.org",
       "@type": "CreativeWork",
       "name": "Repo Notebook voor Obsidian",
-      "description": "Een Obsidian-plugin die Repo Notebook naar je eigen vault brengt, met BRAT-releases en een MCP-koppeling zodat AI-assistenten rechtstreeks met je notities kunnen werken.",
+      "description": "Een Obsidian-plugin die je Repo Notebook-plank in je eigen vault zet: elke opgeslagen GitHub-repo wordt een notitie, verwante repos worden wikilinks, en klonen, installeren en starten blijven één commando ver.",
       "url": "https://thomashuybrechts.com/projecten/repo-notebook-obsidian.html",
       "author": { "@type": "Person", "name": "Thomas Huybrechts", "url": "https://thomashuybrechts.com/" },
       "inLanguage": "nl-BE"
@@ -78,26 +78,44 @@
       <article>
         <section class="section project-hero">
           <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> Alle projecten</a>
-          <p class="work-tag">OBSIDIAN · PLUGIN · MCP</p>
+          <p class="work-tag">OBSIDIAN · PLUGIN · TYPESCRIPT</p>
           <h1>Repo Notebook voor Obsidian</h1>
-          <p class="project-intro">Een Obsidian-plugin die Repo Notebook naar je eigen vault brengt, met BRAT-releases en een MCP-koppeling zodat AI-assistenten rechtstreeks met je notities kunnen werken.</p>
+          <p class="project-intro">Een Obsidian-plugin die je Repo Notebook-plank in je eigen vault zet: elke opgeslagen GitHub-repo wordt een notitie, verwante repos worden wikilinks, en klonen, installeren en starten blijven één commando ver.</p>
           <dl class="project-meta">
-            <div><dt>Type</dt><dd>Obsidian-plugin</dd></div>
-            <div><dt>Status</dt><dd>Actief in ontwikkeling</dd></div>
+            <div><dt>Type</dt><dd>Obsidian-plugin (desktop)</dd></div>
+            <div><dt>Status</dt><dd>v0.1.0 · installeerbaar via BRAT</dd></div>
             <div><dt>Rol</dt><dd>Ontwerp &amp; ontwikkeling</dd></div>
-            <div><dt>Stack</dt><dd>TypeScript · Obsidian API · BRAT · MCP</dd></div>
+            <div><dt>Stack</dt><dd>TypeScript · Obsidian API · Bases · esbuild · node:test</dd></div>
+            <div><dt>Website</dt><dd><a class="inline-link" href="https://github.com/TMSHuybrechts/obsidian-repo-notebook">github.com/TMSHuybrechts/obsidian-repo-notebook</a></dd></div>
           </dl>
-          <div class="project-result"><span class="lbl">RESULTAAT</span><p>Repo-kennis én een AI-koppeling (MCP) rechtstreeks in je Obsidian-vault, met BRAT-releases.</p></div>
+          <div class="project-result"><span class="lbl">RESULTAAT</span><p>Je hele GitHub-verzameling als gelinkte notities in Obsidian, in twee richtingen gesynchroniseerd met de app.</p></div>
           <div class="hero-actions">
-            <a class="button button-dark" href="mailto:hey@thomashuybrechts.com?subject=Over%20Repo%20Notebook%20voor%20Obsidian">Praat met mij hierover <span aria-hidden="true">↗</span></a>
+            <a class="button button-dark" href="https://github.com/TMSHuybrechts/obsidian-repo-notebook" rel="noopener" target="_blank">Plugin op GitHub <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="../repo-notebook/">De Repo Notebook-app <span aria-hidden="true">↗</span></a>
             <a class="text-link" href="#details">Lees hoe het werkt <span aria-hidden="true">↓</span></a>
           </div>
         </section>
 
         <section class="project-gallery" aria-label="Beelden van Repo Notebook voor Obsidian">
           <figure class="reveal gallery-main">
-            <img src="../assets/projects/repo-graph.jpg" alt="De kennisgraaf in Obsidian — elke opgeslagen repo wordt een notitie, met wikilinks die alles verbinden (uitgezoomde voorbeeldweergave)" loading="eager" decoding="async" />
-            <figcaption>De kennisgraaf in Obsidian — elke opgeslagen repo wordt een notitie, met wikilinks die alles verbinden (uitgezoomde voorbeeldweergave)</figcaption>
+            <video src="../assets/projects/obsidian-demo.mp4" poster="../assets/projects/obsidian-demo-poster.webp" controls muted loop playsinline preload="none" width="1280" height="720" aria-label="Korte demo: een repo-notitie met samenvatting, AI-oordeel en eigen notities, daarna de grafiekweergave van de hele verzameling"></video>
+            <figcaption>Korte demo: een repo-notitie met samenvatting, AI-oordeel en eigen notities, daarna de grafiekweergave van de hele verzameling</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../assets/projects/obsidian-note.webp" alt="Elke repo wordt een notitie: samenvatting met sterren, taal en status, je eigen Notities en het AI-oordeel. Rechts het zijpaneel van de plugin" loading="lazy" decoding="async" />
+            <figcaption>Elke repo wordt een notitie: samenvatting met sterren, taal en status, je eigen Notities en het AI-oordeel. Rechts het zijpaneel van de plugin</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../assets/projects/obsidian-related.webp" alt="Verwante repos als wikilinks, telkens met de reden van de koppeling, berekend door dezelfde motor als de kaart in de app" loading="lazy" decoding="async" />
+            <figcaption>Verwante repos als wikilinks, telkens met de reden van de koppeling, berekend door dezelfde motor als de kaart in de app</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../assets/projects/obsidian-graph.webp" alt="De grafiekweergave van Obsidian toont meteen je hele repo-kaart (uitgezoomd, 169 repos)" loading="lazy" decoding="async" />
+            <figcaption>De grafiekweergave van Obsidian toont meteen je hele repo-kaart (uitgezoomd, 169 repos)</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../assets/projects/obsidian-bases.webp" alt="Een kant-en-klare Bases-tabel: alle repos met taal, sterren, cluster en gezondheid, sorteer- en groepeerbaar" loading="lazy" decoding="async" />
+            <figcaption>Een kant-en-klare Bases-tabel: alle repos met taal, sterren, cluster en gezondheid, sorteer- en groepeerbaar</figcaption>
           </figure>
         </section>
 
@@ -105,21 +123,23 @@
           <div class="project-columns">
             <div class="reveal">
               <div class="section-label"><span>01</span> HET PROBLEEM</div>
-              <p class="project-text">Veel makers leven in Obsidian. Een aparte desktop-app is dan één plek te veel. De kennis over repositories hoort naast je andere notities te staan — doorzoekbaar, linkbaar en van jou.</p>
+              <p class="project-text">Repo Notebook bewaarde mijn GitHub-verzameling in een eigen app, maar mijn notities staan in Obsidian. Twee plekken betekent dubbel werk: wat je over een repo weet, hoort naast de rest van je kennis te staan, doorzoekbaar en linkbaar, zonder dat het uit sync loopt.</p>
             </div>
             <div class="reveal">
               <div class="section-label"><span>02</span> WAT HET DOET</div>
               <dl class="feature-list">
-                <div><dt>Alles in je vault</dt><dd>Repositories worden gewone Markdown-notities met frontmatter. Ze werken met je bestaande tags, links en graph view.</dd></div>
-                <div><dt>BRAT-releases</dt><dd>Installeren en updaten via BRAT, zonder wachten op de officiële community-store. Snelle iteratie met echte gebruikers.</dd></div>
-                <div><dt>MCP-koppeling</dt><dd>Een MCP-server maakt de vault bereikbaar voor AI-assistenten zoals Claude: zoeken in je repo-notities, samenvattingen opvragen, suggesties laten toevoegen.</dd></div>
-                <div><dt>Zelfde brein als Repo Notebook</dt><dd>De analyse- en suggestielogica wordt gedeeld met de desktop-app, zodat beide dezelfde kwaliteit leveren.</dd></div>
+                <div><dt>Elke repo een notitie</dt><dd>Per repo een Markdown-notitie met frontmatter (sterren, taal, topics, status, cluster, gezondheid), een samenvatting, het AI-oordeel, de belangrijkste bestanden en de README. Plus een index-notitie per cluster en status.</dd></div>
+                <div><dt>Verwante repos als wikilinks</dt><dd>De koppelingen uit de kennisgraaf van de app worden echte [[wikilinks]], met de reden erbij. Zo toont de grafiekweergave van Obsidian je volledige repo-kaart. Tags zoals #repo/taal/python geven kleurgroepen.</dd></div>
+                <div><dt>Sync in twee richtingen</dt><dd>Pas je status, categorie of notities aan in Obsidian, dan staat dat ruim een seconde later in de app, en omgekeerd. Jouw eigen Notities-blok wordt nooit overschreven; een verwijderde repo wordt gemarkeerd, niet gewist.</dd></div>
+                <div><dt>Zijpaneel met acties</dt><dd>Zoeken, statusfilters, een A–Z-lijst en een rechtsklikmenu met klonen, installeren, starten, stoppen, log en git pull. Staat de app uit, dan werken lezen, sync en repos toevoegen gewoon verder.</dd></div>
+                <div><dt>Bases-tabel</dt><dd>Een kant-en-klare tabel voor Obsidian Bases: alle repos, ‘te proberen’, ‘gekloond’ en een weergave per cluster.</dd></div>
+                <div><dt>Installeren in 3 stappen</dt><dd>Installeer BRAT uit de community-plugins, kies ‘Add beta plugin’ en plak TMSHuybrechts/obsidian-repo-notebook. BRAT houdt de plugin daarna zelf up-to-date.</dd></div>
               </dl>
             </div>
           </div>
           <div class="project-learned reveal">
             <div class="section-label"><span>03</span> WAT IK ERVAN LEERDE</div>
-            <blockquote class="learned">Een plugin bouwen dwingt je om je kern klein en overdraagbaar te maken. Wat in de desktop-app ‘vanzelf’ ging, moest hier expliciet en testbaar worden — en daar werd de desktop-app ook beter van.</blockquote>
+            <blockquote class="learned">De lastigste vraag was niet technisch maar: wat is van wie? Zodra vastlag welk deel van een notitie de app beheert en welk deel van jou is, werd sync in twee richtingen betrouwbaar. De kernlogica draait zonder Obsidian en is getest tegen een kleine nep-versie van de Obsidian-API; een sync van 122 repos duurt zo&#x27;n 0,3 seconde.</blockquote>
           </div>
         </section>
 

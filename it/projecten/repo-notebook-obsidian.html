@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Repo Notebook per Obsidian — progetto di Thomas Huybrechts</title>
-    <meta name="description" content="Un plugin Obsidian che porta Repo Notebook nel tuo vault, con release BRAT e un collegamento MCP così gli assistenti AI possono lavorare direttamente con le tue note." />
+    <meta name="description" content="Un plugin di Obsidian che porta il tuo scaffale di Repo Notebook dentro il tuo vault: ogni repo GitHub salvato diventa una nota, i repo correlati diventano wikilink, e clonare, installare e avviare restano a un comando di distanza." />
     <meta name="theme-color" content="#f3f0e8" />
     <link rel="canonical" href="https://thomashuybrechts.com/it/projecten/repo-notebook-obsidian.html" />
     <!-- i18n:start · gegenereerd door docs/build-i18n.py, niet met de hand aanpassen -->
@@ -23,7 +23,7 @@
     <meta property="og:locale" content="it_IT" />
     <meta property="og:site_name" content="Thomas Huybrechts" />
     <meta property="og:title" content="Repo Notebook per Obsidian — Thomas Huybrechts" />
-    <meta property="og:description" content="Un plugin Obsidian che porta Repo Notebook nel tuo vault, con release BRAT e un collegamento MCP così gli assistenti AI possono lavorare direttamente con le tue note." />
+    <meta property="og:description" content="Un plugin di Obsidian che porta il tuo scaffale di Repo Notebook dentro il tuo vault: ogni repo GitHub salvato diventa una nota, i repo correlati diventano wikilink, e clonare, installare e avviare restano a un comando di distanza." />
     <meta property="og:url" content="https://thomashuybrechts.com/it/projecten/repo-notebook-obsidian.html" />
     <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -38,7 +38,7 @@
       "@context": "https://schema.org",
       "@type": "CreativeWork",
       "name": "Repo Notebook per Obsidian",
-      "description": "Un plugin Obsidian che porta Repo Notebook nel tuo vault, con release BRAT e un collegamento MCP così gli assistenti AI possono lavorare direttamente con le tue note.",
+      "description": "Un plugin di Obsidian che porta il tuo scaffale di Repo Notebook dentro il tuo vault: ogni repo GitHub salvato diventa una nota, i repo correlati diventano wikilink, e clonare, installare e avviare restano a un comando di distanza.",
       "url": "https://thomashuybrechts.com/it/projecten/repo-notebook-obsidian.html",
       "author": {
         "@type": "Person",
@@ -83,26 +83,44 @@
       <article>
         <section class="section project-hero">
           <a class="back-link" href="../#projecten"><span aria-hidden="true">←</span> Tutti i progetti</a>
-          <p class="work-tag">OBSIDIAN · PLUGIN · MCP</p>
+          <p class="work-tag">OBSIDIAN · PLUGIN · TYPESCRIPT</p>
           <h1>Repo Notebook per Obsidian</h1>
-          <p class="project-intro">Un plugin Obsidian che porta Repo Notebook nel tuo vault, con release BRAT e un collegamento MCP così gli assistenti AI possono lavorare direttamente con le tue note.</p>
+          <p class="project-intro">Un plugin di Obsidian che porta il tuo scaffale di Repo Notebook dentro il tuo vault: ogni repo GitHub salvato diventa una nota, i repo correlati diventano wikilink, e clonare, installare e avviare restano a un comando di distanza.</p>
           <dl class="project-meta">
-            <div><dt>Tipo</dt><dd>Plugin Obsidian</dd></div>
-            <div><dt>Stato</dt><dd>In sviluppo attivo</dd></div>
+            <div><dt>Tipo</dt><dd>Plugin di Obsidian (desktop)</dd></div>
+            <div><dt>Stato</dt><dd>v0.1.0 · installabile tramite BRAT</dd></div>
             <div><dt>Ruolo</dt><dd>Design &amp; sviluppo</dd></div>
-            <div><dt>Stack</dt><dd>TypeScript · Obsidian API · BRAT · MCP</dd></div>
+            <div><dt>Stack</dt><dd>TypeScript · Obsidian API · Bases · esbuild · node:test</dd></div>
+            <div><dt>Sito web</dt><dd><a class="inline-link" href="https://github.com/TMSHuybrechts/obsidian-repo-notebook">github.com/TMSHuybrechts/obsidian-repo-notebook</a></dd></div>
           </dl>
-          <div class="project-result"><span class="lbl">RISULTATO</span><p>Conoscenza sui repo e un collegamento AI (MCP) direttamente nel tuo vault Obsidian, con release BRAT.</p></div>
+          <div class="project-result"><span class="lbl">RISULTATO</span><p>Tutta la tua raccolta GitHub come note collegate in Obsidian, sincronizzata in entrambe le direzioni con l'app.</p></div>
           <div class="hero-actions">
-            <a class="button button-dark" href="mailto:hey@thomashuybrechts.com?subject=Riguardo%20a%20Repo%20Notebook%20per%20Obsidian">Parliamone <span aria-hidden="true">↗</span></a>
+            <a class="button button-dark" href="https://github.com/TMSHuybrechts/obsidian-repo-notebook" rel="noopener" target="_blank">Plugin su GitHub <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="../../repo-notebook/">L'app Repo Notebook <span aria-hidden="true">↗</span></a>
             <a class="text-link" href="#details">Scopri come funziona <span aria-hidden="true">↓</span></a>
           </div>
         </section>
 
         <section class="project-gallery" aria-label="Immagini di Repo Notebook per Obsidian">
           <figure class="reveal gallery-main">
-            <img src="../../assets/projects/repo-graph.jpg" alt="Il grafo di conoscenza in Obsidian — ogni repo salvato diventa una nota, con wikilink che collegano tutto (vista di esempio rimpicciolita)" loading="eager" decoding="async" />
-            <figcaption>Il grafo di conoscenza in Obsidian — ogni repo salvato diventa una nota, con wikilink che collegano tutto (vista di esempio rimpicciolita)</figcaption>
+            <video src="../../assets/projects/obsidian-demo.mp4" poster="../assets/projects/obsidian-demo-poster.webp" controls muted loop playsinline preload="none" width="1280" height="720" aria-label="Breve demo: una nota di repo con riassunto, giudizio dell&#x27;IA e le tue note, poi la vista a grafo dell&#x27;intera raccolta"></video>
+            <figcaption>Breve demo: una nota di repo con riassunto, giudizio dell'IA e le tue note, poi la vista a grafo dell'intera raccolta</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../../assets/projects/obsidian-note.webp" alt="Ogni repo diventa una nota: riassunto con stelle, linguaggio e stato, le tue Note e il giudizio dell&#x27;IA. A destra il pannello laterale del plugin" loading="lazy" decoding="async" />
+            <figcaption>Ogni repo diventa una nota: riassunto con stelle, linguaggio e stato, le tue Note e il giudizio dell'IA. A destra il pannello laterale del plugin</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../../assets/projects/obsidian-related.webp" alt="Repo correlati come wikilink, ciascuno con il motivo del collegamento, calcolato dallo stesso motore della mappa nell&#x27;app" loading="lazy" decoding="async" />
+            <figcaption>Repo correlati come wikilink, ciascuno con il motivo del collegamento, calcolato dallo stesso motore della mappa nell'app</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../../assets/projects/obsidian-graph.webp" alt="La vista a grafo di Obsidian mostra subito tutta la tua mappa di repo (rimpicciolita, 169 repo)" loading="lazy" decoding="async" />
+            <figcaption>La vista a grafo di Obsidian mostra subito tutta la tua mappa di repo (rimpicciolita, 169 repo)</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="../../assets/projects/obsidian-bases.webp" alt="Una tabella Bases pronta all&#x27;uso: tutti i repo con linguaggio, stelle, cluster e salute, ordinabili e raggruppabili" loading="lazy" decoding="async" />
+            <figcaption>Una tabella Bases pronta all'uso: tutti i repo con linguaggio, stelle, cluster e salute, ordinabili e raggruppabili</figcaption>
           </figure>
         </section>
 
@@ -110,21 +128,23 @@
           <div class="project-columns">
             <div class="reveal">
               <div class="section-label"><span>01</span> IL PROBLEMA</div>
-              <p class="project-text">Molti maker vivono in Obsidian. Un'app desktop separata è allora un posto di troppo. La conoscenza sui repository deve stare accanto alle altre note — ricercabile, collegabile e tua.</p>
+              <p class="project-text">Repo Notebook teneva la mia raccolta GitHub in un'app a sé, ma le mie note stanno in Obsidian. Due posti significano lavoro doppio: quello che sai di un repo deve stare accanto al resto delle tue conoscenze, ricercabile e collegabile, senza andare fuori sincrono.</p>
             </div>
             <div class="reveal">
               <div class="section-label"><span>02</span> COSA FA</div>
               <dl class="feature-list">
-                <div><dt>Tutto nel tuo vault</dt><dd>I repository diventano normali note Markdown con frontmatter. Funzionano con i tuoi tag, link e graph view esistenti.</dd></div>
-                <div><dt>Release BRAT</dt><dd>Installare e aggiornare tramite BRAT, senza aspettare lo store ufficiale della community. Iterazione rapida con utenti veri.</dd></div>
-                <div><dt>Collegamento MCP</dt><dd>Un server MCP rende il vault accessibile ad assistenti AI come Claude: cercare nelle note sui repo, chiedere riassunti, far aggiungere suggerimenti.</dd></div>
-                <div><dt>Stesso cervello di Repo Notebook</dt><dd>La logica di analisi e suggerimento è condivisa con l'app desktop, così entrambe offrono la stessa qualità.</dd></div>
+                <div><dt>Ogni repo una nota</dt><dd>Una nota Markdown per repo con frontmatter (stelle, linguaggio, topic, stato, cluster, salute), un riassunto, il giudizio dell'IA, i file principali e il README. In più una nota indice per cluster e stato.</dd></div>
+                <div><dt>Repo correlati come wikilink</dt><dd>I collegamenti del grafo di conoscenza dell'app diventano veri [[wikilinks]], con il motivo accanto. Così la vista a grafo di Obsidian mostra la tua mappa completa dei repo. Tag come #repo/taal/python danno gruppi di colore.</dd></div>
+                <div><dt>Sincronizzazione in entrambe le direzioni</dt><dd>Modifica stato, categoria o note in Obsidian e poco più di un secondo dopo compaiono nell'app, e viceversa. Il tuo blocco Note non viene mai sovrascritto; un repo eliminato viene segnato, non cancellato.</dd></div>
+                <div><dt>Pannello laterale con azioni</dt><dd>Ricerca, filtri di stato, un elenco A–Z e un menu contestuale con clona, installa, avvia, ferma, log e git pull. Se l'app è spenta, leggere, sincronizzare e aggiungere repo continuano a funzionare.</dd></div>
+                <div><dt>Tabella Bases</dt><dd>Una tabella pronta all'uso per Obsidian Bases: tutti i repo, ‘da provare’, ‘clonati’ e una vista per cluster.</dd></div>
+                <div><dt>Installazione in 3 passaggi</dt><dd>Installa BRAT dai plugin della community, scegli ‘Add beta plugin’ e incolla TMSHuybrechts/obsidian-repo-notebook. Poi BRAT mantiene il plugin aggiornato da solo.</dd></div>
               </dl>
             </div>
           </div>
           <div class="project-learned reveal">
             <div class="section-label"><span>03</span> COSA HO IMPARATO</div>
-            <blockquote class="learned">Costruire un plugin ti obbliga a rendere il nucleo piccolo e portabile. Ciò che nell'app desktop andava ‘da sé’ qui doveva diventare esplicito e testabile — e ne ha beneficiato anche l'app desktop.</blockquote>
+            <blockquote class="learned">La domanda più difficile non era tecnica ma: che cosa appartiene a chi? Una volta stabilito quale parte di una nota gestisce l'app e quale è tua, la sincronizzazione in entrambe le direzioni è diventata affidabile. La logica centrale gira senza Obsidian ed è testata contro una piccola versione finta dell'API di Obsidian; una sincronizzazione di 122 repo richiede circa 0,3 secondi.</blockquote>
           </div>
         </section>
 

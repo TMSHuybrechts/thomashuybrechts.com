@@ -907,6 +907,7 @@
   "nl": "Website",
   "pages": [
    "index.html",
+   "projecten/repo-notebook-obsidian.html",
    "projecten/repo-notebook.html"
   ]
  },
@@ -1148,7 +1149,7 @@
   ]
  },
  {
-  "nl": "OBSIDIAN · PLUGIN · MCP",
+  "nl": "OBSIDIAN · PLUGIN · TYPESCRIPT",
   "pages": [
    "index.html",
    "projecten/repo-notebook-obsidian.html"
@@ -2185,7 +2186,6 @@
    "projecten/llm-wiki.html",
    "projecten/onderdelen-inventaris.html",
    "projecten/orbit-display.html",
-   "projecten/repo-notebook-obsidian.html",
    "projecten/sirena.html",
    "projecten/thomas-cluster.html",
    "projecten/victus-control.html"
@@ -2751,7 +2751,6 @@
   "nl": "Actief in ontwikkeling",
   "pages": [
    "projecten/jarvis.html",
-   "projecten/repo-notebook-obsidian.html",
    "projecten/repo-notebook.html",
    "projecten/sirena.html",
    "projecten/victus-control.html"
@@ -4200,7 +4199,7 @@
   ]
  },
  {
-  "nl": "Een Obsidian-plugin die Repo Notebook naar je eigen vault brengt, met BRAT-releases en een MCP-koppeling zodat AI-assistenten rechtstreeks met je notities kunnen werken.",
+  "nl": "Een Obsidian-plugin die je Repo Notebook-plank in je eigen vault zet: elke opgeslagen GitHub-repo wordt een notitie, verwante repos worden wikilinks, en klonen, installeren en starten blijven één commando ver.",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
@@ -4212,7 +4211,13 @@
   ]
  },
  {
-  "nl": "Obsidian-plugin",
+  "nl": "Obsidian-plugin (desktop)",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "v0.1.0 · installeerbaar via BRAT",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
@@ -4224,19 +4229,31 @@
   ]
  },
  {
-  "nl": "TypeScript · Obsidian API · BRAT · MCP",
+  "nl": "TypeScript · Obsidian API · Bases · esbuild · node:test",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "Repo-kennis én een AI-koppeling (MCP) rechtstreeks in je Obsidian-vault, met BRAT-releases.",
+  "nl": "github.com/TMSHuybrechts/obsidian-repo-notebook",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "Over Repo Notebook voor Obsidian",
+  "nl": "Je hele GitHub-verzameling als gelinkte notities in Obsidian, in twee richtingen gesynchroniseerd met de app.",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "Plugin op GitHub",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "De Repo Notebook-app",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
@@ -4248,68 +4265,121 @@
   ]
  },
  {
-  "nl": "De kennisgraaf in Obsidian — elke opgeslagen repo wordt een notitie, met wikilinks die alles verbinden (uitgezoomde voorbeeldweergave)",
+  "nl": "Korte demo: een repo-notitie met samenvatting, AI-oordeel en eigen notities, daarna de grafiekweergave van de hele verzameling",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "Veel makers leven in Obsidian. Een aparte desktop-app is dan één plek te veel. De kennis over repositories hoort naast je andere notities te staan — doorzoekbaar, linkbaar en van jou.",
+  "nl": "Elke repo wordt een notitie: samenvatting met sterren, taal en status, je eigen Notities en het AI-oordeel. Rechts het zijpaneel van de plugin",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "Alles in je vault",
+  "nl": "Verwante repos als wikilinks, telkens met de reden van de koppeling, berekend door dezelfde motor als de kaart in de app",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "Repositories worden gewone Markdown-notities met frontmatter. Ze werken met je bestaande tags, links en graph view.",
+  "nl": "De grafiekweergave van Obsidian toont meteen je hele repo-kaart (uitgezoomd, 169 repos)",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "BRAT-releases",
+  "nl": "Een kant-en-klare Bases-tabel: alle repos met taal, sterren, cluster en gezondheid, sorteer- en groepeerbaar",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "Installeren en updaten via BRAT, zonder wachten op de officiële community-store. Snelle iteratie met echte gebruikers.",
+  "nl": "Repo Notebook bewaarde mijn GitHub-verzameling in een eigen app, maar mijn notities staan in Obsidian. Twee plekken betekent dubbel werk: wat je over een repo weet, hoort naast de rest van je kennis te staan, doorzoekbaar en linkbaar, zonder dat het uit sync loopt.",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "MCP-koppeling",
-  "pages": [
-   "projecten/repo-notebook-obsidian.html",
-   "projecten/repo-notebook.html"
-  ]
- },
- {
-  "nl": "Een MCP-server maakt de vault bereikbaar voor AI-assistenten zoals Claude: zoeken in je repo-notities, samenvattingen opvragen, suggesties laten toevoegen.",
+  "nl": "Elke repo een notitie",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "Zelfde brein als Repo Notebook",
+  "nl": "Per repo een Markdown-notitie met frontmatter (sterren, taal, topics, status, cluster, gezondheid), een samenvatting, het AI-oordeel, de belangrijkste bestanden en de README. Plus een index-notitie per cluster en status.",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "De analyse- en suggestielogica wordt gedeeld met de desktop-app, zodat beide dezelfde kwaliteit leveren.",
+  "nl": "Verwante repos als wikilinks",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
  },
  {
-  "nl": "Een plugin bouwen dwingt je om je kern klein en overdraagbaar te maken. Wat in de desktop-app ‘vanzelf’ ging, moest hier expliciet en testbaar worden — en daar werd de desktop-app ook beter van.",
+  "nl": "De koppelingen uit de kennisgraaf van de app worden echte [[wikilinks]], met de reden erbij. Zo toont de grafiekweergave van Obsidian je volledige repo-kaart. Tags zoals #repo/taal/python geven kleurgroepen.",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "Sync in twee richtingen",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "Pas je status, categorie of notities aan in Obsidian, dan staat dat ruim een seconde later in de app, en omgekeerd. Jouw eigen Notities-blok wordt nooit overschreven; een verwijderde repo wordt gemarkeerd, niet gewist.",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "Zijpaneel met acties",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "Zoeken, statusfilters, een A–Z-lijst en een rechtsklikmenu met klonen, installeren, starten, stoppen, log en git pull. Staat de app uit, dan werken lezen, sync en repos toevoegen gewoon verder.",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "Bases-tabel",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "Een kant-en-klare tabel voor Obsidian Bases: alle repos, ‘te proberen’, ‘gekloond’ en een weergave per cluster.",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "Installeren in 3 stappen",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "Installeer BRAT uit de community-plugins, kies ‘Add beta plugin’ en plak TMSHuybrechts/obsidian-repo-notebook. BRAT houdt de plugin daarna zelf up-to-date.",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "De lastigste vraag was niet technisch maar: wat is van wie? Zodra vastlag welk deel van een notitie de app beheert en welk deel van jou is, werd sync in twee richtingen betrouwbaar. De kernlogica draait zonder Obsidian en is getest tegen een kleine nep-versie van de Obsidian-API; een sync van 122 repos duurt zo'n 0,3 seconde.",
+  "pages": [
+   "projecten/repo-notebook-obsidian.html"
+  ]
+ },
+ {
+  "nl": "Over Repo Notebook voor Obsidian",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
@@ -4442,6 +4512,12 @@
  },
  {
   "nl": "Repositories als verbonden kaart bekijken, en met één klik klonen of openen op GitHub.",
+  "pages": [
+   "projecten/repo-notebook.html"
+  ]
+ },
+ {
+  "nl": "MCP-koppeling",
   "pages": [
    "projecten/repo-notebook.html"
   ]

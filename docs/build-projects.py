@@ -108,19 +108,33 @@ PROJECTS = [
     {
         "slug": "repo-notebook-obsidian",
         "num": "04",
-        "tag": "OBSIDIAN · PLUGIN · MCP",
+        "tag": "OBSIDIAN · PLUGIN · TYPESCRIPT",
         "title": "Repo Notebook voor Obsidian",
-        "intro": "Een Obsidian-plugin die Repo Notebook naar je eigen vault brengt, met BRAT-releases en een MCP-koppeling zodat AI-assistenten rechtstreeks met je notities kunnen werken.",
-        "meta": [("Type", "Obsidian-plugin"), ("Status", "Actief in ontwikkeling"), ("Rol", "Ontwerp & ontwikkeling"), ("Stack", "TypeScript · Obsidian API · BRAT · MCP")],
-        "images": [("repo-graph.jpg", "De kennisgraaf in Obsidian — elke opgeslagen repo wordt een notitie, met wikilinks die alles verbinden (uitgezoomde voorbeeldweergave)")],
-        "problem": "Veel makers leven in Obsidian. Een aparte desktop-app is dan één plek te veel. De kennis over repositories hoort naast je andere notities te staan — doorzoekbaar, linkbaar en van jou.",
-        "features": [
-            ("Alles in je vault", "Repositories worden gewone Markdown-notities met frontmatter. Ze werken met je bestaande tags, links en graph view."),
-            ("BRAT-releases", "Installeren en updaten via BRAT, zonder wachten op de officiële community-store. Snelle iteratie met echte gebruikers."),
-            ("MCP-koppeling", "Een MCP-server maakt de vault bereikbaar voor AI-assistenten zoals Claude: zoeken in je repo-notities, samenvattingen opvragen, suggesties laten toevoegen."),
-            ("Zelfde brein als Repo Notebook", "De analyse- en suggestielogica wordt gedeeld met de desktop-app, zodat beide dezelfde kwaliteit leveren."),
+        "intro": "Een Obsidian-plugin die je Repo Notebook-plank in je eigen vault zet: elke opgeslagen GitHub-repo wordt een notitie, verwante repos worden wikilinks, en klonen, installeren en starten blijven één commando ver.",
+        "meta": [("Type", "Obsidian-plugin (desktop)"), ("Status", "v0.1.0 · installeerbaar via BRAT"), ("Rol", "Ontwerp & ontwikkeling"), ("Stack", "TypeScript · Obsidian API · Bases · esbuild · node:test")],
+        "website": ("https://github.com/TMSHuybrechts/obsidian-repo-notebook", "github.com/TMSHuybrechts/obsidian-repo-notebook"),
+        "hero_actions": [
+            ("button button-dark", "https://github.com/TMSHuybrechts/obsidian-repo-notebook", "Plugin op GitHub", "↗", True),
+            ("text-link", "../repo-notebook/", "De Repo Notebook-app", "↗", False),
+            ("text-link", "#details", "Lees hoe het werkt", "↓", False),
         ],
-        "learned": "Een plugin bouwen dwingt je om je kern klein en overdraagbaar te maken. Wat in de desktop-app ‘vanzelf’ ging, moest hier expliciet en testbaar worden — en daar werd de desktop-app ook beter van.",
+        "images": [
+            ("obsidian-demo.mp4", "Korte demo: een repo-notitie met samenvatting, AI-oordeel en eigen notities, daarna de grafiekweergave van de hele verzameling"),
+            ("obsidian-note.webp", "Elke repo wordt een notitie: samenvatting met sterren, taal en status, je eigen Notities en het AI-oordeel. Rechts het zijpaneel van de plugin"),
+            ("obsidian-related.webp", "Verwante repos als wikilinks, telkens met de reden van de koppeling, berekend door dezelfde motor als de kaart in de app"),
+            ("obsidian-graph.webp", "De grafiekweergave van Obsidian toont meteen je hele repo-kaart (uitgezoomd, 169 repos)"),
+            ("obsidian-bases.webp", "Een kant-en-klare Bases-tabel: alle repos met taal, sterren, cluster en gezondheid, sorteer- en groepeerbaar"),
+        ],
+        "problem": "Repo Notebook bewaarde mijn GitHub-verzameling in een eigen app, maar mijn notities staan in Obsidian. Twee plekken betekent dubbel werk: wat je over een repo weet, hoort naast de rest van je kennis te staan, doorzoekbaar en linkbaar, zonder dat het uit sync loopt.",
+        "features": [
+            ("Elke repo een notitie", "Per repo een Markdown-notitie met frontmatter (sterren, taal, topics, status, cluster, gezondheid), een samenvatting, het AI-oordeel, de belangrijkste bestanden en de README. Plus een index-notitie per cluster en status."),
+            ("Verwante repos als wikilinks", "De koppelingen uit de kennisgraaf van de app worden echte [[wikilinks]], met de reden erbij. Zo toont de grafiekweergave van Obsidian je volledige repo-kaart. Tags zoals #repo/taal/python geven kleurgroepen."),
+            ("Sync in twee richtingen", "Pas je status, categorie of notities aan in Obsidian, dan staat dat ruim een seconde later in de app, en omgekeerd. Jouw eigen Notities-blok wordt nooit overschreven; een verwijderde repo wordt gemarkeerd, niet gewist."),
+            ("Zijpaneel met acties", "Zoeken, statusfilters, een A–Z-lijst en een rechtsklikmenu met klonen, installeren, starten, stoppen, log en git pull. Staat de app uit, dan werken lezen, sync en repos toevoegen gewoon verder."),
+            ("Bases-tabel", "Een kant-en-klare tabel voor Obsidian Bases: alle repos, ‘te proberen’, ‘gekloond’ en een weergave per cluster."),
+            ("Installeren in 3 stappen", "Installeer BRAT uit de community-plugins, kies ‘Add beta plugin’ en plak TMSHuybrechts/obsidian-repo-notebook. BRAT houdt de plugin daarna zelf up-to-date."),
+        ],
+        "learned": "De lastigste vraag was niet technisch maar: wat is van wie? Zodra vastlag welk deel van een notitie de app beheert en welk deel van jou is, werd sync in twee richtingen betrouwbaar. De kernlogica draait zonder Obsidian en is getest tegen een kleine nep-versie van de Obsidian-API; een sync van 122 repos duurt zo'n 0,3 seconde.",
         "next": "CyberDash",
         "next_slug": "cyberdash",
     },
@@ -245,7 +259,7 @@ RESULTS = {
     "victus-control": "Toont in één oogopslag het verschil tussen je bedóelde en je live opstelling — zonder cloud-afhankelijkheid.",
     "thomas-cluster": "4 systemen — Docker, n8n, Ollama en ComfyUI — onder één command center met start- en reconnect-logica.",
     "repo-notebook": "127 repositories beheerd en gecategoriseerd door lokale AI — geen cloud-API, geen abonnement.",
-    "repo-notebook-obsidian": "Repo-kennis én een AI-koppeling (MCP) rechtstreeks in je Obsidian-vault, met BRAT-releases.",
+    "repo-notebook-obsidian": "Je hele GitHub-verzameling als gelinkte notities in Obsidian, in twee richtingen gesynchroniseerd met de app.",
     "cyberdash": "Meerdere security-, OSINT- en labtools achter één interface, met een lokale AI-assistent.",
     "llm-wiki": "Bronnen automatisch ingelezen en verbonden in een kennisgraaf met honderden nodes — volledig lokaal.",
     "jarvis": "3 handsfree besturingswijzen — klap, stem én handgebaren — op een lokaal brein.",
@@ -398,7 +412,12 @@ for p in PROJECTS:
     if p.get("images"):
         imgs = []
         for i, (src, cap) in enumerate(p["images"]):
-            imgs.append(f'          <figure class="reveal{" gallery-main" if i == 0 else ""}">\n            <img src="../assets/projects/{src}" alt="{e(cap)}" loading="{"eager" if i == 0 else "lazy"}" decoding="async" />\n            <figcaption>{e(cap)}</figcaption>\n          </figure>')
+            if src.endswith(".mp4"):
+                poster = src[:-4] + "-poster.webp"
+                media = f'<video src="../assets/projects/{src}" poster="../assets/projects/{poster}" controls muted loop playsinline preload="none" width="1280" height="720" aria-label="{e(cap)}"></video>'
+            else:
+                media = f'<img src="../assets/projects/{src}" alt="{e(cap)}" loading="{"eager" if i == 0 else "lazy"}" decoding="async" />'
+            imgs.append(f'          <figure class="reveal{" gallery-main" if i == 0 else ""}">\n            {media}\n            <figcaption>{e(cap)}</figcaption>\n          </figure>')
         gallery = f'\n        <section class="project-gallery" aria-label="Beelden van {e(p["title"])}">\n' + "\n".join(imgs) + "\n        </section>\n"
     else:
         gallery = ""
