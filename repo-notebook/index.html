@@ -144,6 +144,30 @@
       </div>
     </section>
 
+    <section id="demo" class="demo shell">
+      <div class="section-no">SEE IT RUN</div>
+      <h2>Paste a URL. Clone. Install. Watch it happen.</h2>
+      <figure class="demo-shot">
+        <video id="demo-video" controls muted loop playsinline preload="none" poster="assets/demo-poster.webp" width="1100" height="782" aria-label="Screen recording: a GitHub URL is saved, cloned, detected as a Node project and installed with live logs">
+          <source src="assets/demo.mp4" type="video/mp4">
+        </video>
+        <figcaption>A real recording, about 25 seconds: chalk/chalk saved with its README, cloned, detected as Node and installed with live logs.</figcaption>
+      </figure>
+      <script>
+        (function () {
+          var v = document.getElementById('demo-video');
+          if (!v || !('IntersectionObserver' in window)) return;
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          new IntersectionObserver(function (entries, obs) {
+            if (!entries[0].isIntersecting) return;
+            obs.disconnect();
+            v.controls = false;
+            v.play().catch(function () { v.controls = true; });
+          }, { rootMargin: '200px' }).observe(v);
+        })();
+      </script>
+    </section>
+
     <section id="run" class="feature shell">
       <div class="copy">
         <div class="section-no">03 / RUN</div>
