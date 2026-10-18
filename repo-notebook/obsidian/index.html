@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Repo Notebook for Obsidian — Your repos, inside your vault</title>
+  <meta name="description" content="An Obsidian plugin that turns every saved GitHub repo into a linked note, maps related repos in graph view and syncs status and notes both ways with Repo Notebook.">
+  <meta name="theme-color" content="#f3f0e8">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://thomashuybrechts.com/repo-notebook/obsidian/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en">
+  <meta property="og:site_name" content="Repo Notebook">
+  <meta property="og:title" content="Repo Notebook for Obsidian — Your repos, inside your vault">
+  <meta property="og:description" content="Every saved GitHub repo becomes a note, related repos become wikilinks, and status and notes sync both ways with the app.">
+  <meta property="og:url" content="https://thomashuybrechts.com/repo-notebook/obsidian/">
+  <meta property="og:image" content="https://thomashuybrechts.com/repo-notebook/obsidian/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Repo Notebook for Obsidian — Your repos, inside your vault">
+  <meta name="twitter:description" content="Every saved GitHub repo becomes a note, related repos become wikilinks, and status and notes sync both ways with the app.">
+  <meta name="twitter:image" content="https://thomashuybrechts.com/repo-notebook/obsidian/assets/og.jpg">
+
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/note.webp" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .brand .icon.ob{background:#6b4fd8;color:var(--paper)}
+    .steps{list-style:none;counter-reset:step;padding:0;margin:24px 0 0}
+    .steps li{counter-increment:step;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:16px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.7}
+    .steps li:before{content:counter(step,decimal-leading-zero);display:grid;place-items:center;width:34px;height:34px;background:var(--acid);font:500 11px var(--mono)}
+    .steps code,.copy code{font:500 12px var(--mono);background:#e6e3d9;padding:2px 6px;overflow-wrap:anywhere}
+    .note-code{margin:0;padding:22px;background:var(--ink);color:var(--paper);font:400 12px/1.9 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;border-radius:3px}
+    .note-code .c{color:#8d8e86}
+    .note-code .y{color:var(--acid)}
+    .caveats{margin-top:28px;padding:18px;border-left:3px solid var(--ink);background:#e6e3d9;display:grid;gap:10px}
+    .caveats span{font:400 11px/1.7 var(--mono)}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Repo Notebook for Obsidian",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Windows",
+    "softwareVersion": "0.1.0",
+    "url": "https://thomashuybrechts.com/repo-notebook/obsidian/",
+    "description": "An Obsidian plugin that turns every saved GitHub repo into a linked note, maps related repos in graph view and syncs status and notes both ways with the Repo Notebook desktop app.",
+    "author": { "@type": "Person", "name": "Thomas Huybrechts", "url": "https://thomashuybrechts.com/" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "sameAs": ["https://github.com/TMSHuybrechts/obsidian-repo-notebook"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#top">Skip to content</a>
+
+  <header class="topbar shell">
+    <a class="brand" href="#top">
+      <span class="icon ob" aria-hidden="true">OB</span>
+      <span class="brand-name">Repo Notebook for Obsidian<small>by Thomas Huybrechts</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#links">Links</a>
+      <a href="#sync">Sync</a>
+      <a href="#install">Install</a>
+      <a class="btn ghost" href="https://github.com/TMSHuybrechts/obsidian-repo-notebook" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="th-chip" href="https://thomashuybrechts.com" title="Portfolio — thomashuybrechts.com">
+        <img src="../th-mark.svg" alt="Thomas Huybrechts" width="26" height="26">
+      </a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow">OBSIDIAN PLUGIN · FREE &amp; OPEN SOURCE</div>
+        <h1>Your repos.<br>Inside your <span>vault.</span></h1>
+        <p>
+          Every GitHub repo you save in Repo Notebook becomes a note in Obsidian.
+          Related repos become wikilinks, graph view becomes your repo map,
+          and your status and notes sync both ways.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#install">Install via BRAT</a>
+          <a class="btn ghost" href="https://github.com/TMSHuybrechts/obsidian-repo-notebook" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="text-link" href="#demo">See it in action ↗</a>
+        </div>
+        <div class="micro">
+          <span>NOTES</span><span>WIKILINKS</span><span>TWO-WAY SYNC</span><span>BASES</span>
+        </div>
+      </div>
+
+      <div class="product-preview"><div class="hero-shot">
+        <div class="window-bar"><span>● OBSIDIAN</span><span>ONE NOTE PER REPO ↗</span></div>
+        <img src="assets/note.webp" alt="A repo note in Obsidian with summary, notes and AI verdict, next to the Repo Notebook side panel" width="1400" height="790" loading="eager" fetchpriority="high" decoding="async">
+        <div class="shot-label top-right">REPO NOTE / SIDE PANEL</div>
+        <div class="shot-label bottom-left">SAVE. LINK. SYNC.</div>
+      </div><p class="product-note">01 / THE PLUGIN IN OBSIDIAN — REAL PRODUCT CAPTURE</p></div>
+    </section>
+
+    <section class="strip" aria-hidden="true">
+      <div class="strip-track">
+        <span>NOTE</span><i>•</i><span>LINK</span><i>•</i><span>MAP</span><i>•</i>
+        <span>SYNC</span><i>•</i><span>CLONE</span><i>•</i><span>RUN</span><i>•</i>
+        <span>NOTE</span><i>•</i><span>LINK</span><i>•</i><span>MAP</span><i>•</i>
+        <span>SYNC</span><i>•</i><span>CLONE</span><i>•</i><span>RUN</span><i>•</i>
+      </div>
+    </section>
+
+    <section id="notes" class="feature shell">
+      <div class="copy">
+        <div class="section-no">01 / NOTES</div>
+        <h2>One plain Markdown note per repository.</h2>
+        <p>
+          No database you can't read. Each repo is a regular note in your vault,
+          so it works with your search, tags, links and templates.
+        </p>
+        <ul>
+          <li>Frontmatter: stars, language, topics, status, cluster, health</li>
+          <li>Summary callout with GitHub and homepage links</li>
+          <li>Your own Notes section, never overwritten</li>
+          <li>The AI verdict from the app</li>
+          <li>Top-level files and the README</li>
+        </ul>
+      </div>
+      <div class="visual">
+        <img src="assets/bases.webp" alt="A Bases table in Obsidian listing all repos with language, stars, cluster and health" width="1400" height="503" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <section id="links" class="feature reverse shell">
+      <div class="copy">
+        <div class="section-no">02 / LINKS</div>
+        <h2>Related repos become wikilinks. Graph view does the rest.</h2>
+        <p>
+          The same graph engine that draws the map in Repo Notebook decides which
+          repos belong together, and tells you why. In Obsidian those links are real
+          <code>[[wikilinks]]</code>, so graph view shows your whole collection.
+        </p>
+        <p class="example-note">Example collection shown in the screenshots</p><div class="stat-grid">
+          <div><strong>169</strong><span>repos</span></div>
+          <div><strong>0.3 s</strong><span>sync, 122 repos</span></div>
+          <div><strong>2</strong><span>sync directions</span></div>
+        </div>
+      </div>
+      <div class="visual stack">
+        <img class="back" src="assets/graph.webp" alt="Obsidian graph view showing the whole repo collection" width="1400" height="924" loading="lazy" decoding="async">
+        <img class="front" src="assets/related.webp" alt="Related repos listed as wikilinks with the reason for each link" width="1400" height="503" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <section id="demo" class="demo shell">
+      <div class="section-no">SEE IT RUN</div>
+      <h2>Open a repo note. Scroll. Zoom out to the map.</h2>
+      <figure class="demo-shot">
+        <video id="demo-video" controls muted loop playsinline preload="none" poster="assets/demo-poster.webp" width="1280" height="720" aria-label="Screen recording: a repo note in Obsidian with summary, notes and AI verdict, then graph view of the whole collection">
+          <source src="assets/demo.mp4" type="video/mp4">
+        </video>
+        <figcaption>A real recording, about 20 seconds, in a vault with 169 synced repos.</figcaption>
+      </figure>
+      <script>
+        (function () {
+          var v = document.getElementById('demo-video');
+          if (!v || !('IntersectionObserver' in window)) return;
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          new IntersectionObserver(function (entries, obs) {
+            if (!entries[0].isIntersecting) return;
+            obs.disconnect();
+            v.controls = false;
+            v.play().catch(function () { v.controls = true; });
+          }, { rootMargin: '200px' }).observe(v);
+        })();
+      </script>
+    </section>
+
+    <section id="sync" class="feature shell">
+      <div class="copy">
+        <div class="section-no">03 / SYNC</div>
+        <h2>Change it in Obsidian. The app knows a second later.</h2>
+        <p>
+          Status, category and notes flow back to Repo Notebook about 1.5 seconds after
+          you edit them, and new repos from the app show up in your vault on their own.
+          The rule is simple: what is between the markers is yours.
+        </p>
+        <ul>
+          <li>Your notes are never overwritten</li>
+          <li>Removed repos are flagged, not deleted</li>
+          <li>Only notes that actually changed are rewritten</li>
+          <li>Reading, syncing and adding repos work with the app closed</li>
+          <li>Clone, install, start and stop from the side panel</li>
+        </ul>
+      </div>
+      <div class="visual">
+<pre class="note-code"><span class="c">---</span>
+repo: n8n-io/n8n
+status: <span class="y">todo</span>
+cluster: ai · self-hosted
+tags: [repo-notebook, repo/taal/typescript]
+<span class="c">---</span>
+> [!abstract] n8n-io/n8n
+> Fair-code workflow automation platform…
+
+## Notities
+<span class="c">&lt;!-- rn:notes --&gt;</span>
+<span class="y">Try this for the lead follow-up flow.</span>
+<span class="c">&lt;!-- /rn:notes --&gt;</span>
+
+## Verwante repos
+- [[langgenius/dify]] — topics: workflow, automation</pre>
+      </div>
+    </section>
+
+    <section id="install" class="feature reverse shell">
+      <div class="copy">
+        <div class="section-no">04 / INSTALL</div>
+        <h2>Three steps with BRAT.</h2>
+        <ol class="steps">
+          <li><span>Install <strong>BRAT</strong> from Obsidian's community plugins (full name "Obsidian42 - BRAT").</span></li>
+          <li><span>In BRAT's settings choose <strong>Add beta plugin</strong> and paste <code>TMSHuybrechts/obsidian-repo-notebook</code></span></li>
+          <li><span>Enable <strong>Repo Notebook</strong> under Settings → Community plugins. BRAT keeps it up to date.</span></li>
+        </ol>
+      </div>
+      <div class="visual">
+        <div class="mini">GOOD TO KNOW</div>
+        <div class="caveats">
+          <span>↗ Works together with the Repo Notebook desktop app (Windows). The plugin reads the same data file.</span>
+          <span>↗ Desktop only. Version 0.1.0.</span>
+          <span>↗ Menus and commands are in Dutch for now. English is next.</span>
+          <span>↗ MIT licensed. Issues and ideas welcome on GitHub.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto shell">
+      <div class="mini">WHY A PLUGIN?</div>
+      <h2>Your notes live in Obsidian.<br><span>Now your repos do too.</span></h2>
+      <p>
+        What you know about a repository belongs next to the rest of your knowledge:
+        searchable, linkable and yours, without keeping two places in sync by hand.
+      </p>
+    </section>
+
+    <section class="cta shell">
+      <div class="cta-inner">
+        <div>
+          <div class="mini">OPEN SOURCE / BUILD IN PUBLIC</div>
+          <h2>Bring your repos<br><em>home.</em></h2>
+        </div>
+        <div class="cta-actions">
+          <a class="btn primary" href="#install">Install via BRAT</a>
+          <a class="btn ghost" href="https://github.com/TMSHuybrechts/obsidian-repo-notebook" target="_blank" rel="noopener">Plugin on GitHub ↗</a>
+          <a class="btn ghost" href="../">Get the Repo Notebook app ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span>REPO NOTEBOOK FOR OBSIDIAN © 2026</span>
+    <span>Built by <a href="https://thomashuybrechts.com" class="footer-link">Thomas Huybrechts</a></span>
+  </footer>
+<script data-goatcounter="https://thomashuybrechts.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

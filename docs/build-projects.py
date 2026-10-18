@@ -112,10 +112,10 @@ PROJECTS = [
         "title": "Repo Notebook voor Obsidian",
         "intro": "Een Obsidian-plugin die je Repo Notebook-plank in je eigen vault zet: elke opgeslagen GitHub-repo wordt een notitie, verwante repos worden wikilinks, en klonen, installeren en starten blijven één commando ver.",
         "meta": [("Type", "Obsidian-plugin (desktop)"), ("Status", "v0.1.0 · installeerbaar via BRAT"), ("Rol", "Ontwerp & ontwikkeling"), ("Stack", "TypeScript · Obsidian API · Bases · esbuild · node:test")],
-        "website": ("https://github.com/TMSHuybrechts/obsidian-repo-notebook", "github.com/TMSHuybrechts/obsidian-repo-notebook"),
+        "website": ("../repo-notebook/obsidian/", "thomashuybrechts.com/repo-notebook/obsidian"),
         "hero_actions": [
             ("button button-dark", "https://github.com/TMSHuybrechts/obsidian-repo-notebook", "Plugin op GitHub", "↗", True),
-            ("text-link", "../repo-notebook/", "De Repo Notebook-app", "↗", False),
+            ("text-link", "../repo-notebook/obsidian/", "Bekijk de productpagina", "↗", False),
             ("text-link", "#details", "Lees hoe het werkt", "↓", False),
         ],
         "images": [
@@ -272,6 +272,9 @@ RESULTS = {
 APP_CHIP_SLUGS = {"repo-notebook", "repo-notebook-obsidian"}
 APP_CHIP = """        <a class="app-chip" href="../repo-notebook/" title="Repo Notebook — bekijk de website">
           <img src="../repo-notebook/favicon.svg" alt="Repo Notebook" width="22" height="22" />
+        </a>
+        <a class="app-chip" href="../repo-notebook/obsidian/" title="Repo Notebook voor Obsidian — bekijk de website">
+          <img src="../repo-notebook/obsidian/favicon.svg" alt="Repo Notebook voor Obsidian" width="22" height="22" />
         </a>
 """
 

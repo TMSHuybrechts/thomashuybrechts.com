@@ -916,7 +916,10 @@
   "Een kant-en-klare tabel voor Obsidian Bases: alle repos, ‘te proberen’, ‘gekloond’ en een weergave per cluster.": "Uma tabela pronta a usar para o Obsidian Bases: todos os repos, ‘para experimentar’, ‘clonados’ e uma vista por cluster.",
   "Installeren in 3 stappen": "Instalar em 3 passos",
   "Installeer BRAT uit de community-plugins, kies ‘Add beta plugin’ en plak TMSHuybrechts/obsidian-repo-notebook. BRAT houdt de plugin daarna zelf up-to-date.": "Instala o BRAT a partir dos plugins da comunidade, escolhe ‘Add beta plugin’ e cola TMSHuybrechts/obsidian-repo-notebook. Depois o BRAT mantém o plugin atualizado sozinho.",
-  "De lastigste vraag was niet technisch maar: wat is van wie? Zodra vastlag welk deel van een notitie de app beheert en welk deel van jou is, werd sync in twee richtingen betrouwbaar. De kernlogica draait zonder Obsidian en is getest tegen een kleine nep-versie van de Obsidian-API; een sync van 122 repos duurt zo'n 0,3 seconde.": "A pergunta mais difícil não foi técnica, mas sim: o que é de quem? Assim que ficou definido que parte de uma nota é gerida pela app e que parte é tua, a sincronização nos dois sentidos tornou-se fiável. A lógica central funciona sem o Obsidian e está testada contra uma pequena versão simulada da API do Obsidian; uma sincronização de 122 repos demora cerca de 0,3 segundos."
+  "De lastigste vraag was niet technisch maar: wat is van wie? Zodra vastlag welk deel van een notitie de app beheert en welk deel van jou is, werd sync in twee richtingen betrouwbaar. De kernlogica draait zonder Obsidian en is getest tegen een kleine nep-versie van de Obsidian-API; een sync van 122 repos duurt zo'n 0,3 seconde.": "A pergunta mais difícil não foi técnica, mas sim: o que é de quem? Assim que ficou definido que parte de uma nota é gerida pela app e que parte é tua, a sincronização nos dois sentidos tornou-se fiável. A lógica central funciona sem o Obsidian e está testada contra uma pequena versão simulada da API do Obsidian; uma sincronização de 122 repos demora cerca de 0,3 segundos.",
+  "Repo Notebook voor Obsidian — bekijk de website": "Repo Notebook para Obsidian — ver o site",
+  "Bekijk de productpagina": "Ver a página do produto",
+  "thomashuybrechts.com/repo-notebook/obsidian": "thomashuybrechts.com/repo-notebook/obsidian"
  },
  "kw": {
   "repo-notebook-obsidian": [

@@ -916,7 +916,10 @@
   "Een kant-en-klare tabel voor Obsidian Bases: alle repos, ‘te proberen’, ‘gekloond’ en een weergave per cluster.": "Una tabla lista para usar en Obsidian Bases: todos los repos, ‘para probar’, ‘clonados’ y una vista por clúster.",
   "Installeren in 3 stappen": "Instalar en 3 pasos",
   "Installeer BRAT uit de community-plugins, kies ‘Add beta plugin’ en plak TMSHuybrechts/obsidian-repo-notebook. BRAT houdt de plugin daarna zelf up-to-date.": "Instala BRAT desde los plugins de la comunidad, elige ‘Add beta plugin’ y pega TMSHuybrechts/obsidian-repo-notebook. Después BRAT mantiene el plugin actualizado por sí solo.",
-  "De lastigste vraag was niet technisch maar: wat is van wie? Zodra vastlag welk deel van een notitie de app beheert en welk deel van jou is, werd sync in twee richtingen betrouwbaar. De kernlogica draait zonder Obsidian en is getest tegen een kleine nep-versie van de Obsidian-API; een sync van 122 repos duurt zo'n 0,3 seconde.": "La pregunta más difícil no fue técnica sino: ¿qué es de quién? En cuanto quedó claro qué parte de una nota gestiona la app y cuál es tuya, la sincronización en ambos sentidos se volvió fiable. La lógica central funciona sin Obsidian y está probada contra una pequeña versión simulada de la API de Obsidian; una sincronización de 122 repos tarda unos 0,3 segundos."
+  "De lastigste vraag was niet technisch maar: wat is van wie? Zodra vastlag welk deel van een notitie de app beheert en welk deel van jou is, werd sync in twee richtingen betrouwbaar. De kernlogica draait zonder Obsidian en is getest tegen een kleine nep-versie van de Obsidian-API; een sync van 122 repos duurt zo'n 0,3 seconde.": "La pregunta más difícil no fue técnica sino: ¿qué es de quién? En cuanto quedó claro qué parte de una nota gestiona la app y cuál es tuya, la sincronización en ambos sentidos se volvió fiable. La lógica central funciona sin Obsidian y está probada contra una pequeña versión simulada de la API de Obsidian; una sincronización de 122 repos tarda unos 0,3 segundos.",
+  "Repo Notebook voor Obsidian — bekijk de website": "Repo Notebook para Obsidian — ver el sitio web",
+  "Bekijk de productpagina": "Ver la página del producto",
+  "thomashuybrechts.com/repo-notebook/obsidian": "thomashuybrechts.com/repo-notebook/obsidian"
  },
  "kw": {
   "repo-notebook-obsidian": [

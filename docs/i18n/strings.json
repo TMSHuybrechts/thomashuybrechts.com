@@ -468,6 +468,23 @@
   ]
  },
  {
+  "nl": "Repo Notebook voor Obsidian — bekijk de website",
+  "pages": [
+   "index.html",
+   "projecten/repo-notebook-obsidian.html",
+   "projecten/repo-notebook.html"
+  ]
+ },
+ {
+  "nl": "Repo Notebook voor Obsidian",
+  "pages": [
+   "index.html",
+   "projecten/repo-notebook-obsidian.html",
+   "projecten/repo-notebook.html",
+   "script.js"
+  ]
+ },
+ {
   "nl": "Muziek afspelen",
   "pages": [
    "index.html",
@@ -1153,15 +1170,6 @@
   "pages": [
    "index.html",
    "projecten/repo-notebook-obsidian.html"
-  ]
- },
- {
-  "nl": "Repo Notebook voor Obsidian",
-  "pages": [
-   "index.html",
-   "projecten/repo-notebook-obsidian.html",
-   "projecten/repo-notebook.html",
-   "script.js"
   ]
  },
  {
@@ -4235,7 +4243,7 @@
   ]
  },
  {
-  "nl": "github.com/TMSHuybrechts/obsidian-repo-notebook",
+  "nl": "thomashuybrechts.com/repo-notebook/obsidian",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
@@ -4253,7 +4261,7 @@
   ]
  },
  {
-  "nl": "De Repo Notebook-app",
+  "nl": "Bekijk de productpagina",
   "pages": [
    "projecten/repo-notebook-obsidian.html"
   ]
