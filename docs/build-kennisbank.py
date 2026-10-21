@@ -19,6 +19,8 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent.parent
 BRON = Path(os.environ.get("GIDS_BRON", "D:/FREELANCE/03_MARKETING/technologiegids/bron/encyclopedie"))
+# Eigen artikels (cases), zelfde opbouw als de gids, nummer 0.N
+EIGEN = ROOT / "docs" / "kennisbank-artikels"
 SITE = "https://thomashuybrechts.com/"
 EMAIL = "hey@thomashuybrechts.com"
 TODAY = datetime.date.today().isoformat()
@@ -27,16 +29,19 @@ STAND = f"{MAANDEN[datetime.date.today().month - 1]} {datetime.date.today().year
 
 # Gepubliceerde onderwerpen (nummer uit de gids). Gekozen omdat ze aansluiten bij de diensten.
 TOPICS = [
+    "0.1",                                    # eigen project: AI Business OS
     "1.13", "1.16", "1.7", "1.6",            # AI-basis voor kmo's
     "2.1", "2.8", "2.17", "2.18",             # agents
     "4.1", "4.3", "4.6", "4.10", "4.11", "4.14", "4.16",  # automatisering
     "6.9", "6.10", "6.14", "6.15", "6.16",    # web
     "7.12",                                   # voice agents
     "9.8", "9.13",                            # beveiliging en privacy
+    "10.1",                                   # SaaS
     "14.10",                                  # conversie
 ]
 # Korte Nederlandse zoekterm per onderwerp: komt in titel en h1 (zo zoeken kmo's).
 NL = {
+    "0.1": "mijn eigen AI-systeem voor een freelancezaak", "10.1": "software als abonnement",
     "1.13": "AI die antwoordt uit je eigen documenten", "1.16": "goede instructies geven aan AI",
     "1.7": "AI lokaal draaien, zonder cloud", "1.6": "open AI-modellen die je zelf kunt draaien",
     "2.1": "AI-agents die zelf taken uitvoeren", "2.8": "AI koppelen aan je eigen software",
@@ -50,8 +55,8 @@ NL = {
     "7.12": "AI die de telefoon opneemt", "9.8": "AI-chatbots misleiden en hoe je dat voorkomt",
     "9.13": "GDPR voor kmo's", "14.10": "meer aanvragen uit je website halen",
 }
-CHAPTERS = {1: "AI en taalmodellen", 2: "AI-agents", 4: "Automatisering", 6: "Websites en apps",
-            7: "Spraak en beeld", 9: "Beveiliging en privacy", 14: "Business en groei"}
+CHAPTERS = {0: "Eigen projecten", 1: "AI en taalmodellen", 2: "AI-agents", 4: "Automatisering", 6: "Websites en apps",
+            7: "Spraak en beeld", 9: "Beveiliging en privacy", 10: "SaaS en software", 14: "Business en groei"}
 
 
 def slugify(title):
@@ -64,7 +69,7 @@ def slugify(title):
 def load_entries():
     """Alle onderwerpen uit de gids: nummer -> {title, md}."""
     out = {}
-    for f in sorted(BRON.glob("ch*.md")):
+    for f in sorted(BRON.glob("ch*.md")) + sorted(EIGEN.glob("*.md")):
         text = f.read_text(encoding="utf-8")
         for m in re.finditer(r"^### (\d{1,2}\.\d{1,2}) (.+?)\n(.*?)(?=^### |\Z)", text, re.S | re.M):
             out[m.group(1)] = {"num": m.group(1), "title": m.group(2).strip(), "md": m.group(3).strip()}
@@ -96,7 +101,7 @@ def to_sections(md, published):
             strong.decompose()
         inner = li.decode_contents().strip()
         inner = re.sub(r"^\s*:?\s*", "", inner)
-        if label.lower().startswith("praktijkvoorbeeld"):
+        if label.lower() == "praktijkvoorbeeld":
             label = "Praktijkvoorbeeld (fictief)"
         parts.append((label, inner))
     body = "\n".join(
@@ -206,13 +211,37 @@ def page_schema(e, url, desc):
     return json.dumps({"@context": "https://schema.org", "@graph": [
         {"@type": "TechArticle", "headline": f"{e['title']}: {NL[e['num']]}", "description": desc, "inLanguage": "nl-BE",
          "url": url, "mainEntityOfPage": url, "author": AUTHOR, "publisher": AUTHOR, "dateModified": TODAY,
-         "isPartOf": {"@type": "Book", "name": "De praktische technologiegids", "author": AUTHOR},
+         **({} if e["num"].startswith("0.") else {"isPartOf": {"@type": "Book", "name": "De praktische technologiegids", "author": AUTHOR}}),
          "about": {"@type": "DefinedTerm", "name": e["title"], "description": desc}},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Thomas Huybrechts", "item": SITE},
             {"@type": "ListItem", "position": 2, "name": "Kennisbank", "item": SITE + "kennisbank/"},
             {"@type": "ListItem", "position": 3, "name": e["title"], "item": url}]},
     ]}, ensure_ascii=False, indent=2)
+
+
+GUIDE_CARD = """          <article class="price-card price-card-accent kb-card">
+            <p class="price-name">Uit de gids</p>
+            <p class="kb-card-title">De praktische technologiegids</p>
+            <p class="kb-card-text">219 onderwerpen over AI, automatisering, websites en beveiliging, uitgelegd voor wie er mee aan de slag wil. Elk onderwerp op één pagina.</p>
+            <ul>
+              <li>Voor ondernemers, makers en nieuwsgierigen</li>
+              <li>Belgische regels (stand {stand})</li>
+              <li>Samengesteld door Thomas Huybrechts</li>
+            </ul>
+            <a class="button button-light kb-card-btn" href="#contact">Vraag hulp bij je project <span aria-hidden="true">&rarr;</span></a>
+          </article>"""
+OWN_CARD = """          <article class="price-card price-card-accent kb-card">
+            <p class="price-name">Eigen project</p>
+            <p class="kb-card-title">In ontwikkeling</p>
+            <p class="kb-card-text">Vandaag gebruik ik dit zelf voor mijn freelancezaak. Wil je het ook gebruiken of mee testen zodra het als dienst beschikbaar is?</p>
+            <ul>
+              <li>Gebouwd en getest door Thomas Huybrechts</li>
+              <li>Belgische mailregels ingebouwd</li>
+              <li>Zelf gehost, jouw gegevens blijven van jou</li>
+            </ul>
+            <a class="button button-light kb-card-btn" href="#contact">Interesse? Laat het weten <span aria-hidden="true">&rarr;</span></a>
+          </article>"""
 
 
 def render_topic(e, published, entries):
@@ -226,6 +255,8 @@ def render_topic(e, published, entries):
     related = siblings or [n for n in TOPICS if n != e["num"]][:3]
     related_html = "\n".join(f'          <a class="svc-related-link" href="../{published[n]}/">{html.escape(entries[n]["title"])} <span aria-hidden="true">&rarr;</span></a>' for n in related)
     up = "../../"
+    own = e["num"].startswith("0.")
+    aside = OWN_CARD if own else GUIDE_CARD.format(stand=STAND)
     return HEAD.format(up=up, title=html.escape(title), desc=html.escape(desc), url=url, ogtype="article", site=SITE,
                        schema=page_schema(e, url, desc)) + f"""
     <main id="inhoud">
@@ -242,17 +273,7 @@ def render_topic(e, published, entries):
 {body}
         </article>
         <aside class="svc-aside reveal" aria-label="Over deze uitleg">
-          <article class="price-card price-card-accent kb-card">
-            <p class="price-name">Uit de gids</p>
-            <p class="kb-card-title">De praktische technologiegids</p>
-            <p class="kb-card-text">219 onderwerpen over AI, automatisering, websites en beveiliging, uitgelegd voor kmo's. Elk onderwerp op één pagina.</p>
-            <ul>
-              <li>Geschreven voor Vlaamse kmo's</li>
-              <li>Belgische regels (stand {STAND})</li>
-              <li>Samengesteld door Thomas Huybrechts</li>
-            </ul>
-            <a class="button button-light kb-card-btn" href="#contact">Vraag hulp bij je project <span aria-hidden="true">&rarr;</span></a>
-          </article>
+{aside}
         </aside>
       </div>
 
@@ -266,7 +287,7 @@ def render_topic(e, published, entries):
 
 def render_index(published, entries):
     url = SITE + "kennisbank/"
-    desc = "Heldere uitleg over AI, chatbots, automatisering, websites en beveiliging voor Vlaamse kmo's en zelfstandigen. Uit De praktische technologiegids van Thomas Huybrechts."
+    desc = "Heldere uitleg over AI, chatbots, automatisering, websites en beveiliging voor ondernemers, makers en iedereen die mee wil met technologie. Uit De praktische technologiegids van Thomas Huybrechts."
     groups = []
     for chap, name in CHAPTERS.items():
         items = [n for n in TOPICS if int(n.split(".")[0]) == chap]
@@ -284,14 +305,14 @@ def render_index(published, entries):
             {"@type": "ListItem", "position": 2, "name": "Kennisbank", "item": url}]},
     ]}, ensure_ascii=False, indent=2)
     up = "../"
-    return HEAD.format(up=up, title="Kennisbank: AI, automatisering en websites uitgelegd voor kmo's | Thomas Huybrechts",
+    return HEAD.format(up=up, title="Kennisbank: AI, automatisering en websites gewoon uitgelegd | Thomas Huybrechts",
                        desc=html.escape(desc), url=url, ogtype="website", site=SITE, schema=schema) + f"""
     <main id="inhoud">
       <nav class="svc-crumbs" aria-label="Kruimelpad"><a href="{up}">Home</a> <span aria-hidden="true">/</span> <span>Kennisbank</span></nav>
       <section class="svc-hero kb-hero">
         <p class="eyebrow"><span class="status-dot"></span> KENNISBANK</p>
         <h1>Technologie, <em>gewoon uitgelegd.</em></h1>
-        <p class="hero-intro">AI, chatbots, automatisering, websites en beveiliging: wat is het, wat kun je ermee en waar moet je op letten? Korte, eerlijke uitleg voor kmo's en zelfstandigen, uit De praktische technologiegids. Elke week komen er onderwerpen bij.</p>
+        <p class="hero-intro">AI, chatbots, automatisering, websites en beveiliging: wat is het, wat kun je ermee en waar moet je op letten? Korte, eerlijke uitleg voor ondernemers, makers en iedereen die mee wil met technologie, uit De praktische technologiegids. Elke week komen er onderwerpen bij.</p>
       </section>
       <div class="kb-groups">
 {chr(10).join(groups)}
