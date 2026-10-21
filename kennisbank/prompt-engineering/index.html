@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="nl" data-root="../../">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Engineering: goede instructies geven aan AI | Kennisbank Thomas Huybrechts</title>
+    <meta name="description" content="prompt engineering is het vak van het zo formuleren van instructies aan een taalmodel dat de output betrouwbaar, bruikbaar en in het gewenste formaat komt." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href="https://thomashuybrechts.com/kennisbank/prompt-engineering/" />
+    <!-- Gegenereerd door docs/build-kennisbank.py, niet met de hand aanpassen -->
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="Prompt Engineering: goede instructies geven aan AI | Kennisbank Thomas Huybrechts" />
+    <meta property="og:description" content="prompt engineering is het vak van het zo formuleren van instructies aan een taalmodel dat de output betrouwbaar, bruikbaar en in het gewenste formaat komt." />
+    <meta property="og:url" content="https://thomashuybrechts.com/kennisbank/prompt-engineering/" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script src="../../script.js" defer></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Prompt Engineering: goede instructies geven aan AI",
+      "description": "prompt engineering is het vak van het zo formuleren van instructies aan een taalmodel dat de output betrouwbaar, bruikbaar en in het gewenste formaat komt.",
+      "inLanguage": "nl-BE",
+      "url": "https://thomashuybrechts.com/kennisbank/prompt-engineering/",
+      "mainEntityOfPage": "https://thomashuybrechts.com/kennisbank/prompt-engineering/",
+      "author": {
+        "@id": "https://thomashuybrechts.com/#thomas"
+      },
+      "publisher": {
+        "@id": "https://thomashuybrechts.com/#thomas"
+      },
+      "dateModified": "2026-10-22",
+      "isPartOf": {
+        "@type": "Book",
+        "name": "De praktische technologiegids",
+        "author": {
+          "@id": "https://thomashuybrechts.com/#thomas"
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "Prompt Engineering",
+        "description": "prompt engineering is het vak van het zo formuleren van instructies aan een taalmodel dat de output betrouwbaar, bruikbaar en in het gewenste formaat komt."
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Thomas Huybrechts",
+          "item": "https://thomashuybrechts.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kennisbank",
+          "item": "https://thomashuybrechts.com/kennisbank/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Prompt Engineering",
+          "item": "https://thomashuybrechts.com/kennisbank/prompt-engineering/"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+  </head>
+  <body class="svc-page kb-page">
+    <a class="skip-link" href="#inhoud">Naar de inhoud</a>
+    <header class="site-header" id="header">
+      <a class="brand" href="../../" aria-label="Thomas Huybrechts, naar de homepage">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Hoofdmenu">
+        <a href="../../website-laten-maken/">Websites</a>
+        <a href="../../n8n-automatisatie/">Automatisatie</a>
+        <a href="../../ai-chatbot-laten-maken/">AI-chatbot</a>
+        <a class="is-active" aria-current="page" href="../../kennisbank/">Kennisbank</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <nav class="svc-crumbs" aria-label="Kruimelpad"><a href="../../">Home</a> <span aria-hidden="true">/</span> <a href="../">Kennisbank</a> <span aria-hidden="true">/</span> <span>Prompt Engineering</span></nav>
+      <section class="svc-hero kb-hero">
+        <p class="eyebrow"><span class="status-dot"></span> KENNISBANK &middot; AI EN TAALMODELLEN</p>
+        <h1>Prompt Engineering</h1>
+        <p class="kb-sub">Goede instructies geven aan AI</p>
+        <p class="hero-intro">prompt engineering is het vak van het zo formuleren van instructies aan een taalmodel dat de output betrouwbaar, bruikbaar en in het gewenste formaat komt.</p>
+      </section>
+
+      <div class="svc-layout">
+        <article class="svc-body kb-body">
+        <section class="svc-block kb-block">
+          <h2>Wat is het?</h2>
+          <div class="kb-text"><p> De prompt is de invoer die het model aanstuurt: je instructie, voorbeelden en randvoorwaarden. Prompt engineering is het systematisch verbeteren daarvan. Het is de snelste en goedkoopste manier om meer uit een model te halen — geen training nodig.</p></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Hoe werkt het technisch?</h2>
+          <div class="kb-text"><p></p>
+<ul>
+<li><strong>Duidelijke taakdefinitie:</strong> beschrijf precies wat de output moet zijn, voor wie, en in welke vorm. Vage prompts geven wisselende resultaten.</li>
+<li><strong>Few-shot prompting:</strong> voeg enkele voorbeelden van invoer en gewenste output toe; het model imiteert het patroon. Vaak effectiever dan lange uitleg.</li>
+<li><strong>Rol en perspectief:</strong> een roltoewijzing (“je bent een belastingadviseur”) activeert relevante kennis en toon.</li>
+<li><strong>Chain-of-thought:</strong> bij klassieke modellen verhoogt “redeneer eerst, concludeer dan” de juistheid bij complexe vragen. Moderne redeneermodellen doen dat intern al; daar stel je de redeneerinspanning in en houd je de prompt eenvoudig.</li>
+<li><strong>Outputformaten:</strong> eis een structuur (JSON, tabel, vaste kopjes). Dat maakt output machinaal verwerkbaar in ketens.</li>
+<li><strong>Iteratie en evaluatie:</strong> prompts verbeter je door te testen op een vaste set gevallen, niet door gevoel alleen.</li>
+</ul></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Wat kun je ermee bouwen?</h2>
+          <div class="kb-text"><p></p>
+<ul>
+<li>Betrouwbare tekstgeneratie voor mail, rapportage en productcontent.</li>
+<li>Extractiepipelines die ongestructureerde tekst omzetten naar gestructureerde data.</li>
+<li>Chatbots met beheerste toon en gedrag via een goede systeemprompt.</li>
+<li>Snelle prototypes om een AI-idee te valideren voordat je investeert in training.</li>
+</ul></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Commercieel gebruik</h2>
+          <div class="kb-text"><p> prompt engineering heeft de hoogste verhouding tussen inspanning en resultaat van alle AI-technieken. Het versnelt elke AI-implementatie en voorkomt overkill: veel problemen die naar fine-tuning “ruiken”, lossen met een betere prompt op. Als onderdeel van context engineering is het een kerncompetentie voor elk team dat met LLM’s bouwt.</p></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Sterke combinaties</h2>
+          <div class="kb-text"><p> met RAG (de opgehaalde kennis komt in de prompt terecht). Met evaluatieframeworks om promptwijzigingen objectief te toetsen. Met modelroutering: een goede prompt maakt een goedkoper model vaak goed genoeg.</p></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Belangrijkste 20%</h2>
+          <div class="kb-text"><p></p>
+<ul>
+<li>Specifiekheid wint: taak, publiek, format en randvoorwaarden expliciet maken.</li>
+<li>Voorbeelden zijn krachtiger dan beschrijvingen; toon het gewenste gedrag.</li>
+<li>Test prompts als software: met een vaste testset, en opnieuw bij elke modelupdate.</li>
+</ul></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Praktijkvoorbeeld (fictief)</h2>
+          <div class="kb-text"><p> een webshop laat productbeschrijvingen genereren. De eerste prompt (“schrijf een beschrijving”) levert wollige teksten op. De definitieve prompt bevat een roltoewijzing, huisstijlregels, twee voorbeelden van goedgekeurde teksten en een verplicht format met vaste kopjes. De acceptatiegraad van de teksten stijgt sterk en de redactie hoeft alleen nog te controleren, niet te herschrijven.</p></div>
+        </section>
+        </article>
+        <aside class="svc-aside reveal" aria-label="Over deze uitleg">
+          <article class="price-card price-card-accent kb-card">
+            <p class="price-name">Uit de gids</p>
+            <p class="kb-card-title">De praktische technologiegids</p>
+            <p class="kb-card-text">219 onderwerpen over AI, automatisering, websites en beveiliging, uitgelegd voor kmo's. Elk onderwerp op één pagina.</p>
+            <ul>
+              <li>Geschreven voor Vlaamse kmo's</li>
+              <li>Belgische regels (stand oktober 2026)</li>
+              <li>Samengesteld door Thomas Huybrechts</li>
+            </ul>
+            <a class="button button-light kb-card-btn" href="#contact">Vraag hulp bij je project <span aria-hidden="true">&rarr;</span></a>
+          </article>
+        </aside>
+      </div>
+
+      <section class="svc-related reveal" aria-label="Verwante onderwerpen">
+        <p class="eyebrow">VERWANTE ONDERWERPEN</p>
+          <a class="svc-related-link" href="../retrieval-augmented-generation-rag/">Retrieval-Augmented Generation (RAG) <span aria-hidden="true">&rarr;</span></a>
+          <a class="svc-related-link" href="../local-llm-deployment/">Local LLM Deployment <span aria-hidden="true">&rarr;</span></a>
+          <a class="svc-related-link" href="../open-weight-models/">Open-Weight Models <span aria-hidden="true">&rarr;</span></a>
+        <a class="svc-related-link" href="../">Alle onderwerpen <span aria-hidden="true">&rarr;</span></a>
+      </section>
+      <section class="contact" id="contact">
+        <div class="contact-copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span> Vrijblijvend</p>
+          <h2>Wil je dit toepassen in je eigen zaak?</h2>
+          <p class="contact-sub">Ik help kmo's en zelfstandigen met websites, AI-chatbots en automatisering. Vraag een gratis website-check aan of stel gewoon je vraag.</p>
+          <div class="contact-actions">
+            <a class="button button-light" href="mailto:hey@thomashuybrechts.com?subject=Prompt Engineering">Stel je vraag <span aria-hidden="true">&nearr;</span></a>
+            <button class="copy-email" type="button" data-email="hey@thomashuybrechts.com" aria-live="polite">
+              <span class="copy-email-text">hey@thomashuybrechts.com</span>
+              <span class="copy-email-hint">Klik om te kopiëren</span>
+            </button>
+          </div>
+        </div>
+        <div class="contact-disc reveal" aria-hidden="true">
+          <span>HELLO &middot; BONJOUR &middot; HALLO &middot; HEY &middot; </span>
+          <strong>TH</strong>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="brand footer-brand" href="../../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Voettekst">
+        <a href="../../website-laten-maken/">Website laten maken</a>
+        <a href="../../ai-chatbot-laten-maken/">AI-chatbot laten maken</a>
+        <a href="../../n8n-automatisatie/">n8n-automatisatie</a>
+        <a href="../../kennisbank/">Kennisbank</a>
+        <a href="mailto:hey@thomashuybrechts.com">E-mail</a>
+      </nav>
+      <p>&copy; <span id="year"></span> Thomas Huybrechts &middot; Uit &ldquo;De praktische technologiegids&rdquo;</p>
+    </footer>
+  <script data-goatcounter="https://thomashuybrechts.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

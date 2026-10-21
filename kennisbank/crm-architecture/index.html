@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="nl" data-root="../../">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Architecture: je klantenbestand slim opbouwen | Kennisbank Thomas Huybrechts</title>
+    <meta name="description" content="CRM-architectuur is de manier waarop je klantdata, contacten en verkoopprocessen structureert zodat systemen én mensen er betrouwbaar mee werken." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href="https://thomashuybrechts.com/kennisbank/crm-architecture/" />
+    <!-- Gegenereerd door docs/build-kennisbank.py, niet met de hand aanpassen -->
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:site_name" content="Thomas Huybrechts" />
+    <meta property="og:title" content="CRM Architecture: je klantenbestand slim opbouwen | Kennisbank Thomas Huybrechts" />
+    <meta property="og:description" content="CRM-architectuur is de manier waarop je klantdata, contacten en verkoopprocessen structureert zodat systemen én mensen er betrouwbaar mee werken." />
+    <meta property="og:url" content="https://thomashuybrechts.com/kennisbank/crm-architecture/" />
+    <meta property="og:image" content="https://thomashuybrechts.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script src="../../script.js" defer></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "CRM Architecture: je klantenbestand slim opbouwen",
+      "description": "CRM-architectuur is de manier waarop je klantdata, contacten en verkoopprocessen structureert zodat systemen én mensen er betrouwbaar mee werken.",
+      "inLanguage": "nl-BE",
+      "url": "https://thomashuybrechts.com/kennisbank/crm-architecture/",
+      "mainEntityOfPage": "https://thomashuybrechts.com/kennisbank/crm-architecture/",
+      "author": {
+        "@id": "https://thomashuybrechts.com/#thomas"
+      },
+      "publisher": {
+        "@id": "https://thomashuybrechts.com/#thomas"
+      },
+      "dateModified": "2026-10-22",
+      "isPartOf": {
+        "@type": "Book",
+        "name": "De praktische technologiegids",
+        "author": {
+          "@id": "https://thomashuybrechts.com/#thomas"
+        }
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "CRM Architecture",
+        "description": "CRM-architectuur is de manier waarop je klantdata, contacten en verkoopprocessen structureert zodat systemen én mensen er betrouwbaar mee werken."
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Thomas Huybrechts",
+          "item": "https://thomashuybrechts.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kennisbank",
+          "item": "https://thomashuybrechts.com/kennisbank/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CRM Architecture",
+          "item": "https://thomashuybrechts.com/kennisbank/crm-architecture/"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+  </head>
+  <body class="svc-page kb-page">
+    <a class="skip-link" href="#inhoud">Naar de inhoud</a>
+    <header class="site-header" id="header">
+      <a class="brand" href="../../" aria-label="Thomas Huybrechts, naar de homepage">
+        <span class="brand-mark">TH</span>
+        <span>Thomas Huybrechts</span>
+      </a>
+      <nav id="nav" aria-label="Hoofdmenu">
+        <a href="../../website-laten-maken/">Websites</a>
+        <a href="../../n8n-automatisatie/">Automatisatie</a>
+        <a href="../../ai-chatbot-laten-maken/">AI-chatbot</a>
+        <a class="is-active" aria-current="page" href="../../kennisbank/">Kennisbank</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu openen">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inhoud">
+      <nav class="svc-crumbs" aria-label="Kruimelpad"><a href="../../">Home</a> <span aria-hidden="true">/</span> <a href="../">Kennisbank</a> <span aria-hidden="true">/</span> <span>CRM Architecture</span></nav>
+      <section class="svc-hero kb-hero">
+        <p class="eyebrow"><span class="status-dot"></span> KENNISBANK &middot; AUTOMATISERING</p>
+        <h1>CRM Architecture</h1>
+        <p class="kb-sub">Je klantenbestand slim opbouwen</p>
+        <p class="hero-intro">CRM-architectuur is de manier waarop je klantdata, contacten en verkoopprocessen structureert zodat systemen én mensen er betrouwbaar mee werken.</p>
+      </section>
+
+      <div class="svc-layout">
+        <article class="svc-body kb-body">
+        <section class="svc-block kb-block">
+          <h2>Wat is het?</h2>
+          <div class="kb-text"><p> Een CRM (Customer Relationship Management) is het centrale register van klantrelaties. De architectuur bepaalt welke objecten bestaan (contacten, bedrijven, deals, activiteiten), hoe ze samenhangen en welke systemen eraan gekoppeld zijn.</p></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Hoe werkt het technisch?</h2>
+          <div class="kb-text"><p></p>
+<ul>
+<li>Kernobjecten: <strong>contacts</strong> (personen), <strong>companies</strong> (organisaties), <strong>deals/opportunities</strong> (verkoopkansen) en <strong>activities</strong> (mails, telefoontjes, taken).</li>
+<li>Deals doorlopen een <strong>pipeline</strong>: gedefinieerde fasen van eerste contact tot afsluiting.</li>
+<li>Relaties liggen vast in een relationele database: één bedrijf heeft meerdere contacten en deals.</li>
+<li><strong>API’s en webhooks</strong> koppelen het CRM aan website, e-mail, boekhouding en automatiseringsplatforms.</li>
+<li><strong>Custom fields en objecten</strong> passen het model aan de branche aan (bijv. “projecten” voor een aannemer).</li>
+<li>Rechten en auditlogs bepalen wie wat mag zien en wijzigen — relevant voor de AVG (GDPR).</li>
+</ul></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Wat kun je ermee bouwen?</h2>
+          <div class="kb-text"><p></p>
+<ul>
+<li>Een centrale klantdatabank als “single source of truth” voor sales en service.</li>
+<li>Verkooppipelines met automatische faseovergangen en taakherinneringen.</li>
+<li>Klantsegmentatie voor gerichte campagnes.</li>
+<li>Koppelingen waarbij offertes, tickets en facturen aan klantkaarten hangen.</li>
+</ul></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Commercieel gebruik</h2>
+          <div class="kb-text"><p> bureaus verdienen aan CRM-inrichting, datamigratie en integratietrajecten. Bedrijven besparen door minder dubbele invoer en snellere opvolging. Een goed ingerichte pipeline verhoogt conversie omdat geen lead meer “vergeten” wordt.</p></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Sterke combinaties</h2>
+          <div class="kb-text"><p> met <strong>scheduled automation</strong> en workflow-tools voor automatische opvolging. Met <strong>lead scoring</strong> voor prioritering. Met <strong>e-mailpipelines</strong> om correspondentie automatisch te loggen. Met <strong>AI-agents</strong> die zelfstandig taken plannen per klant.</p></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Belangrijkste 20%</h2>
+          <div class="kb-text"><p></p>
+<ul>
+<li>Ontwerp eerst het datamodel (objecten en relaties), pas dan de tooling.</li>
+<li>Houd één systeem leidend (“bron van waarheid”) en synchroniseer de rest.</li>
+<li>Datakwaliteit is werk: deduplicatie en verplichte velden voorkomen vervuiling.</li>
+</ul></div>
+        </section>
+        <section class="svc-block kb-block">
+          <h2>Praktijkvoorbeeld (fictief)</h2>
+          <div class="kb-text"><p> Een installatiebedrijf met acht monteurs werkte met losse Excel-lijsten. Na inrichting van een CRM met companies, contacts en een dealpipeline koppelden ze het webformulier eraan. Elke aanvraag wordt nu een deal met automatische taak voor de verkoper; niets valt meer tussen wal en schip.</p></div>
+        </section>
+        </article>
+        <aside class="svc-aside reveal" aria-label="Over deze uitleg">
+          <article class="price-card price-card-accent kb-card">
+            <p class="price-name">Uit de gids</p>
+            <p class="kb-card-title">De praktische technologiegids</p>
+            <p class="kb-card-text">219 onderwerpen over AI, automatisering, websites en beveiliging, uitgelegd voor kmo's. Elk onderwerp op één pagina.</p>
+            <ul>
+              <li>Geschreven voor Vlaamse kmo's</li>
+              <li>Belgische regels (stand oktober 2026)</li>
+              <li>Samengesteld door Thomas Huybrechts</li>
+            </ul>
+            <a class="button button-light kb-card-btn" href="#contact">Vraag hulp bij je project <span aria-hidden="true">&rarr;</span></a>
+          </article>
+        </aside>
+      </div>
+
+      <section class="svc-related reveal" aria-label="Verwante onderwerpen">
+        <p class="eyebrow">VERWANTE ONDERWERPEN</p>
+          <a class="svc-related-link" href="../n8n-workflow-automation/">n8n Workflow Automation <span aria-hidden="true">&rarr;</span></a>
+          <a class="svc-related-link" href="../business-process-automation-bpa/">Business Process Automation (BPA) <span aria-hidden="true">&rarr;</span></a>
+          <a class="svc-related-link" href="../webhooks/">Webhooks <span aria-hidden="true">&rarr;</span></a>
+          <a class="svc-related-link" href="../lead-generation-automation/">Lead Generation Automation <span aria-hidden="true">&rarr;</span></a>
+        <a class="svc-related-link" href="../">Alle onderwerpen <span aria-hidden="true">&rarr;</span></a>
+      </section>
+      <section class="contact" id="contact">
+        <div class="contact-copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span> Vrijblijvend</p>
+          <h2>Wil je dit toepassen in je eigen zaak?</h2>
+          <p class="contact-sub">Ik help kmo's en zelfstandigen met websites, AI-chatbots en automatisering. Vraag een gratis website-check aan of stel gewoon je vraag.</p>
+          <div class="contact-actions">
+            <a class="button button-light" href="mailto:hey@thomashuybrechts.com?subject=CRM Architecture">Stel je vraag <span aria-hidden="true">&nearr;</span></a>
+            <button class="copy-email" type="button" data-email="hey@thomashuybrechts.com" aria-live="polite">
+              <span class="copy-email-text">hey@thomashuybrechts.com</span>
+              <span class="copy-email-hint">Klik om te kopiëren</span>
+            </button>
+          </div>
+        </div>
+        <div class="contact-disc reveal" aria-hidden="true">
+          <span>HELLO &middot; BONJOUR &middot; HALLO &middot; HEY &middot; </span>
+          <strong>TH</strong>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="brand footer-brand" href="../../"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
+      <nav class="footer-nav" aria-label="Voettekst">
+        <a href="../../website-laten-maken/">Website laten maken</a>
+        <a href="../../ai-chatbot-laten-maken/">AI-chatbot laten maken</a>
+        <a href="../../n8n-automatisatie/">n8n-automatisatie</a>
+        <a href="../../kennisbank/">Kennisbank</a>
+        <a href="mailto:hey@thomashuybrechts.com">E-mail</a>
+      </nav>
+      <p>&copy; <span id="year"></span> Thomas Huybrechts &middot; Uit &ldquo;De praktische technologiegids&rdquo;</p>
+    </footer>
+  <script data-goatcounter="https://thomashuybrechts.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -849,4 +849,31 @@
   </url>
   <url><loc>https://thomashuybrechts.com/demo/</loc><changefreq>monthly</changefreq><priority>0.7</priority>
   </url>
+  <!-- kennisbank -->
+  <url><loc>https://thomashuybrechts.com/kennisbank/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/retrieval-augmented-generation-rag/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/prompt-engineering/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/local-llm-deployment/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/open-weight-models/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/autonomous-ai-agents/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/model-context-protocol-mcp/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/human-in-the-loop/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/agentic-workflows/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/n8n-workflow-automation/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/business-process-automation-bpa/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/webhooks/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/crm-architecture/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/lead-generation-automation/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/email-processing-pipelines/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/intelligent-document-processing-idp/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/progressive-web-apps-pwa/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/responsive-design/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/accessibility-wcag/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/performance-optimization/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/web-application-security/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/voice-agents/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/prompt-injection/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/gdpr-compliance/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/conversion-rate-optimization/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- /kennisbank -->
 </urlset>

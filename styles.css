@@ -651,3 +651,23 @@ a.work-item:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px;
 .faq-list .growth-toggle { flex: none; font-weight: 400; }
 .faq-list p { max-width: 62ch; margin: 0 0 1.6rem; color: var(--muted); line-height: 1.8; }
 @media (max-width: 900px) { .faq { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+/* ---------- Kennisbank (docs/build-kennisbank.py) ---------- */
+.kb-hero h1 { font-size: clamp(2.4rem, 6vw, 4.6rem); }
+.kb-sub { margin: -.4rem 0 0; font: 500 .8rem "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.kb-text { max-width: 44rem; color: var(--muted); line-height: 1.75; }
+.kb-text p { margin: 0 0 .9rem; }
+.kb-text ul, .kb-text ol { margin: .2rem 0 .9rem; padding-left: 1.2rem; }
+.kb-text li { margin: .35rem 0; }
+.kb-text strong { color: var(--ink); }
+.kb-text a { color: var(--ink); border-bottom: 2px solid var(--acid); text-decoration: none; }
+.kb-card-title { margin: .2rem 0 .6rem; font-size: 1.35rem; font-weight: 600; letter-spacing: -.02em; }
+.kb-card-text { margin: 0 0 1rem; font-size: .92rem; line-height: 1.6; opacity: .85; }
+.kb-card-btn { margin-top: 1.4rem; justify-content: center; }
+.kb-groups { padding: 0 clamp(1.2rem, 5vw, 5rem) 3rem; display: grid; gap: 2.5rem; }
+.kb-group h2 { margin: 0 0 1rem; padding-top: 1.6rem; border-top: 1px solid var(--ink); font-size: clamp(1.3rem, 2.2vw, 1.8rem); letter-spacing: -.03em; font-weight: 600; }
+.kb-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.kb-list a { display: grid; gap: .35rem; height: 100%; padding: 1.2rem 1.3rem; background: var(--paper); color: var(--ink); text-decoration: none; transition: background .2s ease; }
+.kb-list a:hover, .kb-list a:focus-visible { background: #ebe8de; }
+.kb-list strong { font-size: 1.05rem; letter-spacing: -.02em; }
+.kb-list span { color: var(--muted); font-size: .88rem; line-height: 1.5; }
