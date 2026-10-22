@@ -692,3 +692,13 @@ a.work-item:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px;
 .kb-shot figcaption b { display: block; font: 500 .68rem "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
 .kb-note { padding: 0 clamp(1.2rem, 5vw, 5rem) 3rem; color: var(--muted); font-size: .8rem; }
 @media (max-width: 760px) { .kb-hooks, .kb-gallery { grid-template-columns: 1fr; } }
+
+/* Nadruk in titels: geen sierletter meer, wel vet + acid-markering (één strakke stijl over de hele site) */
+h1 em, .svc-hero h1 em {
+  font-family: inherit; font-style: normal; font-weight: 700;
+  background: linear-gradient(transparent 60%, var(--acid) 60%, var(--acid) 90%, transparent 90%);
+  padding: 0 .06em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+/* Op donkere vlakken: gewoon acid-kleur, een markering zou de lichte tekst onleesbaar maken */
+.contact h2 em, .arena-copy h2 em { font-family: inherit; font-style: normal; font-weight: 700; background: none; padding: 0; color: var(--acid); }
+.quote-mark { font-family: "Manrope", sans-serif; font-style: normal; }
