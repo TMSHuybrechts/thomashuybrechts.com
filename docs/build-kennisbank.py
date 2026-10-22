@@ -111,11 +111,13 @@ def to_sections(md, published):
 
 
 def link_refs(fragment, published):
-    """Verwijzingen als '(1.13)' worden een link als dat onderwerp gepubliceerd is."""
+    """Gidsverwijzingen '(4.11)' zijn op het web betekenisloos: het nummer verdwijnt en de
+    omschrijving ervoor wordt een link als dat onderwerp gepubliceerd is."""
     def repl(m):
-        num = m.group(1)
-        return f'(<a href="../{published[num]}/">{num}</a>)' if num in published else m.group(0)
-    return re.sub(r"\((\d{1,2}\.\d{1,2})\)", repl, fragment)
+        lead, phrase, num = m.group(1), m.group(2), m.group(3)
+        return f'{lead}<a href="../{published[num]}/">{phrase}</a>' if num in published else lead + phrase
+    out = re.sub(r"(^|[+,;:>]\s*|\s)([^<>()+,;:]{2,80}?)\s*\((\d{1,2}\.\d{1,2})\)", repl, fragment)
+    return re.sub(r"\s*\((?:zie\s+)?\d{1,2}\.\d{1,2}(?:\s*(?:,|en)\s*\d{1,2}\.\d{1,2})*\)", "", out)
 
 
 HEAD = """<!doctype html>
@@ -285,6 +287,75 @@ def render_topic(e, published, entries):
 """ + FOOT.format(up=up, email=EMAIL, subject=html.escape(e["title"]))
 
 
+# Teasers: eigen projecten die nog niet beschikbaar zijn. Nieuwsgierig maken, niet alles uitleggen.
+TEASERS = {
+    "0.1": {
+        "title": "AI Business OS: je hele freelancezaak in één scherm (binnenkort) | Thomas Huybrechts",
+        "desc": "Een eigen AI-systeem dat klanten zoekt, websites doorlicht, opvolgt en mailt volgens de Belgische regels. Binnenkort beschikbaar: zet je op de wachtlijst.",
+        "h1": "AI Business OS. <em>Je zaak, op één scherm.</em>",
+        "intro": "Ik bouwde het voor mezelf: één systeem dat klanten zoekt, hun website doorlicht, de opvolging bewaakt en mailt zonder de Belgische regels te breken. Vandaag draait mijn eigen freelancezaak erop. Binnenkort misschien de jouwe.",
+        "hooks": [("20 bedrijven", "doorgelicht in minder dan een minuut (echte scan in Meerhout)"),
+                  ("0 dubbele mails", "en nooit nog mailen naar wie zich afmeldde"),
+                  ("Made in België", "met de Belgische mailregels ingebouwd, niet als bijzaak")],
+        "shots": [("bos-command-center", "Command Center", "Elke afdeling in één oogopslag. Groen draait. Wat aandacht vraagt, zie je meteen."),
+                  ("bos-lead-hunter", "Lead Hunter", "Het zoekt, het meet, en het zegt je bij wie je eerst moet aankloppen."),
+                  ("bos-crm", "CRM & Sales", "Van eerste contact tot klant. Slepen in plaats van Excel."),
+                  ("bos-outreach", "Cold Outreach", "Mails die de regels kennen. Ook op de dagen dat jij ze vergeet.")],
+    },
+}
+
+
+def render_teaser(e, published, entries):
+    t = TEASERS[e["num"]]
+    slug = published[e["num"]]
+    url = f"{SITE}kennisbank/{slug}/"
+    up = "../../"
+    schema = json.dumps({"@context": "https://schema.org", "@graph": [
+        {"@type": "SoftwareApplication", "name": e["title"], "applicationCategory": "BusinessApplication", "operatingSystem": "Web",
+         "description": t["desc"], "url": url, "author": AUTHOR, "creator": AUTHOR, "inLanguage": "nl-BE",
+         "image": [f"{SITE}assets/kennisbank/{s}.webp" for s, *_ in t["shots"]]},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Thomas Huybrechts", "item": SITE},
+            {"@type": "ListItem", "position": 2, "name": "Kennisbank", "item": SITE + "kennisbank/"},
+            {"@type": "ListItem", "position": 3, "name": e["title"], "item": url}]},
+    ]}, ensure_ascii=False, indent=2)
+    hooks = "\n".join(f"        <div><b>{html.escape(a)}</b><span>{html.escape(b)}</span></div>" for a, b in t["hooks"])
+    shots = "\n".join(
+        f'        <figure class="kb-shot reveal"><img src="{up}assets/kennisbank/{s}.webp" width="1600" height="1000" loading="{("eager", "lazy")[i > 0]}" decoding="async" alt="Screenshot van {html.escape(name)} in AI Business OS">'
+        f'<figcaption><b>{html.escape(name)}</b>{html.escape(cap)}</figcaption></figure>'
+        for i, (s, name, cap) in enumerate(t["shots"]))
+    head = HEAD.format(up=up, title=html.escape(t["title"]), desc=html.escape(t["desc"]), url=url, ogtype="website", site=SITE, schema=schema)
+    head = head.replace(f'<meta property="og:image" content="{SITE}assets/og.png" />', f'<meta property="og:image" content="{SITE}assets/kennisbank/{t["shots"][0][0]}.webp" />')
+    foot = FOOT.format(up=up, email=EMAIL, subject="Wachtlijst AI Business OS")
+    foot = foot.replace("Wil je dit toepassen in je eigen zaak?", "Als eerste weten wanneer het klaar is?").replace("Stel je vraag <span", "Zet me op de wachtlijst <span")
+    return head.replace('<body class="svc-page kb-page">', '<body class="svc-page kb-page kb-teaser">') + f"""
+    <main id="inhoud">
+      <div class="kb-soon" role="note"><strong>Coming soon</strong><span>In ontwikkeling &middot; zet je op de wachtlijst</span></div>
+      <nav class="svc-crumbs" aria-label="Kruimelpad"><a href="{up}">Home</a> <span aria-hidden="true">/</span> <a href="../">Kennisbank</a> <span aria-hidden="true">/</span> <span>{html.escape(e['title'])}</span></nav>
+      <section class="svc-hero kb-hero">
+        <p class="eyebrow"><span class="status-dot"></span> EIGEN PROJECT &middot; SAAS IN WORDING</p>
+        <h1>{t['h1']}</h1>
+        <p class="hero-intro">{html.escape(t['intro'])}</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="mailto:{EMAIL}?subject=Wachtlijst%20AI%20Business%20OS">Zet me op de wachtlijst <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </section>
+      <div class="kb-hooks reveal">
+{hooks}
+      </div>
+      <div class="kb-gallery">
+{shots}
+      </div>
+      <p class="kb-note">Screenshots met verzonnen demogegevens. Hoe het precies werkt? Dat vertel ik graag persoonlijk.</p>
+      <section class="svc-related reveal" aria-label="Lees ook">
+        <p class="eyebrow">LEES OOK</p>
+        <a class="svc-related-link" href="../{published['10.1']}/">Wat is SaaS? <span aria-hidden="true">&rarr;</span></a>
+        <a class="svc-related-link" href="../{published['4.11']}/">Automatisch nieuwe klanten vinden <span aria-hidden="true">&rarr;</span></a>
+        <a class="svc-related-link" href="../">Alle onderwerpen <span aria-hidden="true">&rarr;</span></a>
+      </section>
+""" + foot
+
+
 def render_index(published, entries):
     url = SITE + "kennisbank/"
     desc = "Heldere uitleg over AI, chatbots, automatisering, websites en beveiliging voor ondernemers, makers en iedereen die mee wil met technologie. Uit De praktische technologiegids van Thomas Huybrechts."
@@ -340,7 +411,8 @@ def main():
     for n in TOPICS:
         out = base / published[n] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(render_topic(entries[n], published, entries), encoding="utf-8", newline="\n")
+        render = render_teaser if n in TEASERS else render_topic
+        out.write_text(render(entries[n], published, entries), encoding="utf-8", newline="\n")
     (base / "index.html").write_text(render_index(published, entries), encoding="utf-8", newline="\n")
     update_sitemap(published)
     print(f"kennisbank: {len(TOPICS)} onderwerpen + overzicht, sitemap bijgewerkt")
