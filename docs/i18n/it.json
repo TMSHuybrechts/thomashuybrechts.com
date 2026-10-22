@@ -919,7 +919,8 @@
   "De lastigste vraag was niet technisch maar: wat is van wie? Zodra vastlag welk deel van een notitie de app beheert en welk deel van jou is, werd sync in twee richtingen betrouwbaar. De kernlogica draait zonder Obsidian en is getest tegen een kleine nep-versie van de Obsidian-API; een sync van 122 repos duurt zo'n 0,3 seconde.": "La domanda più difficile non era tecnica ma: che cosa appartiene a chi? Una volta stabilito quale parte di una nota gestisce l'app e quale è tua, la sincronizzazione in entrambe le direzioni è diventata affidabile. La logica centrale gira senza Obsidian ed è testata contro una piccola versione finta dell'API di Obsidian; una sincronizzazione di 122 repo richiede circa 0,3 secondi.",
   "Repo Notebook voor Obsidian — bekijk de website": "Repo Notebook per Obsidian — vedi il sito",
   "Bekijk de productpagina": "Vedi la pagina del prodotto",
-  "thomashuybrechts.com/repo-notebook/obsidian": "thomashuybrechts.com/repo-notebook/obsidian"
+  "thomashuybrechts.com/repo-notebook/obsidian": "thomashuybrechts.com/repo-notebook/obsidian",
+  "Kennisbank": "Base di conoscenza"
  },
  "kw": {
   "repo-notebook-obsidian": [
