@@ -763,3 +763,45 @@ body.ask-lock { overflow: hidden; }
 .portrait-traits { display: flex !important; flex-wrap: wrap; align-items: center; gap: .3rem .45rem; letter-spacing: .06em; margin-top: .55rem !important; color: var(--ink); }
 .portrait-traits b { display: inline-flex; align-items: center; gap: .45rem; font-weight: 500; white-space: nowrap; }
 .portrait-traits b + b::before { content: ""; width: .42rem; height: .42rem; background: var(--ink); }
+
+/* ---------- AI Business OS-balk onder de hero: opvallend, maar ondergeschikt aan wat je vandaag kan kopen ---------- */
+.bos-band { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; gap: clamp(2rem, 5vw, 5rem); overflow: hidden; padding: clamp(2.6rem, 5vw, 4.2rem) max(var(--pad), calc((100vw - var(--max)) / 2 + var(--pad))); color: var(--paper); background: var(--ink); }
+.bos-band-copy { display: grid; gap: 1.1rem; justify-items: start; }
+.bos-band-tag { padding: .4rem .7rem; border: 1px solid rgb(243 240 232 / .3); border-radius: 999px; font: 500 .66rem "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+.bos-band strong { font-size: clamp(2rem, 3.6vw, 3.3rem); font-weight: 500; line-height: 1.02; letter-spacing: -.055em; }
+.bos-band strong em { display: block; font-style: normal; font-weight: 700; color: var(--acid); }
+.bos-band-sub { max-width: 30rem; color: #aaa9a2; line-height: 1.7; }
+.bos-band-cta { display: inline-flex; align-items: center; gap: .7rem; margin-top: .4rem; padding: .9rem 1.2rem; color: var(--ink); background: var(--acid); border-radius: 2px; font-size: .8rem; font-weight: 700; transition: transform .2s ease; }
+.bos-band-shot { width: 100%; height: auto; border-radius: 14px; border: 1px solid rgb(243 240 232 / .18); box-shadow: 0 30px 70px rgb(0 0 0 / .45); transform: rotate(1.5deg) translateY(6px); transition: transform .5s cubic-bezier(.2, 1, .3, 1); }
+.bos-band:hover .bos-band-shot, .bos-band:focus-visible .bos-band-shot { transform: rotate(0) translateY(0) scale(1.02); }
+.bos-band:hover .bos-band-cta { transform: translateX(4px); }
+.bos-band:focus-visible { outline: 3px solid var(--acid); outline-offset: -6px; }
+@media (max-width: 860px) {
+  .bos-band { grid-template-columns: 1fr; }
+  .bos-band-shot { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bos-band-shot, .bos-band:hover .bos-band-shot, .bos-band-cta { transition: none; transform: none; }
+}
+
+/* ---------- AI Business OS-artikel: wat het oplevert (boven) + uitgebreid verslag (onder) ---------- */
+.kb-gains { padding: 0 clamp(1.2rem, 5vw, 5rem) 3.5rem; }
+.kb-gains h2, .kb-offer h2 { margin: 0 0 1.6rem; font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 600; letter-spacing: -.05em; line-height: 1.05; }
+.kb-gains-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--ink); border: 1px solid var(--ink); }
+.kb-gain { padding: clamp(1.4rem, 2.6vw, 2rem); background: var(--paper); }
+.kb-gain:first-child { background: var(--acid); }
+.kb-gain h3 { margin: 0 0 .6rem; font-size: clamp(1.15rem, 1.8vw, 1.45rem); font-weight: 700; letter-spacing: -.03em; }
+.kb-gain p { margin: 0; color: var(--muted); line-height: 1.65; }
+.kb-gain:first-child p { color: var(--ink); }
+.kb-offer { display: grid; justify-items: start; gap: 1rem; margin: 1.5rem clamp(1.2rem, 5vw, 5rem) 4.5rem; padding: clamp(1.8rem, 4vw, 3rem); color: var(--paper); background: var(--ink); }
+.kb-offer h2 { margin: 0; color: var(--acid); }
+.kb-offer p { max-width: 40rem; margin: 0 0 .6rem; color: #c9c8c0; line-height: 1.7; }
+.kb-offer .button-dark { color: var(--ink); background: var(--acid); }
+.kb-report { padding-top: 1rem; scroll-margin-top: 90px; }
+.kb-report .kb-body > h2 { margin-top: 0; font-size: clamp(2rem, 3.4vw, 3rem); letter-spacing: -.05em; }
+.kb-report .kb-body h3 { margin: 2.4rem 0 .8rem; font-size: clamp(1.25rem, 2vw, 1.6rem); letter-spacing: -.03em; }
+.kb-report .kb-body ol { padding-left: 1.3rem; }
+.kb-report .kb-body li { margin-bottom: .8rem; line-height: 1.7; }
+@media (max-width: 760px) { .kb-gains-grid { grid-template-columns: 1fr; } }
+.kb-offer-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; }
+.kb-offer .text-link { color: var(--acid); }

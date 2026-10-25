@@ -849,9 +849,10 @@
   </url>
   <url><loc>https://thomashuybrechts.com/demo/</loc><changefreq>monthly</changefreq><priority>0.7</priority>
   </url>
+  <url><loc>https://thomashuybrechts.com/business-os/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <!-- kennisbank -->
   <url><loc>https://thomashuybrechts.com/kennisbank/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thomashuybrechts.com/kennisbank/ai-business-os/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thomashuybrechts.com/kennisbank/ai-business-os/</loc><lastmod>2026-10-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://thomashuybrechts.com/kennisbank/retrieval-augmented-generation-rag/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://thomashuybrechts.com/kennisbank/prompt-engineering/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://thomashuybrechts.com/kennisbank/local-llm-deployment/</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>

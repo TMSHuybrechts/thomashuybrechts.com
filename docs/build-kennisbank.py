@@ -287,20 +287,44 @@ def render_topic(e, published, entries):
 """ + FOOT.format(up=up, email=EMAIL, subject=html.escape(e["title"]))
 
 
-# Teasers: eigen projecten die nog niet beschikbaar zijn. Nieuwsgierig maken, niet alles uitleggen.
+# Teasers: eigen projecten die nog niet beschikbaar zijn. Bovenaan wat het oplevert, onderaan het uitgebreide verslag.
 TEASERS = {
     "0.1": {
-        "title": "AI Business OS: je hele freelancezaak in één scherm (binnenkort) | Thomas Huybrechts",
-        "desc": "Een eigen AI-systeem dat klanten zoekt, websites doorlicht, opvolgt en mailt volgens de Belgische regels. Binnenkort beschikbaar: zet je op de wachtlijst.",
+        "title": "AI Business OS: klanten vinden, opvolgen en mailen in één systeem (binnenkort) | Thomas Huybrechts",
+        "desc": "Een eigen systeem dat bedrijven in je regio zoekt, hun website doorlicht, de opvolging bewaakt en mailt volgens de Belgische regels. Met het volledige verslag: waarom en hoe ik het bouwde.",
         "h1": "AI Business OS. <em>Je zaak, op één scherm.</em>",
-        "intro": "Ik bouwde het voor mezelf: één systeem dat klanten zoekt, hun website doorlicht, de opvolging bewaakt en mailt zonder de Belgische regels te breken. Vandaag draait mijn eigen freelancezaak erop. Binnenkort misschien de jouwe.",
+        "intro": "Ik bouwde het voor mezelf: één systeem dat klanten zoekt, hun website doorlicht en de opvolging bewaakt, binnen de Belgische mailregels. Vandaag draait mijn eigen freelancezaak erop.",
         "hooks": [("20 bedrijven", "doorgelicht in minder dan een minuut (echte scan in Meerhout)"),
                   ("0 dubbele mails", "en nooit nog mailen naar wie zich afmeldde"),
                   ("Made in België", "met de Belgische mailregels ingebouwd, niet als bijzaak")],
+        "gains": [("Altijd weten bij wie je aanklopt", "Kies een gemeente en een sector. Je krijgt de beste 20 bedrijven om aan te spreken, met de reden erbij."),
+                  ("Een eerste gesprek dat meteen concreet is", "Per bedrijf zie je wat er aan de website schort: traag, niet mobiel, geen contactknop. Je weet wat je komt oplossen."),
+                  ("Niemand valt nog tussen de plooien", "Elk contact staat op het bord, met de volgende stap. Geen losse tabbladen, geen Excel, geen geheugen."),
+                  ("Mailen zonder kopzorgen", "Het systeem weet wie je mag mailen, mailt nooit dubbel en stopt vanzelf zodra iemand antwoordt of zich afmeldt.")],
         "shots": [("bos-command-center", "Command Center", "Elke afdeling in één oogopslag. Groen draait. Wat aandacht vraagt, zie je meteen."),
                   ("bos-lead-hunter", "Lead Hunter", "Het zoekt, het meet, en het zegt je bij wie je eerst moet aankloppen."),
                   ("bos-crm", "CRM & Sales", "Van eerste contact tot klant. Slepen in plaats van Excel."),
                   ("bos-outreach", "Cold Outreach", "Mails die de regels kennen. Ook op de dagen dat jij ze vergeet.")],
+        "offer": "Vandaag gebruik ik het enkel voor mijn eigen zaak. Er komen twee manieren om het zelf te gebruiken: op maat geïnstalleerd voor jouw zaak, of later als abonnement. Op de wachtlijst hoor je het als eerste.",
+        "report": [
+            ("Waarom ik het bouwde", """<p>Als freelancer ben je verkoper, projectleider en boekhouder tegelijk. Klanten zoeken deed ik in losse tabbladen, een Excel-lijst en mijn geheugen. Ik wilde één plek waar ik 's ochtends zie wat er vandaag moet gebeuren.</p>
+<p>Bestaande CRM's konden veel, maar niet zoeken in mijn eigen regio, geen websites doorlichten en de Belgische mailregels kenden ze niet. Dus bouwde ik het zelf.</p>"""),
+            ("Hoe het werkt, in vijf stappen", """<ol>
+<li><strong>Zoeken.</strong> Je kiest een gemeente en een sector. Het systeem haalt bedrijven op uit open kaartgegevens (OpenStreetMap) en laat ketens en filialen weg.</li>
+<li><strong>Doorlichten.</strong> Van elke website meet het de basis: is hij snel, werkt hij op een gsm, kan je contact opnemen, is er een chatbot, kan je online betalen, is hij toegankelijk.</li>
+<li><strong>Kiezen.</strong> Elk bedrijf krijgt een score. Van de 40 gevonden bedrijven blijven de beste 20 over, met de reden waarom.</li>
+<li><strong>Opvolgen.</strong> Wie interessant is, gaat met één klik naar het CRM. Daar sleep je kaartjes van eerste contact naar klant, met notities en activiteiten.</li>
+<li><strong>Mailen.</strong> Campagnes met een daglimiet. Per adres controleert het systeem of je mag mailen, het verstuurt nooit twee keer dezelfde stap en stopt bij een antwoord, een afmelding of een onbestelbare mail.</li>
+</ol>"""),
+            ("De Belgische regels, ingebouwd", """<p>Een vennootschap mag je in België mailen op een algemeen adres zoals info@, met een duidelijke manier om je af te melden. Een eenmanszaak of een persoonlijk adres geldt als natuurlijk persoon: daar heb je vooraf toestemming nodig.</p>
+<p>Is de rechtsvorm niet duidelijk, dan beslist het systeem niet zelf, maar vraagt het mij. Wie zich afmeldt, komt op een blokkeerlijst en krijgt nooit meer een mail.</p>"""),
+            ("Hoe het gebouwd is", """<p>Het draait op mijn eigen server in België, niet in een Amerikaanse cloud. Alle gegevens staan in één lokale databank, en elke nacht gaat er een reservekopie van. Inloggen gebeurt met een persoonlijke code, en na te veel foute pogingen gaat het slot erop.</p>
+<p>Het is lichtgewicht gebouwd, met zo weinig externe onderdelen als mogelijk, en de belangrijkste regels worden automatisch getest: vandaag 33 tests. Hoe ik de bedrijven precies score en welke mailteksten ik gebruik, hou ik voor mezelf.</p>"""),
+            ("Waar het vandaag staat", """<p>Eerlijk is eerlijk: niet alles is af. Zoeken, doorlichten, scoren en het CRM gebruik ik voor mijn eigen zaak. Mailen staat nog in testmodus: er vertrekt niets tot de technische beveiliging van mijn mailbox (DKIM) volledig in orde is. Liever een week later live dan één mail in iemands spam.</p>
+<p>Op de planning: een controle in het Belgische bedrijvenregister (KBO), zodat de rechtsvorm altijd klopt, en hulp bij een eerste mail op maat van wat het systeem op de website vond.</p>"""),
+            ("Wat ik ervan leerde", """<p>Het moeilijkste was niet de techniek, maar de regels. Wie mag je mailen, wanneer stop je, wat als iemand antwoordt? Dat zit nu in het systeem en niet meer in mijn hoofd.</p>
+<p>En dat is precies wat ik ook voor klanten doe: hun werkwijze vastleggen in een systeem dat blijft werken, ook op de drukke dagen.</p>"""),
+        ],
     },
 }
 
@@ -310,6 +334,7 @@ def render_teaser(e, published, entries):
     slug = published[e["num"]]
     url = f"{SITE}kennisbank/{slug}/"
     up = "../../"
+    wait = f"mailto:{EMAIL}?subject=Wachtlijst%20AI%20Business%20OS"
     schema = json.dumps({"@context": "https://schema.org", "@graph": [
         {"@type": "SoftwareApplication", "name": e["title"], "applicationCategory": "BusinessApplication", "operatingSystem": "Web",
          "description": t["desc"], "url": url, "author": AUTHOR, "creator": AUTHOR, "inLanguage": "nl-BE",
@@ -320,10 +345,12 @@ def render_teaser(e, published, entries):
             {"@type": "ListItem", "position": 3, "name": e["title"], "item": url}]},
     ]}, ensure_ascii=False, indent=2)
     hooks = "\n".join(f"        <div><b>{html.escape(a)}</b><span>{html.escape(b)}</span></div>" for a, b in t["hooks"])
+    gains = "\n".join(f"          <div class=\"kb-gain reveal\"><h3>{html.escape(a)}</h3><p>{html.escape(b)}</p></div>" for a, b in t["gains"])
     shots = "\n".join(
         f'        <figure class="kb-shot reveal"><img src="{up}assets/kennisbank/{s}.webp" width="1600" height="1000" loading="{("eager", "lazy")[i > 0]}" decoding="async" alt="Screenshot van {html.escape(name)} in AI Business OS">'
         f'<figcaption><b>{html.escape(name)}</b>{html.escape(cap)}</figcaption></figure>'
         for i, (s, name, cap) in enumerate(t["shots"]))
+    report = "\n".join(f"          <h3>{html.escape(h)}</h3>\n{body}" for h, body in t["report"])
     head = HEAD.format(up=up, title=html.escape(t["title"]), desc=html.escape(t["desc"]), url=url, ogtype="website", site=SITE, schema=schema)
     head = head.replace(f'<meta property="og:image" content="{SITE}assets/og.png" />', f'<meta property="og:image" content="{SITE}assets/kennisbank/{t["shots"][0][0]}.webp" />')
     foot = FOOT.format(up=up, email=EMAIL, subject="Wachtlijst AI Business OS")
@@ -337,16 +364,42 @@ def render_teaser(e, published, entries):
         <h1>{t['h1']}</h1>
         <p class="hero-intro">{html.escape(t['intro'])}</p>
         <div class="hero-actions">
-          <a class="button button-dark" href="mailto:{EMAIL}?subject=Wachtlijst%20AI%20Business%20OS">Zet me op de wachtlijst <span aria-hidden="true">&rarr;</span></a>
+          <a class="button button-dark" href="{wait}">Zet me op de wachtlijst <span aria-hidden="true">&rarr;</span></a>
+          <a class="text-link" href="#verslag">Lees het verslag <span aria-hidden="true">&darr;</span></a>
         </div>
       </section>
       <div class="kb-hooks reveal">
 {hooks}
       </div>
+      <section class="kb-gains" aria-labelledby="kb-gains-title">
+        <h2 id="kb-gains-title" class="reveal">Wat het je oplevert</h2>
+        <div class="kb-gains-grid">
+{gains}
+        </div>
+      </section>
       <div class="kb-gallery">
 {shots}
       </div>
-      <p class="kb-note">Screenshots met verzonnen demogegevens. Hoe het precies werkt? Dat vertel ik graag persoonlijk.</p>
+      <p class="kb-note">Screenshots met verzonnen demogegevens.</p>
+      <section class="kb-offer reveal" aria-labelledby="kb-offer-title">
+        <h2 id="kb-offer-title">Wil je dit voor je eigen zaak?</h2>
+        <p>{html.escape(t['offer'])}</p>
+        <div class="kb-offer-actions">
+          <a class="button button-dark" href="{up}business-os/#wachtlijst">Zet me op de wachtlijst <span aria-hidden="true">&rarr;</span></a>
+          <a class="text-link" href="{up}business-os/">Bekijk functies en tarieven <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </section>
+
+      <div class="svc-layout kb-report" id="verslag">
+        <article class="svc-body kb-body">
+          <h2>Het uitgebreide verslag</h2>
+{report}
+        </article>
+        <aside class="svc-aside reveal" aria-label="Over dit project">
+{OWN_CARD}
+        </aside>
+      </div>
+
       <section class="svc-related reveal" aria-label="Lees ook">
         <p class="eyebrow">LEES OOK</p>
         <a class="svc-related-link" href="../{published['10.1']}/">Wat is SaaS? <span aria-hidden="true">&rarr;</span></a>

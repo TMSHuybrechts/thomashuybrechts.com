@@ -369,6 +369,7 @@ def write_sitemap():
             entry(page_url(code, page), "1.0" if page == "index.html" else "0.8", page)
     entry(SITE + "repo-notebook/", "0.9")
     entry(SITE + "repo-notebook/obsidian/", "0.8")
+    entry(SITE + "business-os/", "0.8")
     # dienstpagina's: Nederlands en Engels, met wederzijdse taalverwijzingen
     for nl_slug, en_slug in (("website-laten-maken", "website-development"), ("ai-chatbot-laten-maken", "ai-chatbot-development"), ("n8n-automatisatie", "n8n-automation")):
         for loc in (SITE + nl_slug + "/", SITE + "en/" + en_slug + "/"):

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inloggen | Business OS</title>
+  <meta name="description" content="De klantomgeving van Business OS opent bij de lancering.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0e110f">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="../bos.css">
+  <style>
+    .login { display: grid; place-items: center; min-height: calc(100dvh - 68px); padding: 3rem var(--pad); }
+    .login-card { width: min(28rem, 100%); padding: clamp(1.8rem, 5vw, 2.6rem); border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: 0 30px 80px rgb(0 0 0 / .45); }
+    .login-card .logo-mark { margin-bottom: 1.4rem; }
+    .login-card h1 { font-size: clamp(2rem, 6vw, 2.6rem); font-weight: 600; }
+    .login-card p { margin: 1rem 0 1.8rem; color: var(--muted); }
+    .login-actions { display: grid; gap: .7rem; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="../" aria-label="Business OS, naar de startpagina">
+      <span class="logo-mark" aria-hidden="true">B</span>
+      <span>Business OS</span>
+    </a>
+    <div class="top-actions">
+      <a class="th-chip" href="../../" title="Een product van Thomas Huybrechts">TH</a>
+    </div>
+  </header>
+  <main class="login">
+    <section class="login-card" aria-labelledby="login-title">
+      <span class="logo-mark" aria-hidden="true">B</span>
+      <h1 id="login-title">Klantlogin</h1>
+      <p>De klantomgeving opent bij de lancering. Sta je op de wachtlijst, dan krijg je als eerste je toegang per mail.</p>
+      <div class="login-actions">
+        <a class="btn btn-acid btn-lg" href="../#wachtlijst">Zet me op de wachtlijst <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost btn-lg" href="../">Terug naar Business OS</a>
+      </div>
+    </section>
+  </main>
+  <script data-goatcounter="https://thomashuybrechts.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
