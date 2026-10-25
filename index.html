@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
+    <script src="./contact-form.js" defer></script>
 
     <script type="application/ld+json">
     {
@@ -175,7 +176,8 @@
           <div class="about-layout">
             <figure class="portrait">
               <img src="./assets/thomas-portrait.jpg" alt="Portret van Thomas Huybrechts" width="680" height="850" loading="lazy" decoding="async" />
-              <figcaption>Thomas Huybrechts · Meerhout, België · hands-on, analytisch, resultaatgericht</figcaption>
+              <button class="ask-pop" type="button" data-ask-open aria-haspopup="dialog">FF snel vragen?</button>
+              <figcaption><span>Thomas Huybrechts</span> <span>Meerhout, België</span> <span class="portrait-traits"><b>hands-on</b> <b>analytisch</b> <b>resultaatgericht</b></span></figcaption>
             </figure>
             <div class="about-grid">
               <p>Ik duik graag in technologie die nog niet vanzelfsprekend is. Ik onderzoek hoe dingen werken, combineer bestaande systemen en vertaal technische mogelijkheden naar iets dat logisch aanvoelt voor de mens die het gebruikt.</p>
@@ -558,7 +560,7 @@
           <h2>Website, workflow<br />of <em>chatbot?</em></h2>
           <p class="contact-sub">Vertel me in een paar zinnen wat je wil bereiken of welke taak je tijd opslorpt. Je krijgt binnen twee werkdagen een eerlijk antwoord: wat is zinvol, wat is de eerste kleine stap, en wat kost het.</p>
           <div class="contact-actions">
-            <a class="button button-light" href="mailto:hey@thomashuybrechts.com?subject=Kennismaking%20project">Plan een gratis kennismaking <span aria-hidden="true">↗</span></a>
+            <button class="button button-light" type="button" data-ask-open aria-haspopup="dialog">FF snel vragen? <span aria-hidden="true">↗</span></button>
             <button class="copy-email" type="button" data-email="hey@thomashuybrechts.com" aria-live="polite">
               <span class="copy-email-text">hey@thomashuybrechts.com</span>
               <span class="copy-email-hint">kopieer</span>
@@ -575,6 +577,37 @@
         </div>
       </section>
     </main>
+
+    <dialog class="ask-dialog" id="ff-vragen-dialog" aria-labelledby="ask-title">
+        <form class="ask-bubble" id="ff-vragen" novalidate>
+          <button class="ask-close" type="button" data-ask-close aria-label="Sluiten">×</button>
+          <h2 id="ask-title">FF snel vragen?</h2>
+          <div class="ask-fields">
+            <label class="ask-field">
+              <span>Naam</span>
+              <input name="naam" type="text" autocomplete="name" required maxlength="120" />
+            </label>
+            <label class="ask-field">
+              <span>E-mail</span>
+              <input name="email" type="email" autocomplete="email" required maxlength="160" />
+            </label>
+            <label class="ask-field ask-field-wide">
+              <span>Bedrijf <small>(optioneel)</small></span>
+              <input name="bedrijf" type="text" autocomplete="organization" maxlength="120" />
+            </label>
+            <label class="ask-field ask-field-wide">
+              <span>Wat wil je oplossen?</span>
+              <textarea name="bericht" rows="4" required maxlength="1900"></textarea>
+            </label>
+            <!-- Honeypot: mensen zien dit veld niet, bots vullen het in -->
+            <label class="ask-hp" aria-hidden="true">Website <input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+          </div>
+          <div class="ask-foot">
+            <button class="button button-dark ask-send" type="submit">Verstuur <span aria-hidden="true">↗</span></button>
+            <p class="ask-status" role="status" aria-live="polite" tabindex="-1"></p>
+          </div>
+        </form>
+    </dialog>
 
     <footer>
       <a class="brand footer-brand" href="#top"><span class="brand-mark">TH</span><span>Thomas Huybrechts</span></a>
