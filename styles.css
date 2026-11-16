@@ -170,6 +170,8 @@ h1 em, .contact h2 em { font-family: "Playfair Display", serif; font-weight: 600
 .svc-related .eyebrow { width: 100%; margin: 0; }
 .svc-related-link { color: var(--ink); font-size: clamp(1.2rem, 2.2vw, 1.7rem); font-weight: 600; letter-spacing: -.03em; text-decoration: none; border-bottom: 2px solid var(--acid); }
 .svc-related-link:hover { border-color: var(--orange); }
+.svc-related-kb { padding-bottom: 1rem; gap: .5rem 1.6rem; }
+.svc-related-kb .svc-related-link { font-size: clamp(1rem, 1.4vw, 1.15rem); font-weight: 500; letter-spacing: -.01em; border-bottom-width: 1px; }
 @media (max-width: 860px) {
   .svc-layout { grid-template-columns: 1fr; }
   .svc-aside { position: static; }
