@@ -47,7 +47,9 @@ BLOCK_RE = re.compile(r"\n?[ \t]*<!-- i18n:start.*?<!-- i18n:end -->", re.S)
 def pages():
     """Te vertalen pagina's, relatief t.o.v. de root (posix)."""
     out = ["index.html"]
-    out += sorted(f"projecten/{p.name}" for p in (ROOT / "projecten").glob("*.html"))
+    # projecten/index.html is een doorverwijzing naar #projecten op de startpagina en staat al
+    # handmatig in elke taalmap; die mag hier niet vertaald of in de sitemap gezet worden.
+    out += sorted(f"projecten/{p.name}" for p in (ROOT / "projecten").glob("*.html") if p.name != "index.html")
     return out
 
 
